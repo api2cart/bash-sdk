@@ -1,0 +1,1998 @@
+#  completion                               -*- shell-script -*-
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !
+# ! Note:
+# !
+# ! THIS SCRIPT HAS BEEN AUTOMATICALLY GENERATED USING
+# ! openapi-generator (https://openapi-generator.tech)
+# ! FROM OPENAPI SPECIFICATION IN JSON.
+# !
+# ! Generator version: 7.11.0
+# !
+# !
+# ! System wide installation:
+# !
+# ! $ sudo cp .bash-completion /etc/bash-completion.d/
+# !
+# !
+# ! User home installation (add this line to .bash_profile):
+# !
+# ! [ -r ~/.bash-completion ] && source ~/.bash-completion
+# !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+declare -A mime_type_abbreviations
+# text/*
+mime_type_abbreviations["text"]="text/plain"
+mime_type_abbreviations["html"]="text/html"
+mime_type_abbreviations["md"]="text/x-markdown"
+mime_type_abbreviations["csv"]="text/csv"
+mime_type_abbreviations["css"]="text/css"
+mime_type_abbreviations["rtf"]="text/rtf"
+# application/*
+mime_type_abbreviations["json"]="application/json"
+mime_type_abbreviations["xml"]="application/xml"
+mime_type_abbreviations["yaml"]="application/yaml"
+mime_type_abbreviations["js"]="application/javascript"
+mime_type_abbreviations["bin"]="application/octet-stream"
+mime_type_abbreviations["rdf"]="application/rdf+xml"
+# image/*
+mime_type_abbreviations["jpg"]="image/jpeg"
+mime_type_abbreviations["png"]="image/png"
+mime_type_abbreviations["gif"]="image/gif"
+mime_type_abbreviations["bmp"]="image/bmp"
+mime_type_abbreviations["tiff"]="image/tiff"
+
+
+#
+# Check if this is OSX, if so defined custom init_completion
+#
+if [[ `uname` =~ "Darwin" ]]; then
+    __osx_init_completion()
+    {
+        COMPREPLY=()
+        _get_comp_words_by_ref cur prev words cword
+    }
+fi
+
+_()
+{
+    local cur
+    local prev
+    local words
+    local cword
+
+    # The reference of currently selected REST operation
+    local operation=""
+
+    # The list of available operation in the REST service
+    # It's modelled as an associative array for efficient key lookup
+    declare -A operations
+    operations["accountCartAdd"]=1
+    operations["accountCartList"]=1
+    operations["accountConfigUpdate"]=1
+    operations["accountFailedWebhooks"]=1
+    operations["accountSupportedPlatforms"]=1
+    operations["attributeAdd"]=1
+    operations["attributeAssignGroup"]=1
+    operations["attributeAssignSet"]=1
+    operations["attributeAttributesetList"]=1
+    operations["attributeCount"]=1
+    operations["attributeDelete"]=1
+    operations["attributeGroupList"]=1
+    operations["attributeInfo"]=1
+    operations["attributeList"]=1
+    operations["attributeTypeList"]=1
+    operations["attributeUnassignGroup"]=1
+    operations["attributeUnassignSet"]=1
+    operations["attributeUpdate"]=1
+    operations["attributeValueAdd"]=1
+    operations["attributeValueDelete"]=1
+    operations["attributeValueUpdate"]=1
+    operations["basketInfo"]=1
+    operations["basketItemAdd"]=1
+    operations["basketLiveShippingServiceCreate"]=1
+    operations["basketLiveShippingServiceDelete"]=1
+    operations["basketLiveShippingServiceList"]=1
+    operations["batchJobList"]=1
+    operations["batchJobResult"]=1
+    operations["bridgeDelete"]=1
+    operations["bridgeDownload"]=1
+    operations["bridgeUpdate"]=1
+    operations["cartBridge"]=1
+    operations["cartCatalogPriceRulesCount"]=1
+    operations["cartCatalogPriceRulesList"]=1
+    operations["cartClearCache"]=1
+    operations["cartConfig"]=1
+    operations["cartConfigUpdate"]=1
+    operations["cartCouponAdd"]=1
+    operations["cartCouponConditionAdd"]=1
+    operations["cartCouponCount"]=1
+    operations["cartCouponDelete"]=1
+    operations["cartCouponList"]=1
+    operations["cartCreate"]=1
+    operations["cartDelete"]=1
+    operations["cartDisconnect"]=1
+    operations["cartGiftcardAdd"]=1
+    operations["cartGiftcardCount"]=1
+    operations["cartGiftcardDelete"]=1
+    operations["cartGiftcardList"]=1
+    operations["cartInfo"]=1
+    operations["cartList"]=1
+    operations["cartMetaDataList"]=1
+    operations["cartMetaDataSet"]=1
+    operations["cartMetaDataUnset"]=1
+    operations["cartMethods"]=1
+    operations["cartPluginList"]=1
+    operations["cartScriptAdd"]=1
+    operations["cartScriptDelete"]=1
+    operations["cartScriptList"]=1
+    operations["cartShippingZonesList"]=1
+    operations["cartValidate"]=1
+    operations["categoryAdd"]=1
+    operations["categoryAddBatch"]=1
+    operations["categoryAssign"]=1
+    operations["categoryCount"]=1
+    operations["categoryDelete"]=1
+    operations["categoryFind"]=1
+    operations["categoryImageAdd"]=1
+    operations["categoryImageDelete"]=1
+    operations["categoryInfo"]=1
+    operations["categoryList"]=1
+    operations["categoryUnassign"]=1
+    operations["categoryUpdate"]=1
+    operations["customerAdd"]=1
+    operations["customerAddressAdd"]=1
+    operations["customerAttributeList"]=1
+    operations["customerCount"]=1
+    operations["customerDelete"]=1
+    operations["customerFind"]=1
+    operations["customerGroupAdd"]=1
+    operations["customerGroupList"]=1
+    operations["customerInfo"]=1
+    operations["customerList"]=1
+    operations["customerUpdate"]=1
+    operations["customerWishlistList"]=1
+    operations["marketplaceProductFind"]=1
+    operations["orderAbandonedList"]=1
+    operations["orderAdd"]=1
+    operations["orderCount"]=1
+    operations["orderFinancialStatusList"]=1
+    operations["orderFind"]=1
+    operations["orderFulfillmentStatusList"]=1
+    operations["orderInfo"]=1
+    operations["orderList"]=1
+    operations["orderPreestimateShippingList"]=1
+    operations["orderRefundAdd"]=1
+    operations["orderReturnAdd"]=1
+    operations["orderReturnDelete"]=1
+    operations["orderReturnUpdate"]=1
+    operations["orderShipmentAdd"]=1
+    operations["orderShipmentAddBatch"]=1
+    operations["orderShipmentDelete"]=1
+    operations["orderShipmentInfo"]=1
+    operations["orderShipmentList"]=1
+    operations["orderShipmentTrackingAdd"]=1
+    operations["orderShipmentUpdate"]=1
+    operations["orderStatusList"]=1
+    operations["orderTransactionList"]=1
+    operations["orderUpdate"]=1
+    operations["productAdd"]=1
+    operations["productAddBatch"]=1
+    operations["productAttributeList"]=1
+    operations["productAttributeValueSet"]=1
+    operations["productAttributeValueUnset"]=1
+    operations["productBrandList"]=1
+    operations["productChildItemFind"]=1
+    operations["productChildItemInfo"]=1
+    operations["productChildItemList"]=1
+    operations["productCount"]=1
+    operations["productCurrencyAdd"]=1
+    operations["productCurrencyList"]=1
+    operations["productDelete"]=1
+    operations["productDeleteBatch"]=1
+    operations["productFields"]=1
+    operations["productFind"]=1
+    operations["productImageAdd"]=1
+    operations["productImageDelete"]=1
+    operations["productImageUpdate"]=1
+    operations["productInfo"]=1
+    operations["productList"]=1
+    operations["productManufacturerAdd"]=1
+    operations["productOptionAdd"]=1
+    operations["productOptionAssign"]=1
+    operations["productOptionDelete"]=1
+    operations["productOptionList"]=1
+    operations["productOptionValueAdd"]=1
+    operations["productOptionValueAssign"]=1
+    operations["productOptionValueDelete"]=1
+    operations["productOptionValueUpdate"]=1
+    operations["productPriceAdd"]=1
+    operations["productPriceDelete"]=1
+    operations["productPriceUpdate"]=1
+    operations["productReviewList"]=1
+    operations["productStoreAssign"]=1
+    operations["productTaxAdd"]=1
+    operations["productUpdate"]=1
+    operations["productUpdateBatch"]=1
+    operations["productVariantAdd"]=1
+    operations["productVariantAddBatch"]=1
+    operations["productVariantCount"]=1
+    operations["productVariantDelete"]=1
+    operations["productVariantDeleteBatch"]=1
+    operations["productVariantImageAdd"]=1
+    operations["productVariantImageDelete"]=1
+    operations["productVariantInfo"]=1
+    operations["productVariantList"]=1
+    operations["productVariantPriceAdd"]=1
+    operations["productVariantPriceDelete"]=1
+    operations["productVariantPriceUpdate"]=1
+    operations["productVariantUpdate"]=1
+    operations["productVariantUpdateBatch"]=1
+    operations["returnActionList"]=1
+    operations["returnCount"]=1
+    operations["returnInfo"]=1
+    operations["returnList"]=1
+    operations["returnReasonList"]=1
+    operations["returnStatusList"]=1
+    operations["subscriberList"]=1
+    operations["taxClassInfo"]=1
+    operations["taxClassList"]=1
+    operations["webhookCount"]=1
+    operations["webhookCreate"]=1
+    operations["webhookDelete"]=1
+    operations["webhookEvents"]=1
+    operations["webhookList"]=1
+    operations["webhookUpdate"]=1
+
+    # An associative array of operations to their parameters
+    # Only include path, query and header parameters
+    declare -A operation_parameters
+    operation_parameters["accountCartAdd"]=""
+    operation_parameters["accountCartList"]="params= exclude= request_from_date= request_to_date= store_url= store_key= "
+    operation_parameters["accountConfigUpdate"]="replace_parameters= new_store_url= new_store_key= bridge_url= store_root= db_tables_prefix= user_agent= 3dcart_private_key= 3dcart_access_token= 3dcartapi_api_key= amazon_sp_client_id= amazon_sp_client_secret= amazon_sp_refresh_token= amazon_sp_aws_region= amazon_sp_api_environment= amazon_seller_id= aspdotnetstorefront_api_user= aspdotnetstorefront_api_pass= bigcommerceapi_admin_account= bigcommerceapi_api_path= bigcommerceapi_api_key= bigcommerceapi_client_id= bigcommerceapi_access_token= bigcommerceapi_context= bol_api_key= bol_api_secret= bol_retailer_id= demandware_client_id= demandware_api_password= demandware_user_name= demandware_user_password= ebay_client_id= ebay_client_secret= ebay_runame= ebay_access_token= ebay_refresh_token= ebay_environment= ebay_site_id= ecwid_acess_token= ecwid_store_id= lazada_app_id= lazada_app_secret= lazada_refresh_token= lazada_region= etsy_keystring= etsy_shared_secret= etsy_access_token= etsy_token_secret= etsy_client_id= etsy_refresh_token= facebook_app_id= facebook_app_secret= facebook_access_token= facebook_business_id= neto_api_key= neto_api_username= shopline_access_token= shopline_app_key= shopline_app_secret= shopify_access_token= shopify_api_key= shopify_api_password= shopify_shared_secret= shoplazza_access_token= shoplazza_shared_secret= miva_access_token= miva_signature= shopware_access_key= shopware_api_key= shopware_api_secret= volusion_login= volusion_password= walmart_client_id= walmart_client_secret= walmart_environment= walmart_channel_type= walmart_region= square_client_id= square_client_secret= square_refresh_token= squarespace_api_key= squarespace_client_id= squarespace_client_secret= squarespace_access_token= squarespace_refresh_token= hybris_client_id= hybris_client_secret= hybris_username= hybris_password= hybris_websites= lightspeed_api_key= lightspeed_api_secret= commercehq_api_key= commercehq_api_password= wc_consumer_key= wc_consumer_secret= magento_consumer_key= magento_consumer_secret= magento_access_token= magento_token_secret= prestashop_webservice_key= wix_app_id= wix_app_secret_key= wix_instance_id= wix_refresh_token= mercado_libre_app_id= mercado_libre_app_secret_key= mercado_libre_refresh_token= zid_client_id= zid_client_secret= zid_access_token= zid_authorization= zid_refresh_token= flipkart_client_id= flipkart_client_secret= allegro_client_id= allegro_client_secret= allegro_access_token= allegro_refresh_token= allegro_environment= zoho_client_id= zoho_client_secret= zoho_refresh_token= zoho_region= tiendanube_user_id= tiendanube_access_token= tiendanube_client_secret= otto_client_id= otto_client_secret= otto_app_id= otto_refresh_token= otto_environment= otto_access_token= tiktokshop_app_key= tiktokshop_app_secret= tiktokshop_refresh_token= tiktokshop_access_token= salla_client_id= salla_client_secret= salla_refresh_token= salla_access_token= "
+    operation_parameters["accountFailedWebhooks"]="count= start= ids= "
+    operation_parameters["accountSupportedPlatforms"]=""
+    operation_parameters["attributeAdd"]="type= code= name= store_id= lang_id= visible= required= position= attribute_group_id= is_global= is_searchable= is_filterable= is_comparable= is_html_allowed_on_front= is_filterable_in_search= is_configurable= is_visible_in_advanced_search= is_used_for_promo_rules= used_in_product_listing= used_for_sort_by= apply_to= "
+    operation_parameters["attributeAssignGroup"]="id= group_id= attribute_set_id= "
+    operation_parameters["attributeAssignSet"]="id= group_id= attribute_set_id= "
+    operation_parameters["attributeAttributesetList"]="start= count= params= exclude= response_fields= "
+    operation_parameters["attributeCount"]="type= attribute_set_id= store_id= lang_id= visible= required= system= "
+    operation_parameters["attributeDelete"]="store_id= id= "
+    operation_parameters["attributeGroupList"]="start= count= lang_id= params= exclude= response_fields= attribute_set_id= "
+    operation_parameters["attributeInfo"]="id= attribute_set_id= store_id= lang_id= params= exclude= response_fields= "
+    operation_parameters["attributeList"]="start= count= type= attribute_ids= attribute_set_id= store_id= lang_id= params= exclude= response_fields= visible= required= system= "
+    operation_parameters["attributeTypeList"]=""
+    operation_parameters["attributeUnassignGroup"]="id= group_id= "
+    operation_parameters["attributeUnassignSet"]="id= attribute_set_id= "
+    operation_parameters["attributeUpdate"]="id= name= store_id= lang_id= "
+    operation_parameters["attributeValueAdd"]="attribute_id= name= code= description= store_id= lang_id= "
+    operation_parameters["attributeValueDelete"]="id= attribute_id= store_id= "
+    operation_parameters["attributeValueUpdate"]="id= attribute_id= name= description= code= store_id= lang_id= "
+    operation_parameters["basketInfo"]="id= store_id= params= exclude= response_fields= "
+    operation_parameters["basketItemAdd"]="customer_id= product_id= variant_id= quantity= store_id= "
+    operation_parameters["basketLiveShippingServiceCreate"]="store_id= name= callback= "
+    operation_parameters["basketLiveShippingServiceDelete"]="id= "
+    operation_parameters["basketLiveShippingServiceList"]="store_id= start= count= "
+    operation_parameters["batchJobList"]="count= page_cursor= created_from= created_to= processed_from= processed_to= ids= response_fields= "
+    operation_parameters["batchJobResult"]="id= "
+    operation_parameters["bridgeDelete"]=""
+    operation_parameters["bridgeDownload"]="whitelabel= "
+    operation_parameters["bridgeUpdate"]=""
+    operation_parameters["cartBridge"]=""
+    operation_parameters["cartCatalogPriceRulesCount"]=""
+    operation_parameters["cartCatalogPriceRulesList"]="page_cursor= start= count= ids= params= response_fields= exclude= "
+    operation_parameters["cartClearCache"]="cache_type= "
+    operation_parameters["cartConfig"]="params= exclude= "
+    operation_parameters["cartConfigUpdate"]=""
+    operation_parameters["cartCouponAdd"]=""
+    operation_parameters["cartCouponConditionAdd"]="store_id= coupon_id= target= entity= key= operator= value= include_tax= include_shipping= "
+    operation_parameters["cartCouponCount"]="store_id= date_start_from= date_start_to= date_end_from= date_end_to= avail= "
+    operation_parameters["cartCouponDelete"]="id= store_id= "
+    operation_parameters["cartCouponList"]="page_cursor= start= count= coupons_ids= store_id= date_start_from= date_start_to= date_end_from= date_end_to= avail= lang_id= params= response_fields= exclude= "
+    operation_parameters["cartCreate"]=""
+    operation_parameters["cartDelete"]="delete_bridge= "
+    operation_parameters["cartDisconnect"]="delete_bridge= "
+    operation_parameters["cartGiftcardAdd"]="amount= code= owner_email= recipient_email= recipient_name= owner_name= "
+    operation_parameters["cartGiftcardCount"]="store_id= "
+    operation_parameters["cartGiftcardDelete"]="id= "
+    operation_parameters["cartGiftcardList"]="page_cursor= start= count= store_id= params= response_fields= exclude= "
+    operation_parameters["cartInfo"]="params= response_fields= exclude= store_id= "
+    operation_parameters["cartList"]=""
+    operation_parameters["cartMetaDataList"]="entity_id= entity= store_id= lang_id= key= count= page_cursor= params= response_fields= exclude= "
+    operation_parameters["cartMetaDataSet"]="entity_id= entity= store_id= lang_id= key= value= namespace= "
+    operation_parameters["cartMetaDataUnset"]="entity_id= entity= store_id= key= id= "
+    operation_parameters["cartMethods"]=""
+    operation_parameters["cartPluginList"]="store_id= start= count= "
+    operation_parameters["cartScriptAdd"]="name= description= html= src= load_method= scope= events= store_id= "
+    operation_parameters["cartScriptDelete"]="id= store_id= "
+    operation_parameters["cartScriptList"]="page_cursor= start= count= created_from= created_to= modified_from= modified_to= script_ids= store_id= params= response_fields= exclude= "
+    operation_parameters["cartShippingZonesList"]="store_id= start= count= params= response_fields= exclude= "
+    operation_parameters["cartValidate"]="validate_version= "
+    operation_parameters["categoryAdd"]="name= parent_id= stores_ids= store_id= lang_id= avail= sort_order= created_time= modified_time= description= short_description= meta_title= meta_description= meta_keywords= seo_url= "
+    operation_parameters["categoryAddBatch"]=""
+    operation_parameters["categoryAssign"]="product_id= category_id= store_id= "
+    operation_parameters["categoryCount"]="parent_id= store_id= lang_id= created_from= created_to= modified_from= modified_to= avail= product_type= find_value= find_where= report_request_id= disable_report_cache= "
+    operation_parameters["categoryDelete"]="id= store_id= "
+    operation_parameters["categoryFind"]="find_value= find_where= find_params= store_id= lang_id= "
+    operation_parameters["categoryImageAdd"]="category_id= image_name= url= label= mime= type= position= store_id= "
+    operation_parameters["categoryImageDelete"]="category_id= image_id= store_id= "
+    operation_parameters["categoryInfo"]="id= params= response_fields= exclude= store_id= lang_id= schema_type= report_request_id= disable_report_cache= "
+    operation_parameters["categoryList"]="start= count= page_cursor= parent_id= params= response_fields= exclude= store_id= lang_id= created_from= created_to= modified_from= modified_to= avail= product_type= find_value= find_where= report_request_id= disable_report_cache= disable_cache= "
+    operation_parameters["categoryUnassign"]="category_id= product_id= store_id= "
+    operation_parameters["categoryUpdate"]="id= name= parent_id= stores_ids= avail= sort_order= modified_time= description= short_description= meta_title= meta_description= meta_keywords= seo_url= lang_id= store_id= "
+    operation_parameters["customerAdd"]=""
+    operation_parameters["customerAddressAdd"]=""
+    operation_parameters["customerAttributeList"]="count= page_cursor= customer_id= store_id= lang_id= params= exclude= response_fields= "
+    operation_parameters["customerCount"]="group_id= created_from= created_to= modified_from= modified_to= store_id= customer_list_id= avail= find_value= find_where= ids= since_id= "
+    operation_parameters["customerDelete"]="id= "
+    operation_parameters["customerFind"]="find_value= find_where= find_params= store_id= "
+    operation_parameters["customerGroupAdd"]="name= store_id= stores_ids= "
+    operation_parameters["customerGroupList"]="disable_cache= page_cursor= start= count= store_id= lang_id= group_ids= params= exclude= response_fields= "
+    operation_parameters["customerInfo"]="id= params= response_fields= exclude= store_id= "
+    operation_parameters["customerList"]="page_cursor= start= count= created_from= created_to= modified_from= modified_to= params= response_fields= exclude= group_id= store_id= customer_list_id= avail= find_value= find_where= sort_by= sort_direction= ids= since_id= "
+    operation_parameters["customerUpdate"]=""
+    operation_parameters["customerWishlistList"]="customer_id= id= store_id= start= count= page_cursor= response_fields= "
+    operation_parameters["marketplaceProductFind"]="store_id= count= page_cursor= categories_ids= keyword= asin= ean= gtin= upc= mpn= isbn= params= exclude= response_fields= "
+    operation_parameters["orderAbandonedList"]="customer_id= customer_email= created_to= created_from= modified_to= modified_from= skip_empty_email= store_id= page_cursor= count= start= params= response_fields= exclude= "
+    operation_parameters["orderAdd"]=""
+    operation_parameters["orderCount"]="customer_id= customer_email= order_status= order_status_ids= created_to= created_from= modified_to= modified_from= store_id= ids= order_ids= ebay_order_status= financial_status= financial_status_ids= fulfillment_channel= fulfillment_status= shipping_method= delivery_method= tags= ship_node_type= "
+    operation_parameters["orderFinancialStatusList"]=""
+    operation_parameters["orderFind"]="customer_id= customer_email= order_status= start= count= params= exclude= created_to= created_from= modified_to= modified_from= financial_status= "
+    operation_parameters["orderFulfillmentStatusList"]="action= "
+    operation_parameters["orderInfo"]="order_id= id= params= response_fields= exclude= store_id= enable_cache= use_latest_api_version= "
+    operation_parameters["orderList"]="customer_id= customer_email= phone= order_status= order_status_ids= start= count= page_cursor= sort_by= sort_direction= params= response_fields= exclude= created_to= created_from= modified_to= modified_from= store_id= ids= order_ids= ebay_order_status= basket_id= financial_status= financial_status_ids= fulfillment_status= fulfillment_channel= shipping_method= skip_order_ids= since_id= is_deleted= shipping_country_iso3= enable_cache= delivery_method= tags= ship_node_type= currency_id= return_status= use_latest_api_version= "
+    operation_parameters["orderPreestimateShippingList"]=""
+    operation_parameters["orderRefundAdd"]=""
+    operation_parameters["orderReturnAdd"]=""
+    operation_parameters["orderReturnDelete"]="return_id= order_id= store_id= "
+    operation_parameters["orderReturnUpdate"]=""
+    operation_parameters["orderShipmentAdd"]=""
+    operation_parameters["orderShipmentAddBatch"]=""
+    operation_parameters["orderShipmentDelete"]="shipment_id= order_id= store_id= "
+    operation_parameters["orderShipmentInfo"]="id= order_id= start= params= response_fields= exclude= store_id= "
+    operation_parameters["orderShipmentList"]="order_id= page_cursor= start= count= params= response_fields= exclude= created_from= created_to= modified_from= modified_to= store_id= "
+    operation_parameters["orderShipmentTrackingAdd"]=""
+    operation_parameters["orderShipmentUpdate"]=""
+    operation_parameters["orderStatusList"]="store_id= action= response_fields= "
+    operation_parameters["orderTransactionList"]="count= order_ids= store_id= params= response_fields= exclude= page_cursor= "
+    operation_parameters["orderUpdate"]="order_id= store_id= order_status= cancellation_reason= comment= admin_comment= admin_private_comment= date_modified= date_finished= financial_status= fulfillment_status= order_payment_method= send_notifications= origin= create_invoice= invoice_admin_comment= "
+    operation_parameters["productAdd"]=""
+    operation_parameters["productAddBatch"]=""
+    operation_parameters["productAttributeList"]="product_id= attribute_id= variant_id= page_cursor= start= count= attribute_group_id= set_name= lang_id= store_id= sort_by= sort_direction= params= response_fields= exclude= "
+    operation_parameters["productAttributeValueSet"]="product_id= attribute_id= attribute_group_id= attribute_name= value= value_id= lang_id= store_id= "
+    operation_parameters["productAttributeValueUnset"]="product_id= attribute_id= store_id= include_default= reindex= clear_cache= "
+    operation_parameters["productBrandList"]="start= count= page_cursor= params= brand_ids= exclude= store_id= lang_id= created_from= created_to= modified_from= modified_to= parent_id= response_fields= find_where= find_value= "
+    operation_parameters["productChildItemFind"]="find_value= find_where= find_params= store_id= "
+    operation_parameters["productChildItemInfo"]="params= response_fields= exclude= product_id= id= store_id= lang_id= currency_id= use_latest_api_version= "
+    operation_parameters["productChildItemList"]="page_cursor= start= count= params= response_fields= exclude= created_from= created_to= modified_from= modified_to= product_id= product_ids= sku= store_id= lang_id= currency_id= avail_sale= find_value= find_where= report_request_id= disable_report_cache= use_latest_api_version= return_global= "
+    operation_parameters["productCount"]="category_id= created_from= created_to= modified_from= modified_to= avail_view= avail_sale= store_id= lang_id= product_ids= since_id= report_request_id= disable_report_cache= brand_name= product_attributes= status= type= find_value= find_where= use_latest_api_version= return_global= categories_ids= "
+    operation_parameters["productCurrencyAdd"]="iso3= rate= name= avail= symbol_left= symbol_right= default= "
+    operation_parameters["productCurrencyList"]="start= count= params= page_cursor= exclude= response_fields= default= avail= "
+    operation_parameters["productDelete"]="id= store_id= "
+    operation_parameters["productDeleteBatch"]=""
+    operation_parameters["productFields"]=""
+    operation_parameters["productFind"]="find_value= find_where= find_params= find_what= lang_id= store_id= "
+    operation_parameters["productImageAdd"]=""
+    operation_parameters["productImageDelete"]="product_id= id= store_id= "
+    operation_parameters["productImageUpdate"]="product_id= variant_ids= image_name= type= label= position= id= store_id= lang_id= hidden= "
+    operation_parameters["productInfo"]="id= params= response_fields= exclude= store_id= lang_id= currency_id= report_request_id= disable_report_cache= use_latest_api_version= "
+    operation_parameters["productList"]="page_cursor= start= count= params= response_fields= exclude= category_id= created_from= created_to= modified_from= modified_to= avail_view= avail_sale= store_id= lang_id= currency_id= product_ids= since_id= report_request_id= disable_report_cache= sort_by= sort_direction= sku= disable_cache= brand_name= product_attributes= status= type= find_value= find_where= use_latest_api_version= return_global= categories_ids= "
+    operation_parameters["productManufacturerAdd"]="product_id= manufacturer= store_id= "
+    operation_parameters["productOptionAdd"]=""
+    operation_parameters["productOptionAssign"]="product_id= option_id= required= sort_order= option_values= clear_cache= "
+    operation_parameters["productOptionDelete"]="option_id= product_id= store_id= "
+    operation_parameters["productOptionList"]="start= count= params= exclude= response_fields= product_id= lang_id= store_id= "
+    operation_parameters["productOptionValueAdd"]="product_id= option_id= option_value= sort_order= display_value= is_default= clear_cache= "
+    operation_parameters["productOptionValueAssign"]="product_option_id= option_value_id= clear_cache= "
+    operation_parameters["productOptionValueDelete"]="option_id= option_value_id= product_id= store_id= "
+    operation_parameters["productOptionValueUpdate"]="product_id= option_id= option_value_id= option_value= price= quantity= display_value= clear_cache= "
+    operation_parameters["productPriceAdd"]=""
+    operation_parameters["productPriceDelete"]="product_id= group_prices= store_id= "
+    operation_parameters["productPriceUpdate"]=""
+    operation_parameters["productReviewList"]="start= page_cursor= count= product_id= ids= store_id= status= params= exclude= response_fields= "
+    operation_parameters["productStoreAssign"]="product_id= store_id= "
+    operation_parameters["productTaxAdd"]=""
+    operation_parameters["productUpdate"]=""
+    operation_parameters["productUpdateBatch"]=""
+    operation_parameters["productVariantAdd"]=""
+    operation_parameters["productVariantAddBatch"]=""
+    operation_parameters["productVariantCount"]="created_from= created_to= modified_from= modified_to= category_id= product_id= store_id= "
+    operation_parameters["productVariantDelete"]="id= product_id= store_id= "
+    operation_parameters["productVariantDeleteBatch"]=""
+    operation_parameters["productVariantImageAdd"]=""
+    operation_parameters["productVariantImageDelete"]="product_id= product_variant_id= id= store_id= "
+    operation_parameters["productVariantInfo"]="params= exclude= id= store_id= "
+    operation_parameters["productVariantList"]="start= count= params= exclude= created_from= created_to= modified_from= modified_to= category_id= product_id= store_id= "
+    operation_parameters["productVariantPriceAdd"]=""
+    operation_parameters["productVariantPriceDelete"]="id= product_id= group_prices= store_id= "
+    operation_parameters["productVariantPriceUpdate"]=""
+    operation_parameters["productVariantUpdate"]=""
+    operation_parameters["productVariantUpdateBatch"]=""
+    operation_parameters["returnActionList"]=""
+    operation_parameters["returnCount"]="order_ids= customer_id= store_id= status= return_type= created_from= created_to= modified_from= modified_to= report_request_id= disable_report_cache= "
+    operation_parameters["returnInfo"]="id= order_id= store_id= params= exclude= response_fields= "
+    operation_parameters["returnList"]="start= count= page_cursor= params= exclude= response_fields= order_id= order_ids= customer_id= store_id= status= return_type= created_from= created_to= modified_from= modified_to= report_request_id= disable_report_cache= "
+    operation_parameters["returnReasonList"]="store_id= "
+    operation_parameters["returnStatusList"]=""
+    operation_parameters["subscriberList"]="start= count= subscribed= store_id= email= params= exclude= created_from= created_to= modified_from= modified_to= page_cursor= response_fields= "
+    operation_parameters["taxClassInfo"]="tax_class_id= store_id= lang_id= params= response_fields= exclude= "
+    operation_parameters["taxClassList"]="created_to= created_from= modified_to= modified_from= find_value= find_where= store_id= count= page_cursor= response_fields= "
+    operation_parameters["webhookCount"]="entity= action= active= "
+    operation_parameters["webhookCreate"]="entity= action= callback= label= fields= active= store_id= "
+    operation_parameters["webhookDelete"]="id= "
+    operation_parameters["webhookEvents"]=""
+    operation_parameters["webhookList"]="params= start= count= entity= action= active= ids= "
+    operation_parameters["webhookUpdate"]="id= callback= label= fields= active= "
+
+    # An associative array of possible values for enum parameters
+    declare -A operation_parameters_enum_values
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["accountConfigUpdate::replace_parameters"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeAdd::visible"]="true false"
+    operation_parameters_enum_values["attributeAdd::required"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_searchable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_comparable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_html_allowed_on_front"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_filterable_in_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_configurable"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_visible_in_advanced_search"]="true false"
+    operation_parameters_enum_values["attributeAdd::is_used_for_promo_rules"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_in_product_listing"]="true false"
+    operation_parameters_enum_values["attributeAdd::used_for_sort_by"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeCount::visible"]="true false"
+    operation_parameters_enum_values["attributeCount::required"]="true false"
+    operation_parameters_enum_values["attributeCount::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["attributeList::visible"]="true false"
+    operation_parameters_enum_values["attributeList::required"]="true false"
+    operation_parameters_enum_values["attributeList::system"]="true false"
+    operation_parameters_enum_values["bridgeDownload::whitelabel"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_tax"]="true false"
+    operation_parameters_enum_values["cartCouponConditionAdd::include_shipping"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponCount::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartCouponList::avail"]="true false"
+    operation_parameters_enum_values["cartDelete::delete_bridge"]="true false"
+    operation_parameters_enum_values["cartDisconnect::delete_bridge"]="true false"
+    operation_parameters_enum_values["cartValidate::validate_version"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryAdd::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryCount::avail"]="true false"
+    operation_parameters_enum_values["categoryCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryList::avail"]="true false"
+    operation_parameters_enum_values["categoryList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["categoryList::disable_cache"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["categoryUpdate::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerCount::avail"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerGroupList::disable_cache"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["customerList::avail"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderAbandonedList::skip_empty_email"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderInfo::enable_cache"]="true false"
+    operation_parameters_enum_values["orderInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderList::is_deleted"]="true false"
+    operation_parameters_enum_values["orderList::enable_cache"]="true false"
+    operation_parameters_enum_values["orderList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["orderUpdate::send_notifications"]="true false"
+    operation_parameters_enum_values["orderUpdate::create_invoice"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::include_default"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::reindex"]="true false"
+    operation_parameters_enum_values["productAttributeValueUnset::clear_cache"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productChildItemList::avail_sale"]="true false"
+    operation_parameters_enum_values["productChildItemList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productChildItemList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productChildItemList::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCount::avail_view"]="true false"
+    operation_parameters_enum_values["productCount::avail_sale"]="true false"
+    operation_parameters_enum_values["productCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productCount::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productCount::return_global"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyAdd::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productCurrencyList::default"]="true false"
+    operation_parameters_enum_values["productCurrencyList::avail"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productImageUpdate::hidden"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productInfo::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productInfo::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productList::avail_view"]="true false"
+    operation_parameters_enum_values["productList::avail_sale"]="true false"
+    operation_parameters_enum_values["productList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["productList::disable_cache"]="true false"
+    operation_parameters_enum_values["productList::use_latest_api_version"]="true false"
+    operation_parameters_enum_values["productList::return_global"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionAssign::required"]="true false"
+    operation_parameters_enum_values["productOptionAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::is_default"]="true false"
+    operation_parameters_enum_values["productOptionValueAdd::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueAssign::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["productOptionValueUpdate::clear_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnCount::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["returnList::disable_report_cache"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["subscriberList::subscribed"]="true false"
+    operation_parameters_enum_values["webhookCount::active"]="true false"
+    operation_parameters_enum_values["webhookCount::active"]="true false"
+    operation_parameters_enum_values["webhookCount::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookCreate::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookList::active"]="true false"
+    operation_parameters_enum_values["webhookUpdate::active"]="true false"
+    operation_parameters_enum_values["webhookUpdate::active"]="true false"
+    operation_parameters_enum_values["webhookUpdate::active"]="true false"
+    operation_parameters_enum_values["webhookUpdate::active"]="true false"
+    operation_parameters_enum_values["webhookUpdate::active"]="true false"
+
+    #
+    # Check if this is OSX and use special __osx_init_completion function
+    #
+    if [[ `uname` =~ "Darwin" ]]; then
+        __osx_init_completion || return
+    else
+        _init_completion -s || return
+    fi
+
+
+    # Check if operation is already in the command line provided
+    for word in "${words[@]}"; do
+        if [[ -n $word && ${operations[$word]} ]]; then
+            operation="${word}"
+        fi
+    done
+
+    if [[ -z $operation ]]; then
+        case $prev in
+            --ciphers|--connect-timeout|-C|--continue-at|-F|--form|--form-string|\
+            --ftp-account|--ftp-alternative-to-user|-P|--ftp-port|-H|--header|-h|\
+            --help|--hostpubmd5|--keepalive-time|--krb|--limit-rate|--local-port|\
+            --mail-from|--mail-rcpt|--max-filesize|--max-redirs|-m|--max-time|\
+            --pass|--proto|--proto-redir|--proxy-user|--proxy1.0|-Q|--quote|-r|\
+            --range|-X|--request|--retry|--retry-delay|--retry-max-time|\
+            --socks5-gssapi-service|-t|--telnet-option|--tftp-blksize|-z|\
+            --time-cond|--url|-u|--user|-A|--user-agent|-V|--version|-w|\
+            --write-out|--resolve|--tlsuser|--tlspassword|--about)
+                return
+                ;;
+            -K|--config|-b|--cookie|-c|--cookie-jar|-D|--dump-header|--egd-file|\
+            --key|--libcurl|-o|--output|--random-file|-T|--upload-file|--trace|\
+            --trace-ascii|--netrc-file)
+                _filedir
+                return
+                ;;
+            --cacert|-E|--cert)
+                _filedir '@(c?(e)rt|cer|pem|der)'
+                return
+                ;;
+            --capath)
+                _filedir -d
+                return
+                ;;
+            --cert-type|--key-type)
+                COMPREPLY=( $( compgen -W 'DER PEM ENG' -- "$cur" ) )
+                return
+                ;;
+            --crlfile)
+                _filedir crl
+                return
+                ;;
+            -d|--data|--data-ascii|--data-binary|--data-urlencode)
+                if [[ $cur == \@* ]]; then
+                    cur=${cur:1}
+                    _filedir
+                    COMPREPLY=( "${COMPREPLY[@]/#/@}" )
+                fi
+                return
+                ;;
+            --delegation)
+                COMPREPLY=( $( compgen -W 'none policy always' -- "$cur" ) )
+                return
+                ;;
+            --engine)
+                COMPREPLY=( $( compgen -W 'list' -- "$cur" ) )
+                return
+                ;;
+            --ftp-method)
+                COMPREPLY=( $( compgen -W 'multicwd nocwd singlecwd' -- "$cur" ) )
+                return
+                ;;
+            --ftp-ssl-ccc-mode)
+                COMPREPLY=( $( compgen -W 'active passive' -- "$cur" ) )
+                return
+                ;;
+            --interface)
+                _available_interfaces -a
+                return
+                ;;
+            -x|--proxy|--socks4|--socks4a|--socks5|--socks5-hostname)
+                _known_hosts_real
+                return
+                ;;
+            --pubkey)
+                _filedir pub
+                return
+                ;;
+            --stderr)
+                COMPREPLY=( $( compgen -W '-' -- "$cur" ) )
+                _filedir
+                return
+                ;;
+            --tlsauthtype)
+                COMPREPLY=( $( compgen -W 'SRP' -- "$cur" ) )
+                return
+                ;;
+            --host)
+                COMPREPLY=( $( compgen -W 'http:// https://' -- "$cur" ) )
+                return
+                ;;
+            -ct|--content-type|-ac|--accept)
+                COMPREPLY=( $( compgen -W '${!mime_type_abbreviations[*]}' -- "$cur" ) )
+                return
+                ;;
+        esac
+    fi
+
+    #
+    # Complete the server address based on ~/.ssh/known_hosts
+    # and ~/.ssh/config
+    #
+    local prefix=${COMP_WORDS[COMP_CWORD-2]}
+    local colon=${COMP_WORDS[COMP_CWORD-1]}
+    if [[ "$colon" == ":" && ( $prefix == "https" || $prefix == "http" ) ]]; then
+        COMPREPLY=()
+        local comp_ssh_hosts=`[[ -f ~/.ssh/known_hosts ]] && \
+                              ( cat ~/.ssh/known_hosts | \
+                              grep '^[a-zA-Z0-9]' | \
+                              cut -f 1 -d ' ' | \
+                              sed -e s/,.*//g | \
+                              grep -v ^# | \
+                              uniq | \
+                              grep -v "\[" ) ;
+                              [[ -f ~/.ssh/config ]] && \
+                              ( cat ~/.ssh/config | \
+                              grep "^Host " | \
+                              awk '{print $2}' )`
+        COMPREPLY=( $( compgen -P '//' -W '${comp_ssh_hosts}' -- "${cur:2}") )
+        return
+    fi
+
+    #
+    # Complete the  and cURL's arguments
+    #
+    if [[ $cur == -* ]]; then
+        COMPREPLY=( $( compgen -W '$(_parse_help curl) $(_parse_help $1)' -- "$cur" ) )
+        return
+    fi
+
+    #
+    # If the argument starts with a letter this could be either an operation
+    # or an operation parameter
+    # When $cur is empty, suggest the list of operations by default
+    #
+    if [[ $cur =~ ^[A-Za-z_0-9]* ]]; then
+        # If operation has not been yet selected, suggest the list of operations
+        # otherwise suggest arguments of this operation as declared in the
+        # OpenAPI specification
+        if [[ -z $operation ]]; then
+            COMPREPLY=( $(compgen -W '${!operations[*]}' -- ${cur}) )
+        else
+            COMPREPLY=( $(compgen -W '${operation_parameters[$operation]}' -- ${cur}) )
+            compopt -o nospace
+        fi
+        return
+    fi
+
+} &&
+complete -F _ 
+
+# ex: ts=4 sw=4 et filetype=sh
