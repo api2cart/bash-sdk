@@ -82,6 +82,7 @@ Name | Type | Description | Notes
 **downloadable** | **boolean** |  | [optional] [default to false]
 **materials** | **array[string]** |  | [optional] [default to null]
 **autoUnderscorerenew** | **boolean** |  | [optional] [default to false]
+**onUnderscoresale** | **boolean** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

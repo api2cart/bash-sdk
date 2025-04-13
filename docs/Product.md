@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **weightUnderscoreunit** | **string** |  | [optional] [default to null]
 **sortUnderscoreorder** | **integer** |  | [optional] [default to null]
 **inUnderscorestock** | **boolean** |  | [optional] [default to null]
+**onUnderscoresale** | **boolean** |  | [optional] [default to null]
 **backorders** | **string** |  | [optional] [default to null]
 **manageUnderscorestock** | **string** |  | [optional] [default to null]
 **isUnderscorestockUnderscoremanaged** | **boolean** |  | [optional] [default to null]
