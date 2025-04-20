@@ -859,6 +859,7 @@ operation_parameters_minimum_occurrences["productBrandList:::page_cursor"]=0
 operation_parameters_minimum_occurrences["productBrandList:::params"]=0
 operation_parameters_minimum_occurrences["productBrandList:::brand_ids"]=0
 operation_parameters_minimum_occurrences["productBrandList:::exclude"]=0
+operation_parameters_minimum_occurrences["productBrandList:::category_id"]=0
 operation_parameters_minimum_occurrences["productBrandList:::store_id"]=0
 operation_parameters_minimum_occurrences["productBrandList:::lang_id"]=0
 operation_parameters_minimum_occurrences["productBrandList:::created_from"]=0
@@ -1971,6 +1972,7 @@ operation_parameters_maximum_occurrences["productBrandList:::page_cursor"]=0
 operation_parameters_maximum_occurrences["productBrandList:::params"]=0
 operation_parameters_maximum_occurrences["productBrandList:::brand_ids"]=0
 operation_parameters_maximum_occurrences["productBrandList:::exclude"]=0
+operation_parameters_maximum_occurrences["productBrandList:::category_id"]=0
 operation_parameters_maximum_occurrences["productBrandList:::store_id"]=0
 operation_parameters_maximum_occurrences["productBrandList:::lang_id"]=0
 operation_parameters_maximum_occurrences["productBrandList:::created_from"]=0
@@ -3080,6 +3082,7 @@ operation_parameters_collection_type["productBrandList:::page_cursor"]=""
 operation_parameters_collection_type["productBrandList:::params"]=""
 operation_parameters_collection_type["productBrandList:::brand_ids"]=""
 operation_parameters_collection_type["productBrandList:::exclude"]=""
+operation_parameters_collection_type["productBrandList:::category_id"]=""
 operation_parameters_collection_type["productBrandList:::store_id"]=""
 operation_parameters_collection_type["productBrandList:::lang_id"]=""
 operation_parameters_collection_type["productBrandList:::created_from"]=""
@@ -7613,6 +7616,8 @@ print_productBrandList_help() {
     echo -e "  * ${GREEN}brand_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves brands specified by brand ids${YELLOW} Specify as: brand_ids=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}category_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves product brands specified by category id${YELLOW} Specify as: category_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -14249,7 +14254,7 @@ call_productBrandList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor params brand_ids exclude store_id lang_id created_from created_to modified_from modified_to parent_id response_fields find_where find_value    )
+    local query_parameter_names=(start count page_cursor params brand_ids exclude category_id store_id lang_id created_from created_to modified_from modified_to parent_id response_fields find_where find_value    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.brand.list.json" path_parameter_names query_parameter_names); then

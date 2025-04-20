@@ -1945,6 +1945,7 @@ case $state in
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "brand_ids=:[QUERY] Retrieves brands specified by brand ids"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"category_id=:[QUERY] Retrieves product brands specified by category id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
 "created_from=:[QUERY] Retrieve entities from their creation date"

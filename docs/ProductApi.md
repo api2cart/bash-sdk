@@ -269,7 +269,7 @@ Get list of brands from your store.
 ### Example
 
 ```bash
- productBrandList  start=value  count=value  page_cursor=value  params=value  brand_ids=value  exclude=value  store_id=value  lang_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  parent_id=value  response_fields=value  find_where=value  find_value=value
+ productBrandList  start=value  count=value  page_cursor=value  params=value  brand_ids=value  exclude=value  category_id=value  store_id=value  lang_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  parent_id=value  response_fields=value  find_where=value  find_value=value
 ```
 
 ### Parameters
@@ -283,6 +283,7 @@ Name | Type | Description  | Notes
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,short_description,active,url]
  **brandIds** | **string** | Retrieves brands specified by brand ids | [optional] [default to null]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **categoryId** | **string** | Retrieves product brands specified by category id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]

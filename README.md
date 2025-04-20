@@ -553,6 +553,7 @@ Class | Method | HTTP request | Description
  - [ProductAddCertificationsInnerImagesInner](docs/ProductAddCertificationsInnerImagesInner.md)
  - [ProductAddFilesInner](docs/ProductAddFilesInner.md)
  - [ProductAddGroupPricesInner](docs/ProductAddGroupPricesInner.md)
+ - [ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
  - [ProductAddSalesTax](docs/ProductAddSalesTax.md)

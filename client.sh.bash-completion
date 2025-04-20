@@ -363,7 +363,7 @@ _()
     operation_parameters["productAttributeList"]="product_id= attribute_id= variant_id= page_cursor= start= count= attribute_group_id= set_name= lang_id= store_id= sort_by= sort_direction= params= response_fields= exclude= "
     operation_parameters["productAttributeValueSet"]="product_id= attribute_id= attribute_group_id= attribute_name= value= value_id= lang_id= store_id= "
     operation_parameters["productAttributeValueUnset"]="product_id= attribute_id= store_id= include_default= reindex= clear_cache= "
-    operation_parameters["productBrandList"]="start= count= page_cursor= params= brand_ids= exclude= store_id= lang_id= created_from= created_to= modified_from= modified_to= parent_id= response_fields= find_where= find_value= "
+    operation_parameters["productBrandList"]="start= count= page_cursor= params= brand_ids= exclude= category_id= store_id= lang_id= created_from= created_to= modified_from= modified_to= parent_id= response_fields= find_where= find_value= "
     operation_parameters["productChildItemFind"]="find_value= find_where= find_params= store_id= "
     operation_parameters["productChildItemInfo"]="params= response_fields= exclude= product_id= id= store_id= lang_id= currency_id= use_latest_api_version= "
     operation_parameters["productChildItemList"]="page_cursor= start= count= params= response_fields= exclude= created_from= created_to= modified_from= modified_to= product_id= product_ids= sku= store_id= lang_id= currency_id= avail_sale= find_value= find_where= report_request_id= disable_report_cache= use_latest_api_version= return_global= "
