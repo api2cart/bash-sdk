@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **orderUnderscoreitemUnderscoreweight** | **integer** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscorevariantUnderscoreid** | **string** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoretax** | **integer** |  | [optional] [default to 0]
+**orderUnderscoreitemUnderscorepriceUnderscoreincludesUnderscoretax** | **boolean** |  | [optional] [default to false]
 **orderUnderscoreitemUnderscoreparent** | **integer** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoreparentUnderscoreoptionUnderscorename** | **string** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoreallowUnderscorerefundUnderscoreitemsUnderscoreseparately** | **boolean** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoreallowUnderscoreshipUnderscoreitemsUnderscoreseparately** | **boolean** |  | [optional] [default to null]
-**orderUnderscoreitemUnderscorepriceUnderscoreincludesUnderscoretax** | **boolean** |  | [optional] [default to false]
 **orderUnderscoreitemUnderscoreoption** | [**array[OrderAddOrderItemInnerOrderItemOptionInner]**](OrderAddOrderItemInnerOrderItemOptionInner.md) |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoreproperty** | [**array[OrderAddOrderItemInnerOrderItemPropertyInner]**](OrderAddOrderItemInnerOrderItemPropertyInner.md) |  | [optional] [default to null]
 

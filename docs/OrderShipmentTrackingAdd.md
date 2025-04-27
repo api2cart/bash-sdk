@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **orderUnderscoreid** | **string** |  | [optional] [default to null]
 **shipmentUnderscoreid** | **string** |  | [default to null]
 **carrierUnderscoreid** | **string** |  | [optional] [default to null]
+**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **trackingUnderscoreprovider** | **string** |  | [optional] [default to null]
 **trackingUnderscorenumber** | **string** |  | [default to null]
 **trackingUnderscorelink** | **string** |  | [optional] [default to null]

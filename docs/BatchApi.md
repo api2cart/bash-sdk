@@ -18,7 +18,7 @@ Get list of recent jobs
 ### Example
 
 ```bash
- batchJobList  count=value  page_cursor=value  created_from=value  created_to=value  processed_from=value  processed_to=value  ids=value  response_fields=value
+ batchJobList  count=value  page_cursor=value  ids=value  created_from=value  created_to=value  processed_from=value  processed_to=value  response_fields=value
 ```
 
 ### Parameters
@@ -28,11 +28,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **ids** | **string** | Filter batch jobs by ids | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **processedFrom** | **string** | Retrieve entities according to their processing datetime | [optional] [default to null]
  **processedTo** | **string** | Retrieve entities according to their processing datetime | [optional] [default to null]
- **ids** | **string** | Filter batch jobs by ids | [optional] [default to null]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to {return_code,return_message,pagination,result}]
 
 ### Return type

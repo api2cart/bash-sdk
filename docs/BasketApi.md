@@ -21,7 +21,7 @@ Retrieve basket information.
 ### Example
 
 ```bash
- basketInfo  id=value  store_id=value  params=value  exclude=value  response_fields=value
+ basketInfo  id=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -31,9 +31,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Entity id | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -171,7 +171,7 @@ Retrieve a list of live shipping rate services.
 ### Example
 
 ```bash
- basketLiveShippingServiceList  store_id=value  start=value  count=value
+ basketLiveShippingServiceList  start=value  count=value  store_id=value
 ```
 
 ### Parameters
@@ -179,9 +179,9 @@ Retrieve a list of live shipping rate services.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string** | Store Id | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 

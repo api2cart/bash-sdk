@@ -161,7 +161,7 @@ Get attribute_set list
 ### Example
 
 ```bash
- attributeAttributesetList  start=value  count=value  params=value  exclude=value  response_fields=value
+ attributeAttributesetList  start=value  count=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -171,9 +171,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -277,7 +277,7 @@ Get attribute group list
 ### Example
 
 ```bash
- attributeGroupList  start=value  count=value  lang_id=value  params=value  exclude=value  response_fields=value  attribute_set_id=value
+ attributeGroupList  start=value  count=value  attribute_set_id=value  lang_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -287,11 +287,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **attributeSetId** | **string** | Attribute set id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **attributeSetId** | **string** | Attribute set id | [optional] [default to null]
 
 ### Return type
 
@@ -318,7 +318,7 @@ Get information about a specific global attribute by its ID.
 ### Example
 
 ```bash
- attributeInfo  id=value  attribute_set_id=value  store_id=value  lang_id=value  params=value  exclude=value  response_fields=value
+ attributeInfo  id=value  attribute_set_id=value  store_id=value  lang_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -330,9 +330,9 @@ Name | Type | Description  | Notes
  **attributeSetId** | **string** | Attribute set id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -359,7 +359,7 @@ Get a list of global attributes.
 ### Example
 
 ```bash
- attributeList  start=value  count=value  type=value  attribute_ids=value  attribute_set_id=value  store_id=value  lang_id=value  params=value  exclude=value  response_fields=value  visible=value  required=value  system=value
+ attributeList  start=value  count=value  attribute_ids=value  attribute_set_id=value  store_id=value  lang_id=value  type=value  visible=value  required=value  system=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -369,17 +369,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **type** | **string** | Defines attribute's type | [optional] [default to null]
  **attributeIds** | **string** | Filter attributes by ids | [optional] [default to null]
  **attributeSetId** | **string** | Filter items by attribute set id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Retrieves attributes on specified language id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,code,type]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **type** | **string** | Defines attribute's type | [optional] [default to null]
  **visible** | **boolean** | Filter items by visibility status | [optional] [default to null]
  **required** | **boolean** | Defines if the option is required | [optional] [default to null]
  **system** | **boolean** | True if attribute is system | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,code,type]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 

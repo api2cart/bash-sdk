@@ -76,6 +76,7 @@ Name | Type | Description | Notes
 **shoplineUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **shoplineUnderscoreappUnderscorekey** | **string** |  | [optional] [default to null]
 **shoplineUnderscoreappUnderscoresecret** | **string** |  | [optional] [default to null]
+**shoplineUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreapiUnderscorepassword** | **string** |  | [optional] [default to null]

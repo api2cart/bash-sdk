@@ -98,7 +98,7 @@ Get attributes for specific customer
 ### Example
 
 ```bash
- customerAttributeList  customer_id=value  count=value  page_cursor=value  store_id=value  lang_id=value  params=value  exclude=value  response_fields=value
+ customerAttributeList  customer_id=value  count=value  page_cursor=value  store_id=value  lang_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -111,9 +111,9 @@ Name | Type | Description  | Notes
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -140,7 +140,7 @@ Get number of customers from store.
 ### Example
 
 ```bash
- customerCount  group_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  store_id=value  customer_list_id=value  avail=value  find_value=value  find_where=value  ids=value  since_id=value
+ customerCount  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value
 ```
 
 ### Parameters
@@ -148,18 +148,18 @@ Get number of customers from store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | **string** | Counts customers specified by ids | [optional] [default to null]
+ **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **customerListId** | **string** | The numeric ID of the customer list in Demandware. | [optional] [default to null]
  **groupId** | **string** | Customer group_id | [optional] [default to null]
+ **storeId** | **string** | Counts customer specified by store id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
+ **findWhere** | **string** | Counts customers that are searched specified by field | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **storeId** | **string** | Counts customer specified by store id | [optional] [default to null]
- **customerListId** | **string** | The numeric ID of the customer list in Demandware. | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
- **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
- **findWhere** | **string** | Counts customers that are searched specified by field | [optional] [default to null]
- **ids** | **string** | Counts customers specified by ids | [optional] [default to null]
- **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
 
 ### Return type
 
@@ -296,7 +296,7 @@ Get list of customers groups.
 ### Example
 
 ```bash
- customerGroupList  disable_cache=value  page_cursor=value  start=value  count=value  store_id=value  lang_id=value  group_ids=value  params=value  exclude=value  response_fields=value
+ customerGroupList  start=value  count=value  page_cursor=value  group_ids=value  store_id=value  lang_id=value  response_fields=value  params=value  exclude=value  disable_cache=value
 ```
 
 ### Parameters
@@ -304,16 +304,16 @@ Get list of customers groups.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **groupIds** | **string** | Groups that will be assigned to a customer | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
- **groupIds** | **string** | Groups that will be assigned to a customer | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,additional_fields]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
 
 ### Return type
 
@@ -340,7 +340,7 @@ Get customers' details from store.
 ### Example
 
 ```bash
- customerInfo  id=value  params=value  response_fields=value  exclude=value  store_id=value
+ customerInfo  id=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -349,10 +349,10 @@ Get customers' details from store.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Retrieves customer's info specified by customer id | [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,email,first_name,last_name]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Retrieves customer info specified by store id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,email,first_name,last_name]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -379,7 +379,7 @@ Get list of customers from store.
 ### Example
 
 ```bash
- customerList  page_cursor=value  start=value  count=value  created_from=value  created_to=value  modified_from=value  modified_to=value  params=value  response_fields=value  exclude=value  group_id=value  store_id=value  customer_list_id=value  avail=value  find_value=value  find_where=value  sort_by=value  sort_direction=value  ids=value  since_id=value
+ customerList  start=value  count=value  page_cursor=value  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sort_by=value  sort_direction=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -387,26 +387,26 @@ Get list of customers from store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **ids** | **string** | Retrieves customers specified by ids | [optional] [default to null]
+ **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **customerListId** | **string** | The numeric ID of the customer list in Demandware. | [optional] [default to null]
+ **groupId** | **string** | Customer group_id | [optional] [default to null]
+ **storeId** | **string** | Retrieves customers specified by store id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
+ **findWhere** | **string** | Customer search that is specified by field | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,email,first_name,last_name]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **groupId** | **string** | Customer group_id | [optional] [default to null]
- **storeId** | **string** | Retrieves customers specified by store id | [optional] [default to null]
- **customerListId** | **string** | The numeric ID of the customer list in Demandware. | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
- **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
- **findWhere** | **string** | Customer search that is specified by field | [optional] [default to null]
  **sortBy** | **string** | Set field to sort by | [optional] [default to created_time]
  **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
- **ids** | **string** | Retrieves customers specified by ids | [optional] [default to null]
- **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,email,first_name,last_name]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -468,7 +468,7 @@ Get a Wish List of customer from the store.
 ### Example
 
 ```bash
- customerWishlistList  customer_id=value  id=value  store_id=value  start=value  count=value  page_cursor=value  response_fields=value
+ customerWishlistList  customer_id=value  start=value  count=value  page_cursor=value  id=value  store_id=value  response_fields=value
 ```
 
 ### Parameters
@@ -477,11 +477,11 @@ Get a Wish List of customer from the store.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **string** | Retrieves orders specified by customer id | [default to null]
- **id** | **string** | Entity id | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **id** | **string** | Entity id | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to {return_code,return_message,pagination,result}]
 
 ### Return type

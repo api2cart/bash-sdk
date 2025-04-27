@@ -28,7 +28,7 @@ Add new category in store
 ### Example
 
 ```bash
- categoryAdd  name=value  parent_id=value  stores_ids=value  store_id=value  lang_id=value  avail=value  sort_order=value  created_time=value  modified_time=value  description=value  short_description=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value
+ categoryAdd  name=value  description=value  short_description=value  parent_id=value  avail=value  created_time=value  modified_time=value  sort_order=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value
 ```
 
 ### Parameters
@@ -37,20 +37,20 @@ Add new category in store
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string** | Defines category's name that has to be added | [default to null]
- **parentId** | **string** | Adds categories specified by parent id | [optional] [default to null]
- **storesIds** | **string** | Create category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
- **langId** | **string** | Language id | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
- **sortOrder** | **integer** | Sort number in the list | [optional] [default to 0]
- **createdTime** | **string** | Entity's date creation | [optional] [default to null]
- **modifiedTime** | **string** | Entity's date modification | [optional] [default to null]
  **description** | **string** | Defines category's description | [optional] [default to null]
  **shortDescription** | **string** | Defines short description | [optional] [default to null]
+ **parentId** | **string** | Adds categories specified by parent id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **createdTime** | **string** | Entity's date creation | [optional] [default to null]
+ **modifiedTime** | **string** | Entity's date modification | [optional] [default to null]
+ **sortOrder** | **integer** | Sort number in the list | [optional] [default to 0]
  **metaTitle** | **string** | Defines unique meta title for each entity | [optional] [default to null]
  **metaDescription** | **string** | Defines unique meta description of a entity | [optional] [default to null]
  **metaKeywords** | **string** | Defines unique meta keywords for each entity | [optional] [default to null]
  **seoUrl** | **string** | Defines unique category's URL for SEO | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
+ **storesIds** | **string** | Create category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
 
 ### Return type
 
@@ -112,7 +112,7 @@ Assign category to product
 ### Example
 
 ```bash
- categoryAssign  product_id=value  category_id=value  store_id=value
+ categoryAssign  category_id=value  product_id=value  store_id=value
 ```
 
 ### Parameters
@@ -120,8 +120,8 @@ Assign category to product
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **string** | Defines category assign to the product, specified by product id | [default to null]
  **categoryId** | **string** | Defines category assign, specified by category id | [default to null]
+ **productId** | **string** | Defines category assign to the product, specified by product id | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
@@ -149,7 +149,7 @@ Count categories in store.
 ### Example
 
 ```bash
- categoryCount  parent_id=value  store_id=value  lang_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  avail=value  product_type=value  find_value=value  find_where=value  report_request_id=value  disable_report_cache=value
+ categoryCount  parent_id=value  store_id=value  lang_id=value  avail=value  created_from=value  created_to=value  modified_from=value  modified_to=value  product_type=value  find_value=value  find_where=value  report_request_id=value  disable_report_cache=value
 ```
 
 ### Parameters
@@ -160,11 +160,11 @@ Name | Type | Description  | Notes
  **parentId** | **string** | Counts categories specified by parent id | [optional] [default to null]
  **storeId** | **string** | Counts category specified by store id | [optional] [default to null]
  **langId** | **string** | Counts category specified by language id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
  **productType** | **string** | A categorization for the product | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Counts categories that are searched specified by field | [optional] [default to null]
@@ -271,7 +271,7 @@ Add image to category
 ### Example
 
 ```bash
- categoryImageAdd  category_id=value  image_name=value  url=value  type=value  label=value  mime=value  position=value  store_id=value
+ categoryImageAdd  category_id=value  image_name=value  url=value  type=value  store_id=value  label=value  mime=value  position=value
 ```
 
 ### Parameters
@@ -283,10 +283,10 @@ Name | Type | Description  | Notes
  **imageName** | **string** | Defines image's name | [default to null]
  **url** | **string** | Defines URL of the image that has to be added | [default to null]
  **type** | **string** | Defines image's types that are specified by comma-separated list | [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **label** | **string** | Defines alternative text that has to be attached to the picture | [optional] [default to null]
  **mime** | **string** | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] [default to null]
  **position** | **integer** | Defines image’s position in the list | [optional] [default to 0]
- **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 
@@ -350,7 +350,7 @@ Get category info about category ID*** or specify other category ID.
 ### Example
 
 ```bash
- categoryInfo  id=value  params=value  response_fields=value  exclude=value  store_id=value  lang_id=value  schema_type=value  report_request_id=value  disable_report_cache=value
+ categoryInfo  id=value  store_id=value  lang_id=value  schema_type=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value
 ```
 
 ### Parameters
@@ -359,12 +359,12 @@ Get category info about category ID*** or specify other category ID.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Retrieves category's info specified by category id | [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,parent_id,name,description]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Retrieves category info  specified by store id | [optional] [default to null]
  **langId** | **string** | Retrieves category info  specified by language id | [optional] [default to null]
  **schemaType** | **string** | The name of the requirements set for the provided schema. | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,parent_id,name,description]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
 
@@ -393,7 +393,7 @@ Get list of categories from store.
 ### Example
 
 ```bash
- categoryList  start=value  count=value  page_cursor=value  parent_id=value  params=value  response_fields=value  exclude=value  store_id=value  lang_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  avail=value  product_type=value  find_value=value  find_where=value  report_request_id=value  disable_report_cache=value  disable_cache=value
+ categoryList  start=value  count=value  page_cursor=value  store_id=value  lang_id=value  parent_id=value  avail=value  product_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  find_value=value  find_where=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  disable_cache=value
 ```
 
 ### Parameters
@@ -404,20 +404,20 @@ Name | Type | Description  | Notes
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **parentId** | **string** | Retrieves categories specified by parent id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,parent_id,name,description]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Retrieves categories specified by store id | [optional] [default to null]
  **langId** | **string** | Retrieves categorys specified by language id | [optional] [default to null]
+ **parentId** | **string** | Retrieves categories specified by parent id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **productType** | **string** | A categorization for the product | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
- **productType** | **string** | A categorization for the product | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Category search that is specified by field | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,parent_id,name,description]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
@@ -484,7 +484,7 @@ Update category in store
 ### Example
 
 ```bash
- categoryUpdate  id=value  name=value  parent_id=value  stores_ids=value  avail=value  sort_order=value  modified_time=value  description=value  short_description=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  lang_id=value  store_id=value
+ categoryUpdate  id=value  name=value  description=value  short_description=value  parent_id=value  avail=value  sort_order=value  modified_time=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value
 ```
 
 ### Parameters
@@ -494,19 +494,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Defines category update specified by category id | [default to null]
  **name** | **string** | Defines new category’s name | [optional] [default to null]
+ **description** | **string** | Defines new category's description | [optional] [default to null]
+ **shortDescription** | **string** | Defines short description | [optional] [default to null]
  **parentId** | **string** | Defines new parent category id | [optional] [default to null]
- **storesIds** | **string** | Update category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
  **avail** | **boolean** | Defines category's visibility status | [optional] [default to null]
  **sortOrder** | **integer** | Sort number in the list | [optional] [default to null]
  **modifiedTime** | **string** | Entity's date modification | [optional] [default to null]
- **description** | **string** | Defines new category's description | [optional] [default to null]
- **shortDescription** | **string** | Defines short description | [optional] [default to null]
  **metaTitle** | **string** | Defines unique meta title for each entity | [optional] [default to null]
  **metaDescription** | **string** | Defines unique meta description of a entity | [optional] [default to null]
  **metaKeywords** | **string** | Defines unique meta keywords for each entity | [optional] [default to null]
  **seoUrl** | **string** | Defines unique category's URL for SEO | [optional] [default to null]
- **langId** | **string** | Language id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **storesIds** | **string** | Update category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
 
 ### Return type
 

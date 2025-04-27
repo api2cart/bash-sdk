@@ -167,7 +167,7 @@ List registered webhook on the store.
 ### Example
 
 ```bash
- webhookList  params=value  start=value  count=value  entity=value  action=value  active=value  ids=value
+ webhookList  start=value  count=value  entity=value  action=value  active=value  ids=value  params=value
 ```
 
 ### Parameters
@@ -175,13 +175,13 @@ List registered webhook on the store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,entity,action,callback]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **entity** | **string** | The entity you want to filter webhooks by (e.g. order or product) | [optional] [default to null]
  **action** | **string** | The action you want to filter webhooks by (e.g. add, update, or delete) | [optional] [default to null]
  **active** | **boolean** | The webhook status you want to filter webhooks by | [optional] [default to null]
  **ids** | **string** | List of сomma-separated webhook ids | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,entity,action,callback]
 
 ### Return type
 

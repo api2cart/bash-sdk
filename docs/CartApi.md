@@ -110,7 +110,7 @@ Get cart catalog price rules discounts.
 ### Example
 
 ```bash
- cartCatalogPriceRulesList  page_cursor=value  start=value  count=value  ids=value  params=value  response_fields=value  exclude=value
+ cartCatalogPriceRulesList  start=value  count=value  page_cursor=value  ids=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -118,12 +118,12 @@ Get cart catalog price rules discounts.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **ids** | **string** | Retrieves  catalog_price_rules by ids | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -292,7 +292,7 @@ Use this method to add additional conditions for coupon application.
 ### Example
 
 ```bash
- cartCouponConditionAdd  coupon_id=value  entity=value  key=value  operator=value  value=value  store_id=value  target=value  include_tax=value  include_shipping=value
+ cartCouponConditionAdd  coupon_id=value  entity=value  key=value  operator=value  value=value  target=value  include_tax=value  include_shipping=value  store_id=value
 ```
 
 ### Parameters
@@ -305,10 +305,10 @@ Name | Type | Description  | Notes
  **key** | **string** | Defines condition entity attribute key | [default to null]
  **operator** | **string** | Defines condition operator | [default to null]
  **value** | **string** | Defines condition value, can be comma separated according to the operator. | [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
  **target** | **string** | Defines condition operator | [optional] [default to coupon_prerequisite]
  **includeTax** | **boolean** | Indicates whether to apply a discount for taxes. | [optional] [default to false]
  **includeShipping** | **boolean** | Indicates whether to apply a discount for shipping. | [optional] [default to false]
+ **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 
@@ -335,7 +335,7 @@ This method allows you to get the number of coupons. On some platforms, you can 
 ### Example
 
 ```bash
- cartCouponCount  store_id=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value  avail=value
+ cartCouponCount  store_id=value  avail=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value
 ```
 
 ### Parameters
@@ -344,11 +344,11 @@ This method allows you to get the number of coupons. On some platforms, you can 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
  **dateStartFrom** | **string** | Filter entity by date_start (greater or equal) | [optional] [default to null]
  **dateStartTo** | **string** | Filter entity by date_start (less or equal) | [optional] [default to null]
  **dateEndFrom** | **string** | Filter entity by date_end (greater or equal) | [optional] [default to null]
  **dateEndTo** | **string** | Filter entity by date_end (less or equal) | [optional] [default to null]
- **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
 
 ### Return type
 
@@ -411,7 +411,7 @@ Get cart coupon discounts.
 ### Example
 
 ```bash
- cartCouponList  page_cursor=value  start=value  count=value  coupons_ids=value  store_id=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value  avail=value  lang_id=value  params=value  response_fields=value  exclude=value
+ cartCouponList  start=value  count=value  page_cursor=value  coupons_ids=value  store_id=value  lang_id=value  avail=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -419,19 +419,19 @@ Get cart coupon discounts.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **couponsIds** | **string** | Filter coupons by ids | [optional] [default to null]
  **storeId** | **string** | Filter coupons by store id | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
+ **avail** | **boolean** | Filter coupons by avail status | [optional] [default to null]
  **dateStartFrom** | **string** | Filter entity by date_start (greater or equal) | [optional] [default to null]
  **dateStartTo** | **string** | Filter entity by date_start (less or equal) | [optional] [default to null]
  **dateEndFrom** | **string** | Filter entity by date_end (greater or equal) | [optional] [default to null]
  **dateEndTo** | **string** | Filter entity by date_end (less or equal) | [optional] [default to null]
- **avail** | **boolean** | Filter coupons by avail status | [optional] [default to null]
- **langId** | **string** | Language id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,code,name,description]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,code,name,description]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -674,7 +674,7 @@ Get gift cards list.
 ### Example
 
 ```bash
- cartGiftcardList  page_cursor=value  start=value  count=value  store_id=value  params=value  response_fields=value  exclude=value
+ cartGiftcardList  start=value  count=value  page_cursor=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -682,12 +682,12 @@ Get gift cards list.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,code,name]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,code,name]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -715,7 +715,7 @@ This method allows you to get various information about the store, including a l
 ### Example
 
 ```bash
- cartInfo  params=value  response_fields=value  exclude=value  store_id=value
+ cartInfo  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -723,10 +723,10 @@ This method allows you to get various information about the store, including a l
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to store_name,store_url,db_prefix]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to store_name,store_url,db_prefix]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -785,7 +785,7 @@ Using this method, you can get a list of metadata for various entities (products
 ### Example
 
 ```bash
- cartMetaDataList  entity_id=value  entity=value  store_id=value  lang_id=value  key=value  count=value  page_cursor=value  params=value  response_fields=value  exclude=value
+ cartMetaDataList  entity_id=value  count=value  page_cursor=value  entity=value  store_id=value  lang_id=value  key=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -794,14 +794,14 @@ Using this method, you can get a list of metadata for various entities (products
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entityId** | **string** | Entity Id | [default to null]
+ **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **entity** | **string** | Entity | [optional] [default to product]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **key** | **string** | Key | [optional] [default to null]
- **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to key,value]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to key,value]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -941,7 +941,7 @@ Get a list of third-party plugins installed on the store.
 ### Example
 
 ```bash
- cartPluginList  store_id=value  start=value  count=value
+ cartPluginList  start=value  count=value  store_id=value
 ```
 
 ### Parameters
@@ -949,9 +949,9 @@ Get a list of third-party plugins installed on the store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string** | Store Id | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 
@@ -1056,7 +1056,7 @@ Get scripts installed to the storefront
 ### Example
 
 ```bash
- cartScriptList  page_cursor=value  start=value  count=value  created_from=value  created_to=value  modified_from=value  modified_to=value  script_ids=value  store_id=value  params=value  response_fields=value  exclude=value
+ cartScriptList  start=value  count=value  page_cursor=value  script_ids=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1064,17 +1064,17 @@ Get scripts installed to the storefront
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **scriptIds** | **string** | Retrieves only scripts with specific ids | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **scriptIds** | **string** | Retrieves only scripts with specific ids | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -1102,7 +1102,7 @@ Get list of shipping zones
 ### Example
 
 ```bash
- cartShippingZonesList  store_id=value  start=value  count=value  params=value  response_fields=value  exclude=value
+ cartShippingZonesList  start=value  count=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1110,11 +1110,11 @@ Get list of shipping zones
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string** | Store Id | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,enabled]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,enabled]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type

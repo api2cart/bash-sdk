@@ -138,7 +138,7 @@ Get list of attributes and values.
 ### Example
 
 ```bash
- productAttributeList  product_id=value  attribute_id=value  variant_id=value  page_cursor=value  start=value  count=value  attribute_group_id=value  set_name=value  lang_id=value  store_id=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value
+ productAttributeList  product_id=value  start=value  count=value  page_cursor=value  attribute_id=value  variant_id=value  attribute_group_id=value  lang_id=value  store_id=value  set_name=value  sort_by=value  sort_direction=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -147,19 +147,19 @@ Get list of attributes and values.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string** | Retrieves attributes specified by product id | [default to null]
- **attributeId** | **string** | Retrieves info for specified attribute_id | [optional] [default to null]
- **variantId** | **string** | Defines product's variants specified by variant id | [optional] [default to null]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **attributeId** | **string** | Retrieves info for specified attribute_id | [optional] [default to null]
+ **variantId** | **string** | Defines product's variants specified by variant id | [optional] [default to null]
  **attributeGroupId** | **string** | Filter by attribute_group_id | [optional] [default to null]
- **setName** | **string** | Retrieves attributes specified by set_name in Magento | [optional] [default to null]
  **langId** | **string** | Retrieves attributes specified by language id | [optional] [default to null]
  **storeId** | **string** | Retrieves attributes specified by store id | [optional] [default to null]
+ **setName** | **string** | Retrieves attributes specified by set_name in Magento | [optional] [default to null]
  **sortBy** | **string** | Set field to sort by | [optional] [default to attribute_id]
  **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to attribute_id,name]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to attribute_id,name]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -269,7 +269,7 @@ Get list of brands from your store.
 ### Example
 
 ```bash
- productBrandList  start=value  count=value  page_cursor=value  params=value  brand_ids=value  exclude=value  category_id=value  store_id=value  lang_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  parent_id=value  response_fields=value  find_where=value  find_value=value
+ productBrandList  start=value  count=value  page_cursor=value  brand_ids=value  category_id=value  parent_id=value  store_id=value  lang_id=value  find_where=value  find_value=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -280,20 +280,20 @@ Name | Type | Description  | Notes
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,short_description,active,url]
  **brandIds** | **string** | Retrieves brands specified by brand ids | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **categoryId** | **string** | Retrieves product brands specified by category id | [optional] [default to null]
+ **parentId** | **string** | Retrieves brands specified by parent id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **findWhere** | **string** | Entity search that is specified by the comma-separated unique fields | [optional] [default to null]
+ **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **parentId** | **string** | Retrieves brands specified by parent id | [optional] [default to null]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **findWhere** | **string** | Entity search that is specified by the comma-separated unique fields | [optional] [default to null]
- **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,short_description,active,url]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -358,7 +358,7 @@ Get child for specific product.
 ### Example
 
 ```bash
- productChildItemInfo  product_id=value  id=value  params=value  response_fields=value  exclude=value  store_id=value  lang_id=value  currency_id=value  use_latest_api_version=value
+ productChildItemInfo  product_id=value  id=value  store_id=value  lang_id=value  currency_id=value  response_fields=value  params=value  exclude=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -368,12 +368,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string** | Filter by parent product id | [default to null]
  **id** | **string** | Entity id | [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **currencyId** | **string** | Currency Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
@@ -401,7 +401,7 @@ Get a list of a product's child items, such as variants or bundle components. Th
 ### Example
 
 ```bash
- productChildItemList  page_cursor=value  start=value  count=value  params=value  response_fields=value  exclude=value  created_from=value  created_to=value  modified_from=value  modified_to=value  product_id=value  product_ids=value  sku=value  store_id=value  lang_id=value  currency_id=value  avail_sale=value  find_value=value  find_where=value  report_request_id=value  disable_report_cache=value  use_latest_api_version=value  return_global=value
+ productChildItemList  start=value  count=value  page_cursor=value  product_id=value  product_ids=value  sku=value  store_id=value  lang_id=value  currency_id=value  avail_sale=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value  return_global=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -409,16 +409,9 @@ Get a list of a product's child items, such as variants or bundle components. Th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **pageCursor** | **string** | Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **productId** | **string** | Filter by parent product id | [optional] [default to null]
  **productIds** | **string** | Filter by parent product ids | [optional] [default to null]
  **sku** | **string** | Filter by products variant's sku | [optional] [default to null]
@@ -428,10 +421,17 @@ Name | Type | Description  | Notes
  **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Child products search that is specified by field | [optional] [default to null]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
+ **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **returnGlobal** | **boolean** | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned. | [optional] [default to false]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to force_all]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
- **returnGlobal** | **boolean** | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned. | [optional] [default to false]
 
 ### Return type
 
@@ -458,7 +458,7 @@ Count products in store.
 ### Example
 
 ```bash
- productCount  category_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  avail_view=value  avail_sale=value  store_id=value  lang_id=value  product_ids=value  since_id=value  report_request_id=value  disable_report_cache=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  use_latest_api_version=value  return_global=value  categories_ids=value
+ productCount  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -466,28 +466,28 @@ Count products in store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productIds** | **string** | Counts products specified by product ids | [optional] [default to null]
+ **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **categoriesIds** | **string** | Defines product add that is specified by comma-separated categories id | [optional] [default to null]
  **categoryId** | **string** | Counts products specified by category id | [optional] [default to null]
+ **storeId** | **string** | Counts products specified by store id | [optional] [default to null]
+ **langId** | **string** | Counts products specified by language id | [optional] [default to null]
+ **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
+ **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
- **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
- **storeId** | **string** | Counts products specified by store id | [optional] [default to null]
- **langId** | **string** | Counts products specified by language id | [optional] [default to null]
- **productIds** | **string** | Counts products specified by product ids | [optional] [default to null]
- **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
- **reportRequestId** | **string** | Report request id | [optional] [default to null]
- **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **brandName** | **string** | Retrieves brands specified by brand name | [optional] [default to null]
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Counts products that are searched specified by field | [optional] [default to null]
- **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
+ **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **returnGlobal** | **boolean** | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned. | [optional] [default to false]
- **categoriesIds** | **string** | Defines product add that is specified by comma-separated categories id | [optional] [default to null]
+ **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 
@@ -555,7 +555,7 @@ Get list of currencies
 ### Example
 
 ```bash
- productCurrencyList  start=value  count=value  params=value  page_cursor=value  exclude=value  response_fields=value  default=value  avail=value
+ productCurrencyList  start=value  count=value  page_cursor=value  default=value  avail=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -565,12 +565,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to name,iso3,default,avail]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **default** | **boolean** | Specifies the set of default/not default currencies | [optional] [default to null]
  **avail** | **boolean** | Specifies the set of available/not available currencies | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to name,iso3,default,avail]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -812,7 +812,7 @@ Update details of image
 ### Example
 
 ```bash
- productImageUpdate  product_id=value  id=value  variant_ids=value  image_name=value  type=value  label=value  position=value  store_id=value  lang_id=value  hidden=value
+ productImageUpdate  product_id=value  id=value  variant_ids=value  store_id=value  lang_id=value  image_name=value  type=value  label=value  position=value  hidden=value
 ```
 
 ### Parameters
@@ -823,12 +823,12 @@ Name | Type | Description  | Notes
  **productId** | **string** | Defines product id where the image should be updated | [default to null]
  **id** | **string** | Defines image update specified by image id | [default to null]
  **variantIds** | **string** | Defines product's variants ids | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
  **imageName** | **string** | Defines image's name | [optional] [default to null]
  **type** | **string** | Defines image's types that are specified by comma-separated list | [optional] [default to additional]
  **label** | **string** | Defines alternative text that has to be attached to the picture | [optional] [default to null]
  **position** | **integer** | Defines image’s position in the list | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
- **langId** | **string** | Language id | [optional] [default to null]
  **hidden** | **boolean** | Define is hide image | [optional] [default to null]
 
 ### Return type
@@ -856,7 +856,7 @@ Get information about a specific product by its ID. In the case of a multistore 
 ### Example
 
 ```bash
- productInfo  id=value  params=value  response_fields=value  exclude=value  store_id=value  lang_id=value  currency_id=value  report_request_id=value  disable_report_cache=value  use_latest_api_version=value
+ productInfo  id=value  store_id=value  lang_id=value  currency_id=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -865,12 +865,12 @@ Get information about a specific product by its ID. In the case of a multistore 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Retrieves product's info specified by product id | [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price,categories_ids]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Retrieves product info specified by store id | [optional] [default to null]
  **langId** | **string** | Retrieves product info specified by language id | [optional] [default to null]
  **currencyId** | **string** | Currency Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price,categories_ids]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
@@ -900,7 +900,7 @@ Get list of products from your store. Returns 10 products by default.
 ### Example
 
 ```bash
- productList  page_cursor=value  start=value  count=value  params=value  response_fields=value  exclude=value  category_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  avail_view=value  avail_sale=value  store_id=value  lang_id=value  currency_id=value  product_ids=value  since_id=value  report_request_id=value  disable_report_cache=value  sort_by=value  sort_direction=value  sku=value  disable_cache=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  use_latest_api_version=value  return_global=value  categories_ids=value
+ productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -908,39 +908,39 @@ Get list of products from your store. Returns 10 products by default.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **string** | Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price,categories_ids]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **pageCursor** | **string** | Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **productIds** | **string** | Retrieves products specified by product ids | [optional] [default to null]
+ **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **categoriesIds** | **string** | Retrieves products specified by categories ids | [optional] [default to null]
  **categoryId** | **string** | Retrieves products specified by category id | [optional] [default to null]
+ **storeId** | **string** | Retrieves products specified by store id | [optional] [default to null]
+ **langId** | **string** | Retrieves products specified by language id | [optional] [default to null]
+ **currencyId** | **string** | Currency Id | [optional] [default to null]
+ **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
+ **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
- **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
- **storeId** | **string** | Retrieves products specified by store id | [optional] [default to null]
- **langId** | **string** | Retrieves products specified by language id | [optional] [default to null]
- **currencyId** | **string** | Currency Id | [optional] [default to null]
- **productIds** | **string** | Retrieves products specified by product ids | [optional] [default to null]
- **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
- **reportRequestId** | **string** | Report request id | [optional] [default to null]
- **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
- **sortBy** | **string** | Set field to sort by | [optional] [default to id]
- **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
  **sku** | **string** | Filter by product's sku | [optional] [default to null]
- **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
  **brandName** | **string** | Retrieves brands specified by brand name | [optional] [default to null]
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Product search that is specified by field | [optional] [default to null]
- **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
  **returnGlobal** | **boolean** | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned. | [optional] [default to false]
- **categoriesIds** | **string** | Retrieves products specified by categories ids | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price,categories_ids]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **sortBy** | **string** | Set field to sort by | [optional] [default to id]
+ **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
+ **reportRequestId** | **string** | Report request id | [optional] [default to null]
+ **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
+ **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 
@@ -1116,7 +1116,7 @@ Get list of options.
 ### Example
 
 ```bash
- productOptionList  start=value  count=value  params=value  exclude=value  response_fields=value  product_id=value  lang_id=value  store_id=value
+ productOptionList  start=value  count=value  product_id=value  lang_id=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1126,12 +1126,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **productId** | **string** | Retrieves products' options specified by product id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -1423,7 +1423,7 @@ Get reviews of a specific product.
 ### Example
 
 ```bash
- productReviewList  product_id=value  start=value  page_cursor=value  count=value  ids=value  store_id=value  status=value  params=value  exclude=value  response_fields=value
+ productReviewList  product_id=value  start=value  count=value  page_cursor=value  ids=value  store_id=value  status=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1433,14 +1433,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string** | Product id | [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **ids** | **string** | Retrieves reviews specified by ids | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **status** | **string** | Defines status | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -1678,7 +1678,7 @@ Get count variants.
 ### Example
 
 ```bash
- productVariantCount  product_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  category_id=value  store_id=value
+ productVariantCount  product_id=value  category_id=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value
 ```
 
 ### Parameters
@@ -1687,12 +1687,12 @@ Get count variants.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string** | Retrieves products' variants specified by product id | [default to null]
+ **categoryId** | **string** | Counts products’ variants specified by category id | [optional] [default to null]
+ **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **categoryId** | **string** | Counts products’ variants specified by category id | [optional] [default to null]
- **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
 
 ### Return type
 
@@ -1864,7 +1864,7 @@ Get variant info. This method is deprecated, and its development is stopped. Ple
 ### Example
 
 ```bash
- productVariantInfo  id=value  params=value  exclude=value  store_id=value
+ productVariantInfo  id=value  store_id=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1873,9 +1873,9 @@ Get variant info. This method is deprecated, and its development is stopped. Ple
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Retrieves variant's info specified by variant id | [default to null]
+ **storeId** | **string** | Retrieves variant info specified by store id | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **storeId** | **string** | Retrieves variant info specified by store id | [optional] [default to null]
 
 ### Return type
 
@@ -1902,7 +1902,7 @@ Get a list of variants. This method is deprecated, and its development is stoppe
 ### Example
 
 ```bash
- productVariantList  start=value  count=value  params=value  exclude=value  created_from=value  created_to=value  modified_from=value  modified_to=value  category_id=value  product_id=value  store_id=value
+ productVariantList  start=value  count=value  product_id=value  category_id=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1912,15 +1912,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **productId** | **string** | Retrieves products' variants specified by product id | [optional] [default to null]
+ **categoryId** | **string** | Retrieves products’ variants specified by category id | [optional] [default to null]
+ **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **categoryId** | **string** | Retrieves products’ variants specified by category id | [optional] [default to null]
- **productId** | **string** | Retrieves products' variants specified by product id | [optional] [default to null]
- **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 

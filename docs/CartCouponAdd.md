@@ -3,14 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **code** | **string** |  | [default to null]
-**name** | **string** |  | [optional] [default to null]
-**codes** | **array[string]** |  | [optional] [default to null]
 **actionUnderscoretype** | **string** |  | [default to null]
 **actionUnderscoreapplyUnderscoreto** | **string** |  | [default to null]
 **actionUnderscorescope** | **string** |  | [default to null]
 **actionUnderscoreamount** | **integer** |  | [default to null]
+**codes** | **array[string]** |  | [optional] [default to null]
+**name** | **string** |  | [optional] [default to null]
 **dateUnderscorestart** | **string** |  | [optional] [default to now]
 **dateUnderscoreend** | **string** |  | [optional] [default to null]
 **usageUnderscorelimit** | **integer** |  | [optional] [default to null]
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **actionUnderscoreconditionUnderscoreoperator** | **string** |  | [optional] [default to null]
 **actionUnderscoreconditionUnderscorevalue** | **string** |  | [optional] [default to null]
 **includeUnderscoretax** | **boolean** |  | [optional] [default to false]
+**storeUnderscoreid** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

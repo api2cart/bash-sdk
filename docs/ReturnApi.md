@@ -99,7 +99,7 @@ Retrieve return information.
 ### Example
 
 ```bash
- returnInfo  id=value  order_id=value  store_id=value  params=value  exclude=value  response_fields=value
+ returnInfo  id=value  order_id=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -110,9 +110,9 @@ Name | Type | Description  | Notes
  **id** | **string** | Entity id | [default to null]
  **orderId** | **string** | Defines the order id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_products]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
 
@@ -139,7 +139,7 @@ Get list of return requests from store.
 ### Example
 
 ```bash
- returnList  start=value  count=value  page_cursor=value  params=value  exclude=value  response_fields=value  order_id=value  order_ids=value  customer_id=value  store_id=value  status=value  return_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  report_request_id=value  disable_report_cache=value
+ returnList  start=value  count=value  page_cursor=value  order_id=value  order_ids=value  customer_id=value  store_id=value  status=value  return_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value
 ```
 
 ### Parameters
@@ -150,9 +150,6 @@ Name | Type | Description  | Notes
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_products]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **orderId** | **string** | Defines the order id | [optional] [default to null]
  **orderIds** | **string** | Retrieves return requests specified by order ids | [optional] [default to null]
  **customerId** | **string** | Retrieves return requests specified by customer id | [optional] [default to null]
@@ -163,6 +160,9 @@ Name | Type | Description  | Notes
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_products]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
 

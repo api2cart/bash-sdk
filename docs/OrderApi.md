@@ -39,7 +39,7 @@ Get list of orders that were left by customers before completing the order.
 ### Example
 
 ```bash
- orderAbandonedList  customer_id=value  customer_email=value  created_to=value  created_from=value  modified_to=value  modified_from=value  skip_empty_email=value  store_id=value  page_cursor=value  count=value  start=value  params=value  response_fields=value  exclude=value
+ orderAbandonedList  start=value  count=value  page_cursor=value  customer_id=value  customer_email=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  skip_empty_email=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -47,19 +47,19 @@ Get list of orders that were left by customers before completing the order.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
+ **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
  **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **skipEmptyEmail** | **boolean** | Filter empty emails | [optional] [default to false]
  **storeId** | **string** | Store Id | [optional] [default to null]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
- **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to customer,totals,items]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
+ **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **skipEmptyEmail** | **boolean** | Filter empty emails | [optional] [default to false]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to customer,totals,items]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
@@ -122,7 +122,7 @@ Count orders in store
 ### Example
 
 ```bash
- orderCount  customer_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  created_to=value  created_from=value  modified_to=value  modified_from=value  store_id=value  ids=value  order_ids=value  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value
+ orderCount  order_ids=value  ids=value  customer_id=value  store_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value
 ```
 
 ### Parameters
@@ -130,17 +130,13 @@ Count orders in store
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **orderIds** | **string** | Counts orders specified by order ids | [optional] [default to null]
+ **ids** | **string** | Counts orders specified by ids | [optional] [default to null]
  **customerId** | **string** | Counts orders quantity specified by customer id | [optional] [default to null]
+ **storeId** | **string** | Counts orders quantity specified by store id | [optional] [default to null]
  **customerEmail** | **string** | Counts orders quantity specified by customer email | [optional] [default to null]
  **orderStatus** | **string** | Counts orders quantity specified by order status | [optional] [default to null]
  **orderStatusIds** | [**array[string]**](string.md) | Retrieves orders specified by order statuses | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **storeId** | **string** | Counts orders quantity specified by store id | [optional] [default to null]
- **ids** | **string** | Counts orders specified by ids | [optional] [default to null]
- **orderIds** | **string** | Counts orders specified by order ids | [optional] [default to null]
  **ebayOrderStatus** | **string** | Counts orders quantity specified by order status | [optional] [default to null]
  **financialStatus** | **string** | Counts orders quantity specified by financial status | [optional] [default to null]
  **financialStatusIds** | [**array[string]**](string.md) | Retrieves orders count specified by financial status ids | [optional] [default to null]
@@ -150,6 +146,10 @@ Name | Type | Description  | Notes
  **deliveryMethod** | **string** | Retrieves order with delivery method | [optional] [default to null]
  **tags** | **string** | Order tags | [optional] [default to null]
  **shipNodeType** | **string** | Retrieves order with ship node type | [optional] [default to null]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
+ **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
 
 ### Return type
 
@@ -208,7 +208,7 @@ This method is deprecated and won't be supported in the future. Please use \"ord
 ### Example
 
 ```bash
- orderFind  customer_id=value  customer_email=value  order_status=value  start=value  count=value  params=value  exclude=value  created_to=value  created_from=value  modified_to=value  modified_from=value  financial_status=value
+ orderFind  start=value  count=value  customer_id=value  customer_email=value  order_status=value  financial_status=value  created_to=value  created_from=value  modified_to=value  modified_from=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -216,18 +216,18 @@ This method is deprecated and won't be supported in the future. Please use \"ord
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
+ **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
  **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
  **orderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
- **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to order_id,customer,totals,address,items,bundles,status]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **financialStatus** | **string** | Retrieves orders specified by financial status | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **financialStatus** | **string** | Retrieves orders specified by financial status | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to order_id,customer,totals,address,items,bundles,status]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -289,7 +289,7 @@ Info about a specific order by ID
 ### Example
 
 ```bash
- orderInfo  order_id=value  id=value  params=value  response_fields=value  exclude=value  store_id=value  enable_cache=value  use_latest_api_version=value
+ orderInfo  id=value  order_id=value  store_id=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -297,12 +297,12 @@ Info about a specific order by ID
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **string** | Retrieves order’s info specified by order id | [optional] [default to null]
  **id** | **string** | Retrieves order info specified by id | [optional] [default to null]
+ **orderId** | **string** | Retrieves order’s info specified by order id | [optional] [default to null]
+ **storeId** | **string** | Defines store id where the order should be found | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to order_id,customer,totals,address,items,bundles,status]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **storeId** | **string** | Defines store id where the order should be found | [optional] [default to null]
  **enableCache** | **boolean** | If the value is 'true' and order exist in our cache, we will return order.info response from cache | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
@@ -331,7 +331,7 @@ Get list of orders from store.
 ### Example
 
 ```bash
- orderList  customer_id=value  customer_email=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  start=value  count=value  page_cursor=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  created_to=value  created_from=value  modified_to=value  modified_from=value  store_id=value  ids=value  order_ids=value  ebay_order_status=value  basket_id=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  since_id=value  is_deleted=value  shipping_country_iso3=value  enable_cache=value  delivery_method=value  tags=value  ship_node_type=value  currency_id=value  return_status=value  use_latest_api_version=value
+ orderList  start=value  count=value  page_cursor=value  ids=value  order_ids=value  since_id=value  store_id=value  customer_id=value  customer_email=value  basket_id=value  currency_id=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  return_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  is_deleted=value  shipping_country_iso3=value  delivery_method=value  ship_node_type=value  created_to=value  created_from=value  modified_to=value  modified_from=value  tags=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -339,43 +339,43 @@ Get list of orders from store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
- **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
- **phone** | **string** | Filter orders by customer's phone number | [optional] [default to null]
- **orderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
- **orderStatusIds** | [**array[string]**](string.md) | Retrieves orders specified by order statuses | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve orders via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **ids** | **string** | Retrieves orders specified by ids | [optional] [default to null]
+ **orderIds** | **string** | Retrieves orders specified by order ids | [optional] [default to null]
+ **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
+ **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
+ **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
+ **basketId** | **string** | Retrieves order’s info specified by basket id. | [optional] [default to null]
+ **currencyId** | **string** | Currency Id | [optional] [default to null]
+ **phone** | **string** | Filter orders by customer's phone number | [optional] [default to null]
+ **orderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
+ **orderStatusIds** | [**array[string]**](string.md) | Retrieves orders specified by order statuses | [optional] [default to null]
+ **ebayOrderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
+ **financialStatus** | **string** | Retrieves orders specified by financial status | [optional] [default to null]
+ **financialStatusIds** | [**array[string]**](string.md) | Retrieves orders specified by financial status ids | [optional] [default to null]
+ **fulfillmentStatus** | **string** | Create order with fulfillment status | [optional] [default to null]
+ **returnStatus** | **string** | Retrieves orders specified by return status | [optional] [default to null]
+ **fulfillmentChannel** | **string** | Retrieves order with a fulfillment channel | [optional] [default to null]
+ **shippingMethod** | **string** | Retrieve entities according to shipping method | [optional] [default to null]
+ **skipOrderIds** | **string** | Skipped orders by ids | [optional] [default to null]
+ **isDeleted** | **boolean** | Filter deleted orders | [optional] [default to null]
+ **shippingCountryIso3** | **string** | Retrieve entities according to shipping country | [optional] [default to null]
+ **deliveryMethod** | **string** | Retrieves order with delivery method | [optional] [default to null]
+ **shipNodeType** | **string** | Retrieves order with ship node type | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
+ **tags** | **string** | Order tags | [optional] [default to null]
  **sortBy** | **string** | Set field to sort by | [optional] [default to order_id]
  **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to order_id,customer,totals,address,items,bundles,status]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
- **ids** | **string** | Retrieves orders specified by ids | [optional] [default to null]
- **orderIds** | **string** | Retrieves orders specified by order ids | [optional] [default to null]
- **ebayOrderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
- **basketId** | **string** | Retrieves order’s info specified by basket id. | [optional] [default to null]
- **financialStatus** | **string** | Retrieves orders specified by financial status | [optional] [default to null]
- **financialStatusIds** | [**array[string]**](string.md) | Retrieves orders specified by financial status ids | [optional] [default to null]
- **fulfillmentStatus** | **string** | Create order with fulfillment status | [optional] [default to null]
- **fulfillmentChannel** | **string** | Retrieves order with a fulfillment channel | [optional] [default to null]
- **shippingMethod** | **string** | Retrieve entities according to shipping method | [optional] [default to null]
- **skipOrderIds** | **string** | Skipped orders by ids | [optional] [default to null]
- **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
- **isDeleted** | **boolean** | Filter deleted orders | [optional] [default to null]
- **shippingCountryIso3** | **string** | Retrieve entities according to shipping country | [optional] [default to null]
  **enableCache** | **boolean** | If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) | [optional] [default to false]
- **deliveryMethod** | **string** | Retrieves order with delivery method | [optional] [default to null]
- **tags** | **string** | Order tags | [optional] [default to null]
- **shipNodeType** | **string** | Retrieves order with ship node type | [optional] [default to null]
- **currencyId** | **string** | Currency Id | [optional] [default to null]
- **returnStatus** | **string** | Retrieves orders specified by return status | [optional] [default to null]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
@@ -687,7 +687,7 @@ Get information of shipment.
 ### Example
 
 ```bash
- orderShipmentInfo  id=value  order_id=value  start=value  params=value  response_fields=value  exclude=value  store_id=value
+ orderShipmentInfo  id=value  order_id=value  start=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -698,10 +698,10 @@ Name | Type | Description  | Notes
  **id** | **string** | Entity id | [default to null]
  **orderId** | **string** | Defines the order id | [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_id,items,tracking_numbers]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_id,items,tracking_numbers]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -728,7 +728,7 @@ Get list of shipments by orders.
 ### Example
 
 ```bash
- orderShipmentList  order_id=value  page_cursor=value  start=value  count=value  params=value  response_fields=value  exclude=value  created_from=value  created_to=value  modified_from=value  modified_to=value  store_id=value
+ orderShipmentList  order_id=value  start=value  count=value  page_cursor=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -737,17 +737,17 @@ Get list of shipments by orders.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string** | Retrieves shipments specified by order id | [default to null]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_id,items,tracking_numbers]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **storeId** | **string** | Store Id | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+ **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_id,items,tracking_numbers]
+ **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
 
 ### Return type
 
@@ -881,7 +881,7 @@ Retrieve list of order transaction
 ### Example
 
 ```bash
- orderTransactionList  order_ids=value  count=value  store_id=value  params=value  response_fields=value  exclude=value  page_cursor=value
+ orderTransactionList  order_ids=value  count=value  page_cursor=value  store_id=value  params=value  response_fields=value  exclude=value
 ```
 
 ### Parameters
@@ -891,11 +891,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderIds** | **string** | Retrieves order transactions specified by order ids | [default to null]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,order_id,amount,description]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
- **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
 
 ### Return type
 
@@ -922,7 +922,7 @@ Update existing order.
 ### Example
 
 ```bash
- orderUpdate  order_id=value  store_id=value  order_status=value  cancellation_reason=value  comment=value  admin_comment=value  admin_private_comment=value  date_modified=value  date_finished=value  financial_status=value  fulfillment_status=value  order_payment_method=value  send_notifications=value  origin=value  create_invoice=value  invoice_admin_comment=value
+ orderUpdate  order_id=value  store_id=value  order_status=value  financial_status=value  fulfillment_status=value  cancellation_reason=value  order_payment_method=value  comment=value  admin_comment=value  admin_private_comment=value  invoice_admin_comment=value  date_modified=value  date_finished=value  send_notifications=value  create_invoice=value  origin=value
 ```
 
 ### Parameters
@@ -933,19 +933,19 @@ Name | Type | Description  | Notes
  **orderId** | **string** | Defines the orders specified by order id | [default to null]
  **storeId** | **string** | Defines store id where the order should be found | [optional] [default to null]
  **orderStatus** | **string** | Defines new order's status | [optional] [default to null]
+ **financialStatus** | **string** | Update order financial status to specified | [optional] [default to null]
+ **fulfillmentStatus** | **string** | Create order with fulfillment status | [optional] [default to null]
  **cancellationReason** | **string** | Defines the cancellation reason when the order will be canceled | [optional] [default to null]
+ **orderPaymentMethod** | **string** | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid' | [optional] [default to null]
  **comment** | **string** | Specifies order comment | [optional] [default to null]
  **adminComment** | **string** | Specifies admin's order comment | [optional] [default to null]
  **adminPrivateComment** | **string** | Specifies private admin's order comment | [optional] [default to null]
+ **invoiceAdminComment** | **string** | Specifies admin's order invoice comment | [optional] [default to null]
  **dateModified** | **string** | Specifies order's  modification date | [optional] [default to null]
  **dateFinished** | **string** | Specifies order's  finished date | [optional] [default to null]
- **financialStatus** | **string** | Update order financial status to specified | [optional] [default to null]
- **fulfillmentStatus** | **string** | Create order with fulfillment status | [optional] [default to null]
- **orderPaymentMethod** | **string** | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid' | [optional] [default to null]
  **sendNotifications** | **boolean** | Send notifications to customer after order was created | [optional] [default to false]
- **origin** | **string** | The source of the order | [optional] [default to null]
  **createInvoice** | **boolean** | Determines whether an invoice should be created if it has not already been created | [optional] [default to null]
- **invoiceAdminComment** | **string** | Specifies admin's order invoice comment | [optional] [default to null]
+ **origin** | **string** | The source of the order | [optional] [default to null]
 
 ### Return type
 

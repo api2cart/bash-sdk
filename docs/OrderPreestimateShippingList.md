@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **warehouseUnderscoreid** | **string** |  | [optional] [default to null]
-**customerUnderscoreemail** | **string** |  | [optional] [default to null]
 **customerUnderscoreid** | **string** |  | [optional] [default to null]
+**customerUnderscoreemail** | **string** |  | [optional] [default to null]
+**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **shippUnderscoreaddressUnderscore1** | **string** |  | [optional] [default to null]
 **shippUnderscorecity** | **string** |  | [optional] [default to null]
 **shippUnderscorepostcode** | **string** |  | [optional] [default to null]

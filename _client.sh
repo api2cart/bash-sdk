@@ -475,12 +475,12 @@ case $state in
       accountCartList)
         local -a _op_arguments
         _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+                    "store_url=:[QUERY] A web address of a store"
+"store_key=:[QUERY] Find store by store key"
 "request_from_date=:[QUERY] Retrieve entities from their creation date"
 "request_to_date=:[QUERY] Retrieve entities to their creation date"
-"store_url=:[QUERY] A web address of a store"
-"store_key=:[QUERY] Find store by store key"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -547,6 +547,7 @@ case $state in
 "shopline_access_token=:[QUERY] Shopline APP Key"
 "shopline_app_key=:[QUERY] Shopline APP Key"
 "shopline_app_secret=:[QUERY] Shopline App Secret"
+"shopline_shared_secret=:[QUERY] Shopline Shared Secret"
 "shopify_access_token=:[QUERY] Access token authorizing the app to access resources on behalf of a user"
 "shopify_api_key=:[QUERY] Shopify API Key"
 "shopify_api_password=:[QUERY] Shopify API Password"
@@ -635,8 +636,8 @@ case $state in
       accountFailedWebhooks)
         local -a _op_arguments
         _op_arguments=(
-                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "ids=:[QUERY] List of сomma-separated webhook ids"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -651,8 +652,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "type=:[QUERY] Defines attribute&#39;s type"
-"code=:[QUERY] Entity code"
 "name=:[QUERY] Defines attributes&#39;s name"
+"code=:[QUERY] Entity code"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
 "visible=true:[QUERY] Set visibility status"
@@ -708,9 +709,9 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -733,8 +734,8 @@ case $state in
       attributeDelete)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"id=:[QUERY] Entity id"
+                    "id=:[QUERY] Entity id"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -743,11 +744,11 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"attribute_set_id=:[QUERY] Attribute set id"
 "lang_id=:[QUERY] Language id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"attribute_set_id=:[QUERY] Attribute set id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -758,9 +759,9 @@ case $state in
 "attribute_set_id=:[QUERY] Attribute set id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -769,20 +770,20 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"type=:[QUERY] Defines attribute&#39;s type"
 "attribute_ids=:[QUERY] Filter attributes by ids"
 "attribute_set_id=:[QUERY] Filter items by attribute set id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Retrieves attributes on specified language id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"type=:[QUERY] Defines attribute&#39;s type"
 "visible=true:[QUERY] Filter items by visibility status"
           "visible=false:[QUERY] Filter items by visibility status"
 "required=true:[QUERY] Defines if the option is required"
           "required=false:[QUERY] Defines if the option is required"
 "system=true:[QUERY] True if attribute is system"
           "system=false:[QUERY] True if attribute is system"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -857,9 +858,9 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Entity id"
 "store_id=:[QUERY] Store Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -877,9 +878,9 @@ case $state in
       basketLiveShippingServiceCreate)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"name=:[QUERY] Shipping Service Name"
+                    "name=:[QUERY] Shipping Service Name"
 "callback=:[QUERY] Callback url that returns shipping rates. It should be able to accept POST requests with json data."
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -893,9 +894,9 @@ case $state in
       basketLiveShippingServiceList)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -904,11 +905,11 @@ case $state in
         _op_arguments=(
                     "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"ids=:[QUERY] Filter batch jobs by ids"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "processed_from=:[QUERY] Retrieve entities according to their processing datetime"
 "processed_to=:[QUERY] Retrieve entities according to their processing datetime"
-"ids=:[QUERY] Filter batch jobs by ids"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -955,12 +956,12 @@ case $state in
       cartCatalogPriceRulesList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "ids=:[QUERY] Retrieves  catalog_price_rules by ids"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -995,17 +996,17 @@ case $state in
       cartCouponConditionAdd)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"coupon_id=:[QUERY] Coupon Id"
-"target=:[QUERY] Defines condition operator"
+                    "coupon_id=:[QUERY] Coupon Id"
 "entity=:[QUERY] Defines condition entity type"
 "key=:[QUERY] Defines condition entity attribute key"
 "operator=:[QUERY] Defines condition operator"
 "value=:[QUERY] Defines condition value, can be comma separated according to the operator."
+"target=:[QUERY] Defines condition operator"
 "include_tax=true:[QUERY] Indicates whether to apply a discount for taxes."
           "include_tax=false:[QUERY] Indicates whether to apply a discount for taxes."
 "include_shipping=true:[QUERY] Indicates whether to apply a discount for shipping."
           "include_shipping=false:[QUERY] Indicates whether to apply a discount for shipping."
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1013,12 +1014,12 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "store_id=:[QUERY] Store Id"
+"avail=true:[QUERY] Defines category&#39;s visibility status"
+          "avail=false:[QUERY] Defines category&#39;s visibility status"
 "date_start_from=:[QUERY] Filter entity by date_start (greater or equal)"
 "date_start_to=:[QUERY] Filter entity by date_start (less or equal)"
 "date_end_from=:[QUERY] Filter entity by date_end (greater or equal)"
 "date_end_to=:[QUERY] Filter entity by date_end (less or equal)"
-"avail=true:[QUERY] Defines category&#39;s visibility status"
-          "avail=false:[QUERY] Defines category&#39;s visibility status"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1033,20 +1034,20 @@ case $state in
       cartCouponList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "coupons_ids=:[QUERY] Filter coupons by ids"
 "store_id=:[QUERY] Filter coupons by store id"
+"lang_id=:[QUERY] Language id"
+"avail=true:[QUERY] Filter coupons by avail status"
+          "avail=false:[QUERY] Filter coupons by avail status"
 "date_start_from=:[QUERY] Filter entity by date_start (greater or equal)"
 "date_start_to=:[QUERY] Filter entity by date_start (less or equal)"
 "date_end_from=:[QUERY] Filter entity by date_end (greater or equal)"
 "date_end_to=:[QUERY] Filter entity by date_end (less or equal)"
-"avail=true:[QUERY] Filter coupons by avail status"
-          "avail=false:[QUERY] Filter coupons by avail status"
-"lang_id=:[QUERY] Language id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1102,12 +1103,12 @@ case $state in
       cartGiftcardList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "store_id=:[QUERY] Store Id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1115,10 +1116,10 @@ case $state in
       cartInfo)
         local -a _op_arguments
         _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+                    "store_id=:[QUERY] Store Id"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1131,15 +1132,15 @@ case $state in
       cartMetaDataList)
         local -a _op_arguments
         _op_arguments=(
-                    "entity_id=:[QUERY] Entity Id"
+                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"entity_id=:[QUERY] Entity Id"
 "entity=:[QUERY] Entity"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
 "key=:[QUERY] Key"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1148,12 +1149,12 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "entity_id=:[QUERY] Entity Id"
-"entity=:[QUERY] Entity"
-"store_id=:[QUERY] Store Id"
-"lang_id=:[QUERY] Language id"
 "key=:[QUERY] Key"
 "value=:[QUERY] Value"
 "namespace=:[QUERY] Metafield namespace"
+"entity=:[QUERY] Entity"
+"store_id=:[QUERY] Store Id"
+"lang_id=:[QUERY] Language id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1161,10 +1162,10 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "entity_id=:[QUERY] Entity Id"
-"entity=:[QUERY] Entity"
-"store_id=:[QUERY] Store Id"
 "key=:[QUERY] Key"
 "id=:[QUERY] Entity id"
+"entity=:[QUERY] Entity"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1177,9 +1178,9 @@ case $state in
       cartPluginList)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1208,17 +1209,17 @@ case $state in
       cartScriptList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"script_ids=:[QUERY] Retrieves only scripts with specific ids"
+"store_id=:[QUERY] Store Id"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"script_ids=:[QUERY] Retrieves only scripts with specific ids"
-"store_id=:[QUERY] Store Id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1226,11 +1227,11 @@ case $state in
       cartShippingZonesList)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"store_id=:[QUERY] Store Id"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1247,21 +1248,21 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "name=:[QUERY] Defines category&#39;s name that has to be added"
-"parent_id=:[QUERY] Adds categories specified by parent id"
-"stores_ids=:[QUERY] Create category in the stores that is specified by comma-separated stores&#39; id"
-"store_id=:[QUERY] Store Id"
-"lang_id=:[QUERY] Language id"
-"avail=true:[QUERY] Defines category&#39;s visibility status"
-          "avail=false:[QUERY] Defines category&#39;s visibility status"
-"sort_order=:[QUERY] Sort number in the list"
-"created_time=:[QUERY] Entity&#39;s date creation"
-"modified_time=:[QUERY] Entity&#39;s date modification"
 "description=:[QUERY] Defines category&#39;s description"
 "short_description=:[QUERY] Defines short description"
+"parent_id=:[QUERY] Adds categories specified by parent id"
+"avail=true:[QUERY] Defines category&#39;s visibility status"
+          "avail=false:[QUERY] Defines category&#39;s visibility status"
+"created_time=:[QUERY] Entity&#39;s date creation"
+"modified_time=:[QUERY] Entity&#39;s date modification"
+"sort_order=:[QUERY] Sort number in the list"
 "meta_title=:[QUERY] Defines unique meta title for each entity"
 "meta_description=:[QUERY] Defines unique meta description of a entity"
 "meta_keywords=:[QUERY] Defines unique meta keywords for each entity"
 "seo_url=:[QUERY] Defines unique category&#39;s URL for SEO"
+"store_id=:[QUERY] Store Id"
+"stores_ids=:[QUERY] Create category in the stores that is specified by comma-separated stores&#39; id"
+"lang_id=:[QUERY] Language id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1274,8 +1275,8 @@ case $state in
       categoryAssign)
         local -a _op_arguments
         _op_arguments=(
-                    "product_id=:[QUERY] Defines category assign to the product, specified by product id"
-"category_id=:[QUERY] Defines category assign, specified by category id"
+                    "category_id=:[QUERY] Defines category assign, specified by category id"
+"product_id=:[QUERY] Defines category assign to the product, specified by product id"
 "store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1286,12 +1287,12 @@ case $state in
                     "parent_id=:[QUERY] Counts categories specified by parent id"
 "store_id=:[QUERY] Counts category specified by store id"
 "lang_id=:[QUERY] Counts category specified by language id"
+"avail=true:[QUERY] Defines category&#39;s visibility status"
+          "avail=false:[QUERY] Defines category&#39;s visibility status"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"avail=true:[QUERY] Defines category&#39;s visibility status"
-          "avail=false:[QUERY] Defines category&#39;s visibility status"
 "product_type=:[QUERY] A categorization for the product"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Counts categories that are searched specified by field"
@@ -1326,11 +1327,11 @@ case $state in
                     "category_id=:[QUERY] Defines category id where the image should be added"
 "image_name=:[QUERY] Defines image&#39;s name"
 "url=:[QUERY] Defines URL of the image that has to be added"
+"type=:[QUERY] Defines image&#39;s types that are specified by comma-separated list"
+"store_id=:[QUERY] Store Id"
 "label=:[QUERY] Defines alternative text that has to be attached to the picture"
 "mime=:[QUERY] Mime type of image http://en.wikipedia.org/wiki/Internet_media_type."
-"type=:[QUERY] Defines image&#39;s types that are specified by comma-separated list"
 "position=:[QUERY] Defines image’s position in the list"
-"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1347,12 +1348,12 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "id=:[QUERY] Retrieves category&#39;s info specified by category id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "store_id=:[QUERY] Retrieves category info  specified by store id"
 "lang_id=:[QUERY] Retrieves category info  specified by language id"
 "schema_type=:[QUERY] The name of the requirements set for the provided schema."
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
@@ -1365,21 +1366,21 @@ case $state in
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"parent_id=:[QUERY] Retrieves categories specified by parent id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "store_id=:[QUERY] Retrieves categories specified by store id"
 "lang_id=:[QUERY] Retrieves categorys specified by language id"
+"parent_id=:[QUERY] Retrieves categories specified by parent id"
+"avail=true:[QUERY] Defines category&#39;s visibility status"
+          "avail=false:[QUERY] Defines category&#39;s visibility status"
+"product_type=:[QUERY] A categorization for the product"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"avail=true:[QUERY] Defines category&#39;s visibility status"
-          "avail=false:[QUERY] Defines category&#39;s visibility status"
-"product_type=:[QUERY] A categorization for the product"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Category search that is specified by field"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
@@ -1402,20 +1403,20 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Defines category update specified by category id"
 "name=:[QUERY] Defines new category’s name"
+"description=:[QUERY] Defines new category&#39;s description"
+"short_description=:[QUERY] Defines short description"
 "parent_id=:[QUERY] Defines new parent category id"
-"stores_ids=:[QUERY] Update category in the stores that is specified by comma-separated stores&#39; id"
 "avail=true:[QUERY] Defines category&#39;s visibility status"
           "avail=false:[QUERY] Defines category&#39;s visibility status"
 "sort_order=:[QUERY] Sort number in the list"
 "modified_time=:[QUERY] Entity&#39;s date modification"
-"description=:[QUERY] Defines new category&#39;s description"
-"short_description=:[QUERY] Defines short description"
 "meta_title=:[QUERY] Defines unique meta title for each entity"
 "meta_description=:[QUERY] Defines unique meta description of a entity"
 "meta_keywords=:[QUERY] Defines unique meta keywords for each entity"
 "seo_url=:[QUERY] Defines unique category&#39;s URL for SEO"
-"lang_id=:[QUERY] Language id"
 "store_id=:[QUERY] Store Id"
+"stores_ids=:[QUERY] Update category in the stores that is specified by comma-separated stores&#39; id"
+"lang_id=:[QUERY] Language id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1439,28 +1440,28 @@ case $state in
 "customer_id=:[QUERY] Retrieves orders specified by customer id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       customerCount)
         local -a _op_arguments
         _op_arguments=(
-                    "group_id=:[QUERY] Customer group_id"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"store_id=:[QUERY] Counts customer specified by store id"
+                    "ids=:[QUERY] Counts customers specified by ids"
+"since_id=:[QUERY] Retrieve entities starting from the specified id."
 "customer_list_id=:[QUERY] The numeric ID of the customer list in Demandware."
+"group_id=:[QUERY] Customer group_id"
+"store_id=:[QUERY] Counts customer specified by store id"
 "avail=true:[QUERY] Defines category&#39;s visibility status"
           "avail=false:[QUERY] Defines category&#39;s visibility status"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Counts customers that are searched specified by field"
-"ids=:[QUERY] Counts customers specified by ids"
-"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1493,17 +1494,17 @@ case $state in
       customerGroupList)
         local -a _op_arguments
         _op_arguments=(
-                    "disable_cache=true:[QUERY] Disable cache for current request"
-          "disable_cache=false:[QUERY] Disable cache for current request"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"group_ids=:[QUERY] Groups that will be assigned to a customer"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
-"group_ids=:[QUERY] Groups that will be assigned to a customer"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"disable_cache=true:[QUERY] Disable cache for current request"
+          "disable_cache=false:[QUERY] Disable cache for current request"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1511,37 +1512,37 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "id=:[QUERY] Retrieves customer&#39;s info specified by customer id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "store_id=:[QUERY] Retrieves customer info specified by store id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       customerList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"ids=:[QUERY] Retrieves customers specified by ids"
+"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"customer_list_id=:[QUERY] The numeric ID of the customer list in Demandware."
 "group_id=:[QUERY] Customer group_id"
 "store_id=:[QUERY] Retrieves customers specified by store id"
-"customer_list_id=:[QUERY] The numeric ID of the customer list in Demandware."
 "avail=true:[QUERY] Defines category&#39;s visibility status"
           "avail=false:[QUERY] Defines category&#39;s visibility status"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Customer search that is specified by field"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
 "sort_by=:[QUERY] Set field to sort by"
 "sort_direction=:[QUERY] Set sorting direction"
-"ids=:[QUERY] Retrieves customers specified by ids"
-"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1554,12 +1555,12 @@ case $state in
       customerWishlistList)
         local -a _op_arguments
         _op_arguments=(
-                    "customer_id=:[QUERY] Retrieves orders specified by customer id"
-"id=:[QUERY] Entity id"
-"store_id=:[QUERY] Store Id"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"customer_id=:[QUERY] Retrieves orders specified by customer id"
+"id=:[QUERY] Entity id"
+"store_id=:[QUERY] Store Id"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1567,40 +1568,40 @@ case $state in
       marketplaceProductFind)
         local -a _op_arguments
         _op_arguments=(
-                    "store_id=:[QUERY] Store Id"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
 "keyword=:[QUERY] Defines search keyword"
+"categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
+"store_id=:[QUERY] Store Id"
 "asin=:[QUERY] Amazon Standard Identification Number."
 "ean=:[QUERY] European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products."
 "gtin=:[QUERY] Global Trade Item Number. An GTIN is an identifier for trade items."
 "upc=:[QUERY] Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products."
 "mpn=:[QUERY] Manufacturer Part Number. A MPN is an identifier of a particular part design or material used."
 "isbn=:[QUERY] International Standard Book Number. An ISBN is a unique identifier for books."
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       orderAbandonedList)
         local -a _op_arguments
         _op_arguments=(
-                    "customer_id=:[QUERY] Retrieves orders specified by customer id"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"customer_id=:[QUERY] Retrieves orders specified by customer id"
 "customer_email=:[QUERY] Retrieves orders specified by customer email"
-"created_to=:[QUERY] Retrieve entities to their creation date"
+"store_id=:[QUERY] Store Id"
 "created_from=:[QUERY] Retrieve entities from their creation date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
 "skip_empty_email=true:[QUERY] Filter empty emails"
           "skip_empty_email=false:[QUERY] Filter empty emails"
-"store_id=:[QUERY] Store Id"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1614,17 +1615,13 @@ case $state in
       orderCount)
         local -a _op_arguments
         _op_arguments=(
-                    "customer_id=:[QUERY] Counts orders quantity specified by customer id"
+                    "order_ids=:[QUERY] Counts orders specified by order ids"
+"ids=:[QUERY] Counts orders specified by ids"
+"customer_id=:[QUERY] Counts orders quantity specified by customer id"
+"store_id=:[QUERY] Counts orders quantity specified by store id"
 "customer_email=:[QUERY] Counts orders quantity specified by customer email"
 "order_status=:[QUERY] Counts orders quantity specified by order status"
 "order_status_ids=:[QUERY] Retrieves orders specified by order statuses"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"store_id=:[QUERY] Counts orders quantity specified by store id"
-"ids=:[QUERY] Counts orders specified by ids"
-"order_ids=:[QUERY] Counts orders specified by order ids"
 "ebay_order_status=:[QUERY] Counts orders quantity specified by order status"
 "financial_status=:[QUERY] Counts orders quantity specified by financial status"
 "financial_status_ids=:[QUERY] Retrieves orders count specified by financial status ids"
@@ -1634,6 +1631,10 @@ case $state in
 "delivery_method=:[QUERY] Retrieves order with delivery method"
 "tags=:[QUERY] Order tags"
 "ship_node_type=:[QUERY] Retrieves order with ship node type"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1646,18 +1647,18 @@ case $state in
       orderFind)
         local -a _op_arguments
         _op_arguments=(
-                    "customer_id=:[QUERY] Retrieves orders specified by customer id"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"customer_id=:[QUERY] Retrieves orders specified by customer id"
 "customer_email=:[QUERY] Retrieves orders specified by customer email"
 "order_status=:[QUERY] Retrieves orders specified by order status"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"financial_status=:[QUERY] Retrieves orders specified by financial status"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
-"financial_status=:[QUERY] Retrieves orders specified by financial status"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1671,12 +1672,12 @@ case $state in
       orderInfo)
         local -a _op_arguments
         _op_arguments=(
-                    "order_id=:[QUERY] Retrieves order’s info specified by order id"
-"id=:[QUERY] Retrieves order info specified by id"
+                    "id=:[QUERY] Retrieves order info specified by id"
+"order_id=:[QUERY] Retrieves order’s info specified by order id"
+"store_id=:[QUERY] Defines store id where the order should be found"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"store_id=:[QUERY] Defines store id where the order should be found"
 "enable_cache=true:[QUERY] If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache"
           "enable_cache=false:[QUERY] If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
@@ -1687,45 +1688,45 @@ case $state in
       orderList)
         local -a _op_arguments
         _op_arguments=(
-                    "customer_id=:[QUERY] Retrieves orders specified by customer id"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"ids=:[QUERY] Retrieves orders specified by ids"
+"order_ids=:[QUERY] Retrieves orders specified by order ids"
+"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"store_id=:[QUERY] Store Id"
+"customer_id=:[QUERY] Retrieves orders specified by customer id"
 "customer_email=:[QUERY] Retrieves orders specified by customer email"
+"basket_id=:[QUERY] Retrieves order’s info specified by basket id."
+"currency_id=:[QUERY] Currency Id"
 "phone=:[QUERY] Filter orders by customer&#39;s phone number"
 "order_status=:[QUERY] Retrieves orders specified by order status"
 "order_status_ids=:[QUERY] Retrieves orders specified by order statuses"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"page_cursor=:[QUERY] Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"ebay_order_status=:[QUERY] Retrieves orders specified by order status"
+"financial_status=:[QUERY] Retrieves orders specified by financial status"
+"financial_status_ids=:[QUERY] Retrieves orders specified by financial status ids"
+"fulfillment_status=:[QUERY] Create order with fulfillment status"
+"return_status=:[QUERY] Retrieves orders specified by return status"
+"fulfillment_channel=:[QUERY] Retrieves order with a fulfillment channel"
+"shipping_method=:[QUERY] Retrieve entities according to shipping method"
+"skip_order_ids=:[QUERY] Skipped orders by ids"
+"is_deleted=true:[QUERY] Filter deleted orders"
+          "is_deleted=false:[QUERY] Filter deleted orders"
+"shipping_country_iso3=:[QUERY] Retrieve entities according to shipping country"
+"delivery_method=:[QUERY] Retrieves order with delivery method"
+"ship_node_type=:[QUERY] Retrieves order with ship node type"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"tags=:[QUERY] Order tags"
 "sort_by=:[QUERY] Set field to sort by"
 "sort_direction=:[QUERY] Set sorting direction"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"store_id=:[QUERY] Store Id"
-"ids=:[QUERY] Retrieves orders specified by ids"
-"order_ids=:[QUERY] Retrieves orders specified by order ids"
-"ebay_order_status=:[QUERY] Retrieves orders specified by order status"
-"basket_id=:[QUERY] Retrieves order’s info specified by basket id."
-"financial_status=:[QUERY] Retrieves orders specified by financial status"
-"financial_status_ids=:[QUERY] Retrieves orders specified by financial status ids"
-"fulfillment_status=:[QUERY] Create order with fulfillment status"
-"fulfillment_channel=:[QUERY] Retrieves order with a fulfillment channel"
-"shipping_method=:[QUERY] Retrieve entities according to shipping method"
-"skip_order_ids=:[QUERY] Skipped orders by ids"
-"since_id=:[QUERY] Retrieve entities starting from the specified id."
-"is_deleted=true:[QUERY] Filter deleted orders"
-          "is_deleted=false:[QUERY] Filter deleted orders"
-"shipping_country_iso3=:[QUERY] Retrieve entities according to shipping country"
 "enable_cache=true:[QUERY] If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)"
           "enable_cache=false:[QUERY] If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)"
-"delivery_method=:[QUERY] Retrieves order with delivery method"
-"tags=:[QUERY] Order tags"
-"ship_node_type=:[QUERY] Retrieves order with ship node type"
-"currency_id=:[QUERY] Currency Id"
-"return_status=:[QUERY] Retrieves orders specified by return status"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
@@ -1788,31 +1789,31 @@ case $state in
       orderShipmentInfo)
         local -a _op_arguments
         _op_arguments=(
-                    "id=:[QUERY] Entity id"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"id=:[QUERY] Entity id"
 "order_id=:[QUERY] Defines the order id"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "store_id=:[QUERY] Store Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       orderShipmentList)
         local -a _op_arguments
         _op_arguments=(
-                    "order_id=:[QUERY] Retrieves shipments specified by order id"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"order_id=:[QUERY] Retrieves shipments specified by order id"
+"store_id=:[QUERY] Store Id"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"store_id=:[QUERY] Store Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1841,12 +1842,12 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "order_ids=:[QUERY] Retrieves order transactions specified by order ids"
 "store_id=:[QUERY] Store Id"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1856,21 +1857,21 @@ case $state in
                     "order_id=:[QUERY] Defines the orders specified by order id"
 "store_id=:[QUERY] Defines store id where the order should be found"
 "order_status=:[QUERY] Defines new order&#39;s status"
+"financial_status=:[QUERY] Update order financial status to specified"
+"fulfillment_status=:[QUERY] Create order with fulfillment status"
 "cancellation_reason=:[QUERY] Defines the cancellation reason when the order will be canceled"
+"order_payment_method=:[QUERY] Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;"
 "comment=:[QUERY] Specifies order comment"
 "admin_comment=:[QUERY] Specifies admin&#39;s order comment"
 "admin_private_comment=:[QUERY] Specifies private admin&#39;s order comment"
+"invoice_admin_comment=:[QUERY] Specifies admin&#39;s order invoice comment"
 "date_modified=:[QUERY] Specifies order&#39;s  modification date"
 "date_finished=:[QUERY] Specifies order&#39;s  finished date"
-"financial_status=:[QUERY] Update order financial status to specified"
-"fulfillment_status=:[QUERY] Create order with fulfillment status"
-"order_payment_method=:[QUERY] Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;"
 "send_notifications=true:[QUERY] Send notifications to customer after order was created"
           "send_notifications=false:[QUERY] Send notifications to customer after order was created"
-"origin=:[QUERY] The source of the order"
 "create_invoice=true:[QUERY] Determines whether an invoice should be created if it has not already been created"
           "create_invoice=false:[QUERY] Determines whether an invoice should be created if it has not already been created"
-"invoice_admin_comment=:[QUERY] Specifies admin&#39;s order invoice comment"
+"origin=:[QUERY] The source of the order"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1889,20 +1890,20 @@ case $state in
       productAttributeList)
         local -a _op_arguments
         _op_arguments=(
-                    "product_id=:[QUERY] Retrieves attributes specified by product id"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"product_id=:[QUERY] Retrieves attributes specified by product id"
 "attribute_id=:[QUERY] Retrieves info for specified attribute_id"
 "variant_id=:[QUERY] Defines product&#39;s variants specified by variant id"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "attribute_group_id=:[QUERY] Filter by attribute_group_id"
-"set_name=:[QUERY] Retrieves attributes specified by set_name in Magento"
 "lang_id=:[QUERY] Retrieves attributes specified by language id"
 "store_id=:[QUERY] Retrieves attributes specified by store id"
+"set_name=:[QUERY] Retrieves attributes specified by set_name in Magento"
 "sort_by=:[QUERY] Set field to sort by"
 "sort_direction=:[QUERY] Set sorting direction"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1942,20 +1943,20 @@ case $state in
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "brand_ids=:[QUERY] Retrieves brands specified by brand ids"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "category_id=:[QUERY] Retrieves product brands specified by category id"
+"parent_id=:[QUERY] Retrieves brands specified by parent id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"find_where=:[QUERY] Entity search that is specified by the comma-separated unique fields"
+"find_value=:[QUERY] Entity search that is specified by some value"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"parent_id=:[QUERY] Retrieves brands specified by parent id"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"find_where=:[QUERY] Entity search that is specified by the comma-separated unique fields"
-"find_value=:[QUERY] Entity search that is specified by some value"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1972,14 +1973,14 @@ case $state in
       productChildItemInfo)
         local -a _op_arguments
         _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"product_id=:[QUERY] Filter by parent product id"
+                    "product_id=:[QUERY] Filter by parent product id"
 "id=:[QUERY] Entity id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
 "currency_id=:[QUERY] Currency Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
@@ -1988,16 +1989,9 @@ case $state in
       productChildItemList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
+"page_cursor=:[QUERY] Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "product_id=:[QUERY] Filter by parent product id"
 "product_ids=:[QUERY] Filter by parent product ids"
 "sku=:[QUERY] Filter by products variant&#39;s sku"
@@ -2008,46 +2002,53 @@ case $state in
           "avail_sale=false:[QUERY] Specifies the set of available/not available products for sale"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Child products search that is specified by field"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
+"return_global=true:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
+          "return_global=false:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
-"return_global=true:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
-          "return_global=false:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       productCount)
         local -a _op_arguments
         _op_arguments=(
-                    "category_id=:[QUERY] Counts products specified by category id"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
+                    "product_ids=:[QUERY] Counts products specified by product ids"
+"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
+"category_id=:[QUERY] Counts products specified by category id"
+"store_id=:[QUERY] Counts products specified by store id"
+"lang_id=:[QUERY] Counts products specified by language id"
 "avail_view=true:[QUERY] Specifies the set of visible/invisible products"
           "avail_view=false:[QUERY] Specifies the set of visible/invisible products"
 "avail_sale=true:[QUERY] Specifies the set of available/not available products for sale"
           "avail_sale=false:[QUERY] Specifies the set of available/not available products for sale"
-"store_id=:[QUERY] Counts products specified by store id"
-"lang_id=:[QUERY] Counts products specified by language id"
-"product_ids=:[QUERY] Counts products specified by product ids"
-"since_id=:[QUERY] Retrieve entities starting from the specified id."
-"report_request_id=:[QUERY] Report request id"
-"disable_report_cache=true:[QUERY] Disable report cache for current request"
-          "disable_report_cache=false:[QUERY] Disable report cache for current request"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
 "brand_name=:[QUERY] Retrieves brands specified by brand name"
 "product_attributes=:[QUERY] Defines product attributes"
 "status=:[QUERY] Defines product&#39;s status"
 "type=:[QUERY] Defines products&#39;s type"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Counts products that are searched specified by field"
-"use_latest_api_version=true:[QUERY] Use the latest platform API version"
-          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
+"report_request_id=:[QUERY] Report request id"
 "return_global=true:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
           "return_global=false:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
-"categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
+"disable_report_cache=true:[QUERY] Disable report cache for current request"
+          "disable_report_cache=false:[QUERY] Disable report cache for current request"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2071,14 +2072,14 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "default=true:[QUERY] Specifies the set of default/not default currencies"
           "default=false:[QUERY] Specifies the set of default/not default currencies"
 "avail=true:[QUERY] Specifies the set of available/not available currencies"
           "avail=false:[QUERY] Specifies the set of available/not available currencies"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2133,14 +2134,14 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "product_id=:[QUERY] Defines product id where the image should be updated"
+"id=:[QUERY] Defines image update specified by image id"
 "variant_ids=:[QUERY] Defines product&#39;s variants ids"
+"store_id=:[QUERY] Store Id"
+"lang_id=:[QUERY] Language id"
 "image_name=:[QUERY] Defines image&#39;s name"
 "type=:[QUERY] Defines image&#39;s types that are specified by comma-separated list"
 "label=:[QUERY] Defines alternative text that has to be attached to the picture"
 "position=:[QUERY] Defines image’s position in the list"
-"id=:[QUERY] Defines image update specified by image id"
-"store_id=:[QUERY] Store Id"
-"lang_id=:[QUERY] Language id"
 "hidden=true:[QUERY] Define is hide image"
           "hidden=false:[QUERY] Define is hide image"
           )
@@ -2150,12 +2151,12 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "id=:[QUERY] Retrieves product&#39;s info specified by product id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "store_id=:[QUERY] Retrieves product info specified by store id"
 "lang_id=:[QUERY] Retrieves product info specified by language id"
 "currency_id=:[QUERY] Currency Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
@@ -2167,45 +2168,45 @@ case $state in
       productList)
         local -a _op_arguments
         _op_arguments=(
-                    "page_cursor=:[QUERY] Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"page_cursor=:[QUERY] Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"product_ids=:[QUERY] Retrieves products specified by product ids"
+"since_id=:[QUERY] Retrieve entities starting from the specified id."
+"categories_ids=:[QUERY] Retrieves products specified by categories ids"
 "category_id=:[QUERY] Retrieves products specified by category id"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
+"store_id=:[QUERY] Retrieves products specified by store id"
+"lang_id=:[QUERY] Retrieves products specified by language id"
+"currency_id=:[QUERY] Currency Id"
 "avail_view=true:[QUERY] Specifies the set of visible/invisible products"
           "avail_view=false:[QUERY] Specifies the set of visible/invisible products"
 "avail_sale=true:[QUERY] Specifies the set of available/not available products for sale"
           "avail_sale=false:[QUERY] Specifies the set of available/not available products for sale"
-"store_id=:[QUERY] Retrieves products specified by store id"
-"lang_id=:[QUERY] Retrieves products specified by language id"
-"currency_id=:[QUERY] Currency Id"
-"product_ids=:[QUERY] Retrieves products specified by product ids"
-"since_id=:[QUERY] Retrieve entities starting from the specified id."
-"report_request_id=:[QUERY] Report request id"
-"disable_report_cache=true:[QUERY] Disable report cache for current request"
-          "disable_report_cache=false:[QUERY] Disable report cache for current request"
-"sort_by=:[QUERY] Set field to sort by"
-"sort_direction=:[QUERY] Set sorting direction"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
 "sku=:[QUERY] Filter by product&#39;s sku"
-"disable_cache=true:[QUERY] Disable cache for current request"
-          "disable_cache=false:[QUERY] Disable cache for current request"
 "brand_name=:[QUERY] Retrieves brands specified by brand name"
 "product_attributes=:[QUERY] Defines product attributes"
 "status=:[QUERY] Defines product&#39;s status"
 "type=:[QUERY] Defines products&#39;s type"
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Product search that is specified by field"
-"use_latest_api_version=true:[QUERY] Use the latest platform API version"
-          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
 "return_global=true:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
           "return_global=false:[QUERY] Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned."
-"categories_ids=:[QUERY] Retrieves products specified by categories ids"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"sort_by=:[QUERY] Set field to sort by"
+"sort_direction=:[QUERY] Set sorting direction"
+"report_request_id=:[QUERY] Report request id"
+"disable_cache=true:[QUERY] Disable cache for current request"
+          "disable_cache=false:[QUERY] Disable cache for current request"
+"disable_report_cache=true:[QUERY] Disable report cache for current request"
+          "disable_report_cache=false:[QUERY] Disable report cache for current request"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2252,12 +2253,12 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "product_id=:[QUERY] Retrieves products&#39; options specified by product id"
 "lang_id=:[QUERY] Language id"
 "store_id=:[QUERY] Store Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2336,15 +2337,15 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "product_id=:[QUERY] Product id"
 "ids=:[QUERY] Retrieves reviews specified by ids"
 "store_id=:[QUERY] Store Id"
 "status=:[QUERY] Defines status"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2389,13 +2390,13 @@ case $state in
       productVariantCount)
         local -a _op_arguments
         _op_arguments=(
-                    "created_from=:[QUERY] Retrieve entities from their creation date"
+                    "product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
+"category_id=:[QUERY] Counts products’ variants specified by category id"
+"store_id=:[QUERY] Retrieves variants specified by store id"
+"created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"category_id=:[QUERY] Counts products’ variants specified by category id"
-"product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
-"store_id=:[QUERY] Retrieves variants specified by store id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2433,10 +2434,10 @@ case $state in
       productVariantInfo)
         local -a _op_arguments
         _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"id=:[QUERY] Retrieves variant&#39;s info specified by variant id"
+                    "id=:[QUERY] Retrieves variant&#39;s info specified by variant id"
 "store_id=:[QUERY] Retrieves variant info specified by store id"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2445,15 +2446,15 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
+"category_id=:[QUERY] Retrieves products’ variants specified by category id"
+"store_id=:[QUERY] Retrieves variants specified by store id"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"category_id=:[QUERY] Retrieves products’ variants specified by category id"
-"product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
-"store_id=:[QUERY] Retrieves variants specified by store id"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2521,9 +2522,9 @@ case $state in
                     "id=:[QUERY] Entity id"
 "order_id=:[QUERY] Defines the order id"
 "store_id=:[QUERY] Store Id"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2533,9 +2534,6 @@ case $state in
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "order_id=:[QUERY] Defines the order id"
 "order_ids=:[QUERY] Retrieves return requests specified by order ids"
 "customer_id=:[QUERY] Retrieves return requests specified by customer id"
@@ -2546,6 +2544,9 @@ case $state in
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
@@ -2570,18 +2571,18 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "subscribed=true:[QUERY] Filter by subscription status"
           "subscribed=false:[QUERY] Filter by subscription status"
 "store_id=:[QUERY] Store Id"
 "email=:[QUERY] Filter subscribers by email"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2591,8 +2592,8 @@ case $state in
                     "tax_class_id=:[QUERY] Retrieves taxes specified by class id"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -2600,15 +2601,15 @@ case $state in
       taxClassList)
         local -a _op_arguments
         _op_arguments=(
-                    "created_to=:[QUERY] Retrieve entities to their creation date"
+                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"store_id=:[QUERY] Store Id"
+"find_value=:[QUERY] Entity search that is specified by some value"
+"find_where=:[QUERY] Tax class search that is specified by field"
+"created_to=:[QUERY] Retrieve entities to their creation date"
 "created_from=:[QUERY] Retrieve entities from their creation date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
-"find_value=:[QUERY] Entity search that is specified by some value"
-"find_where=:[QUERY] Tax class search that is specified by field"
-"store_id=:[QUERY] Store Id"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -2653,14 +2654,14 @@ case $state in
       webhookList)
         local -a _op_arguments
         _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "entity=:[QUERY] The entity you want to filter webhooks by (e.g. order or product)"
 "action=:[QUERY] The action you want to filter webhooks by (e.g. add, update, or delete)"
 "active=true:[QUERY] The webhook status you want to filter webhooks by"
           "active=false:[QUERY] The webhook status you want to filter webhooks by"
 "ids=:[QUERY] List of сomma-separated webhook ids"
+"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
