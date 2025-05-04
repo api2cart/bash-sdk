@@ -559,6 +559,8 @@ case $state in
 "shopware_access_key=:[QUERY] Shopware access key"
 "shopware_api_key=:[QUERY] Shopware api key"
 "shopware_api_secret=:[QUERY] Shopware client secret access key"
+"bigcartel_user_name=:[QUERY] Subdomain of store"
+"bigcartel_password=:[QUERY] BigCartel account password"
 "volusion_login=:[QUERY] It&#39;s a Volusion account for which API is enabled"
 "volusion_password=:[QUERY] Volusion API Password"
 "walmart_client_id=:[QUERY] Walmart client ID. For the region &#39;ca&#39; use Consumer ID"

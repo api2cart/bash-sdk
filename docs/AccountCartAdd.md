@@ -37,6 +37,8 @@ Name | Type | Description | Notes
 **bolUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **bolUnderscoreapiUnderscoresecret** | **string** |  | [optional] [default to null]
 **bolUnderscoreretailerUnderscoreid** | **integer** |  | [optional] [default to null]
+**bigcartelUnderscoreuserUnderscorename** | **string** |  | [default to null]
+**bigcartelUnderscorepassword** | **string** |  | [default to null]
 **demandwareUnderscoreclientUnderscoreid** | **string** |  | [optional] [default to null]
 **demandwareUnderscoreapiUnderscorepassword** | **string** |  | [optional] [default to null]
 **demandwareUnderscoreuserUnderscorename** | **string** |  | [optional] [default to null]
