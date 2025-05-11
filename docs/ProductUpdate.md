@@ -85,6 +85,9 @@ Name | Type | Description | Notes
 **reindex** | **boolean** |  | [optional] [default to true]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 **checkUnderscoreprocessUnderscorestatus** | **boolean** |  | [optional] [default to false]
+**specifics** | [**array[ProductAddSpecificsInner]**](ProductAddSpecificsInner.md) |  | [optional] [default to null]
+**shopUnderscoresectionUnderscoreid** | **integer** |  | [optional] [default to null]
+**personalizationUnderscoredetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

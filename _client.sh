@@ -2571,7 +2571,8 @@ case $state in
       subscriberList)
         local -a _op_arguments
         _op_arguments=(
-                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "ids=:[QUERY] Retrieves subscribers specified by ids"
+"start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "subscribed=true:[QUERY] Filter by subscription status"

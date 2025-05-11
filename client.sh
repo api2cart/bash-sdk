@@ -1152,6 +1152,7 @@ operation_parameters_minimum_occurrences["returnList:::exclude"]=0
 operation_parameters_minimum_occurrences["returnList:::report_request_id"]=0
 operation_parameters_minimum_occurrences["returnList:::disable_report_cache"]=0
 operation_parameters_minimum_occurrences["returnReasonList:::store_id"]=0
+operation_parameters_minimum_occurrences["subscriberList:::ids"]=0
 operation_parameters_minimum_occurrences["subscriberList:::start"]=0
 operation_parameters_minimum_occurrences["subscriberList:::count"]=0
 operation_parameters_minimum_occurrences["subscriberList:::page_cursor"]=0
@@ -2268,6 +2269,7 @@ operation_parameters_maximum_occurrences["returnList:::exclude"]=0
 operation_parameters_maximum_occurrences["returnList:::report_request_id"]=0
 operation_parameters_maximum_occurrences["returnList:::disable_report_cache"]=0
 operation_parameters_maximum_occurrences["returnReasonList:::store_id"]=0
+operation_parameters_maximum_occurrences["subscriberList:::ids"]=0
 operation_parameters_maximum_occurrences["subscriberList:::start"]=0
 operation_parameters_maximum_occurrences["subscriberList:::count"]=0
 operation_parameters_maximum_occurrences["subscriberList:::page_cursor"]=0
@@ -3381,6 +3383,7 @@ operation_parameters_collection_type["returnList:::exclude"]=""
 operation_parameters_collection_type["returnList:::report_request_id"]=""
 operation_parameters_collection_type["returnList:::disable_report_cache"]=""
 operation_parameters_collection_type["returnReasonList:::store_id"]=""
+operation_parameters_collection_type["subscriberList:::ids"]=""
 operation_parameters_collection_type["subscriberList:::start"]=""
 operation_parameters_collection_type["subscriberList:::count"]=""
 operation_parameters_collection_type["subscriberList:::page_cursor"]=""
@@ -9110,6 +9113,8 @@ print_subscriberList_help() {
     echo -e "Get subscribers list" | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves subscribers specified by ids${YELLOW} Specify as: ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
@@ -16849,7 +16854,7 @@ call_subscriberList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor subscribed store_id email created_from created_to modified_from modified_to response_fields params exclude    )
+    local query_parameter_names=(ids start count page_cursor subscribed store_id email created_from created_to modified_from modified_to response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/subscriber.list.json" path_parameter_names query_parameter_names); then

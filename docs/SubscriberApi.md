@@ -17,7 +17,7 @@ Get subscribers list
 ### Example
 
 ```bash
- subscriberList  start=value  count=value  page_cursor=value  subscribed=value  store_id=value  email=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value
+ subscriberList  ids=value  start=value  count=value  page_cursor=value  subscribed=value  store_id=value  email=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -25,6 +25,7 @@ Get subscribers list
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | **string** | Retrieves subscribers specified by ids | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
