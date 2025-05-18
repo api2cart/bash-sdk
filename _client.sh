@@ -1874,6 +1874,7 @@ case $state in
 "create_invoice=true:[QUERY] Determines whether an invoice should be created if it has not already been created"
           "create_invoice=false:[QUERY] Determines whether an invoice should be created if it has not already been created"
 "origin=:[QUERY] The source of the order"
+"tags=:[QUERY] Order tags"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

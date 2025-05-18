@@ -825,6 +825,7 @@ operation_parameters_minimum_occurrences["orderUpdate:::date_finished"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::send_notifications"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::create_invoice"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::origin"]=0
+operation_parameters_minimum_occurrences["orderUpdate:::tags"]=0
 operation_parameters_minimum_occurrences["productAdd:::ProductAdd"]=1
 operation_parameters_minimum_occurrences["productAddBatch:::ProductAddBatch"]=1
 operation_parameters_minimum_occurrences["productAttributeList:::product_id"]=1
@@ -1942,6 +1943,7 @@ operation_parameters_maximum_occurrences["orderUpdate:::date_finished"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::send_notifications"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::create_invoice"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::origin"]=0
+operation_parameters_maximum_occurrences["orderUpdate:::tags"]=0
 operation_parameters_maximum_occurrences["productAdd:::ProductAdd"]=0
 operation_parameters_maximum_occurrences["productAddBatch:::ProductAddBatch"]=0
 operation_parameters_maximum_occurrences["productAttributeList:::product_id"]=0
@@ -3056,6 +3058,7 @@ operation_parameters_collection_type["orderUpdate:::date_finished"]=""
 operation_parameters_collection_type["orderUpdate:::send_notifications"]=""
 operation_parameters_collection_type["orderUpdate:::create_invoice"]=""
 operation_parameters_collection_type["orderUpdate:::origin"]=""
+operation_parameters_collection_type["orderUpdate:::tags"]=""
 operation_parameters_collection_type["productAdd:::ProductAdd"]=""
 operation_parameters_collection_type["productAddBatch:::ProductAddBatch"]=""
 operation_parameters_collection_type["productAttributeList:::product_id"]=""
@@ -7458,6 +7461,8 @@ print_orderUpdate_help() {
     echo -e "  * ${GREEN}create_invoice${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Determines whether an invoice should be created if it has not already been created${YELLOW} Specify as: create_invoice=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}origin${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The source of the order${YELLOW} Specify as: origin=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}tags${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Order tags${YELLOW} Specify as: tags=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -13974,7 +13979,7 @@ call_orderUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(order_id store_id order_status financial_status fulfillment_status cancellation_reason order_payment_method comment admin_comment admin_private_comment invoice_admin_comment date_modified date_finished send_notifications create_invoice origin    )
+    local query_parameter_names=(order_id store_id order_status financial_status fulfillment_status cancellation_reason order_payment_method comment admin_comment admin_private_comment invoice_admin_comment date_modified date_finished send_notifications create_invoice origin tags    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.update.json" path_parameter_names query_parameter_names); then

@@ -922,7 +922,7 @@ Update existing order.
 ### Example
 
 ```bash
- orderUpdate  order_id=value  store_id=value  order_status=value  financial_status=value  fulfillment_status=value  cancellation_reason=value  order_payment_method=value  comment=value  admin_comment=value  admin_private_comment=value  invoice_admin_comment=value  date_modified=value  date_finished=value  send_notifications=value  create_invoice=value  origin=value
+ orderUpdate  order_id=value  store_id=value  order_status=value  financial_status=value  fulfillment_status=value  cancellation_reason=value  order_payment_method=value  comment=value  admin_comment=value  admin_private_comment=value  invoice_admin_comment=value  date_modified=value  date_finished=value  send_notifications=value  create_invoice=value  origin=value  tags=value
 ```
 
 ### Parameters
@@ -946,6 +946,7 @@ Name | Type | Description  | Notes
  **sendNotifications** | **boolean** | Send notifications to customer after order was created | [optional] [default to false]
  **createInvoice** | **boolean** | Determines whether an invoice should be created if it has not already been created | [optional] [default to null]
  **origin** | **string** | The source of the order | [optional] [default to null]
+ **tags** | **string** | Order tags | [optional] [default to null]
 
 ### Return type
 
