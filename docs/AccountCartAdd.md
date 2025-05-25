@@ -83,6 +83,12 @@ Name | Type | Description | Notes
 **shopifyUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreapiUnderscorepassword** | **string** |  | [optional] [default to null]
 **shopifyUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]
+**shopeeUnderscorepartnerUnderscoreid** | **string** |  | [optional] [default to null]
+**shopeeUnderscorepartnerUnderscorekey** | **string** |  | [optional] [default to null]
+**shopeeUnderscoreshopUnderscoreid** | **string** |  | [optional] [default to null]
+**shopeeUnderscorerefreshUnderscoretoken** | **string** |  | [optional] [default to null]
+**shopeeUnderscoreregion** | **string** |  | [optional] [default to null]
+**shopeeUnderscoreenvironment** | **string** |  | [optional] [default to production]
 **shoplazzaUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **shoplazzaUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]
 **shopwareUnderscoreaccessUnderscorekey** | **string** |  | [optional] [default to null]
@@ -154,6 +160,10 @@ Name | Type | Description | Notes
 **sallaUnderscoreclientUnderscoresecret** | **string** |  | [optional] [default to null]
 **sallaUnderscorerefreshUnderscoretoken** | **string** |  | [optional] [default to null]
 **sallaUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
+**temuUnderscoreappUnderscorekey** | **string** |  | [optional] [default to null]
+**temuUnderscoreappUnderscoresecret** | **string** |  | [optional] [default to null]
+**temuUnderscoreaccessUnderscoretoken** | **string** |  | [default to null]
+**temuUnderscoreregion** | **string** |  | [optional] [default to US]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

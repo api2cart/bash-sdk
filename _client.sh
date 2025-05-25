@@ -552,6 +552,12 @@ case $state in
 "shopify_api_key=:[QUERY] Shopify API Key"
 "shopify_api_password=:[QUERY] Shopify API Password"
 "shopify_shared_secret=:[QUERY] Shared secret"
+"shopee_partner_id=:[QUERY] Shopee Partner ID"
+"shopee_partner_key=:[QUERY] Shopee Partner Key"
+"shopee_shop_id=:[QUERY] Shopee SHOP ID"
+"shopee_refresh_token=:[QUERY] Shopee Refresh Token"
+"shopee_region=:[QUERY] Shopee API endpoint Region. Use for Chinese Mainland or Brazil."
+"shopee_environment=:[QUERY] Shopee Environment"
 "shoplazza_access_token=:[QUERY] Access token authorizing the app to access resources on behalf of a user"
 "shoplazza_shared_secret=:[QUERY] Shared secret"
 "miva_access_token=:[QUERY] Miva access token"
@@ -632,6 +638,10 @@ case $state in
 "salla_client_secret=:[QUERY] Salla Client Secret"
 "salla_refresh_token=:[QUERY] Salla Refresh Token"
 "salla_access_token=:[QUERY] Salla Access Token"
+"temu_app_key=:[QUERY] Temu App Key"
+"temu_app_secret=:[QUERY] Temu App Secret"
+"temu_access_token=:[QUERY] Temu Access Token"
+"temu_region=:[QUERY] Temu API endpoint Region."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
