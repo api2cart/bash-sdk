@@ -163,7 +163,7 @@ Name | Type | Description | Notes
 **temuUnderscoreappUnderscorekey** | **string** |  | [optional] [default to null]
 **temuUnderscoreappUnderscoresecret** | **string** |  | [optional] [default to null]
 **temuUnderscoreaccessUnderscoretoken** | **string** |  | [default to null]
-**temuUnderscoreregion** | **string** |  | [optional] [default to US]
+**temuUnderscoreregion** | **string** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

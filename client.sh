@@ -4561,7 +4561,7 @@ print_accountConfigUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}temu_access_token${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Temu Access Token${YELLOW} Specify as: temu_access_token=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}temu_region${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: US)${OFF} - Temu API endpoint Region.${YELLOW} Specify as: temu_region=value${OFF}" \
+    echo -e "  * ${GREEN}temu_region${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Temu API endpoint Region.${YELLOW} Specify as: temu_region=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
