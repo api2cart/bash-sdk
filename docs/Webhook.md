@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **integer** |  | [optional] [default to null]
 **label** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]
+**langUnderscoreid** | **string** |  | [optional] [default to null]
 **active** | **boolean** |  | [optional] [default to null]
 **callback** | **string** |  | [optional] [default to null]
 **fields** | **string** |  | [optional] [default to null]

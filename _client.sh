@@ -2648,6 +2648,7 @@ case $state in
 "fields=:[QUERY] Fields the webhook should send"
 "active=true:[QUERY] Webhook status"
           "active=false:[QUERY] Webhook status"
+"lang_id=:[QUERY] Language id"
 "store_id=:[QUERY] Defines store id where the webhook should be assigned"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -2688,6 +2689,7 @@ case $state in
 "fields=:[QUERY] Fields the webhook should send"
 "active=true:[QUERY] Webhook status"
           "active=false:[QUERY] Webhook status"
+"lang_id=:[QUERY] Language id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

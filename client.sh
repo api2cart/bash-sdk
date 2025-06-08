@@ -1202,6 +1202,7 @@ operation_parameters_minimum_occurrences["webhookCreate:::callback"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::label"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::fields"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::active"]=0
+operation_parameters_minimum_occurrences["webhookCreate:::lang_id"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::store_id"]=0
 operation_parameters_minimum_occurrences["webhookDelete:::id"]=1
 operation_parameters_minimum_occurrences["webhookList:::start"]=0
@@ -1216,6 +1217,7 @@ operation_parameters_minimum_occurrences["webhookUpdate:::callback"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::label"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::fields"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::active"]=0
+operation_parameters_minimum_occurrences["webhookUpdate:::lang_id"]=0
 
 ##
 # This array stores the maximum number of allowed occurrences for parameter
@@ -2330,6 +2332,7 @@ operation_parameters_maximum_occurrences["webhookCreate:::callback"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::label"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::fields"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::active"]=0
+operation_parameters_maximum_occurrences["webhookCreate:::lang_id"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::store_id"]=0
 operation_parameters_maximum_occurrences["webhookDelete:::id"]=0
 operation_parameters_maximum_occurrences["webhookList:::start"]=0
@@ -2344,6 +2347,7 @@ operation_parameters_maximum_occurrences["webhookUpdate:::callback"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::label"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::fields"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::active"]=0
+operation_parameters_maximum_occurrences["webhookUpdate:::lang_id"]=0
 
 ##
 # The type of collection for specifying multiple values for parameter:
@@ -3455,6 +3459,7 @@ operation_parameters_collection_type["webhookCreate:::callback"]=""
 operation_parameters_collection_type["webhookCreate:::label"]=""
 operation_parameters_collection_type["webhookCreate:::fields"]=""
 operation_parameters_collection_type["webhookCreate:::active"]=""
+operation_parameters_collection_type["webhookCreate:::lang_id"]=""
 operation_parameters_collection_type["webhookCreate:::store_id"]=""
 operation_parameters_collection_type["webhookDelete:::id"]=""
 operation_parameters_collection_type["webhookList:::start"]=""
@@ -3469,6 +3474,7 @@ operation_parameters_collection_type["webhookUpdate:::callback"]=""
 operation_parameters_collection_type["webhookUpdate:::label"]=""
 operation_parameters_collection_type["webhookUpdate:::fields"]=""
 operation_parameters_collection_type["webhookUpdate:::active"]=""
+operation_parameters_collection_type["webhookUpdate:::lang_id"]=""
 
 
 ##
@@ -9314,6 +9320,8 @@ print_webhookCreate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}active${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Webhook status${YELLOW} Specify as: active=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines store id where the webhook should be assigned${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
@@ -9408,6 +9416,8 @@ print_webhookUpdate_help() {
     echo -e "  * ${GREEN}fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Fields the webhook should send${YELLOW} Specify as: fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}active${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Webhook status${YELLOW} Specify as: active=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -17053,7 +17063,7 @@ call_webhookCreate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(entity action callback label fields active store_id    )
+    local query_parameter_names=(entity action callback label fields active lang_id store_id    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.create.json" path_parameter_names query_parameter_names); then
@@ -17197,7 +17207,7 @@ call_webhookUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id callback label fields active    )
+    local query_parameter_names=(id callback label fields active lang_id    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.update.json" path_parameter_names query_parameter_names); then

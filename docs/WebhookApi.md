@@ -59,7 +59,7 @@ Create webhook on the store and subscribe to it.
 ### Example
 
 ```bash
- webhookCreate  entity=value  action=value  callback=value  label=value  fields=value  active=value  store_id=value
+ webhookCreate  entity=value  action=value  callback=value  label=value  fields=value  active=value  lang_id=value  store_id=value
 ```
 
 ### Parameters
@@ -73,6 +73,7 @@ Name | Type | Description  | Notes
  **label** | **string** | The name you give to the webhook | [optional] [default to null]
  **fields** | **string** | Fields the webhook should send | [optional] [default to force_all]
  **active** | **boolean** | Webhook status | [optional] [default to true]
+ **langId** | **string** | Language id | [optional] [default to null]
  **storeId** | **string** | Defines store id where the webhook should be assigned | [optional] [default to null]
 
 ### Return type
@@ -208,7 +209,7 @@ Update Webhooks parameters.
 ### Example
 
 ```bash
- webhookUpdate  id=value  callback=value  label=value  fields=value  active=value
+ webhookUpdate  id=value  callback=value  label=value  fields=value  active=value  lang_id=value
 ```
 
 ### Parameters
@@ -221,6 +222,7 @@ Name | Type | Description  | Notes
  **label** | **string** | The name you give to the webhook | [optional] [default to null]
  **fields** | **string** | Fields the webhook should send | [optional] [default to null]
  **active** | **boolean** | Webhook status | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
 
 ### Return type
 
