@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **availUnderscoreforUnderscoresale** | **boolean** |  | [optional] [default to null]
 **allowUnderscorebackorders** | **boolean** |  | [optional] [default to null]
 **inUnderscorestock** | **boolean** |  | [optional] [default to null]
+**onUnderscoresale** | **boolean** |  | [optional] [default to null]
 **manageUnderscorestock** | **boolean** |  | [optional] [default to null]
 **inventoryUnderscorelevel** | **integer** |  | [optional] [default to null]
 **inventory** | [**array[ProductInventory]**](ProductInventory.md) |  | [optional] [default to null]

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **active** | **boolean** |  | [optional] [default to null]
 **callback** | **string** |  | [optional] [default to null]
 **fields** | **string** |  | [optional] [default to null]
+**responseUnderscorefields** | **string** |  | [optional] [default to null]
 **createdUnderscoreat** | **string** |  | [optional] [default to null]
 **updatedUnderscoreat** | **string** |  | [optional] [default to null]
 **entity** | **string** |  | [optional] [default to null]
