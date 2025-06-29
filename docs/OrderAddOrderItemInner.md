@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **orderUnderscoreitemUnderscoreweight** | **integer** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscorevariantUnderscoreid** | **string** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoretax** | **integer** |  | [optional] [default to 0]
+**orderUnderscoreitemUnderscoretaxUnderscoreclass** | **string** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscorepriceUnderscoreincludesUnderscoretax** | **boolean** |  | [optional] [default to false]
 **orderUnderscoreitemUnderscoreparent** | **integer** |  | [optional] [default to null]
 **orderUnderscoreitemUnderscoreparentUnderscoreoptionUnderscorename** | **string** |  | [optional] [default to null]

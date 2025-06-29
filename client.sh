@@ -936,6 +936,7 @@ operation_parameters_minimum_occurrences["productCount:::brand_name"]=0
 operation_parameters_minimum_occurrences["productCount:::product_attributes"]=0
 operation_parameters_minimum_occurrences["productCount:::status"]=0
 operation_parameters_minimum_occurrences["productCount:::type"]=0
+operation_parameters_minimum_occurrences["productCount:::visible"]=0
 operation_parameters_minimum_occurrences["productCount:::find_value"]=0
 operation_parameters_minimum_occurrences["productCount:::find_where"]=0
 operation_parameters_minimum_occurrences["productCount:::report_request_id"]=0
@@ -1011,6 +1012,7 @@ operation_parameters_minimum_occurrences["productList:::brand_name"]=0
 operation_parameters_minimum_occurrences["productList:::product_attributes"]=0
 operation_parameters_minimum_occurrences["productList:::status"]=0
 operation_parameters_minimum_occurrences["productList:::type"]=0
+operation_parameters_minimum_occurrences["productList:::visible"]=0
 operation_parameters_minimum_occurrences["productList:::find_value"]=0
 operation_parameters_minimum_occurrences["productList:::find_where"]=0
 operation_parameters_minimum_occurrences["productList:::return_global"]=0
@@ -2068,6 +2070,7 @@ operation_parameters_maximum_occurrences["productCount:::brand_name"]=0
 operation_parameters_maximum_occurrences["productCount:::product_attributes"]=0
 operation_parameters_maximum_occurrences["productCount:::status"]=0
 operation_parameters_maximum_occurrences["productCount:::type"]=0
+operation_parameters_maximum_occurrences["productCount:::visible"]=0
 operation_parameters_maximum_occurrences["productCount:::find_value"]=0
 operation_parameters_maximum_occurrences["productCount:::find_where"]=0
 operation_parameters_maximum_occurrences["productCount:::report_request_id"]=0
@@ -2143,6 +2146,7 @@ operation_parameters_maximum_occurrences["productList:::brand_name"]=0
 operation_parameters_maximum_occurrences["productList:::product_attributes"]=0
 operation_parameters_maximum_occurrences["productList:::status"]=0
 operation_parameters_maximum_occurrences["productList:::type"]=0
+operation_parameters_maximum_occurrences["productList:::visible"]=0
 operation_parameters_maximum_occurrences["productList:::find_value"]=0
 operation_parameters_maximum_occurrences["productList:::find_where"]=0
 operation_parameters_maximum_occurrences["productList:::return_global"]=0
@@ -3197,6 +3201,7 @@ operation_parameters_collection_type["productCount:::brand_name"]=""
 operation_parameters_collection_type["productCount:::product_attributes"]="multi"
 operation_parameters_collection_type["productCount:::status"]=""
 operation_parameters_collection_type["productCount:::type"]=""
+operation_parameters_collection_type["productCount:::visible"]=""
 operation_parameters_collection_type["productCount:::find_value"]=""
 operation_parameters_collection_type["productCount:::find_where"]=""
 operation_parameters_collection_type["productCount:::report_request_id"]=""
@@ -3272,6 +3277,7 @@ operation_parameters_collection_type["productList:::brand_name"]=""
 operation_parameters_collection_type["productList:::product_attributes"]="multi"
 operation_parameters_collection_type["productList:::status"]=""
 operation_parameters_collection_type["productList:::type"]=""
+operation_parameters_collection_type["productList:::visible"]=""
 operation_parameters_collection_type["productList:::find_value"]=""
 operation_parameters_collection_type["productList:::find_where"]=""
 operation_parameters_collection_type["productList:::return_global"]=""
@@ -7356,7 +7362,7 @@ print_orderShipmentList_help() {
     echo ""
     echo -e "${BOLD}${WHITE}orderShipmentList - order.shipment.list${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Get list of shipments by orders." | paste -sd' ' | fold -sw 80
+    echo -e "Get list of shipments per order." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}order_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Retrieves shipments specified by order id${YELLOW} Specify as: order_id=value${OFF}" \
@@ -7896,6 +7902,8 @@ print_productCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines products's type${YELLOW} Specify as: type=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}visible${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: everywhere)${OFF} - Filter items by visibility status${YELLOW} Specify as: visible=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_value${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Entity search that is specified by some value${YELLOW} Specify as: find_value=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_where${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products that are searched specified by field${YELLOW} Specify as: find_where=value${OFF}" \
@@ -8231,6 +8239,8 @@ print_productList_help() {
     echo -e "  * ${GREEN}status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines product's status${YELLOW} Specify as: status=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines products's type${YELLOW} Specify as: type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}visible${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: everywhere)${OFF} - Filter items by visibility status${YELLOW} Specify as: visible=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_value${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Entity search that is specified by some value${YELLOW} Specify as: find_value=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -14493,7 +14503,7 @@ call_productCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_ids since_id categories_ids category_id store_id lang_id avail_view avail_sale created_from created_to modified_from modified_to brand_name product_attributes status type find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(product_ids since_id categories_ids category_id store_id lang_id avail_view avail_sale created_from created_to modified_from modified_to brand_name product_attributes status type visible find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.count.json" path_parameter_names query_parameter_names); then
@@ -14973,7 +14983,7 @@ call_productList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes status type find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.list.json" path_parameter_names query_parameter_names); then

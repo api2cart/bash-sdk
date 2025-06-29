@@ -458,7 +458,7 @@ Count products in store.
 ### Example
 
 ```bash
- productCount  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
+ productCount  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -482,6 +482,7 @@ Name | Type | Description  | Notes
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
+ **visible** | **string** | Filter items by visibility status | [optional] [default to everywhere]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Counts products that are searched specified by field | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
@@ -900,7 +901,7 @@ Get list of products from your store. Returns 10 products by default.
 ### Example
 
 ```bash
- productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value
+ productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -929,6 +930,7 @@ Name | Type | Description  | Notes
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
+ **visible** | **string** | Filter items by visibility status | [optional] [default to everywhere]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Product search that is specified by field | [optional] [default to null]
  **returnGlobal** | **boolean** | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned. | [optional] [default to false]

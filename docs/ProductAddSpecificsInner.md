@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **values** | **array[string]** |  | [optional] [default to null]
 **usedUnderscoreforUnderscorevariations** | **boolean** |  | [optional] [default to false]
 **scaleUnderscoreid** | **integer** |  | [optional] [default to null]
+**inputUnderscorevalue** | **string** |  | [optional] [default to null]
 **foodUnderscoredetails** | [**ProductAddSpecificsInnerFoodDetails**](ProductAddSpecificsInnerFoodDetails.md) |  | [optional] [default to null]
 **groupUnderscoreproductsUnderscoredetails** | [**array[ProductAddSpecificsInnerGroupProductsDetailsInner]**](ProductAddSpecificsInnerGroupProductsDetailsInner.md) |  | [optional] [default to null]
 **bookingUnderscoredetails** | [**ProductAddSpecificsInnerBookingDetails**](ProductAddSpecificsInnerBookingDetails.md) |  | [optional] [default to null]

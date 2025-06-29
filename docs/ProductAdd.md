@@ -106,6 +106,7 @@ Name | Type | Description | Notes
 **logisticUnderscoreinfo** | [**array[ProductAddLogisticInfoInner]**](ProductAddLogisticInfoInner.md) |  | [optional] [default to null]
 **listingUnderscoreduration** | **string** |  | [optional] [default to null]
 **listingUnderscoretype** | **string** |  | [optional] [default to FixedPrice]
+**categoryUnderscoretype** | **string** |  | [optional] [default to null]
 **returnUnderscoreaccepted** | **boolean** |  | [optional] [default to null]
 **sellerUnderscoreprofiles** | [**ProductAddSellerProfiles**](ProductAddSellerProfiles.md) |  | [optional] [default to null]
 **auctionUnderscoreconfidentialityUnderscorelevel** | **string** |  | [optional] [default to null]
