@@ -611,6 +611,7 @@ operation_parameters_minimum_occurrences["customerCount:::customer_list_id"]=0
 operation_parameters_minimum_occurrences["customerCount:::group_id"]=0
 operation_parameters_minimum_occurrences["customerCount:::store_id"]=0
 operation_parameters_minimum_occurrences["customerCount:::avail"]=0
+operation_parameters_minimum_occurrences["customerCount:::include_guests"]=0
 operation_parameters_minimum_occurrences["customerCount:::find_value"]=0
 operation_parameters_minimum_occurrences["customerCount:::find_where"]=0
 operation_parameters_minimum_occurrences["customerCount:::created_from"]=0
@@ -622,6 +623,7 @@ operation_parameters_minimum_occurrences["customerFind:::find_value"]=1
 operation_parameters_minimum_occurrences["customerFind:::find_where"]=0
 operation_parameters_minimum_occurrences["customerFind:::find_params"]=0
 operation_parameters_minimum_occurrences["customerFind:::store_id"]=0
+operation_parameters_minimum_occurrences["customerFind:::include_guests"]=0
 operation_parameters_minimum_occurrences["customerGroupAdd:::name"]=1
 operation_parameters_minimum_occurrences["customerGroupAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["customerGroupAdd:::stores_ids"]=0
@@ -649,6 +651,7 @@ operation_parameters_minimum_occurrences["customerList:::customer_list_id"]=0
 operation_parameters_minimum_occurrences["customerList:::group_id"]=0
 operation_parameters_minimum_occurrences["customerList:::store_id"]=0
 operation_parameters_minimum_occurrences["customerList:::avail"]=0
+operation_parameters_minimum_occurrences["customerList:::include_guests"]=0
 operation_parameters_minimum_occurrences["customerList:::find_value"]=0
 operation_parameters_minimum_occurrences["customerList:::find_where"]=0
 operation_parameters_minimum_occurrences["customerList:::created_from"]=0
@@ -1745,6 +1748,7 @@ operation_parameters_maximum_occurrences["customerCount:::customer_list_id"]=0
 operation_parameters_maximum_occurrences["customerCount:::group_id"]=0
 operation_parameters_maximum_occurrences["customerCount:::store_id"]=0
 operation_parameters_maximum_occurrences["customerCount:::avail"]=0
+operation_parameters_maximum_occurrences["customerCount:::include_guests"]=0
 operation_parameters_maximum_occurrences["customerCount:::find_value"]=0
 operation_parameters_maximum_occurrences["customerCount:::find_where"]=0
 operation_parameters_maximum_occurrences["customerCount:::created_from"]=0
@@ -1756,6 +1760,7 @@ operation_parameters_maximum_occurrences["customerFind:::find_value"]=0
 operation_parameters_maximum_occurrences["customerFind:::find_where"]=0
 operation_parameters_maximum_occurrences["customerFind:::find_params"]=0
 operation_parameters_maximum_occurrences["customerFind:::store_id"]=0
+operation_parameters_maximum_occurrences["customerFind:::include_guests"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::name"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::stores_ids"]=0
@@ -1783,6 +1788,7 @@ operation_parameters_maximum_occurrences["customerList:::customer_list_id"]=0
 operation_parameters_maximum_occurrences["customerList:::group_id"]=0
 operation_parameters_maximum_occurrences["customerList:::store_id"]=0
 operation_parameters_maximum_occurrences["customerList:::avail"]=0
+operation_parameters_maximum_occurrences["customerList:::include_guests"]=0
 operation_parameters_maximum_occurrences["customerList:::find_value"]=0
 operation_parameters_maximum_occurrences["customerList:::find_where"]=0
 operation_parameters_maximum_occurrences["customerList:::created_from"]=0
@@ -2876,6 +2882,7 @@ operation_parameters_collection_type["customerCount:::customer_list_id"]=""
 operation_parameters_collection_type["customerCount:::group_id"]=""
 operation_parameters_collection_type["customerCount:::store_id"]=""
 operation_parameters_collection_type["customerCount:::avail"]=""
+operation_parameters_collection_type["customerCount:::include_guests"]=""
 operation_parameters_collection_type["customerCount:::find_value"]=""
 operation_parameters_collection_type["customerCount:::find_where"]=""
 operation_parameters_collection_type["customerCount:::created_from"]=""
@@ -2887,6 +2894,7 @@ operation_parameters_collection_type["customerFind:::find_value"]=""
 operation_parameters_collection_type["customerFind:::find_where"]=""
 operation_parameters_collection_type["customerFind:::find_params"]=""
 operation_parameters_collection_type["customerFind:::store_id"]=""
+operation_parameters_collection_type["customerFind:::include_guests"]=""
 operation_parameters_collection_type["customerGroupAdd:::name"]=""
 operation_parameters_collection_type["customerGroupAdd:::store_id"]=""
 operation_parameters_collection_type["customerGroupAdd:::stores_ids"]=""
@@ -2914,6 +2922,7 @@ operation_parameters_collection_type["customerList:::customer_list_id"]=""
 operation_parameters_collection_type["customerList:::group_id"]=""
 operation_parameters_collection_type["customerList:::store_id"]=""
 operation_parameters_collection_type["customerList:::avail"]=""
+operation_parameters_collection_type["customerList:::include_guests"]=""
 operation_parameters_collection_type["customerList:::find_value"]=""
 operation_parameters_collection_type["customerList:::find_where"]=""
 operation_parameters_collection_type["customerList:::created_from"]=""
@@ -6539,6 +6548,8 @@ print_customerCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines category's visibility status${YELLOW} Specify as: avail=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}include_guests${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Indicates whether to include guest customers in the total count.${YELLOW} Specify as: include_guests=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_value${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Entity search that is specified by some value${YELLOW} Specify as: find_value=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_where${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts customers that are searched specified by field${YELLOW} Specify as: find_where=value${OFF}" \
@@ -6594,6 +6605,8 @@ print_customerFind_help() {
     echo -e "  * ${GREEN}find_params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: whole_words)${OFF} - Entity search that is specified by comma-separated parameters${YELLOW} Specify as: find_params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}include_guests${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Indicates whether to search among guest customers when looking up a customer.${YELLOW} Specify as: include_guests=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6716,6 +6729,8 @@ print_customerList_help() {
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves customers specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines category's visibility status${YELLOW} Specify as: avail=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}include_guests${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Indicates whether to include guest customers in the list results.${YELLOW} Specify as: include_guests=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_value${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Entity search that is specified by some value${YELLOW} Specify as: find_value=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -12487,7 +12502,7 @@ call_customerCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(ids since_id customer_list_id group_id store_id avail find_value find_where created_from created_to modified_from modified_to    )
+    local query_parameter_names=(ids since_id customer_list_id group_id store_id avail include_guests find_value find_where created_from created_to modified_from modified_to    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.count.json" path_parameter_names query_parameter_names); then
@@ -12559,7 +12574,7 @@ call_customerFind() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(find_value find_where find_params store_id    )
+    local query_parameter_names=(find_value find_where find_params store_id include_guests    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.find.json" path_parameter_names query_parameter_names); then
@@ -12703,7 +12718,7 @@ call_customerList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor ids since_id customer_list_id group_id store_id avail find_value find_where created_from created_to modified_from modified_to sort_by sort_direction response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor ids since_id customer_list_id group_id store_id avail include_guests find_value find_where created_from created_to modified_from modified_to sort_by sort_direction response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.list.json" path_parameter_names query_parameter_names); then

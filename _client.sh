@@ -1468,6 +1468,8 @@ case $state in
 "store_id=:[QUERY] Counts customer specified by store id"
 "avail=true:[QUERY] Defines category&#39;s visibility status"
           "avail=false:[QUERY] Defines category&#39;s visibility status"
+"include_guests=true:[QUERY] Indicates whether to include guest customers in the total count."
+          "include_guests=false:[QUERY] Indicates whether to include guest customers in the total count."
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Counts customers that are searched specified by field"
 "created_from=:[QUERY] Retrieve entities from their creation date"
@@ -1491,6 +1493,8 @@ case $state in
 "find_where=:[QUERY] Entity search that is specified by the comma-separated unique fields"
 "find_params=:[QUERY] Entity search that is specified by comma-separated parameters"
 "store_id=:[QUERY] Store Id"
+"include_guests=true:[QUERY] Indicates whether to search among guest customers when looking up a customer."
+          "include_guests=false:[QUERY] Indicates whether to search among guest customers when looking up a customer."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1544,6 +1548,8 @@ case $state in
 "store_id=:[QUERY] Retrieves customers specified by store id"
 "avail=true:[QUERY] Defines category&#39;s visibility status"
           "avail=false:[QUERY] Defines category&#39;s visibility status"
+"include_guests=true:[QUERY] Indicates whether to include guest customers in the list results."
+          "include_guests=false:[QUERY] Indicates whether to include guest customers in the list results."
 "find_value=:[QUERY] Entity search that is specified by some value"
 "find_where=:[QUERY] Customer search that is specified by field"
 "created_from=:[QUERY] Retrieve entities from their creation date"

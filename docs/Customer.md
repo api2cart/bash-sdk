@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **lastUnderscorelogin** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] [default to null]
 **birthUnderscoreday** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to null]
+**isUnderscoreguest** | **boolean** |  | [optional] [default to null]
 **newsUnderscoreletterUnderscoresubscription** | **boolean** |  | [optional] [default to null]
 **consents** | [**array[CustomerConsent]**](CustomerConsent.md) |  | [optional] [default to null]
 **gender** | **string** |  | [optional] [default to null]

@@ -140,7 +140,7 @@ Get number of customers from store.
 ### Example
 
 ```bash
- customerCount  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value
+ customerCount  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  include_guests=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value
 ```
 
 ### Parameters
@@ -154,6 +154,7 @@ Name | Type | Description  | Notes
  **groupId** | **string** | Customer group_id | [optional] [default to null]
  **storeId** | **string** | Counts customer specified by store id | [optional] [default to null]
  **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **includeGuests** | **boolean** | Indicates whether to include guest customers in the total count. | [optional] [default to false]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Counts customers that are searched specified by field | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
@@ -221,7 +222,7 @@ Find customers in store.
 ### Example
 
 ```bash
- customerFind  find_value=value  find_where=value  find_params=value  store_id=value
+ customerFind  find_value=value  find_where=value  find_params=value  store_id=value  include_guests=value
 ```
 
 ### Parameters
@@ -233,6 +234,7 @@ Name | Type | Description  | Notes
  **findWhere** | **string** | Entity search that is specified by the comma-separated unique fields | [optional] [default to email]
  **findParams** | **string** | Entity search that is specified by comma-separated parameters | [optional] [default to whole_words]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **includeGuests** | **boolean** | Indicates whether to search among guest customers when looking up a customer. | [optional] [default to false]
 
 ### Return type
 
@@ -379,7 +381,7 @@ Get list of customers from store.
 ### Example
 
 ```bash
- customerList  start=value  count=value  page_cursor=value  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sort_by=value  sort_direction=value  response_fields=value  params=value  exclude=value
+ customerList  start=value  count=value  page_cursor=value  ids=value  since_id=value  customer_list_id=value  group_id=value  store_id=value  avail=value  include_guests=value  find_value=value  find_where=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sort_by=value  sort_direction=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -396,6 +398,7 @@ Name | Type | Description  | Notes
  **groupId** | **string** | Customer group_id | [optional] [default to null]
  **storeId** | **string** | Retrieves customers specified by store id | [optional] [default to null]
  **avail** | **boolean** | Defines category's visibility status | [optional] [default to true]
+ **includeGuests** | **boolean** | Indicates whether to include guest customers in the list results. | [optional] [default to false]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]
  **findWhere** | **string** | Customer search that is specified by field | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
