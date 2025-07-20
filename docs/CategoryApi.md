@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 

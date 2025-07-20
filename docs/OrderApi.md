@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**orderAdd**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add
 [**orderCount**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count
 [**orderFinancialStatusList**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list
-[**orderFind**](OrderApi.md#orderFind) | **GET** /order.find.json | order.find
 [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 [**orderInfo**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info
 [**orderList**](OrderApi.md#orderList) | **GET** /order.list.json | order.list
@@ -186,52 +185,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OrderFinancialStatusList200Response**](OrderFinancialStatusList200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## orderFind
-
-order.find
-
-This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
-
-### Example
-
-```bash
- orderFind  start=value  count=value  customer_id=value  customer_email=value  order_status=value  financial_status=value  created_to=value  created_from=value  modified_to=value  modified_from=value  params=value  exclude=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
- **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
- **orderStatus** | **string** | Retrieves orders specified by order status | [optional] [default to null]
- **financialStatus** | **string** | Retrieves orders specified by financial status | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to order_id,customer,totals,address,items,bundles,status]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
-
-### Return type
-
-[**OrderFind200Response**](OrderFind200Response.md)
 
 ### Authorization
 

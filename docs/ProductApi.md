@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**productCurrencyList**](ProductApi.md#productCurrencyList) | **GET** /product.currency.list.json | product.currency.list
 [**productDelete**](ProductApi.md#productDelete) | **DELETE** /product.delete.json | product.delete
 [**productDeleteBatch**](ProductApi.md#productDeleteBatch) | **POST** /product.delete.batch.json | product.delete.batch
-[**productFields**](ProductApi.md#productFields) | **GET** /product.fields.json | product.fields
 [**productFind**](ProductApi.md#productFind) | **GET** /product.find.json | product.find
 [**productImageAdd**](ProductApi.md#productImageAdd) | **POST** /product.image.add.json | product.image.add
 [**productImageDelete**](ProductApi.md#productImageDelete) | **DELETE** /product.image.delete.json | product.image.delete
@@ -44,13 +43,10 @@ Method | HTTP request | Description
 [**productUpdateBatch**](ProductApi.md#productUpdateBatch) | **POST** /product.update.batch.json | product.update.batch
 [**productVariantAdd**](ProductApi.md#productVariantAdd) | **POST** /product.variant.add.json | product.variant.add
 [**productVariantAddBatch**](ProductApi.md#productVariantAddBatch) | **POST** /product.variant.add.batch.json | product.variant.add.batch
-[**productVariantCount**](ProductApi.md#productVariantCount) | **GET** /product.variant.count.json | product.variant.count
 [**productVariantDelete**](ProductApi.md#productVariantDelete) | **DELETE** /product.variant.delete.json | product.variant.delete
 [**productVariantDeleteBatch**](ProductApi.md#productVariantDeleteBatch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch
 [**productVariantImageAdd**](ProductApi.md#productVariantImageAdd) | **POST** /product.variant.image.add.json | product.variant.image.add
 [**productVariantImageDelete**](ProductApi.md#productVariantImageDelete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete
-[**productVariantInfo**](ProductApi.md#productVariantInfo) | **GET** /product.variant.info.json | product.variant.info
-[**productVariantList**](ProductApi.md#productVariantList) | **GET** /product.variant.list.json | product.variant.list
 [**productVariantPriceAdd**](ProductApi.md#productVariantPriceAdd) | **POST** /product.variant.price.add.json | product.variant.price.add
 [**productVariantPriceDelete**](ProductApi.md#productVariantPriceDelete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete
 [**productVariantPriceUpdate**](ProductApi.md#productVariantPriceUpdate) | **PUT** /product.variant.price.update.json | product.variant.price.update
@@ -655,38 +651,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## productFields
-
-product.fields
-
-Retrieve all available fields for product item in store.
-
-### Example
-
-```bash
- productFields
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1671,47 +1635,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## productVariantCount
-
-product.variant.count
-
-Get count variants.
-
-### Example
-
-```bash
- productVariantCount  product_id=value  category_id=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **string** | Retrieves products' variants specified by product id | [default to null]
- **categoryId** | **string** | Counts products’ variants specified by category id | [optional] [default to null]
- **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
-
-### Return type
-
-[**ProductVariantCount200Response**](ProductVariantCount200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## productVariantDelete
 
 product.variant.delete
@@ -1844,89 +1767,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AttributeDelete200Response**](AttributeDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## productVariantInfo
-
-product.variant.info
-
-Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
-
-### Example
-
-```bash
- productVariantInfo  id=value  store_id=value  params=value  exclude=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** | Retrieves variant's info specified by variant id | [default to null]
- **storeId** | **string** | Retrieves variant info specified by store id | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
-
-### Return type
-
-[**ProductInfo200Response**](ProductInfo200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## productVariantList
-
-product.variant.list
-
-Get a list of variants. This method is deprecated, and its development is stopped. Please use \"product.child_item.list\" instead.
-
-### Example
-
-```bash
- productVariantList  start=value  count=value  product_id=value  category_id=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  params=value  exclude=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
- **productId** | **string** | Retrieves products' variants specified by product id | [optional] [default to null]
- **categoryId** | **string** | Retrieves products’ variants specified by category id | [optional] [default to null]
- **storeId** | **string** | Retrieves variants specified by store id | [optional] [default to null]
- **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
- **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
- **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
- **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,name,description,price]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
-
-### Return type
-
-[**ProductVariantList200Response**](ProductVariantList200Response.md)
 
 ### Authorization
 

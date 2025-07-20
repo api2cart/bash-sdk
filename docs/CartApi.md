@@ -4,26 +4,19 @@ All URIs are relative to */v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cartBridge**](CartApi.md#cartBridge) | **GET** /cart.bridge.json | cart.bridge
 [**cartCatalogPriceRulesCount**](CartApi.md#cartCatalogPriceRulesCount) | **GET** /cart.catalog_price_rules.count.json | cart.catalog_price_rules.count
 [**cartCatalogPriceRulesList**](CartApi.md#cartCatalogPriceRulesList) | **GET** /cart.catalog_price_rules.list.json | cart.catalog_price_rules.list
-[**cartClearCache**](CartApi.md#cartClearCache) | **POST** /cart.clear_cache.json | cart.clear_cache
-[**cartConfig**](CartApi.md#cartConfig) | **GET** /cart.config.json | cart.config
-[**cartConfigUpdate**](CartApi.md#cartConfigUpdate) | **PUT** /cart.config.update.json | cart.config.update
 [**cartCouponAdd**](CartApi.md#cartCouponAdd) | **POST** /cart.coupon.add.json | cart.coupon.add
 [**cartCouponConditionAdd**](CartApi.md#cartCouponConditionAdd) | **POST** /cart.coupon.condition.add.json | cart.coupon.condition.add
 [**cartCouponCount**](CartApi.md#cartCouponCount) | **GET** /cart.coupon.count.json | cart.coupon.count
 [**cartCouponDelete**](CartApi.md#cartCouponDelete) | **DELETE** /cart.coupon.delete.json | cart.coupon.delete
 [**cartCouponList**](CartApi.md#cartCouponList) | **GET** /cart.coupon.list.json | cart.coupon.list
-[**cartCreate**](CartApi.md#cartCreate) | **POST** /cart.create.json | cart.create
 [**cartDelete**](CartApi.md#cartDelete) | **DELETE** /cart.delete.json | cart.delete
-[**cartDisconnect**](CartApi.md#cartDisconnect) | **GET** /cart.disconnect.json | cart.disconnect
 [**cartGiftcardAdd**](CartApi.md#cartGiftcardAdd) | **POST** /cart.giftcard.add.json | cart.giftcard.add
 [**cartGiftcardCount**](CartApi.md#cartGiftcardCount) | **GET** /cart.giftcard.count.json | cart.giftcard.count
 [**cartGiftcardDelete**](CartApi.md#cartGiftcardDelete) | **DELETE** /cart.giftcard.delete.json | cart.giftcard.delete
 [**cartGiftcardList**](CartApi.md#cartGiftcardList) | **GET** /cart.giftcard.list.json | cart.giftcard.list
 [**cartInfo**](CartApi.md#cartInfo) | **GET** /cart.info.json | cart.info
-[**cartList**](CartApi.md#cartList) | **GET** /cart.list.json | cart.list
 [**cartMetaDataList**](CartApi.md#cartMetaDataList) | **GET** /cart.meta_data.list.json | cart.meta_data.list
 [**cartMetaDataSet**](CartApi.md#cartMetaDataSet) | **POST** /cart.meta_data.set.json | cart.meta_data.set
 [**cartMetaDataUnset**](CartApi.md#cartMetaDataUnset) | **DELETE** /cart.meta_data.unset.json | cart.meta_data.unset
@@ -35,38 +28,6 @@ Method | HTTP request | Description
 [**cartShippingZonesList**](CartApi.md#cartShippingZonesList) | **GET** /cart.shipping_zones.list.json | cart.shipping_zones.list
 [**cartValidate**](CartApi.md#cartValidate) | **GET** /cart.validate.json | cart.validate
 
-
-
-## cartBridge
-
-cart.bridge
-
-Get bridge key and store key
-
-### Example
-
-```bash
- cartBridge
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartBridge200Response**](CartBridge200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## cartCatalogPriceRulesCount
@@ -137,112 +98,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## cartClearCache
-
-cart.clear_cache
-
-Clear cache on store.
-
-### Example
-
-```bash
- cartClearCache  cache_type=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cacheType** | **string** | Defines which cache should be cleared. | [default to null]
-
-### Return type
-
-[**CartClearCache200Response**](CartClearCache200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## cartConfig
-
-cart.config
-
-Get list of cart configs
-
-### Example
-
-```bash
- cartConfig  params=value  exclude=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to store_name,store_url,db_prefix]
- **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
-
-### Return type
-
-[**CartConfig200Response**](CartConfig200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## cartConfigUpdate
-
-cart.config.update
-
-Use this API method to update custom data in client database.
-
-### Example
-
-```bash
- cartConfigUpdate
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartConfigUpdate** | [**CartConfigUpdate**](CartConfigUpdate.md) |  |
-
-### Return type
-
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -450,41 +305,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## cartCreate
-
-cart.create
-
-Add store to the account
-
-### Example
-
-```bash
- cartCreate
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartCreate** | [**CartCreate**](CartCreate.md) |  |
-
-### Return type
-
-[**AccountCartAdd200Response**](AccountCartAdd200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## cartDelete
 
 cart.delete
@@ -507,41 +327,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CartDelete200Response**](CartDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## cartDisconnect
-
-cart.disconnect
-
-Disconnect with the store and clear store session data.
-
-### Example
-
-```bash
- cartDisconnect  delete_bridge=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **deleteBridge** | **boolean** | Identifies if there is a necessity to delete bridge | [optional] [default to false]
-
-### Return type
-
-[**CartDisconnect200Response**](CartDisconnect200Response.md)
 
 ### Authorization
 
@@ -735,38 +520,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## cartList
-
-cart.list
-
-Get list of supported carts
-
-### Example
-
-```bash
- cartList
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartList200Response**](CartList200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

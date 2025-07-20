@@ -323,26 +323,19 @@ case $state in
             "basketLiveShippingServiceList[basket.live_shipping_service.list]"             "batchJobList[batch.job.list]" \
             "batchJobResult[batch.job.result]"             "bridgeDelete[bridge.delete]" \
             "bridgeDownload[bridge.download]" \
-            "bridgeUpdate[bridge.update]"             "cartBridge[cart.bridge]" \
-            "cartCatalogPriceRulesCount[cart.catalog_price_rules.count]" \
+            "bridgeUpdate[bridge.update]"             "cartCatalogPriceRulesCount[cart.catalog_price_rules.count]" \
             "cartCatalogPriceRulesList[cart.catalog_price_rules.list]" \
-            "cartClearCache[cart.clear_cache]" \
-            "cartConfig[cart.config]" \
-            "cartConfigUpdate[cart.config.update]" \
             "cartCouponAdd[cart.coupon.add]" \
             "cartCouponConditionAdd[cart.coupon.condition.add]" \
             "cartCouponCount[cart.coupon.count]" \
             "cartCouponDelete[cart.coupon.delete]" \
             "cartCouponList[cart.coupon.list]" \
-            "cartCreate[cart.create]" \
             "cartDelete[cart.delete]" \
-            "cartDisconnect[cart.disconnect]" \
             "cartGiftcardAdd[cart.giftcard.add]" \
             "cartGiftcardCount[cart.giftcard.count]" \
             "cartGiftcardDelete[cart.giftcard.delete]" \
             "cartGiftcardList[cart.giftcard.list]" \
             "cartInfo[cart.info]" \
-            "cartList[cart.list]" \
             "cartMetaDataList[cart.meta_data.list]" \
             "cartMetaDataSet[cart.meta_data.set]" \
             "cartMetaDataUnset[cart.meta_data.unset]" \
@@ -378,7 +371,6 @@ case $state in
             "orderAdd[order.add]" \
             "orderCount[order.count]" \
             "orderFinancialStatusList[order.financial_status.list]" \
-            "orderFind[order.find]" \
             "orderFulfillmentStatusList[order.fulfillment_status.list]" \
             "orderInfo[order.info]" \
             "orderList[order.list]" \
@@ -410,7 +402,6 @@ case $state in
             "productCurrencyList[product.currency.list]" \
             "productDelete[product.delete]" \
             "productDeleteBatch[product.delete.batch]" \
-            "productFields[product.fields]" \
             "productFind[product.find]" \
             "productImageAdd[product.image.add]" \
             "productImageDelete[product.image.delete]" \
@@ -436,13 +427,10 @@ case $state in
             "productUpdateBatch[product.update.batch]" \
             "productVariantAdd[product.variant.add]" \
             "productVariantAddBatch[product.variant.add.batch]" \
-            "productVariantCount[product.variant.count]" \
             "productVariantDelete[product.variant.delete]" \
             "productVariantDeleteBatch[product.variant.delete.batch]" \
             "productVariantImageAdd[product.variant.image.add]" \
             "productVariantImageDelete[product.variant.image.delete]" \
-            "productVariantInfo[product.variant.info]" \
-            "productVariantList[product.variant.list]" \
             "productVariantPriceAdd[product.variant.price.add]" \
             "productVariantPriceDelete[product.variant.price.delete]" \
             "productVariantPriceUpdate[product.variant.price.update]" \
@@ -567,6 +555,10 @@ case $state in
 "shopware_api_secret=:[QUERY] Shopware client secret access key"
 "bigcartel_user_name=:[QUERY] Subdomain of store"
 "bigcartel_password=:[QUERY] BigCartel account password"
+"bricklink_consumer_key=:[QUERY] Bricklink Consumer Key"
+"bricklink_consumer_secret=:[QUERY] Bricklink Consumer Secret"
+"bricklink_token=:[QUERY] Bricklink Access Token"
+"bricklink_token_secret=:[QUERY] Bricklink Access Token Secret"
 "volusion_login=:[QUERY] It&#39;s a Volusion account for which API is enabled"
 "volusion_password=:[QUERY] Volusion API Password"
 "walmart_client_id=:[QUERY] Walmart client ID. For the region &#39;ca&#39; use Consumer ID"
@@ -953,12 +945,6 @@ case $state in
                               )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      cartBridge)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       cartCatalogPriceRulesCount)
         local -a _op_arguments
         _op_arguments=(
@@ -976,27 +962,6 @@ case $state in
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      cartClearCache)
-        local -a _op_arguments
-        _op_arguments=(
-                    "cache_type=:[QUERY] Defines which cache should be cleared."
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      cartConfig)
-        local -a _op_arguments
-        _op_arguments=(
-                    "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      cartConfigUpdate)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       cartCouponAdd)
@@ -1064,21 +1029,7 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      cartCreate)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       cartDelete)
-        local -a _op_arguments
-        _op_arguments=(
-                    "delete_bridge=true:[QUERY] Identifies if there is a necessity to delete bridge"
-          "delete_bridge=false:[QUERY] Identifies if there is a necessity to delete bridge"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      cartDisconnect)
         local -a _op_arguments
         _op_arguments=(
                     "delete_bridge=true:[QUERY] Identifies if there is a necessity to delete bridge"
@@ -1133,12 +1084,6 @@ case $state in
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      cartList)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       cartMetaDataList)
@@ -1662,24 +1607,6 @@ case $state in
                               )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      orderFind)
-        local -a _op_arguments
-        _op_arguments=(
-                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"customer_id=:[QUERY] Retrieves orders specified by customer id"
-"customer_email=:[QUERY] Retrieves orders specified by customer email"
-"order_status=:[QUERY] Retrieves orders specified by order status"
-"financial_status=:[QUERY] Retrieves orders specified by financial status"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       orderFulfillmentStatusList)
         local -a _op_arguments
         _op_arguments=(
@@ -2117,12 +2044,6 @@ case $state in
                               )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      productFields)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       productFind)
         local -a _op_arguments
         _op_arguments=(
@@ -2408,19 +2329,6 @@ case $state in
                               )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      productVariantCount)
-        local -a _op_arguments
-        _op_arguments=(
-                    "product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
-"category_id=:[QUERY] Counts products’ variants specified by category id"
-"store_id=:[QUERY] Retrieves variants specified by store id"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       productVariantDelete)
         local -a _op_arguments
         _op_arguments=(
@@ -2449,33 +2357,6 @@ case $state in
 "product_variant_id=:[QUERY] Defines product&#39;s variants specified by variant id"
 "id=:[QUERY] Entity id"
 "store_id=:[QUERY] Store Id"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      productVariantInfo)
-        local -a _op_arguments
-        _op_arguments=(
-                    "id=:[QUERY] Retrieves variant&#39;s info specified by variant id"
-"store_id=:[QUERY] Retrieves variant info specified by store id"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      productVariantList)
-        local -a _op_arguments
-        _op_arguments=(
-                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
-"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
-"product_id=:[QUERY] Retrieves products&#39; variants specified by product id"
-"category_id=:[QUERY] Retrieves products’ variants specified by category id"
-"store_id=:[QUERY] Retrieves variants specified by store id"
-"created_from=:[QUERY] Retrieve entities from their creation date"
-"created_to=:[QUERY] Retrieve entities to their creation date"
-"modified_from=:[QUERY] Retrieve entities from their modification date"
-"modified_to=:[QUERY] Retrieve entities to their modification date"
-"params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

@@ -182,6 +182,10 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::shopware_api_key
 operation_parameters_minimum_occurrences["accountConfigUpdate:::shopware_api_secret"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::bigcartel_user_name"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::bigcartel_password"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::bricklink_consumer_key"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::bricklink_consumer_secret"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::bricklink_token"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::bricklink_token_secret"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::volusion_login"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::volusion_password"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::walmart_client_id"]=0
@@ -386,10 +390,6 @@ operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::ids"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::response_fields"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::params"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::exclude"]=0
-operation_parameters_minimum_occurrences["cartClearCache:::cache_type"]=1
-operation_parameters_minimum_occurrences["cartConfig:::params"]=0
-operation_parameters_minimum_occurrences["cartConfig:::exclude"]=0
-operation_parameters_minimum_occurrences["cartConfigUpdate:::CartConfigUpdate"]=1
 operation_parameters_minimum_occurrences["cartCouponAdd:::CartCouponAdd"]=1
 operation_parameters_minimum_occurrences["cartCouponConditionAdd:::coupon_id"]=1
 operation_parameters_minimum_occurrences["cartCouponConditionAdd:::entity"]=1
@@ -422,9 +422,7 @@ operation_parameters_minimum_occurrences["cartCouponList:::date_end_to"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::response_fields"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::params"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::exclude"]=0
-operation_parameters_minimum_occurrences["cartCreate:::CartCreate"]=1
 operation_parameters_minimum_occurrences["cartDelete:::delete_bridge"]=0
-operation_parameters_minimum_occurrences["cartDisconnect:::delete_bridge"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::amount"]=1
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::code"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_email"]=0
@@ -720,18 +718,6 @@ operation_parameters_minimum_occurrences["orderCount:::created_from"]=0
 operation_parameters_minimum_occurrences["orderCount:::created_to"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_to"]=0
-operation_parameters_minimum_occurrences["orderFind:::start"]=0
-operation_parameters_minimum_occurrences["orderFind:::count"]=0
-operation_parameters_minimum_occurrences["orderFind:::customer_id"]=0
-operation_parameters_minimum_occurrences["orderFind:::customer_email"]=0
-operation_parameters_minimum_occurrences["orderFind:::order_status"]=0
-operation_parameters_minimum_occurrences["orderFind:::financial_status"]=0
-operation_parameters_minimum_occurrences["orderFind:::created_to"]=0
-operation_parameters_minimum_occurrences["orderFind:::created_from"]=0
-operation_parameters_minimum_occurrences["orderFind:::modified_to"]=0
-operation_parameters_minimum_occurrences["orderFind:::modified_from"]=0
-operation_parameters_minimum_occurrences["orderFind:::params"]=0
-operation_parameters_minimum_occurrences["orderFind:::exclude"]=0
 operation_parameters_minimum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_minimum_occurrences["orderInfo:::id"]=0
 operation_parameters_minimum_occurrences["orderInfo:::order_id"]=0
@@ -1093,13 +1079,6 @@ operation_parameters_minimum_occurrences["productUpdate:::ProductUpdate"]=1
 operation_parameters_minimum_occurrences["productUpdateBatch:::ProductUpdateBatch"]=1
 operation_parameters_minimum_occurrences["productVariantAdd:::ProductVariantAdd"]=1
 operation_parameters_minimum_occurrences["productVariantAddBatch:::ProductVariantAddBatch"]=1
-operation_parameters_minimum_occurrences["productVariantCount:::product_id"]=1
-operation_parameters_minimum_occurrences["productVariantCount:::category_id"]=0
-operation_parameters_minimum_occurrences["productVariantCount:::store_id"]=0
-operation_parameters_minimum_occurrences["productVariantCount:::created_from"]=0
-operation_parameters_minimum_occurrences["productVariantCount:::created_to"]=0
-operation_parameters_minimum_occurrences["productVariantCount:::modified_from"]=0
-operation_parameters_minimum_occurrences["productVariantCount:::modified_to"]=0
 operation_parameters_minimum_occurrences["productVariantDelete:::id"]=1
 operation_parameters_minimum_occurrences["productVariantDelete:::product_id"]=1
 operation_parameters_minimum_occurrences["productVariantDelete:::store_id"]=0
@@ -1109,21 +1088,6 @@ operation_parameters_minimum_occurrences["productVariantImageDelete:::product_id
 operation_parameters_minimum_occurrences["productVariantImageDelete:::product_variant_id"]=1
 operation_parameters_minimum_occurrences["productVariantImageDelete:::id"]=1
 operation_parameters_minimum_occurrences["productVariantImageDelete:::store_id"]=0
-operation_parameters_minimum_occurrences["productVariantInfo:::id"]=1
-operation_parameters_minimum_occurrences["productVariantInfo:::store_id"]=0
-operation_parameters_minimum_occurrences["productVariantInfo:::params"]=0
-operation_parameters_minimum_occurrences["productVariantInfo:::exclude"]=0
-operation_parameters_minimum_occurrences["productVariantList:::start"]=0
-operation_parameters_minimum_occurrences["productVariantList:::count"]=0
-operation_parameters_minimum_occurrences["productVariantList:::product_id"]=0
-operation_parameters_minimum_occurrences["productVariantList:::category_id"]=0
-operation_parameters_minimum_occurrences["productVariantList:::store_id"]=0
-operation_parameters_minimum_occurrences["productVariantList:::created_from"]=0
-operation_parameters_minimum_occurrences["productVariantList:::created_to"]=0
-operation_parameters_minimum_occurrences["productVariantList:::modified_from"]=0
-operation_parameters_minimum_occurrences["productVariantList:::modified_to"]=0
-operation_parameters_minimum_occurrences["productVariantList:::params"]=0
-operation_parameters_minimum_occurrences["productVariantList:::exclude"]=0
 operation_parameters_minimum_occurrences["productVariantPriceAdd:::ProductVariantPriceAdd"]=1
 operation_parameters_minimum_occurrences["productVariantPriceDelete:::id"]=1
 operation_parameters_minimum_occurrences["productVariantPriceDelete:::product_id"]=1
@@ -1319,6 +1283,10 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::shopware_api_key
 operation_parameters_maximum_occurrences["accountConfigUpdate:::shopware_api_secret"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::bigcartel_user_name"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::bigcartel_password"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::bricklink_consumer_key"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::bricklink_consumer_secret"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::bricklink_token"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::bricklink_token_secret"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::volusion_login"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::volusion_password"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::walmart_client_id"]=0
@@ -1523,10 +1491,6 @@ operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::ids"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::response_fields"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::params"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::exclude"]=0
-operation_parameters_maximum_occurrences["cartClearCache:::cache_type"]=0
-operation_parameters_maximum_occurrences["cartConfig:::params"]=0
-operation_parameters_maximum_occurrences["cartConfig:::exclude"]=0
-operation_parameters_maximum_occurrences["cartConfigUpdate:::CartConfigUpdate"]=0
 operation_parameters_maximum_occurrences["cartCouponAdd:::CartCouponAdd"]=0
 operation_parameters_maximum_occurrences["cartCouponConditionAdd:::coupon_id"]=0
 operation_parameters_maximum_occurrences["cartCouponConditionAdd:::entity"]=0
@@ -1559,9 +1523,7 @@ operation_parameters_maximum_occurrences["cartCouponList:::date_end_to"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::response_fields"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::params"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::exclude"]=0
-operation_parameters_maximum_occurrences["cartCreate:::CartCreate"]=0
 operation_parameters_maximum_occurrences["cartDelete:::delete_bridge"]=0
-operation_parameters_maximum_occurrences["cartDisconnect:::delete_bridge"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::amount"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::code"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_email"]=0
@@ -1857,18 +1819,6 @@ operation_parameters_maximum_occurrences["orderCount:::created_from"]=0
 operation_parameters_maximum_occurrences["orderCount:::created_to"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_to"]=0
-operation_parameters_maximum_occurrences["orderFind:::start"]=0
-operation_parameters_maximum_occurrences["orderFind:::count"]=0
-operation_parameters_maximum_occurrences["orderFind:::customer_id"]=0
-operation_parameters_maximum_occurrences["orderFind:::customer_email"]=0
-operation_parameters_maximum_occurrences["orderFind:::order_status"]=0
-operation_parameters_maximum_occurrences["orderFind:::financial_status"]=0
-operation_parameters_maximum_occurrences["orderFind:::created_to"]=0
-operation_parameters_maximum_occurrences["orderFind:::created_from"]=0
-operation_parameters_maximum_occurrences["orderFind:::modified_to"]=0
-operation_parameters_maximum_occurrences["orderFind:::modified_from"]=0
-operation_parameters_maximum_occurrences["orderFind:::params"]=0
-operation_parameters_maximum_occurrences["orderFind:::exclude"]=0
 operation_parameters_maximum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_maximum_occurrences["orderInfo:::id"]=0
 operation_parameters_maximum_occurrences["orderInfo:::order_id"]=0
@@ -2230,13 +2180,6 @@ operation_parameters_maximum_occurrences["productUpdate:::ProductUpdate"]=0
 operation_parameters_maximum_occurrences["productUpdateBatch:::ProductUpdateBatch"]=0
 operation_parameters_maximum_occurrences["productVariantAdd:::ProductVariantAdd"]=0
 operation_parameters_maximum_occurrences["productVariantAddBatch:::ProductVariantAddBatch"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::product_id"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::category_id"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::store_id"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::created_from"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::created_to"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::modified_from"]=0
-operation_parameters_maximum_occurrences["productVariantCount:::modified_to"]=0
 operation_parameters_maximum_occurrences["productVariantDelete:::id"]=0
 operation_parameters_maximum_occurrences["productVariantDelete:::product_id"]=0
 operation_parameters_maximum_occurrences["productVariantDelete:::store_id"]=0
@@ -2246,21 +2189,6 @@ operation_parameters_maximum_occurrences["productVariantImageDelete:::product_id
 operation_parameters_maximum_occurrences["productVariantImageDelete:::product_variant_id"]=0
 operation_parameters_maximum_occurrences["productVariantImageDelete:::id"]=0
 operation_parameters_maximum_occurrences["productVariantImageDelete:::store_id"]=0
-operation_parameters_maximum_occurrences["productVariantInfo:::id"]=0
-operation_parameters_maximum_occurrences["productVariantInfo:::store_id"]=0
-operation_parameters_maximum_occurrences["productVariantInfo:::params"]=0
-operation_parameters_maximum_occurrences["productVariantInfo:::exclude"]=0
-operation_parameters_maximum_occurrences["productVariantList:::start"]=0
-operation_parameters_maximum_occurrences["productVariantList:::count"]=0
-operation_parameters_maximum_occurrences["productVariantList:::product_id"]=0
-operation_parameters_maximum_occurrences["productVariantList:::category_id"]=0
-operation_parameters_maximum_occurrences["productVariantList:::store_id"]=0
-operation_parameters_maximum_occurrences["productVariantList:::created_from"]=0
-operation_parameters_maximum_occurrences["productVariantList:::created_to"]=0
-operation_parameters_maximum_occurrences["productVariantList:::modified_from"]=0
-operation_parameters_maximum_occurrences["productVariantList:::modified_to"]=0
-operation_parameters_maximum_occurrences["productVariantList:::params"]=0
-operation_parameters_maximum_occurrences["productVariantList:::exclude"]=0
 operation_parameters_maximum_occurrences["productVariantPriceAdd:::ProductVariantPriceAdd"]=0
 operation_parameters_maximum_occurrences["productVariantPriceDelete:::id"]=0
 operation_parameters_maximum_occurrences["productVariantPriceDelete:::product_id"]=0
@@ -2453,6 +2381,10 @@ operation_parameters_collection_type["accountConfigUpdate:::shopware_api_key"]="
 operation_parameters_collection_type["accountConfigUpdate:::shopware_api_secret"]=""
 operation_parameters_collection_type["accountConfigUpdate:::bigcartel_user_name"]=""
 operation_parameters_collection_type["accountConfigUpdate:::bigcartel_password"]=""
+operation_parameters_collection_type["accountConfigUpdate:::bricklink_consumer_key"]=""
+operation_parameters_collection_type["accountConfigUpdate:::bricklink_consumer_secret"]=""
+operation_parameters_collection_type["accountConfigUpdate:::bricklink_token"]=""
+operation_parameters_collection_type["accountConfigUpdate:::bricklink_token_secret"]=""
 operation_parameters_collection_type["accountConfigUpdate:::volusion_login"]=""
 operation_parameters_collection_type["accountConfigUpdate:::volusion_password"]=""
 operation_parameters_collection_type["accountConfigUpdate:::walmart_client_id"]=""
@@ -2657,10 +2589,6 @@ operation_parameters_collection_type["cartCatalogPriceRulesList:::ids"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::response_fields"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::params"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::exclude"]=""
-operation_parameters_collection_type["cartClearCache:::cache_type"]=""
-operation_parameters_collection_type["cartConfig:::params"]=""
-operation_parameters_collection_type["cartConfig:::exclude"]=""
-operation_parameters_collection_type["cartConfigUpdate:::CartConfigUpdate"]=""
 operation_parameters_collection_type["cartCouponAdd:::CartCouponAdd"]=""
 operation_parameters_collection_type["cartCouponConditionAdd:::coupon_id"]=""
 operation_parameters_collection_type["cartCouponConditionAdd:::entity"]=""
@@ -2693,9 +2621,7 @@ operation_parameters_collection_type["cartCouponList:::date_end_to"]=""
 operation_parameters_collection_type["cartCouponList:::response_fields"]=""
 operation_parameters_collection_type["cartCouponList:::params"]=""
 operation_parameters_collection_type["cartCouponList:::exclude"]=""
-operation_parameters_collection_type["cartCreate:::CartCreate"]=""
 operation_parameters_collection_type["cartDelete:::delete_bridge"]=""
-operation_parameters_collection_type["cartDisconnect:::delete_bridge"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::amount"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::code"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::owner_email"]=""
@@ -2991,18 +2917,6 @@ operation_parameters_collection_type["orderCount:::created_from"]=""
 operation_parameters_collection_type["orderCount:::created_to"]=""
 operation_parameters_collection_type["orderCount:::modified_from"]=""
 operation_parameters_collection_type["orderCount:::modified_to"]=""
-operation_parameters_collection_type["orderFind:::start"]=""
-operation_parameters_collection_type["orderFind:::count"]=""
-operation_parameters_collection_type["orderFind:::customer_id"]=""
-operation_parameters_collection_type["orderFind:::customer_email"]=""
-operation_parameters_collection_type["orderFind:::order_status"]=""
-operation_parameters_collection_type["orderFind:::financial_status"]=""
-operation_parameters_collection_type["orderFind:::created_to"]=""
-operation_parameters_collection_type["orderFind:::created_from"]=""
-operation_parameters_collection_type["orderFind:::modified_to"]=""
-operation_parameters_collection_type["orderFind:::modified_from"]=""
-operation_parameters_collection_type["orderFind:::params"]=""
-operation_parameters_collection_type["orderFind:::exclude"]=""
 operation_parameters_collection_type["orderFulfillmentStatusList:::action"]=""
 operation_parameters_collection_type["orderInfo:::id"]=""
 operation_parameters_collection_type["orderInfo:::order_id"]=""
@@ -3364,13 +3278,6 @@ operation_parameters_collection_type["productUpdate:::ProductUpdate"]=""
 operation_parameters_collection_type["productUpdateBatch:::ProductUpdateBatch"]=""
 operation_parameters_collection_type["productVariantAdd:::ProductVariantAdd"]=""
 operation_parameters_collection_type["productVariantAddBatch:::ProductVariantAddBatch"]=""
-operation_parameters_collection_type["productVariantCount:::product_id"]=""
-operation_parameters_collection_type["productVariantCount:::category_id"]=""
-operation_parameters_collection_type["productVariantCount:::store_id"]=""
-operation_parameters_collection_type["productVariantCount:::created_from"]=""
-operation_parameters_collection_type["productVariantCount:::created_to"]=""
-operation_parameters_collection_type["productVariantCount:::modified_from"]=""
-operation_parameters_collection_type["productVariantCount:::modified_to"]=""
 operation_parameters_collection_type["productVariantDelete:::id"]=""
 operation_parameters_collection_type["productVariantDelete:::product_id"]=""
 operation_parameters_collection_type["productVariantDelete:::store_id"]=""
@@ -3380,21 +3287,6 @@ operation_parameters_collection_type["productVariantImageDelete:::product_id"]="
 operation_parameters_collection_type["productVariantImageDelete:::product_variant_id"]=""
 operation_parameters_collection_type["productVariantImageDelete:::id"]=""
 operation_parameters_collection_type["productVariantImageDelete:::store_id"]=""
-operation_parameters_collection_type["productVariantInfo:::id"]=""
-operation_parameters_collection_type["productVariantInfo:::store_id"]=""
-operation_parameters_collection_type["productVariantInfo:::params"]=""
-operation_parameters_collection_type["productVariantInfo:::exclude"]=""
-operation_parameters_collection_type["productVariantList:::start"]=""
-operation_parameters_collection_type["productVariantList:::count"]=""
-operation_parameters_collection_type["productVariantList:::product_id"]=""
-operation_parameters_collection_type["productVariantList:::category_id"]=""
-operation_parameters_collection_type["productVariantList:::store_id"]=""
-operation_parameters_collection_type["productVariantList:::created_from"]=""
-operation_parameters_collection_type["productVariantList:::created_to"]=""
-operation_parameters_collection_type["productVariantList:::modified_from"]=""
-operation_parameters_collection_type["productVariantList:::modified_to"]=""
-operation_parameters_collection_type["productVariantList:::params"]=""
-operation_parameters_collection_type["productVariantList:::exclude"]=""
 operation_parameters_collection_type["productVariantPriceAdd:::ProductVariantPriceAdd"]=""
 operation_parameters_collection_type["productVariantPriceDelete:::id"]=""
 operation_parameters_collection_type["productVariantPriceDelete:::product_id"]=""
@@ -3979,26 +3871,19 @@ echo "  $ops" | column -t -s ';'
     echo ""
     echo -e "${BOLD}${WHITE}[cart]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}cartBridge${OFF};cart.bridge (AUTH)
   ${CYAN}cartCatalogPriceRulesCount${OFF};cart.catalog_price_rules.count (AUTH) (AUTH)
   ${CYAN}cartCatalogPriceRulesList${OFF};cart.catalog_price_rules.list (AUTH) (AUTH)
-  ${CYAN}cartClearCache${OFF};cart.clear_cache (AUTH) (AUTH)
-  ${CYAN}cartConfig${OFF};cart.config (AUTH) (AUTH)
-  ${CYAN}cartConfigUpdate${OFF};cart.config.update (AUTH) (AUTH)
   ${CYAN}cartCouponAdd${OFF};cart.coupon.add (AUTH) (AUTH)
   ${CYAN}cartCouponConditionAdd${OFF};cart.coupon.condition.add (AUTH) (AUTH)
   ${CYAN}cartCouponCount${OFF};cart.coupon.count (AUTH) (AUTH)
   ${CYAN}cartCouponDelete${OFF};cart.coupon.delete (AUTH) (AUTH)
   ${CYAN}cartCouponList${OFF};cart.coupon.list (AUTH) (AUTH)
-  ${CYAN}cartCreate${OFF};cart.create (AUTH)
   ${CYAN}cartDelete${OFF};cart.delete (AUTH) (AUTH)
-  ${CYAN}cartDisconnect${OFF};cart.disconnect (AUTH) (AUTH)
   ${CYAN}cartGiftcardAdd${OFF};cart.giftcard.add (AUTH) (AUTH)
   ${CYAN}cartGiftcardCount${OFF};cart.giftcard.count (AUTH) (AUTH)
   ${CYAN}cartGiftcardDelete${OFF};cart.giftcard.delete (AUTH) (AUTH)
   ${CYAN}cartGiftcardList${OFF};cart.giftcard.list (AUTH) (AUTH)
   ${CYAN}cartInfo${OFF};cart.info (AUTH) (AUTH)
-  ${CYAN}cartList${OFF};cart.list (AUTH)
   ${CYAN}cartMetaDataList${OFF};cart.meta_data.list (AUTH) (AUTH)
   ${CYAN}cartMetaDataSet${OFF};cart.meta_data.set (AUTH) (AUTH)
   ${CYAN}cartMetaDataUnset${OFF};cart.meta_data.unset (AUTH) (AUTH)
@@ -4058,7 +3943,6 @@ read -r -d '' ops <<EOF
   ${CYAN}orderAdd${OFF};order.add (AUTH) (AUTH)
   ${CYAN}orderCount${OFF};order.count (AUTH) (AUTH)
   ${CYAN}orderFinancialStatusList${OFF};order.financial_status.list (AUTH) (AUTH)
-  ${CYAN}orderFind${OFF};order.find (AUTH) (AUTH)
   ${CYAN}orderFulfillmentStatusList${OFF};order.fulfillment_status.list (AUTH) (AUTH)
   ${CYAN}orderInfo${OFF};order.info (AUTH) (AUTH)
   ${CYAN}orderList${OFF};order.list (AUTH) (AUTH)
@@ -4096,7 +3980,6 @@ read -r -d '' ops <<EOF
   ${CYAN}productCurrencyList${OFF};product.currency.list (AUTH) (AUTH)
   ${CYAN}productDelete${OFF};product.delete (AUTH) (AUTH)
   ${CYAN}productDeleteBatch${OFF};product.delete.batch (AUTH) (AUTH)
-  ${CYAN}productFields${OFF};product.fields (AUTH) (AUTH)
   ${CYAN}productFind${OFF};product.find (AUTH) (AUTH)
   ${CYAN}productImageAdd${OFF};product.image.add (AUTH) (AUTH)
   ${CYAN}productImageDelete${OFF};product.image.delete (AUTH) (AUTH)
@@ -4122,13 +4005,10 @@ read -r -d '' ops <<EOF
   ${CYAN}productUpdateBatch${OFF};product.update.batch (AUTH) (AUTH)
   ${CYAN}productVariantAdd${OFF};product.variant.add (AUTH) (AUTH)
   ${CYAN}productVariantAddBatch${OFF};product.variant.add.batch (AUTH) (AUTH)
-  ${CYAN}productVariantCount${OFF};product.variant.count (AUTH) (AUTH)
   ${CYAN}productVariantDelete${OFF};product.variant.delete (AUTH) (AUTH)
   ${CYAN}productVariantDeleteBatch${OFF};product.variant.delete.batch (AUTH) (AUTH)
   ${CYAN}productVariantImageAdd${OFF};product.variant.image.add (AUTH) (AUTH)
   ${CYAN}productVariantImageDelete${OFF};product.variant.image.delete (AUTH) (AUTH)
-  ${CYAN}productVariantInfo${OFF};product.variant.info (AUTH) (AUTH)
-  ${CYAN}productVariantList${OFF};product.variant.list (AUTH) (AUTH)
   ${CYAN}productVariantPriceAdd${OFF};product.variant.price.add (AUTH) (AUTH)
   ${CYAN}productVariantPriceDelete${OFF};product.variant.price.delete (AUTH) (AUTH)
   ${CYAN}productVariantPriceUpdate${OFF};product.variant.price.update (AUTH) (AUTH)
@@ -4177,7 +4057,7 @@ echo "  $ops" | column -t -s ';'
     echo -e "  -V,--version\\t\\t\\t\\tPrint API version"
     echo -e "  --about\\t\\t\\t\\tPrint the information about service"
     echo -e "  --host ${CYAN}<url>${OFF}\\t\\t\\t\\tSpecify the host URL "
-echo -e "              \\t\\t\\t\\t(e.g. 'https://api.api2cart.com')"
+echo -e "              \\t\\t\\t\\t(e.g. 'https://api.api2cart.local.com')"
 
     echo -e "  --force\\t\\t\\t\\tForce command invocation in spite of missing"
     echo -e "         \\t\\t\\t\\trequired parameters or wrong content type"
@@ -4439,6 +4319,14 @@ print_accountConfigUpdate_help() {
     echo -e "  * ${GREEN}bigcartel_user_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Subdomain of store${YELLOW} Specify as: bigcartel_user_name=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}bigcartel_password${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - BigCartel account password${YELLOW} Specify as: bigcartel_password=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}bricklink_consumer_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Bricklink Consumer Key${YELLOW} Specify as: bricklink_consumer_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}bricklink_consumer_secret${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Bricklink Consumer Secret${YELLOW} Specify as: bricklink_consumer_secret=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}bricklink_token${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Bricklink Access Token${YELLOW} Specify as: bricklink_token=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}bricklink_token_secret${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Bricklink Access Token Secret${YELLOW} Specify as: bricklink_token_secret=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}volusion_login${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - It's a Volusion account for which API is enabled${YELLOW} Specify as: volusion_login=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -5313,22 +5201,6 @@ print_bridgeUpdate_help() {
 }
 ##############################################################################
 #
-# Print help for cartBridge operation
-#
-##############################################################################
-print_cartBridge_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartBridge - cart.bridge${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get bridge key and store key" | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
 # Print help for cartCatalogPriceRulesCount operation
 #
 ##############################################################################
@@ -5369,65 +5241,6 @@ print_cartCatalogPriceRulesList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for cartClearCache operation
-#
-##############################################################################
-print_cartClearCache_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartClearCache - cart.clear_cache${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Clear cache on store." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}cache_type${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines which cache should be cleared.${YELLOW} Specify as: cache_type=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for cartConfig operation
-#
-##############################################################################
-print_cartConfig_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartConfig - cart.config${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get list of cart configs" | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: store_name,store_url,db_prefix)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for cartConfigUpdate operation
-#
-##############################################################################
-print_cartConfigUpdate_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartConfigUpdate - cart.config.update${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Use this API method to update custom data in client database." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5584,25 +5397,6 @@ print_cartCouponList_help() {
 }
 ##############################################################################
 #
-# Print help for cartCreate operation
-#
-##############################################################################
-print_cartCreate_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartCreate - cart.create${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Add store to the account" | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
 # Print help for cartDelete operation
 #
 ##############################################################################
@@ -5614,25 +5408,6 @@ print_cartDelete_help() {
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}delete_bridge${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Identifies if there is a necessity to delete bridge${YELLOW} Specify as: delete_bridge=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for cartDisconnect operation
-#
-##############################################################################
-print_cartDisconnect_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartDisconnect - cart.disconnect${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Disconnect with the store and clear store session data." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}delete_bridge${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Identifies if there is a necessity to delete bridge${YELLOW} Specify as: delete_bridge=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5757,22 +5532,6 @@ print_cartInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for cartList operation
-#
-##############################################################################
-print_cartList_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}cartList - cart.list${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get list of supported carts" | paste -sd' ' | fold -sw 80
-    echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6993,47 +6752,6 @@ print_orderFinancialStatusList_help() {
 }
 ##############################################################################
 #
-# Print help for orderFind operation
-#
-##############################################################################
-print_orderFind_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}orderFind - order.find${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "This method is deprecated and won't be supported in the future. Please use \"order.list\" instead." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}customer_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by customer id${YELLOW} Specify as: customer_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}customer_email${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by customer email${YELLOW} Specify as: customer_email=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}order_status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by order status${YELLOW} Specify as: order_status=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}financial_status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by financial status${YELLOW} Specify as: financial_status=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their modification date${YELLOW} Specify as: modified_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: order_id,customer,totals,address,items,bundles,status)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
 # Print help for orderFulfillmentStatusList operation
 #
 ##############################################################################
@@ -8042,22 +7760,6 @@ print_productDeleteBatch_help() {
 }
 ##############################################################################
 #
-# Print help for productFields operation
-#
-##############################################################################
-print_productFields_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}productFields - product.fields${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Retrieve all available fields for product item in store." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
 # Print help for productFind operation
 #
 ##############################################################################
@@ -8741,37 +8443,6 @@ print_productVariantAddBatch_help() {
 }
 ##############################################################################
 #
-# Print help for productVariantCount operation
-#
-##############################################################################
-print_productVariantCount_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}productVariantCount - product.variant.count${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get count variants." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}product_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Retrieves products' variants specified by product id${YELLOW} Specify as: product_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}category_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products’ variants specified by category id${YELLOW} Specify as: category_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves variants specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their modification date${YELLOW} Specify as: modified_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
 # Print help for productVariantDelete operation
 #
 ##############################################################################
@@ -8850,70 +8521,6 @@ print_productVariantImageDelete_help() {
     echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity id${YELLOW} Specify as: id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for productVariantInfo operation
-#
-##############################################################################
-print_productVariantInfo_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}productVariantInfo - product.variant.info${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Retrieves variant's info specified by variant id${YELLOW} Specify as: id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves variant info specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for productVariantList operation
-#
-##############################################################################
-print_productVariantList_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}productVariantList - product.variant.list${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get a list of variants. This method is deprecated, and its development is stopped. Please use \"product.child_item.list\" instead." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}product_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products' variants specified by product id${YELLOW} Specify as: product_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}category_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products’ variants specified by category id${YELLOW} Specify as: category_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves variants specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their modification date${YELLOW} Specify as: modified_from=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9586,7 +9193,7 @@ call_accountConfigUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region    )
+    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region    )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.config.update.json" path_parameter_names query_parameter_names); then
@@ -10621,42 +10228,6 @@ call_bridgeUpdate() {
 
 ##############################################################################
 #
-# Call cartBridge operation
-#
-##############################################################################
-call_cartBridge() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(  )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.bridge.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
 # Call cartCatalogPriceRulesCount operation
 #
 ##############################################################################
@@ -10724,156 +10295,6 @@ call_cartCatalogPriceRulesList() {
         echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
     else
         eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call cartClearCache operation
-#
-##############################################################################
-call_cartClearCache() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(cache_type    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.clear_cache.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="POST"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call cartConfig operation
-#
-##############################################################################
-call_cartConfig() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(params exclude    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.config.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call cartConfigUpdate operation
-#
-##############################################################################
-call_cartConfigUpdate() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.config.update.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="PUT"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    local body_json_curl=""
-
-    #
-    # Check if the user provided 'Content-type' headers in the
-    # command line. If not try to set them based on the OpenAPI specification
-    # if values produces and consumes are defined unambiguously
-    #
-    if [[ -z $header_content_type ]]; then
-        header_content_type="application/json"
-    fi
-
-
-    if [[ -z $header_content_type && "$force" = false ]]; then
-        :
-        echo "ERROR: Request's content-type not specified!!!"
-        echo "This operation expects content-type in one of the following formats:"
-        echo -e "\\t- application/json"
-        echo ""
-        echo "Use '--content-type' to set proper content type"
-        exit 1
-    else
-        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
-    fi
-
-
-    #
-    # If we have received some body content over pipe, pass it from the
-    # temporary file to cURL
-    #
-    if [[ -n $body_content_temp_file ]]; then
-        if [[ "$print_curl" = true ]]; then
-            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
-        else
-            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
-        fi
-        rm "${body_content_temp_file}"
-    #
-    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
-    #
-    else
-        body_json_curl=$(body_parameters_to_json)
-        if [[ "$print_curl" = true ]]; then
-            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
-        else
-            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
-        fi
     fi
 }
 
@@ -11101,84 +10522,6 @@ call_cartCouponList() {
 
 ##############################################################################
 #
-# Call cartCreate operation
-#
-##############################################################################
-call_cartCreate() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(  )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.create.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="POST"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    local body_json_curl=""
-
-    #
-    # Check if the user provided 'Content-type' headers in the
-    # command line. If not try to set them based on the OpenAPI specification
-    # if values produces and consumes are defined unambiguously
-    #
-    if [[ -z $header_content_type ]]; then
-        header_content_type="application/json"
-    fi
-
-
-    if [[ -z $header_content_type && "$force" = false ]]; then
-        :
-        echo "ERROR: Request's content-type not specified!!!"
-        echo "This operation expects content-type in one of the following formats:"
-        echo -e "\\t- application/json"
-        echo ""
-        echo "Use '--content-type' to set proper content type"
-        exit 1
-    else
-        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
-    fi
-
-
-    #
-    # If we have received some body content over pipe, pass it from the
-    # temporary file to cURL
-    #
-    if [[ -n $body_content_temp_file ]]; then
-        if [[ "$print_curl" = true ]]; then
-            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
-        else
-            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
-        fi
-        rm "${body_content_temp_file}"
-    #
-    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
-    #
-    else
-        body_json_curl=$(body_parameters_to_json)
-        if [[ "$print_curl" = true ]]; then
-            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
-        else
-            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
-        fi
-    fi
-}
-
-##############################################################################
-#
 # Call cartDelete operation
 #
 ##############################################################################
@@ -11196,42 +10539,6 @@ call_cartDelete() {
         exit 1
     fi
     local method="DELETE"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call cartDisconnect operation
-#
-##############################################################################
-call_cartDisconnect() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(delete_bridge    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.disconnect.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
     local headers_curl
     headers_curl=$(header_arguments_to_curl)
     if [[ -n $header_accept ]]; then
@@ -11408,42 +10715,6 @@ call_cartInfo() {
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.info.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call cartList operation
-#
-##############################################################################
-call_cartList() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(  )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/cart.list.json" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -13081,42 +12352,6 @@ call_orderFinancialStatusList() {
 
 ##############################################################################
 #
-# Call orderFind operation
-#
-##############################################################################
-call_orderFind() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(start count customer_id customer_email order_status financial_status created_to created_from modified_to modified_from params exclude    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/order.find.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
 # Call orderFulfillmentStatusList operation
 #
 ##############################################################################
@@ -14731,42 +13966,6 @@ call_productDeleteBatch() {
 
 ##############################################################################
 #
-# Call productFields operation
-#
-##############################################################################
-call_productFields() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/product.fields.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
 # Call productFind operation
 #
 ##############################################################################
@@ -16045,42 +15244,6 @@ call_productVariantAddBatch() {
 
 ##############################################################################
 #
-# Call productVariantCount operation
-#
-##############################################################################
-call_productVariantCount() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(product_id category_id store_id created_from created_to modified_from modified_to    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/product.variant.count.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
 # Call productVariantDelete operation
 #
 ##############################################################################
@@ -16290,78 +15453,6 @@ call_productVariantImageDelete() {
         exit 1
     fi
     local method="DELETE"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call productVariantInfo operation
-#
-##############################################################################
-call_productVariantInfo() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(id store_id params exclude    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/product.variant.info.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call productVariantList operation
-#
-##############################################################################
-call_productVariantList() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(start count product_id category_id store_id created_from created_to modified_from modified_to params exclude    )
-    local path
-
-    if ! path=$(build_request_path "/v1.1/product.variant.list.json" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
     local headers_curl
     headers_curl=$(header_arguments_to_curl)
     if [[ -n $header_accept ]]; then
@@ -17457,23 +16548,11 @@ case $key in
     bridgeUpdate)
     operation="bridgeUpdate"
     ;;
-    cartBridge)
-    operation="cartBridge"
-    ;;
     cartCatalogPriceRulesCount)
     operation="cartCatalogPriceRulesCount"
     ;;
     cartCatalogPriceRulesList)
     operation="cartCatalogPriceRulesList"
-    ;;
-    cartClearCache)
-    operation="cartClearCache"
-    ;;
-    cartConfig)
-    operation="cartConfig"
-    ;;
-    cartConfigUpdate)
-    operation="cartConfigUpdate"
     ;;
     cartCouponAdd)
     operation="cartCouponAdd"
@@ -17490,14 +16569,8 @@ case $key in
     cartCouponList)
     operation="cartCouponList"
     ;;
-    cartCreate)
-    operation="cartCreate"
-    ;;
     cartDelete)
     operation="cartDelete"
-    ;;
-    cartDisconnect)
-    operation="cartDisconnect"
     ;;
     cartGiftcardAdd)
     operation="cartGiftcardAdd"
@@ -17513,9 +16586,6 @@ case $key in
     ;;
     cartInfo)
     operation="cartInfo"
-    ;;
-    cartList)
-    operation="cartList"
     ;;
     cartMetaDataList)
     operation="cartMetaDataList"
@@ -17634,9 +16704,6 @@ case $key in
     orderFinancialStatusList)
     operation="orderFinancialStatusList"
     ;;
-    orderFind)
-    operation="orderFind"
-    ;;
     orderFulfillmentStatusList)
     operation="orderFulfillmentStatusList"
     ;;
@@ -17733,9 +16800,6 @@ case $key in
     productDeleteBatch)
     operation="productDeleteBatch"
     ;;
-    productFields)
-    operation="productFields"
-    ;;
     productFind)
     operation="productFind"
     ;;
@@ -17811,9 +16875,6 @@ case $key in
     productVariantAddBatch)
     operation="productVariantAddBatch"
     ;;
-    productVariantCount)
-    operation="productVariantCount"
-    ;;
     productVariantDelete)
     operation="productVariantDelete"
     ;;
@@ -17825,12 +16886,6 @@ case $key in
     ;;
     productVariantImageDelete)
     operation="productVariantImageDelete"
-    ;;
-    productVariantInfo)
-    operation="productVariantInfo"
-    ;;
-    productVariantList)
-    operation="productVariantList"
     ;;
     productVariantPriceAdd)
     operation="productVariantPriceAdd"
@@ -18086,23 +17141,11 @@ case $operation in
     bridgeUpdate)
     call_bridgeUpdate
     ;;
-    cartBridge)
-    call_cartBridge
-    ;;
     cartCatalogPriceRulesCount)
     call_cartCatalogPriceRulesCount
     ;;
     cartCatalogPriceRulesList)
     call_cartCatalogPriceRulesList
-    ;;
-    cartClearCache)
-    call_cartClearCache
-    ;;
-    cartConfig)
-    call_cartConfig
-    ;;
-    cartConfigUpdate)
-    call_cartConfigUpdate
     ;;
     cartCouponAdd)
     call_cartCouponAdd
@@ -18119,14 +17162,8 @@ case $operation in
     cartCouponList)
     call_cartCouponList
     ;;
-    cartCreate)
-    call_cartCreate
-    ;;
     cartDelete)
     call_cartDelete
-    ;;
-    cartDisconnect)
-    call_cartDisconnect
     ;;
     cartGiftcardAdd)
     call_cartGiftcardAdd
@@ -18142,9 +17179,6 @@ case $operation in
     ;;
     cartInfo)
     call_cartInfo
-    ;;
-    cartList)
-    call_cartList
     ;;
     cartMetaDataList)
     call_cartMetaDataList
@@ -18263,9 +17297,6 @@ case $operation in
     orderFinancialStatusList)
     call_orderFinancialStatusList
     ;;
-    orderFind)
-    call_orderFind
-    ;;
     orderFulfillmentStatusList)
     call_orderFulfillmentStatusList
     ;;
@@ -18362,9 +17393,6 @@ case $operation in
     productDeleteBatch)
     call_productDeleteBatch
     ;;
-    productFields)
-    call_productFields
-    ;;
     productFind)
     call_productFind
     ;;
@@ -18440,9 +17468,6 @@ case $operation in
     productVariantAddBatch)
     call_productVariantAddBatch
     ;;
-    productVariantCount)
-    call_productVariantCount
-    ;;
     productVariantDelete)
     call_productVariantDelete
     ;;
@@ -18454,12 +17479,6 @@ case $operation in
     ;;
     productVariantImageDelete)
     call_productVariantImageDelete
-    ;;
-    productVariantInfo)
-    call_productVariantInfo
-    ;;
-    productVariantList)
-    call_productVariantList
     ;;
     productVariantPriceAdd)
     call_productVariantPriceAdd
