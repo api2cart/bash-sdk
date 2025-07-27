@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **backorderUnderscorestatus** | **string** |  | [optional] [default to null]
 **minUnderscoreorderUnderscorequantity** | **integer** |  | [optional] [default to null]
 **maxUnderscoreorderUnderscorequantity** | **integer** |  | [optional] [default to null]
+**lowUnderscorestockUnderscorethreshold** | **integer** |  | [optional] [default to null]
 **weight** | **integer** |  | [optional] [default to 0]
 **weightUnderscoreunit** | **string** |  | [optional] [default to null]
 **width** | **integer** |  | [optional] [default to null]

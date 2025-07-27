@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **visible** | **string** |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to null]
 **backorderUnderscorestatus** | **string** |  | [optional] [default to null]
+**lowUnderscorestockUnderscorethreshold** | **integer** |  | [optional] [default to null]
 **availableUnderscoreforUnderscoresale** | **boolean** |  | [optional] [default to true]
 **avail** | **boolean** |  | [optional] [default to true]
 **isUnderscoredefault** | **boolean** |  | [optional] [default to null]

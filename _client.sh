@@ -2149,6 +2149,7 @@ case $state in
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
+"product_type=:[QUERY] A categorization for the product"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

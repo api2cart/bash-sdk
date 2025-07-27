@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **inUnderscorestock** | **boolean** |  | [optional] [default to null]
 **backorderUnderscorestatus** | **string** |  | [optional] [default to null]
 **manageUnderscorestock** | **boolean** |  | [optional] [default to null]
+**lowUnderscorestockUnderscorethreshold** | **integer** |  | [optional] [default to null]
 **weight** | **integer** |  | [optional] [default to 0]
 **width** | **integer** |  | [optional] [default to null]
 **height** | **integer** |  | [optional] [default to null]

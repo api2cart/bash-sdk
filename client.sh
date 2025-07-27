@@ -1014,6 +1014,7 @@ operation_parameters_minimum_occurrences["productList:::report_request_id"]=0
 operation_parameters_minimum_occurrences["productList:::disable_cache"]=0
 operation_parameters_minimum_occurrences["productList:::disable_report_cache"]=0
 operation_parameters_minimum_occurrences["productList:::use_latest_api_version"]=0
+operation_parameters_minimum_occurrences["productList:::product_type"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::product_id"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::manufacturer"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::store_id"]=0
@@ -2115,6 +2116,7 @@ operation_parameters_maximum_occurrences["productList:::report_request_id"]=0
 operation_parameters_maximum_occurrences["productList:::disable_cache"]=0
 operation_parameters_maximum_occurrences["productList:::disable_report_cache"]=0
 operation_parameters_maximum_occurrences["productList:::use_latest_api_version"]=0
+operation_parameters_maximum_occurrences["productList:::product_type"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::product_id"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::manufacturer"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::store_id"]=0
@@ -3213,6 +3215,7 @@ operation_parameters_collection_type["productList:::report_request_id"]=""
 operation_parameters_collection_type["productList:::disable_cache"]=""
 operation_parameters_collection_type["productList:::disable_report_cache"]=""
 operation_parameters_collection_type["productList:::use_latest_api_version"]=""
+operation_parameters_collection_type["productList:::product_type"]=""
 operation_parameters_collection_type["productManufacturerAdd:::product_id"]=""
 operation_parameters_collection_type["productManufacturerAdd:::manufacturer"]=""
 operation_parameters_collection_type["productManufacturerAdd:::store_id"]=""
@@ -7982,6 +7985,8 @@ print_productList_help() {
     echo -e "  * ${GREEN}disable_report_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Disable report cache for current request${YELLOW} Specify as: disable_report_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}product_type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A categorization for the product${YELLOW} Specify as: product_type=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -14197,7 +14202,7 @@ call_productList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version product_type    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.list.json" path_parameter_names query_parameter_names); then

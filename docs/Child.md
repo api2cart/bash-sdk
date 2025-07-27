@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **inventoryUnderscorelevel** | **integer** |  | [optional] [default to null]
 **inventory** | [**array[ProductInventory]**](ProductInventory.md) |  | [optional] [default to null]
 **minUnderscorequantity** | **integer** |  | [optional] [default to null]
+**lowUnderscorestockUnderscorethreshold** | **integer** |  | [optional] [default to null]
 **defaultUnderscoreqtyUnderscoreinUnderscorepack** | **integer** |  | [optional] [default to null]
 **isUnderscoreqtyUnderscoreinUnderscorepackUnderscorefixed** | **boolean** |  | [optional] [default to null]
 **weightUnderscoreunit** | **string** |  | [optional] [default to null]

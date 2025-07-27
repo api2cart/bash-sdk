@@ -865,7 +865,7 @@ Get list of products from your store. Returns 10 products by default.
 ### Example
 
 ```bash
- productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value
+ productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value  product_type=value
 ```
 
 ### Parameters
@@ -907,6 +907,7 @@ Name | Type | Description  | Notes
  **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
+ **productType** | **string** | A categorization for the product | [optional] [default to null]
 
 ### Return type
 
