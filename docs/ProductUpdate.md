@@ -89,6 +89,8 @@ Name | Type | Description | Notes
 **specifics** | [**array[ProductAddSpecificsInner]**](ProductAddSpecificsInner.md) |  | [optional] [default to null]
 **shopUnderscoresectionUnderscoreid** | **integer** |  | [optional] [default to null]
 **personalizationUnderscoredetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] [default to null]
+**marketplaceUnderscoreitemUnderscoreproperties** | **string** |  | [optional] [default to null]
+**minUnderscoreorderUnderscorequantity** | **integer** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
