@@ -266,7 +266,7 @@ Get cart coupon discounts.
 ### Example
 
 ```bash
- cartCouponList  start=value  count=value  page_cursor=value  coupons_ids=value  store_id=value  lang_id=value  avail=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value  response_fields=value  params=value  exclude=value
+ cartCouponList  start=value  count=value  page_cursor=value  coupons_ids=value  store_id=value  lang_id=value  avail=value  status=value  date_start_from=value  date_start_to=value  date_end_from=value  date_end_to=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -281,6 +281,7 @@ Name | Type | Description  | Notes
  **storeId** | **string** | Filter coupons by store id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **avail** | **boolean** | Filter coupons by avail status | [optional] [default to null]
+ **status** | **string** | Defines coupon's status | [optional] [default to null]
  **dateStartFrom** | **string** | Filter entity by date_start (greater or equal) | [optional] [default to null]
  **dateStartTo** | **string** | Filter entity by date_start (less or equal) | [optional] [default to null]
  **dateEndFrom** | **string** | Filter entity by date_end (greater or equal) | [optional] [default to null]

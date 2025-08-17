@@ -415,6 +415,7 @@ operation_parameters_minimum_occurrences["cartCouponList:::coupons_ids"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::store_id"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::lang_id"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::avail"]=0
+operation_parameters_minimum_occurrences["cartCouponList:::status"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::date_start_from"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::date_start_to"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::date_end_from"]=0
@@ -1517,6 +1518,7 @@ operation_parameters_maximum_occurrences["cartCouponList:::coupons_ids"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::store_id"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::lang_id"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::avail"]=0
+operation_parameters_maximum_occurrences["cartCouponList:::status"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::date_start_from"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::date_start_to"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::date_end_from"]=0
@@ -2616,6 +2618,7 @@ operation_parameters_collection_type["cartCouponList:::coupons_ids"]=""
 operation_parameters_collection_type["cartCouponList:::store_id"]=""
 operation_parameters_collection_type["cartCouponList:::lang_id"]=""
 operation_parameters_collection_type["cartCouponList:::avail"]=""
+operation_parameters_collection_type["cartCouponList:::status"]=""
 operation_parameters_collection_type["cartCouponList:::date_start_from"]=""
 operation_parameters_collection_type["cartCouponList:::date_start_to"]=""
 operation_parameters_collection_type["cartCouponList:::date_end_from"]=""
@@ -5378,6 +5381,8 @@ print_cartCouponList_help() {
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Filter coupons by avail status${YELLOW} Specify as: avail=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines coupon's status${YELLOW} Specify as: status=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}date_start_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter entity by date_start (greater or equal)${YELLOW} Specify as: date_start_from=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -10500,7 +10505,7 @@ call_cartCouponList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor coupons_ids store_id lang_id avail date_start_from date_start_to date_end_from date_end_to response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor coupons_ids store_id lang_id avail status date_start_from date_start_to date_end_from date_end_to response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.coupon.list.json" path_parameter_names query_parameter_names); then

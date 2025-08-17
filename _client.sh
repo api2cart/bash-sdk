@@ -1019,6 +1019,7 @@ case $state in
 "lang_id=:[QUERY] Language id"
 "avail=true:[QUERY] Filter coupons by avail status"
           "avail=false:[QUERY] Filter coupons by avail status"
+"status=:[QUERY] Defines coupon&#39;s status"
 "date_start_from=:[QUERY] Filter entity by date_start (greater or equal)"
 "date_start_to=:[QUERY] Filter entity by date_start (less or equal)"
 "date_end_from=:[QUERY] Filter entity by date_end (greater or equal)"

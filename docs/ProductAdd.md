@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **mpn** | **string** |  | [optional] [default to null]
 **asin** | **string** |  | [optional] [default to null]
 **productUnderscorereference** | **string** |  | [optional] [default to null]
+**externalUnderscoreproductUnderscorelink** | **string** |  | [optional] [default to null]
 **harmonizedUnderscoresystemUnderscorecode** | **string** |  | [optional] [default to null]
 **countryUnderscoreofUnderscoreorigin** | **string** |  | [optional] [default to null]
 **manufacturer** | **string** |  | [optional] [default to null]
