@@ -89,6 +89,7 @@ Name | Type | Description | Notes
 **specifics** | [**array[ProductAddSpecificsInner]**](ProductAddSpecificsInner.md) |  | [optional] [default to null]
 **shopUnderscoresectionUnderscoreid** | **integer** |  | [optional] [default to null]
 **personalizationUnderscoredetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] [default to null]
+**externalUnderscoreproductUnderscorelink** | **string** |  | [optional] [default to null]
 **marketplaceUnderscoreitemUnderscoreproperties** | **string** |  | [optional] [default to null]
 **minUnderscoreorderUnderscorequantity** | **integer** |  | [optional] [default to null]
 
