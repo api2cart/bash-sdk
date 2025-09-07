@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **lastUnderscorename** | **string** |  | [optional] [default to null]
 **password** | **string** |  | [optional] [default to null]
 **group** | **string** |  | [optional] [default to null]
+**groupUnderscoreid** | **string** |  | [optional] [default to null]
 **groupUnderscoreids** | **string** |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to enabled]
 **createdUnderscoretime** | **string** |  | [optional] [default to null]

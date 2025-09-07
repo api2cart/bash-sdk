@@ -934,7 +934,7 @@ Add manufacturer to store and assign to product
 ### Example
 
 ```bash
- productManufacturerAdd  product_id=value  manufacturer=value  store_id=value
+ productManufacturerAdd  product_id=value  manufacturer=value  store_id=value  meta_title=value  meta_keywords=value  meta_description=value  search_keywords=value  image_url=value  seo_url=value
 ```
 
 ### Parameters
@@ -945,6 +945,12 @@ Name | Type | Description  | Notes
  **productId** | **string** | Defines products specified by product id | [default to null]
  **manufacturer** | **string** | Defines product’s manufacturer's name | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **metaTitle** | **string** | Defines unique meta title for each entity | [optional] [default to null]
+ **metaKeywords** | **string** | Defines unique meta keywords for each entity | [optional] [default to null]
+ **metaDescription** | **string** | Defines unique meta description of a entity | [optional] [default to null]
+ **searchKeywords** | **string** | Defines unique search keywords | [optional] [default to null]
+ **imageUrl** | **string** | Image Url | [optional] [default to null]
+ **seoUrl** | **string** | Defines unique URL for SEO | [optional] [default to null]
 
 ### Return type
 
@@ -1390,7 +1396,7 @@ Get reviews of a specific product.
 ### Example
 
 ```bash
- productReviewList  product_id=value  start=value  count=value  page_cursor=value  ids=value  store_id=value  status=value  response_fields=value  params=value  exclude=value
+ productReviewList  product_id=value  start=value  count=value  page_cursor=value  ids=value  store_id=value  lang_id=value  status=value  created_from=value  created_to=value  customer_id=value  sort_by=value  sort_direction=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -1404,7 +1410,13 @@ Name | Type | Description  | Notes
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **ids** | **string** | Retrieves reviews specified by ids | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **langId** | **string** | Language id | [optional] [default to null]
  **status** | **string** | Defines status | [optional] [default to null]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
+ **sortBy** | **string** | Set field to sort by | [optional] [default to id]
+ **sortDirection** | **string** | Set sorting direction | [optional] [default to asc]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]

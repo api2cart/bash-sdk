@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ratings** | [**array[ProductReviewRating]**](ProductReviewRating.md) |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to null]
 **createdUnderscoretime** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] [default to null]
+**modifiedUnderscoretime** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] [default to null]
 **medias** | [**array[Media]**](Media.md) |  | [optional] [default to null]
 **additionalUnderscorefields** | **map** |  | [optional] [default to null]
 **customUnderscorefields** | **map** |  | [optional] [default to null]

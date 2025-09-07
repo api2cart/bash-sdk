@@ -369,6 +369,7 @@ case $state in
             "customerUpdate[customer.update]" \
             "customerWishlistList[customer.wishlist.list]"             "marketplaceProductFind[marketplace.product.find]"             "orderAbandonedList[order.abandoned.list]" \
             "orderAdd[order.add]" \
+            "orderCalculate[order.calculate]" \
             "orderCount[order.count]" \
             "orderFinancialStatusList[order.financial_status.list]" \
             "orderFulfillmentStatusList[order.fulfillment_status.list]" \
@@ -1576,6 +1577,12 @@ case $state in
                               )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
+      orderCalculate)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
       orderCount)
         local -a _op_arguments
         _op_arguments=(
@@ -2160,6 +2167,12 @@ case $state in
                     "product_id=:[QUERY] Defines products specified by product id"
 "manufacturer=:[QUERY] Defines product’s manufacturer&#39;s name"
 "store_id=:[QUERY] Store Id"
+"meta_title=:[QUERY] Defines unique meta title for each entity"
+"meta_keywords=:[QUERY] Defines unique meta keywords for each entity"
+"meta_description=:[QUERY] Defines unique meta description of a entity"
+"search_keywords=:[QUERY] Defines unique search keywords"
+"image_url=:[QUERY] Image Url"
+"seo_url=:[QUERY] Defines unique URL for SEO"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2286,7 +2299,13 @@ case $state in
 "product_id=:[QUERY] Product id"
 "ids=:[QUERY] Retrieves reviews specified by ids"
 "store_id=:[QUERY] Store Id"
+"lang_id=:[QUERY] Language id"
 "status=:[QUERY] Defines status"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"customer_id=:[QUERY] Retrieves orders specified by customer id"
+"sort_by=:[QUERY] Set field to sort by"
+"sort_direction=:[QUERY] Set sorting direction"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"

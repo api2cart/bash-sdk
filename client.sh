@@ -699,6 +699,7 @@ operation_parameters_minimum_occurrences["orderAbandonedList:::response_fields"]
 operation_parameters_minimum_occurrences["orderAbandonedList:::params"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::exclude"]=0
 operation_parameters_minimum_occurrences["orderAdd:::OrderAdd"]=1
+operation_parameters_minimum_occurrences["orderCalculate:::OrderCalculate"]=1
 operation_parameters_minimum_occurrences["orderCount:::order_ids"]=0
 operation_parameters_minimum_occurrences["orderCount:::ids"]=0
 operation_parameters_minimum_occurrences["orderCount:::customer_id"]=0
@@ -1019,6 +1020,12 @@ operation_parameters_minimum_occurrences["productList:::product_type"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::product_id"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::manufacturer"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::store_id"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_title"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_keywords"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_description"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::search_keywords"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::image_url"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::seo_url"]=0
 operation_parameters_minimum_occurrences["productOptionAdd:::ProductOptionAdd"]=1
 operation_parameters_minimum_occurrences["productOptionAssign:::product_id"]=1
 operation_parameters_minimum_occurrences["productOptionAssign:::option_id"]=1
@@ -1070,7 +1077,13 @@ operation_parameters_minimum_occurrences["productReviewList:::count"]=0
 operation_parameters_minimum_occurrences["productReviewList:::page_cursor"]=0
 operation_parameters_minimum_occurrences["productReviewList:::ids"]=0
 operation_parameters_minimum_occurrences["productReviewList:::store_id"]=0
+operation_parameters_minimum_occurrences["productReviewList:::lang_id"]=0
 operation_parameters_minimum_occurrences["productReviewList:::status"]=0
+operation_parameters_minimum_occurrences["productReviewList:::created_from"]=0
+operation_parameters_minimum_occurrences["productReviewList:::created_to"]=0
+operation_parameters_minimum_occurrences["productReviewList:::customer_id"]=0
+operation_parameters_minimum_occurrences["productReviewList:::sort_by"]=0
+operation_parameters_minimum_occurrences["productReviewList:::sort_direction"]=0
 operation_parameters_minimum_occurrences["productReviewList:::response_fields"]=0
 operation_parameters_minimum_occurrences["productReviewList:::params"]=0
 operation_parameters_minimum_occurrences["productReviewList:::exclude"]=0
@@ -1802,6 +1815,7 @@ operation_parameters_maximum_occurrences["orderAbandonedList:::response_fields"]
 operation_parameters_maximum_occurrences["orderAbandonedList:::params"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::exclude"]=0
 operation_parameters_maximum_occurrences["orderAdd:::OrderAdd"]=0
+operation_parameters_maximum_occurrences["orderCalculate:::OrderCalculate"]=0
 operation_parameters_maximum_occurrences["orderCount:::order_ids"]=0
 operation_parameters_maximum_occurrences["orderCount:::ids"]=0
 operation_parameters_maximum_occurrences["orderCount:::customer_id"]=0
@@ -2122,6 +2136,12 @@ operation_parameters_maximum_occurrences["productList:::product_type"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::product_id"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::manufacturer"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::store_id"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_title"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_keywords"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_description"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::search_keywords"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::image_url"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::seo_url"]=0
 operation_parameters_maximum_occurrences["productOptionAdd:::ProductOptionAdd"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::product_id"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::option_id"]=0
@@ -2173,7 +2193,13 @@ operation_parameters_maximum_occurrences["productReviewList:::count"]=0
 operation_parameters_maximum_occurrences["productReviewList:::page_cursor"]=0
 operation_parameters_maximum_occurrences["productReviewList:::ids"]=0
 operation_parameters_maximum_occurrences["productReviewList:::store_id"]=0
+operation_parameters_maximum_occurrences["productReviewList:::lang_id"]=0
 operation_parameters_maximum_occurrences["productReviewList:::status"]=0
+operation_parameters_maximum_occurrences["productReviewList:::created_from"]=0
+operation_parameters_maximum_occurrences["productReviewList:::created_to"]=0
+operation_parameters_maximum_occurrences["productReviewList:::customer_id"]=0
+operation_parameters_maximum_occurrences["productReviewList:::sort_by"]=0
+operation_parameters_maximum_occurrences["productReviewList:::sort_direction"]=0
 operation_parameters_maximum_occurrences["productReviewList:::response_fields"]=0
 operation_parameters_maximum_occurrences["productReviewList:::params"]=0
 operation_parameters_maximum_occurrences["productReviewList:::exclude"]=0
@@ -2902,6 +2928,7 @@ operation_parameters_collection_type["orderAbandonedList:::response_fields"]=""
 operation_parameters_collection_type["orderAbandonedList:::params"]=""
 operation_parameters_collection_type["orderAbandonedList:::exclude"]=""
 operation_parameters_collection_type["orderAdd:::OrderAdd"]=""
+operation_parameters_collection_type["orderCalculate:::OrderCalculate"]=""
 operation_parameters_collection_type["orderCount:::order_ids"]=""
 operation_parameters_collection_type["orderCount:::ids"]=""
 operation_parameters_collection_type["orderCount:::customer_id"]=""
@@ -3222,6 +3249,12 @@ operation_parameters_collection_type["productList:::product_type"]=""
 operation_parameters_collection_type["productManufacturerAdd:::product_id"]=""
 operation_parameters_collection_type["productManufacturerAdd:::manufacturer"]=""
 operation_parameters_collection_type["productManufacturerAdd:::store_id"]=""
+operation_parameters_collection_type["productManufacturerAdd:::meta_title"]=""
+operation_parameters_collection_type["productManufacturerAdd:::meta_keywords"]=""
+operation_parameters_collection_type["productManufacturerAdd:::meta_description"]=""
+operation_parameters_collection_type["productManufacturerAdd:::search_keywords"]=""
+operation_parameters_collection_type["productManufacturerAdd:::image_url"]=""
+operation_parameters_collection_type["productManufacturerAdd:::seo_url"]=""
 operation_parameters_collection_type["productOptionAdd:::ProductOptionAdd"]=""
 operation_parameters_collection_type["productOptionAssign:::product_id"]=""
 operation_parameters_collection_type["productOptionAssign:::option_id"]=""
@@ -3273,7 +3306,13 @@ operation_parameters_collection_type["productReviewList:::count"]=""
 operation_parameters_collection_type["productReviewList:::page_cursor"]=""
 operation_parameters_collection_type["productReviewList:::ids"]=""
 operation_parameters_collection_type["productReviewList:::store_id"]=""
+operation_parameters_collection_type["productReviewList:::lang_id"]=""
 operation_parameters_collection_type["productReviewList:::status"]=""
+operation_parameters_collection_type["productReviewList:::created_from"]=""
+operation_parameters_collection_type["productReviewList:::created_to"]=""
+operation_parameters_collection_type["productReviewList:::customer_id"]=""
+operation_parameters_collection_type["productReviewList:::sort_by"]=""
+operation_parameters_collection_type["productReviewList:::sort_direction"]=""
 operation_parameters_collection_type["productReviewList:::response_fields"]=""
 operation_parameters_collection_type["productReviewList:::params"]=""
 operation_parameters_collection_type["productReviewList:::exclude"]=""
@@ -3947,6 +3986,7 @@ echo "  $ops" | column -t -s ';'
 read -r -d '' ops <<EOF
   ${CYAN}orderAbandonedList${OFF};order.abandoned.list (AUTH) (AUTH)
   ${CYAN}orderAdd${OFF};order.add (AUTH) (AUTH)
+  ${CYAN}orderCalculate${OFF};order.calculate (AUTH) (AUTH)
   ${CYAN}orderCount${OFF};order.count (AUTH) (AUTH)
   ${CYAN}orderFinancialStatusList${OFF};order.financial_status.list (AUTH) (AUTH)
   ${CYAN}orderFulfillmentStatusList${OFF};order.fulfillment_status.list (AUTH) (AUTH)
@@ -6687,6 +6727,25 @@ print_orderAdd_help() {
 }
 ##############################################################################
 #
+# Print help for orderCalculate operation
+#
+##############################################################################
+print_orderCalculate_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}orderCalculate - order.calculate${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "<p>Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.</p> <p>Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.</p><p>The result of this method can be used when creating an order using the <strong>order.add</strong> method.</p>" | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
 # Print help for orderCount operation
 #
 ##############################################################################
@@ -8016,6 +8075,18 @@ print_productManufacturerAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}meta_title${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique meta title for each entity${YELLOW} Specify as: meta_title=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}meta_keywords${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique meta keywords for each entity${YELLOW} Specify as: meta_keywords=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}meta_description${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique meta description of a entity${YELLOW} Specify as: meta_description=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}search_keywords${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique search keywords${YELLOW} Specify as: search_keywords=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}image_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Image Url${YELLOW} Specify as: image_url=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}seo_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique URL for SEO${YELLOW} Specify as: seo_url=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -8322,7 +8393,19 @@ print_productReviewList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines status${YELLOW} Specify as: status=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}customer_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by customer id${YELLOW} Specify as: customer_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id)${OFF} - Set field to sort by${YELLOW} Specify as: sort_by=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -12290,6 +12373,84 @@ call_orderAdd() {
 
 ##############################################################################
 #
+# Call orderCalculate operation
+#
+##############################################################################
+call_orderCalculate() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/order.calculate.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="POST"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
+    else
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
+    fi
+}
+
+##############################################################################
+#
 # Call orderCount operation
 #
 ##############################################################################
@@ -14243,7 +14404,7 @@ call_productManufacturerAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id manufacturer store_id    )
+    local query_parameter_names=(product_id manufacturer store_id meta_title meta_keywords meta_description search_keywords image_url seo_url    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.manufacturer.add.json" path_parameter_names query_parameter_names); then
@@ -14801,7 +14962,7 @@ call_productReviewList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor product_id ids store_id status response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor product_id ids store_id lang_id status created_from created_to customer_id sort_by sort_direction response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.review.list.json" path_parameter_names query_parameter_names); then
@@ -16708,6 +16869,9 @@ case $key in
     orderAdd)
     operation="orderAdd"
     ;;
+    orderCalculate)
+    operation="orderCalculate"
+    ;;
     orderCount)
     operation="orderCount"
     ;;
@@ -17300,6 +17464,9 @@ case $operation in
     ;;
     orderAdd)
     call_orderAdd
+    ;;
+    orderCalculate)
+    call_orderCalculate
     ;;
     orderCount)
     call_orderCount

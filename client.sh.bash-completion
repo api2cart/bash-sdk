@@ -150,6 +150,7 @@ _()
     operations["marketplaceProductFind"]=1
     operations["orderAbandonedList"]=1
     operations["orderAdd"]=1
+    operations["orderCalculate"]=1
     operations["orderCount"]=1
     operations["orderFinancialStatusList"]=1
     operations["orderFulfillmentStatusList"]=1
@@ -318,6 +319,7 @@ _()
     operation_parameters["marketplaceProductFind"]="count= page_cursor= keyword= categories_ids= store_id= asin= ean= gtin= upc= mpn= isbn= response_fields= params= exclude= "
     operation_parameters["orderAbandonedList"]="start= count= page_cursor= customer_id= customer_email= store_id= created_from= created_to= modified_from= modified_to= skip_empty_email= response_fields= params= exclude= "
     operation_parameters["orderAdd"]=""
+    operation_parameters["orderCalculate"]=""
     operation_parameters["orderCount"]="order_ids= ids= customer_id= store_id= customer_email= order_status= order_status_ids= ebay_order_status= financial_status= financial_status_ids= fulfillment_channel= fulfillment_status= shipping_method= delivery_method= tags= ship_node_type= created_from= created_to= modified_from= modified_to= "
     operation_parameters["orderFinancialStatusList"]=""
     operation_parameters["orderFulfillmentStatusList"]="action= "
@@ -358,7 +360,7 @@ _()
     operation_parameters["productImageUpdate"]="product_id= id= variant_ids= store_id= lang_id= image_name= type= label= position= hidden= "
     operation_parameters["productInfo"]="id= store_id= lang_id= currency_id= response_fields= params= exclude= report_request_id= disable_report_cache= use_latest_api_version= "
     operation_parameters["productList"]="start= count= page_cursor= product_ids= since_id= categories_ids= category_id= store_id= lang_id= currency_id= avail_view= avail_sale= created_from= created_to= modified_from= modified_to= sku= brand_name= product_attributes= status= type= visible= find_value= find_where= return_global= params= response_fields= exclude= sort_by= sort_direction= report_request_id= disable_cache= disable_report_cache= use_latest_api_version= product_type= "
-    operation_parameters["productManufacturerAdd"]="product_id= manufacturer= store_id= "
+    operation_parameters["productManufacturerAdd"]="product_id= manufacturer= store_id= meta_title= meta_keywords= meta_description= search_keywords= image_url= seo_url= "
     operation_parameters["productOptionAdd"]=""
     operation_parameters["productOptionAssign"]="product_id= option_id= required= sort_order= option_values= clear_cache= "
     operation_parameters["productOptionDelete"]="option_id= product_id= store_id= "
@@ -370,7 +372,7 @@ _()
     operation_parameters["productPriceAdd"]=""
     operation_parameters["productPriceDelete"]="product_id= group_prices= store_id= "
     operation_parameters["productPriceUpdate"]=""
-    operation_parameters["productReviewList"]="start= count= page_cursor= product_id= ids= store_id= status= response_fields= params= exclude= "
+    operation_parameters["productReviewList"]="start= count= page_cursor= product_id= ids= store_id= lang_id= status= created_from= created_to= customer_id= sort_by= sort_direction= response_fields= params= exclude= "
     operation_parameters["productStoreAssign"]="product_id= store_id= "
     operation_parameters["productTaxAdd"]=""
     operation_parameters["productUpdate"]=""

@@ -202,6 +202,15 @@ docs/OrderAddOrderItemInner.md
 docs/OrderAddOrderItemInnerOrderItemOptionInner.md
 docs/OrderAddOrderItemInnerOrderItemPropertyInner.md
 docs/OrderApi.md
+docs/OrderCalculate.md
+docs/OrderCalculate200Response.md
+docs/OrderCalculateDiscount.md
+docs/OrderCalculateItem.md
+docs/OrderCalculateOrderItemInner.md
+docs/OrderCalculateOrderItemInnerOrderItemOptionInner.md
+docs/OrderCalculateShippingRate.md
+docs/OrderCalculateSubtotal.md
+docs/OrderCalculateTax.md
 docs/OrderCount200Response.md
 docs/OrderCount200ResponseResult.md
 docs/OrderFinancialStatusList200Response.md
