@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **avail** | **boolean** |  | [optional] [default to true]
 **availUnderscorefrom** | **string** |  | [optional] [default to null]
 **productUnderscoreclass** | **string** |  | [optional] [default to null]
+**brandUnderscorename** | **string** |  | [optional] [default to null]
 **availableUnderscoreforUnderscoreview** | **boolean** |  | [optional] [default to null]
 **storesUnderscoreids** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]

@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **status** | **string** |  | [optional] [default to null]
 **type** | **string** |  | [optional] [default to null]
 **condition** | **string** |  | [optional] [default to null]
+**conditionUnderscoredescription** | **string** |  | [optional] [default to null]
 **visible** | **string** |  | [optional] [default to null]
 **availableUnderscoreforUnderscoreview** | **boolean** |  | [optional] [default to null]
 **availableUnderscoreforUnderscoresale** | **boolean** |  | [optional] [default to null]
