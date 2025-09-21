@@ -96,6 +96,7 @@ Name | Type | Description | Notes
 **shoplazzaUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **shoplazzaUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]
 **shopwareUnderscoreaccessUnderscorekey** | **string** |  | [optional] [default to null]
+**unasUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **shopwareUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **shopwareUnderscoreapiUnderscoresecret** | **string** |  | [optional] [default to null]
 **mivaUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]

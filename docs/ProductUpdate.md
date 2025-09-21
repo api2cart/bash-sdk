@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **tierUnderscoreprices** | [**array[ProductAddTierPricesInner]**](ProductAddTierPricesInner.md) |  | [optional] [default to null]
 **reserveUnderscoreprice** | **integer** |  | [optional] [default to null]
 **buyitnowUnderscoreprice** | **integer** |  | [optional] [default to null]
-**taxable** | **boolean** |  | [optional] [default to true]
+**taxable** | **boolean** |  | [optional] [default to null]
 **taxUnderscoreclassUnderscoreid** | **string** |  | [optional] [default to null]
 **type** | **string** |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to null]

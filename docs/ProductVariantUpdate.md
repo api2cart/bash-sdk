@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **avail** | **boolean** |  | [optional] [default to true]
 **isUnderscoredefault** | **boolean** |  | [optional] [default to null]
 **isUnderscorefreeUnderscoreshipping** | **boolean** |  | [optional] [default to null]
-**taxable** | **boolean** |  | [optional] [default to true]
+**taxable** | **boolean** |  | [optional] [default to null]
 **taxUnderscoreclassUnderscoreid** | **string** |  | [optional] [default to null]
 **isUnderscorevirtual** | **boolean** |  | [optional] [default to false]
 **manageUnderscorestock** | **boolean** |  | [optional] [default to null]
@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **metaUnderscoretitle** | **string** |  | [optional] [default to null]
 **metaUnderscoredescription** | **string** |  | [optional] [default to null]
 **metaUnderscorekeywords** | **string** |  | [optional] [default to null]
+**manufacturer** | **string** |  | [optional] [default to null]
 **reindex** | **boolean** |  | [optional] [default to true]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 
