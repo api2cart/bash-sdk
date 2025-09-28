@@ -552,6 +552,7 @@ case $state in
 "miva_access_token=:[QUERY] Miva access token"
 "miva_signature=:[QUERY] Miva signature"
 "shopware_access_key=:[QUERY] Shopware access key"
+"unas_api_key=:[QUERY] UNAS API Key"
 "shopware_api_key=:[QUERY] Shopware api key"
 "shopware_api_secret=:[QUERY] Shopware client secret access key"
 "bigcartel_user_name=:[QUERY] Subdomain of store"

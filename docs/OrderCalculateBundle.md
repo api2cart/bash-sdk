@@ -1,4 +1,4 @@
-# Order_Calculate_Item
+# Order_Calculate_Bundle
 
 ## Properties
 Name | Type | Description | Notes
@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **weightUnderscoreunit** | **string** |  | [optional] [default to null]
 **barcode** | **string** |  | [optional] [default to null]
 **variantUnderscoreid** | **string** |  | [optional] [default to null]
-**bundleUnderscoreproductUnderscoreid** | **string** |  | [optional] [default to null]
 **options** | [**array[OrderItemOption]**](OrderItemOption.md) |  | [optional] [default to null]
 **additionalUnderscorefields** | **map** |  | [optional] [default to null]
 **customUnderscorefields** | **map** |  | [optional] [default to null]
