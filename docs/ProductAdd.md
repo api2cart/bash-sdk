@@ -98,6 +98,7 @@ Name | Type | Description | Notes
 **paymentUnderscoremethods** | **array[string]** |  | [optional] [default to null]
 **paypalUnderscoreemail** | **string** |  | [optional] [default to null]
 **shippingUnderscoretemplateUnderscoreid** | **integer** |  | [optional] [default to 0]
+**processingUnderscoreprofileUnderscoreid** | **integer** |  | [optional] [default to null]
 **shippingUnderscoredetails** | [**array[ProductAddShippingDetailsInner]**](ProductAddShippingDetailsInner.md) |  | [optional] [default to null]
 **isUnderscorefreeUnderscoreshipping** | **boolean** |  | [optional] [default to null]
 **deliveryUnderscorecode** | **string** |  | [optional] [default to null]

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] [default to null]
 **version** | **string** |  | [optional] [default to null]
 **bridgeUnderscoreversion** | **string** |  | [optional] [default to null]
+**defaultUnderscoreroundingUnderscoreprecision** | **integer** |  | [optional] [default to null]
 **dbUnderscoreprefix** | **string** |  | [optional] [default to null]
 **storesUnderscoreinfo** | [**array[CartStoreInfo]**](CartStoreInfo.md) |  | [optional] [default to null]
 **warehouses** | [**array[CartWarehouse]**](CartWarehouse.md) |  | [optional] [default to null]

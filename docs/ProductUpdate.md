@@ -74,6 +74,7 @@ Name | Type | Description | Notes
 **countryUnderscoreofUnderscoreorigin** | **string** |  | [optional] [default to null]
 **harmonizedUnderscoresystemUnderscorecode** | **string** |  | [optional] [default to null]
 **shippingUnderscoretemplateUnderscoreid** | **integer** |  | [optional] [default to 0]
+**processingUnderscoreprofileUnderscoreid** | **integer** |  | [optional] [default to null]
 **whenUnderscoremade** | **string** |  | [optional] [default to made_to_order]
 **isUnderscoresupply** | **boolean** |  | [optional] [default to true]
 **downloadable** | **boolean** |  | [optional] [default to false]

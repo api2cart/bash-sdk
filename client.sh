@@ -730,6 +730,7 @@ operation_parameters_minimum_occurrences["orderInfo:::response_fields"]=0
 operation_parameters_minimum_occurrences["orderInfo:::exclude"]=0
 operation_parameters_minimum_occurrences["orderInfo:::enable_cache"]=0
 operation_parameters_minimum_occurrences["orderInfo:::use_latest_api_version"]=0
+operation_parameters_minimum_occurrences["orderInfo:::rounding_precision"]=0
 operation_parameters_minimum_occurrences["orderList:::start"]=0
 operation_parameters_minimum_occurrences["orderList:::count"]=0
 operation_parameters_minimum_occurrences["orderList:::page_cursor"]=0
@@ -768,6 +769,7 @@ operation_parameters_minimum_occurrences["orderList:::response_fields"]=0
 operation_parameters_minimum_occurrences["orderList:::exclude"]=0
 operation_parameters_minimum_occurrences["orderList:::enable_cache"]=0
 operation_parameters_minimum_occurrences["orderList:::use_latest_api_version"]=0
+operation_parameters_minimum_occurrences["orderList:::rounding_precision"]=0
 operation_parameters_minimum_occurrences["orderPreestimateShippingList:::OrderPreestimateShippingList"]=1
 operation_parameters_minimum_occurrences["orderRefundAdd:::OrderRefundAdd"]=1
 operation_parameters_minimum_occurrences["orderReturnAdd:::OrderReturnAdd"]=1
@@ -1847,6 +1849,7 @@ operation_parameters_maximum_occurrences["orderInfo:::response_fields"]=0
 operation_parameters_maximum_occurrences["orderInfo:::exclude"]=0
 operation_parameters_maximum_occurrences["orderInfo:::enable_cache"]=0
 operation_parameters_maximum_occurrences["orderInfo:::use_latest_api_version"]=0
+operation_parameters_maximum_occurrences["orderInfo:::rounding_precision"]=0
 operation_parameters_maximum_occurrences["orderList:::start"]=0
 operation_parameters_maximum_occurrences["orderList:::count"]=0
 operation_parameters_maximum_occurrences["orderList:::page_cursor"]=0
@@ -1885,6 +1888,7 @@ operation_parameters_maximum_occurrences["orderList:::response_fields"]=0
 operation_parameters_maximum_occurrences["orderList:::exclude"]=0
 operation_parameters_maximum_occurrences["orderList:::enable_cache"]=0
 operation_parameters_maximum_occurrences["orderList:::use_latest_api_version"]=0
+operation_parameters_maximum_occurrences["orderList:::rounding_precision"]=0
 operation_parameters_maximum_occurrences["orderPreestimateShippingList:::OrderPreestimateShippingList"]=0
 operation_parameters_maximum_occurrences["orderRefundAdd:::OrderRefundAdd"]=0
 operation_parameters_maximum_occurrences["orderReturnAdd:::OrderReturnAdd"]=0
@@ -2961,6 +2965,7 @@ operation_parameters_collection_type["orderInfo:::response_fields"]=""
 operation_parameters_collection_type["orderInfo:::exclude"]=""
 operation_parameters_collection_type["orderInfo:::enable_cache"]=""
 operation_parameters_collection_type["orderInfo:::use_latest_api_version"]=""
+operation_parameters_collection_type["orderInfo:::rounding_precision"]=""
 operation_parameters_collection_type["orderList:::start"]=""
 operation_parameters_collection_type["orderList:::count"]=""
 operation_parameters_collection_type["orderList:::page_cursor"]=""
@@ -2999,6 +3004,7 @@ operation_parameters_collection_type["orderList:::response_fields"]=""
 operation_parameters_collection_type["orderList:::exclude"]=""
 operation_parameters_collection_type["orderList:::enable_cache"]=""
 operation_parameters_collection_type["orderList:::use_latest_api_version"]=""
+operation_parameters_collection_type["orderList:::rounding_precision"]=""
 operation_parameters_collection_type["orderPreestimateShippingList:::OrderPreestimateShippingList"]=""
 operation_parameters_collection_type["orderRefundAdd:::OrderRefundAdd"]=""
 operation_parameters_collection_type["orderReturnAdd:::OrderReturnAdd"]=""
@@ -6869,6 +6875,8 @@ print_orderInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}rounding_precision${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>${YELLOW} Specify as: rounding_precision=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6961,6 +6969,8 @@ print_orderList_help() {
     echo -e "  * ${GREEN}enable_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)${YELLOW} Specify as: enable_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}rounding_precision${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>${YELLOW} Specify as: rounding_precision=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -12573,7 +12583,7 @@ call_orderInfo() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id order_id store_id params response_fields exclude enable_cache use_latest_api_version    )
+    local query_parameter_names=(id order_id store_id params response_fields exclude enable_cache use_latest_api_version rounding_precision    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.info.json" path_parameter_names query_parameter_names); then
@@ -12609,7 +12619,7 @@ call_orderList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor ids order_ids since_id store_id customer_id customer_email basket_id currency_id phone order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_status return_status fulfillment_channel shipping_method skip_order_ids is_deleted shipping_country_iso3 delivery_method ship_node_type created_to created_from modified_to modified_from tags sort_by sort_direction params response_fields exclude enable_cache use_latest_api_version    )
+    local query_parameter_names=(start count page_cursor ids order_ids since_id store_id customer_id customer_email basket_id currency_id phone order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_status return_status fulfillment_channel shipping_method skip_order_ids is_deleted shipping_country_iso3 delivery_method ship_node_type created_to created_from modified_to modified_from tags sort_by sort_direction params response_fields exclude enable_cache use_latest_api_version rounding_precision    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.list.json" path_parameter_names query_parameter_names); then
