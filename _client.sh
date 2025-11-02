@@ -1979,7 +1979,8 @@ case $state in
       productCount)
         local -a _op_arguments
         _op_arguments=(
-                    "product_ids=:[QUERY] Counts products specified by product ids"
+                    "sku=:[QUERY] Filter by product&#39;s sku"
+"product_ids=:[QUERY] Counts products specified by product ids"
 "since_id=:[QUERY] Retrieve entities starting from the specified id."
 "categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
 "category_id=:[QUERY] Counts products specified by category id"
@@ -1994,6 +1995,7 @@ case $state in
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
 "brand_name=:[QUERY] Retrieves brands specified by brand name"
+"manufacturer_id=:[QUERY] Defines product&#39;s manufacturer by manufacturer_id"
 "product_attributes=:[QUERY] Defines product attributes"
 "status=:[QUERY] Defines product&#39;s status"
 "type=:[QUERY] Defines products&#39;s type"
@@ -2141,6 +2143,7 @@ case $state in
 "sku=:[QUERY] Filter by product&#39;s sku"
 "brand_name=:[QUERY] Retrieves brands specified by brand name"
 "product_attributes=:[QUERY] Defines product attributes"
+"manufacturer_id=:[QUERY] Defines product&#39;s manufacturer by manufacturer_id"
 "status=:[QUERY] Defines product&#39;s status"
 "type=:[QUERY] Defines products&#39;s type"
 "visible=:[QUERY] Filter items by visibility status"

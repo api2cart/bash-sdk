@@ -72,6 +72,7 @@ Name | Type | Description | Notes
 **noteUnderscoreattributes** | [**array[OrderAddNoteAttributesInner]**](OrderAddNoteAttributesInner.md) |  | [optional] [default to null]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 **origin** | **string** |  | [optional] [default to null]
+**feeUnderscoreprice** | **integer** |  | [optional] [default to null]
 **orderUnderscoreitem** | [**array[OrderAddOrderItemInner]**](OrderAddOrderItemInner.md) |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

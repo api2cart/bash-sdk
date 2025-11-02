@@ -454,7 +454,7 @@ Count products in store.
 ### Example
 
 ```bash
- productCount  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
+ productCount  sku=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  manufacturer_id=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -462,6 +462,7 @@ Count products in store.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sku** | **string** | Filter by product's sku | [optional] [default to null]
  **productIds** | **string** | Counts products specified by product ids | [optional] [default to null]
  **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
  **categoriesIds** | **string** | Defines product add that is specified by comma-separated categories id | [optional] [default to null]
@@ -475,6 +476,7 @@ Name | Type | Description  | Notes
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
  **brandName** | **string** | Retrieves brands specified by brand name | [optional] [default to null]
+ **manufacturerId** | **string** | Defines product's manufacturer by manufacturer_id | [optional] [default to null]
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
@@ -865,7 +867,7 @@ Get list of products from your store. Returns 10 products by default.
 ### Example
 
 ```bash
- productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value  product_type=value
+ productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  manufacturer_id=value  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value  product_type=value
 ```
 
 ### Parameters
@@ -892,6 +894,7 @@ Name | Type | Description  | Notes
  **sku** | **string** | Filter by product's sku | [optional] [default to null]
  **brandName** | **string** | Retrieves brands specified by brand name | [optional] [default to null]
  **productAttributes** | [**array[string]**](string.md) | Defines product attributes | [optional] [default to null]
+ **manufacturerId** | **string** | Defines product's manufacturer by manufacturer_id | [optional] [default to null]
  **status** | **string** | Defines product's status | [optional] [default to null]
  **type** | **string** | Defines products's type | [optional] [default to null]
  **visible** | **string** | Filter items by visibility status | [optional] [default to everywhere]
