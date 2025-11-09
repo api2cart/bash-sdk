@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **currencyUnderscoreid** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]
 **coupons** | **array[string]** |  | [optional] [default to null]
+**roundingUnderscoreprecision** | **integer** |  | [optional] [default to null]
 **shippUnderscorefirstUnderscorename** | **string** |  | [default to null]
 **shippUnderscorelastUnderscorename** | **string** |  | [default to null]
 **shippUnderscoreaddressUnderscore1** | **string** |  | [default to null]
