@@ -173,6 +173,11 @@ Name | Type | Description | Notes
 **temuUnderscoreappUnderscoresecret** | **string** |  | [optional] [default to null]
 **temuUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **temuUnderscoreregion** | **string** |  | [optional] [default to null]
+**scapiUnderscoreclientUnderscoreid** | **string** |  | [optional] [default to null]
+**scapiUnderscoreclientUnderscoresecret** | **string** |  | [optional] [default to null]
+**scapiUnderscoreorganizationUnderscoreid** | **string** |  | [optional] [default to null]
+**scapiUnderscoreshortUnderscorecode** | **string** |  | [optional] [default to null]
+**scapiUnderscorescopes** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

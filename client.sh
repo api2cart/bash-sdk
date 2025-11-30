@@ -266,6 +266,11 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::temu_app_key"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::temu_app_secret"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::temu_access_token"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::temu_region"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_client_id"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_client_secret"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_organization_id"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_short_code"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_scopes"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::ids"]=0
@@ -1392,6 +1397,11 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::temu_app_key"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::temu_app_secret"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::temu_access_token"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::temu_region"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_client_id"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_client_secret"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_organization_id"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_short_code"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_scopes"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::ids"]=0
@@ -2515,6 +2525,11 @@ operation_parameters_collection_type["accountConfigUpdate:::temu_app_key"]=""
 operation_parameters_collection_type["accountConfigUpdate:::temu_app_secret"]=""
 operation_parameters_collection_type["accountConfigUpdate:::temu_access_token"]=""
 operation_parameters_collection_type["accountConfigUpdate:::temu_region"]=""
+operation_parameters_collection_type["accountConfigUpdate:::scapi_client_id"]=""
+operation_parameters_collection_type["accountConfigUpdate:::scapi_client_secret"]=""
+operation_parameters_collection_type["accountConfigUpdate:::scapi_organization_id"]=""
+operation_parameters_collection_type["accountConfigUpdate:::scapi_short_code"]=""
+operation_parameters_collection_type["accountConfigUpdate:::scapi_scopes"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::start"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::count"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::ids"]=""
@@ -4563,6 +4578,16 @@ print_accountConfigUpdate_help() {
     echo -e "  * ${GREEN}temu_access_token${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Temu Access Token${YELLOW} Specify as: temu_access_token=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}temu_region${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Temu API endpoint Region.${YELLOW} Specify as: temu_region=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}scapi_client_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce API Client ID${YELLOW} Specify as: scapi_client_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}scapi_client_secret${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce API Client Secret${YELLOW} Specify as: scapi_client_secret=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}scapi_organization_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce Organization ID${YELLOW} Specify as: scapi_organization_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}scapi_short_code${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce Short Code${YELLOW} Specify as: scapi_short_code=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}scapi_scopes${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce API Scopes${YELLOW} Specify as: scapi_scopes=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9336,7 +9361,7 @@ call_accountConfigUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region    )
+    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region scapi_client_id scapi_client_secret scapi_organization_id scapi_short_code scapi_scopes    )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.config.update.json" path_parameter_names query_parameter_names); then

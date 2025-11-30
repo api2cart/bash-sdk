@@ -640,6 +640,11 @@ case $state in
 "temu_app_secret=:[QUERY] Temu App Secret"
 "temu_access_token=:[QUERY] Temu Access Token"
 "temu_region=:[QUERY] Temu API endpoint Region."
+"scapi_client_id=:[QUERY] Salesforce Commerce API Client ID"
+"scapi_client_secret=:[QUERY] Salesforce Commerce API Client Secret"
+"scapi_organization_id=:[QUERY] Salesforce Commerce Organization ID"
+"scapi_short_code=:[QUERY] Salesforce Commerce Short Code"
+"scapi_scopes=:[QUERY] Salesforce Commerce API Scopes"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

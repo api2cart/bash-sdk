@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **customerUnderscorecountry** | **string** |  | [optional] [default to null]
 **customerUnderscorebirthday** | **string** |  | [optional] [default to null]
 **customerUnderscorefax** | **string** |  | [optional] [default to null]
+**isUnderscoreguest** | **boolean** |  | [optional] [default to false]
 **orderUnderscorepaymentUnderscoremethod** | **string** |  | [optional] [default to null]
 **transactionUnderscoreid** | **string** |  | [optional] [default to null]
 **currency** | **string** |  | [optional] [default to null]
