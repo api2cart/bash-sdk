@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **isUnderscorefreeUnderscoreshipping** | **boolean** |  | [optional] [default to null]
 **countryUnderscoreofUnderscoreorigin** | **string** |  | [optional] [default to null]
 **harmonizedUnderscoresystemUnderscorecode** | **string** |  | [optional] [default to null]
+**processingUnderscoreprofileUnderscoreid** | **integer** |  | [optional] [default to null]
 **marketplaceUnderscoreitemUnderscoreproperties** | **string** |  | [optional] [default to null]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 

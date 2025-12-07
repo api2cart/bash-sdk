@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **manufacturer** | **string** |  | [optional] [default to null]
 **reindex** | **boolean** |  | [optional] [default to true]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
+**processingUnderscoreprofileUnderscoreid** | **integer** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
