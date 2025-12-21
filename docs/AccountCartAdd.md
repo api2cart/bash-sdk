@@ -88,6 +88,7 @@ Name | Type | Description | Notes
 **shoplineUnderscoreappUnderscoresecret** | **string** |  | [optional] [default to null]
 **shoplineUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
+**shopifyUnderscoreclientUnderscoreid** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **shopifyUnderscoreapiUnderscorepassword** | **string** |  | [optional] [default to null]
 **shopifyUnderscoresharedUnderscoresecret** | **string** |  | [optional] [default to null]

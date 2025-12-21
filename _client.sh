@@ -542,6 +542,7 @@ case $state in
 "shopline_app_secret=:[QUERY] Shopline App Secret"
 "shopline_shared_secret=:[QUERY] Shopline Shared Secret"
 "shopify_access_token=:[QUERY] Access token authorizing the app to access resources on behalf of a user"
+"shopify_client_id=:[QUERY] Shopify Client ID"
 "shopify_api_key=:[QUERY] Shopify API Key"
 "shopify_api_password=:[QUERY] Shopify API Password"
 "shopify_shared_secret=:[QUERY] Shared secret"
