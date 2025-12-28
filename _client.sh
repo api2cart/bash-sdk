@@ -1647,6 +1647,8 @@ case $state in
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
 "rounding_precision=:[QUERY] &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;"
+"allow_user_defined_order_statuses=true:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
+          "allow_user_defined_order_statuses=false:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1695,6 +1697,8 @@ case $state in
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
 "rounding_precision=:[QUERY] &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;"
+"allow_user_defined_order_statuses=true:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
+          "allow_user_defined_order_statuses=false:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1800,6 +1804,8 @@ case $state in
         _op_arguments=(
                     "store_id=:[QUERY] Store Id"
 "action=:[QUERY] Available statuses for the specified action."
+"allow_user_defined_order_statuses=true:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
+          "allow_user_defined_order_statuses=false:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0

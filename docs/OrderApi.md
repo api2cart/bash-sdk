@@ -278,7 +278,7 @@ Info about a specific order by ID
 ### Example
 
 ```bash
- orderInfo  id=value  order_id=value  store_id=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value
+ orderInfo  id=value  order_id=value  store_id=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value  allow_user_defined_order_statuses=value
 ```
 
 ### Parameters
@@ -295,6 +295,7 @@ Name | Type | Description  | Notes
  **enableCache** | **boolean** | If the value is 'true' and order exist in our cache, we will return order.info response from cache | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
  **roundingPrecision** | **integer** | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p> | [optional] [default to null]
+ **allowUserDefinedOrderStatuses** | **boolean** | Indicates whether custom (user-defined) order statuses should be included in the response. | [optional] [default to false]
 
 ### Return type
 
@@ -321,7 +322,7 @@ Get list of orders from store.
 ### Example
 
 ```bash
- orderList  start=value  count=value  page_cursor=value  ids=value  order_ids=value  since_id=value  store_id=value  customer_id=value  customer_email=value  basket_id=value  currency_id=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  return_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  is_deleted=value  shipping_country_iso3=value  delivery_method=value  ship_node_type=value  created_to=value  created_from=value  modified_to=value  modified_from=value  tags=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value
+ orderList  start=value  count=value  page_cursor=value  ids=value  order_ids=value  since_id=value  store_id=value  customer_id=value  customer_email=value  basket_id=value  currency_id=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  return_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  is_deleted=value  shipping_country_iso3=value  delivery_method=value  ship_node_type=value  created_to=value  created_from=value  modified_to=value  modified_from=value  tags=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value  allow_user_defined_order_statuses=value
 ```
 
 ### Parameters
@@ -368,6 +369,7 @@ Name | Type | Description  | Notes
  **enableCache** | **boolean** | If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) | [optional] [default to false]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
  **roundingPrecision** | **integer** | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p> | [optional] [default to null]
+ **allowUserDefinedOrderStatuses** | **boolean** | Indicates whether custom (user-defined) order statuses should be included in the response. | [optional] [default to false]
 
 ### Return type
 
@@ -835,7 +837,7 @@ Retrieve list of statuses
 ### Example
 
 ```bash
- orderStatusList  store_id=value  action=value  response_fields=value
+ orderStatusList  store_id=value  action=value  allow_user_defined_order_statuses=value  response_fields=value
 ```
 
 ### Parameters
@@ -845,6 +847,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storeId** | **string** | Store Id | [optional] [default to null]
  **action** | **string** | Available statuses for the specified action. | [optional] [default to null]
+ **allowUserDefinedOrderStatuses** | **boolean** | Indicates whether custom (user-defined) order statuses should be included in the response. | [optional] [default to false]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
 
 ### Return type
