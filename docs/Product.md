@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **price** | **integer** |  | [optional] [default to null]
 **advancedUnderscoreprice** | [**array[ProductAdvancedPrice]**](ProductAdvancedPrice.md) |  | [optional] [default to null]
 **costUnderscoreprice** | **integer** |  | [optional] [default to null]
+**unitUnderscoreprice** | **integer** |  | [optional] [default to null]
+**measureUnderscoreunit** | **string** |  | [optional] [default to null]
 **quantity** | **integer** |  | [optional] [default to null]
 **inventory** | [**array[ProductInventory]**](ProductInventory.md) |  | [optional] [default to null]
 **groupUnderscoreitems** | [**array[ProductGroupItem]**](ProductGroupItem.md) |  | [optional] [default to null]

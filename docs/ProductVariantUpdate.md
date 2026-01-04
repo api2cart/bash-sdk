@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 **fixedUnderscorecostUnderscoreshippingUnderscoreprice** | **integer** |  | [optional] [default to null]
 **spriceUnderscorecreate** | **string** |  | [optional] [default to null]
 **spriceUnderscoreexpire** | **string** |  | [optional] [default to null]
+**measureUnderscoreunit** | **string** |  | [optional] [default to null]
+**unitUnderscoreprice** | **integer** |  | [optional] [default to null]
 **weight** | **integer** |  | [optional] [default to 0]
 **barcode** | **string** |  | [optional] [default to null]
 **width** | **integer** |  | [optional] [default to null]

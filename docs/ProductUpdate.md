@@ -32,6 +32,8 @@ Name | Type | Description | Notes
 **productUnderscoreclass** | **string** |  | [optional] [default to null]
 **brandUnderscorename** | **string** |  | [optional] [default to null]
 **availableUnderscoreforUnderscoreview** | **boolean** |  | [optional] [default to null]
+**measureUnderscoreunit** | **string** |  | [optional] [default to null]
+**unitUnderscoreprice** | **integer** |  | [optional] [default to null]
 **storesUnderscoreids** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]
 **langUnderscoreid** | **string** |  | [optional] [default to null]

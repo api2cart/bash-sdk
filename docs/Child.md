@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **combination** | [**array[ProductChildItemCombination]**](ProductChildItemCombination.md) |  | [optional] [default to null]
 **defaultUnderscoreprice** | **integer** |  | [optional] [default to null]
 **costUnderscoreprice** | **integer** |  | [optional] [default to null]
+**unitUnderscoreprice** | **integer** |  | [optional] [default to null]
+**measureUnderscoreunit** | **string** |  | [optional] [default to null]
 **listUnderscoreprice** | **integer** |  | [optional] [default to null]
 **wholesaleUnderscoreprice** | **integer** |  | [optional] [default to null]
 **advancedUnderscoreprice** | [**array[ProductAdvancedPrice]**](ProductAdvancedPrice.md) |  | [optional] [default to null]
