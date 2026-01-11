@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **checkUnderscoreprocessUnderscorestatus** | **boolean** |  | [optional] [default to false]
 **trackingUnderscoreprovider** | **string** |  | [optional] [default to null]
 **useUnderscorelatestUnderscoreapiUnderscoreversion** | **boolean** |  | [optional] [default to false]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

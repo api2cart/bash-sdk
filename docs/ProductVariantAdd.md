@@ -61,6 +61,7 @@ Name | Type | Description | Notes
 **processingUnderscoreprofileUnderscoreid** | **integer** |  | [optional] [default to null]
 **marketplaceUnderscoreitemUnderscoreproperties** | **string** |  | [optional] [default to null]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

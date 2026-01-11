@@ -147,7 +147,7 @@ Use this method to add additional conditions for coupon application.
 ### Example
 
 ```bash
- cartCouponConditionAdd  coupon_id=value  entity=value  key=value  operator=value  value=value  target=value  include_tax=value  include_shipping=value  store_id=value
+ cartCouponConditionAdd  coupon_id=value  entity=value  key=value  operator=value  value=value  target=value  include_tax=value  include_shipping=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -164,6 +164,7 @@ Name | Type | Description  | Notes
  **includeTax** | **boolean** | Indicates whether to apply a discount for taxes. | [optional] [default to false]
  **includeShipping** | **boolean** | Indicates whether to apply a discount for shipping. | [optional] [default to false]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -350,7 +351,7 @@ Use this method to create a gift card for a specified amount.
 ### Example
 
 ```bash
- cartGiftcardAdd  amount=value  code=value  owner_email=value  recipient_email=value  recipient_name=value  owner_name=value
+ cartGiftcardAdd  amount=value  code=value  owner_email=value  recipient_email=value  recipient_name=value  owner_name=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -364,6 +365,7 @@ Name | Type | Description  | Notes
  **recipientEmail** | **string** | Gift card recipient email | [optional] [default to null]
  **recipientName** | **string** | Gift card recipient name | [optional] [default to null]
  **ownerName** | **string** | Gift card owner name | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -583,7 +585,7 @@ Set meta data for a specific entity
 ### Example
 
 ```bash
- cartMetaDataSet  entity_id=value  key=value  value=value  namespace=value  entity=value  store_id=value  lang_id=value
+ cartMetaDataSet  entity_id=value  key=value  value=value  namespace=value  entity=value  store_id=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -598,6 +600,7 @@ Name | Type | Description  | Notes
  **entity** | **string** | Entity | [optional] [default to product]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -732,7 +735,7 @@ Add new script to the storefront
 ### Example
 
 ```bash
- cartScriptAdd  name=value  description=value  html=value  src=value  load_method=value  scope=value  events=value  store_id=value
+ cartScriptAdd  name=value  description=value  html=value  src=value  load_method=value  scope=value  events=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -748,6 +751,7 @@ Name | Type | Description  | Notes
  **scope** | **string** | The page or pages on the online store where the script should be included | [optional] [default to storefront]
  **events** | **string** | Event for run scripts | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

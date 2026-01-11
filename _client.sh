@@ -350,6 +350,7 @@ case $state in
             "categoryAssign[category.assign]" \
             "categoryCount[category.count]" \
             "categoryDelete[category.delete]" \
+            "categoryDeleteBatch[category.delete.batch]" \
             "categoryFind[category.find]" \
             "categoryImageAdd[category.image.add]" \
             "categoryImageDelete[category.image.delete]" \
@@ -646,6 +647,7 @@ case $state in
 "scapi_organization_id=:[QUERY] Salesforce Commerce Organization ID"
 "scapi_short_code=:[QUERY] Salesforce Commerce Short Code"
 "scapi_scopes=:[QUERY] Salesforce Commerce API Scopes"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -699,6 +701,7 @@ case $state in
 "used_for_sort_by=true:[QUERY] Used for Sorting in Product Listing"
           "used_for_sort_by=false:[QUERY] Used for Sorting in Product Listing"
 "apply_to=:[QUERY] Types of products which can have this attribute"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -708,6 +711,7 @@ case $state in
                     "id=:[QUERY] Entity id"
 "group_id=:[QUERY] Attribute group_id"
 "attribute_set_id=:[QUERY] Attribute set id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -717,6 +721,7 @@ case $state in
                     "id=:[QUERY] Entity id"
 "group_id=:[QUERY] Attribute group_id"
 "attribute_set_id=:[QUERY] Attribute set id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -814,6 +819,7 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Entity id"
 "group_id=:[QUERY] Customer group_id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -822,6 +828,7 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Entity id"
 "attribute_set_id=:[QUERY] Attribute set id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -832,6 +839,7 @@ case $state in
 "name=:[QUERY] Defines new attributes&#39;s name"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -844,6 +852,7 @@ case $state in
 "description=:[QUERY] Defines attribute value&#39;s description"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -866,6 +875,7 @@ case $state in
 "code=:[QUERY] Entity code"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -888,6 +898,7 @@ case $state in
 "variant_id=:[QUERY] Defines product&#39;s variants specified by variant id"
 "quantity=:[QUERY] Defines new items quantity"
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -897,6 +908,7 @@ case $state in
                     "name=:[QUERY] Shipping Service Name"
 "callback=:[QUERY] Callback url that returns shipping rates. It should be able to accept POST requests with json data."
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -996,6 +1008,7 @@ case $state in
 "include_shipping=true:[QUERY] Indicates whether to apply a discount for shipping."
           "include_shipping=false:[QUERY] Indicates whether to apply a discount for shipping."
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1059,6 +1072,7 @@ case $state in
 "recipient_email=:[QUERY] Gift card recipient email"
 "recipient_name=:[QUERY] Gift card recipient name"
 "owner_name=:[QUERY] Gift card owner name"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1125,6 +1139,7 @@ case $state in
 "entity=:[QUERY] Entity"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1165,6 +1180,7 @@ case $state in
 "scope=:[QUERY] The page or pages on the online store where the script should be included"
 "events=:[QUERY] Event for run scripts"
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1233,6 +1249,7 @@ case $state in
 "store_id=:[QUERY] Store Id"
 "stores_ids=:[QUERY] Create category in the stores that is specified by comma-separated stores&#39; id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1248,6 +1265,7 @@ case $state in
                     "category_id=:[QUERY] Defines category assign, specified by category id"
 "product_id=:[QUERY] Defines category assign to the product, specified by product id"
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1280,6 +1298,12 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
+      categoryDeleteBatch)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
       categoryFind)
         local -a _op_arguments
         _op_arguments=(
@@ -1302,6 +1326,7 @@ case $state in
 "label=:[QUERY] Defines alternative text that has to be attached to the picture"
 "mime=:[QUERY] Mime type of image http://en.wikipedia.org/wiki/Internet_media_type."
 "position=:[QUERY] Defines image’s position in the list"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1365,6 +1390,7 @@ case $state in
                     "category_id=:[QUERY] Defines category unassign, specified by category id"
 "product_id=:[QUERY] Defines category unassign to the product, specified by product id"
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1387,6 +1413,7 @@ case $state in
 "store_id=:[QUERY] Store Id"
 "stores_ids=:[QUERY] Update category in the stores that is specified by comma-separated stores&#39; id"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1441,6 +1468,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "id=:[QUERY] Identifies customer specified by the id"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1462,6 +1490,7 @@ case $state in
                     "name=:[QUERY] Customer group name"
 "store_id=:[QUERY] Store Id"
 "stores_ids=:[QUERY] Assign customer group to the stores that is specified by comma-separated stores&#39; id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1845,6 +1874,7 @@ case $state in
           "create_invoice=false:[QUERY] Determines whether an invoice should be created if it has not already been created"
 "origin=:[QUERY] The source of the order"
 "tags=:[QUERY] Order tags"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1892,6 +1922,7 @@ case $state in
 "value_id=:[QUERY] Define attribute value id"
 "lang_id=:[QUERY] Language id"
 "store_id=:[QUERY] Store Id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1907,6 +1938,7 @@ case $state in
           "reindex=false:[QUERY] Is reindex required"
 "clear_cache=true:[QUERY] Is cache clear required"
           "clear_cache=false:[QUERY] Is cache clear required"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2040,6 +2072,7 @@ case $state in
 "symbol_right=:[QUERY] Defines the symbol that is located after the currency"
 "default=true:[QUERY] Specifies currency&#39;s default meaning"
           "default=false:[QUERY] Specifies currency&#39;s default meaning"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2114,6 +2147,7 @@ case $state in
 "position=:[QUERY] Defines image’s position in the list"
 "hidden=true:[QUERY] Define is hide image"
           "hidden=false:[QUERY] Define is hide image"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2195,6 +2229,7 @@ case $state in
 "search_keywords=:[QUERY] Defines unique search keywords"
 "image_url=:[QUERY] Image Url"
 "seo_url=:[QUERY] Defines unique URL for SEO"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2215,6 +2250,7 @@ case $state in
 "option_values=:[QUERY] Defines option values that has to be assigned"
 "clear_cache=true:[QUERY] Is cache clear required"
           "clear_cache=false:[QUERY] Is cache clear required"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2253,6 +2289,7 @@ case $state in
           "is_default=false:[QUERY] Defines as a default"
 "clear_cache=true:[QUERY] Is cache clear required"
           "clear_cache=false:[QUERY] Is cache clear required"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2263,6 +2300,7 @@ case $state in
 "option_value_id=:[QUERY] Defines value id that has to be assigned"
 "clear_cache=true:[QUERY] Is cache clear required"
           "clear_cache=false:[QUERY] Is cache clear required"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2288,6 +2326,7 @@ case $state in
 "display_value=:[QUERY] Defines the value that will be displayed for the option value"
 "clear_cache=true:[QUERY] Is cache clear required"
           "clear_cache=false:[QUERY] Is cache clear required"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2339,6 +2378,7 @@ case $state in
         _op_arguments=(
                     "product_id=:[QUERY] Defines id of the product which should be assigned to a store"
 "store_id=:[QUERY] Defines id of the store product should be assigned to"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2583,6 +2623,7 @@ case $state in
           "active=false:[QUERY] Webhook status"
 "lang_id=:[QUERY] Language id"
 "store_id=:[QUERY] Defines store id where the webhook should be assigned"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2624,6 +2665,7 @@ case $state in
 "active=true:[QUERY] Webhook status"
           "active=false:[QUERY] Webhook status"
 "lang_id=:[QUERY] Language id"
+"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

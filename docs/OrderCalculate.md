@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **billUnderscorecompany** | **string** |  | [optional] [default to null]
 **billUnderscorephone** | **string** |  | [optional] [default to null]
 **responseUnderscorefields** | **string** |  | [optional] [default to null]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **orderUnderscoreitem** | [**array[OrderCalculateOrderItemInner]**](OrderCalculateOrderItemInner.md) |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

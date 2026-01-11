@@ -183,7 +183,7 @@ Set attribute value to product.
 ### Example
 
 ```bash
- productAttributeValueSet  product_id=value  attribute_id=value  attribute_group_id=value  attribute_name=value  value=value  value_id=value  lang_id=value  store_id=value
+ productAttributeValueSet  product_id=value  attribute_id=value  attribute_group_id=value  attribute_name=value  value=value  value_id=value  lang_id=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -199,6 +199,7 @@ Name | Type | Description  | Notes
  **valueId** | **integer** | Define attribute value id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -225,7 +226,7 @@ Removes attribute value for a product.
 ### Example
 
 ```bash
- productAttributeValueUnset  product_id=value  attribute_id=value  store_id=value  include_default=value  reindex=value  clear_cache=value
+ productAttributeValueUnset  product_id=value  attribute_id=value  store_id=value  include_default=value  reindex=value  clear_cache=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -239,6 +240,7 @@ Name | Type | Description  | Notes
  **includeDefault** | **boolean** | Boolean, whether or not to unset default value of the attribute, if applicable | [optional] [default to false]
  **reindex** | **boolean** | Is reindex required | [optional] [default to true]
  **clearCache** | **boolean** | Is cache clear required | [optional] [default to true]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -513,7 +515,7 @@ Add currency and/or set default in store
 ### Example
 
 ```bash
- productCurrencyAdd  iso3=value  rate=value  name=value  avail=value  symbol_left=value  symbol_right=value  default=value
+ productCurrencyAdd  iso3=value  rate=value  name=value  avail=value  symbol_left=value  symbol_right=value  default=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -528,6 +530,7 @@ Name | Type | Description  | Notes
  **symbolLeft** | **string** | Defines the symbol that is located before the currency | [optional] [default to null]
  **symbolRight** | **string** | Defines the symbol that is located after the currency | [optional] [default to null]
  **default** | **boolean** | Specifies currency's default meaning | [optional] [default to false]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -779,7 +782,7 @@ Update details of image
 ### Example
 
 ```bash
- productImageUpdate  product_id=value  id=value  variant_ids=value  store_id=value  lang_id=value  image_name=value  type=value  label=value  position=value  hidden=value
+ productImageUpdate  product_id=value  id=value  variant_ids=value  store_id=value  lang_id=value  image_name=value  type=value  label=value  position=value  hidden=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -797,6 +800,7 @@ Name | Type | Description  | Notes
  **label** | **string** | Defines alternative text that has to be attached to the picture | [optional] [default to null]
  **position** | **integer** | Defines image’s position in the list | [optional] [default to null]
  **hidden** | **boolean** | Define is hide image | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -937,7 +941,7 @@ Add manufacturer to store and assign to product
 ### Example
 
 ```bash
- productManufacturerAdd  product_id=value  manufacturer=value  store_id=value  meta_title=value  meta_keywords=value  meta_description=value  search_keywords=value  image_url=value  seo_url=value
+ productManufacturerAdd  product_id=value  manufacturer=value  store_id=value  meta_title=value  meta_keywords=value  meta_description=value  search_keywords=value  image_url=value  seo_url=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -954,6 +958,7 @@ Name | Type | Description  | Notes
  **searchKeywords** | **string** | Defines unique search keywords | [optional] [default to null]
  **imageUrl** | **string** | Image Url | [optional] [default to null]
  **seoUrl** | **string** | Defines unique URL for SEO | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -1015,7 +1020,7 @@ Assign option from product.
 ### Example
 
 ```bash
- productOptionAssign  product_id=value  option_id=value  required=value  sort_order=value  option_values=value  clear_cache=value
+ productOptionAssign  product_id=value  option_id=value  required=value  sort_order=value  option_values=value  clear_cache=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -1029,6 +1034,7 @@ Name | Type | Description  | Notes
  **sortOrder** | **integer** | Sort number in the list | [optional] [default to 0]
  **optionValues** | **string** | Defines option values that has to be assigned | [optional] [default to null]
  **clearCache** | **boolean** | Is cache clear required | [optional] [default to true]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -1134,7 +1140,7 @@ Add product option item from option.
 ### Example
 
 ```bash
- productOptionValueAdd  product_id=value  option_id=value  option_value=value  sort_order=value  display_value=value  is_default=value  clear_cache=value
+ productOptionValueAdd  product_id=value  option_id=value  option_value=value  sort_order=value  display_value=value  is_default=value  clear_cache=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -1149,6 +1155,7 @@ Name | Type | Description  | Notes
  **displayValue** | **string** | Defines the value that will be displayed for the option value | [optional] [default to null]
  **isDefault** | **boolean** | Defines as a default | [optional] [default to null]
  **clearCache** | **boolean** | Is cache clear required | [optional] [default to true]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -1175,7 +1182,7 @@ Assign product option item from product.
 ### Example
 
 ```bash
- productOptionValueAssign  product_option_id=value  option_value_id=value  clear_cache=value
+ productOptionValueAssign  product_option_id=value  option_value_id=value  clear_cache=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -1186,6 +1193,7 @@ Name | Type | Description  | Notes
  **productOptionId** | **integer** | Defines product's option id where the value has to be assigned | [default to null]
  **optionValueId** | **string** | Defines value id that has to be assigned | [default to null]
  **clearCache** | **boolean** | Is cache clear required | [optional] [default to true]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -1250,7 +1258,7 @@ Update product option item from option.
 ### Example
 
 ```bash
- productOptionValueUpdate  product_id=value  option_id=value  option_value_id=value  option_value=value  price=value  quantity=value  display_value=value  clear_cache=value
+ productOptionValueUpdate  product_id=value  option_id=value  option_value_id=value  option_value=value  price=value  quantity=value  display_value=value  clear_cache=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -1266,6 +1274,7 @@ Name | Type | Description  | Notes
  **quantity** | **integer** | Defines new products' options quantity | [optional] [default to null]
  **displayValue** | **string** | Defines the value that will be displayed for the option value | [optional] [default to null]
  **clearCache** | **boolean** | Is cache clear required | [optional] [default to true]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -1449,7 +1458,7 @@ Assign product to store
 ### Example
 
 ```bash
- productStoreAssign  product_id=value  store_id=value
+ productStoreAssign  product_id=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -1459,6 +1468,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string** | Defines id of the product which should be assigned to a store | [default to null]
  **storeId** | **string** | Defines id of the store product should be assigned to | [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

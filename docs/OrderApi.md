@@ -916,7 +916,7 @@ Update existing order.
 ### Example
 
 ```bash
- orderUpdate  order_id=value  store_id=value  order_status=value  financial_status=value  fulfillment_status=value  cancellation_reason=value  order_payment_method=value  comment=value  admin_comment=value  admin_private_comment=value  invoice_admin_comment=value  date_modified=value  date_finished=value  send_notifications=value  create_invoice=value  origin=value  tags=value
+ orderUpdate  order_id=value  store_id=value  order_status=value  financial_status=value  fulfillment_status=value  cancellation_reason=value  order_payment_method=value  comment=value  admin_comment=value  admin_private_comment=value  invoice_admin_comment=value  date_modified=value  date_finished=value  send_notifications=value  create_invoice=value  origin=value  tags=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -941,6 +941,7 @@ Name | Type | Description  | Notes
  **createInvoice** | **boolean** | Determines whether an invoice should be created if it has not already been created | [optional] [default to null]
  **origin** | **string** | The source of the order | [optional] [default to null]
  **tags** | **string** | Order tags | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

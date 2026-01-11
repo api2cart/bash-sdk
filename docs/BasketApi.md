@@ -60,7 +60,7 @@ Add item to basket
 ### Example
 
 ```bash
- basketItemAdd  customer_id=value  product_id=value  variant_id=value  quantity=value  store_id=value
+ basketItemAdd  customer_id=value  product_id=value  variant_id=value  quantity=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -73,6 +73,7 @@ Name | Type | Description  | Notes
  **variantId** | **string** | Defines product's variants specified by variant id | [optional] [default to null]
  **quantity** | **integer** | Defines new items quantity | [optional] [default to 0]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -99,7 +100,7 @@ Create live shipping rate service.
 ### Example
 
 ```bash
- basketLiveShippingServiceCreate  name=value  callback=value  store_id=value
+ basketLiveShippingServiceCreate  name=value  callback=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -110,6 +111,7 @@ Name | Type | Description  | Notes
  **name** | **string** | Shipping Service Name | [default to null]
  **callback** | **string** | Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

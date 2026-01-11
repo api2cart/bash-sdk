@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**categoryAssign**](CategoryApi.md#categoryAssign) | **POST** /category.assign.json | category.assign
 [**categoryCount**](CategoryApi.md#categoryCount) | **GET** /category.count.json | category.count
 [**categoryDelete**](CategoryApi.md#categoryDelete) | **DELETE** /category.delete.json | category.delete
+[**categoryDeleteBatch**](CategoryApi.md#categoryDeleteBatch) | **POST** /category.delete.batch.json | category.delete.batch
 [**categoryFind**](CategoryApi.md#categoryFind) | **GET** /category.find.json | category.find
 [**categoryImageAdd**](CategoryApi.md#categoryImageAdd) | **POST** /category.image.add.json | category.image.add
 [**categoryImageDelete**](CategoryApi.md#categoryImageDelete) | **DELETE** /category.image.delete.json | category.image.delete
@@ -28,7 +29,7 @@ Add new category in store
 ### Example
 
 ```bash
- categoryAdd  name=value  description=value  short_description=value  parent_id=value  avail=value  created_time=value  modified_time=value  sort_order=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value
+ categoryAdd  name=value  description=value  short_description=value  parent_id=value  avail=value  created_time=value  modified_time=value  sort_order=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **storeId** | **string** | Store Id | [optional] [default to null]
  **storesIds** | **string** | Create category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -112,7 +114,7 @@ Assign category to product
 ### Example
 
 ```bash
- categoryAssign  category_id=value  product_id=value  store_id=value
+ categoryAssign  category_id=value  product_id=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ Name | Type | Description  | Notes
  **categoryId** | **string** | Defines category assign, specified by category id | [default to null]
  **productId** | **string** | Defines category assign to the product, specified by product id | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -223,6 +226,41 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## categoryDeleteBatch
+
+category.delete.batch
+
+Delete categories from the store.
+
+### Example
+
+```bash
+ categoryDeleteBatch
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryDeleteBatch** | [**CategoryDeleteBatch**](CategoryDeleteBatch.md) |  |
+
+### Return type
+
+[**CategoryAddBatch200Response**](CategoryAddBatch200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## categoryFind
 
 category.find
@@ -271,7 +309,7 @@ Add image to category
 ### Example
 
 ```bash
- categoryImageAdd  category_id=value  image_name=value  url=value  type=value  store_id=value  label=value  mime=value  position=value
+ categoryImageAdd  category_id=value  image_name=value  url=value  type=value  store_id=value  label=value  mime=value  position=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -287,6 +325,7 @@ Name | Type | Description  | Notes
  **label** | **string** | Defines alternative text that has to be attached to the picture | [optional] [default to null]
  **mime** | **string** | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] [default to null]
  **position** | **integer** | Defines image’s position in the list | [optional] [default to 0]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -447,7 +486,7 @@ Unassign category to product
 ### Example
 
 ```bash
- categoryUnassign  category_id=value  product_id=value  store_id=value
+ categoryUnassign  category_id=value  product_id=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -458,6 +497,7 @@ Name | Type | Description  | Notes
  **categoryId** | **string** | Defines category unassign, specified by category id | [default to null]
  **productId** | **string** | Defines category unassign to the product, specified by product id | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -484,7 +524,7 @@ Update category in store
 ### Example
 
 ```bash
- categoryUpdate  id=value  name=value  description=value  short_description=value  parent_id=value  avail=value  sort_order=value  modified_time=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value
+ categoryUpdate  id=value  name=value  description=value  short_description=value  parent_id=value  avail=value  sort_order=value  modified_time=value  meta_title=value  meta_description=value  meta_keywords=value  seo_url=value  store_id=value  stores_ids=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -507,6 +547,7 @@ Name | Type | Description  | Notes
  **storeId** | **string** | Store Id | [optional] [default to null]
  **storesIds** | **string** | Update category in the stores that is specified by comma-separated stores' id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

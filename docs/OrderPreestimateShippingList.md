@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **shippUnderscorecountry** | **string** |  | [default to null]
 **params** | **string** |  | [optional] [default to force_all]
 **exclude** | **string** |  | [optional] [default to null]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **orderUnderscoreitem** | [**array[OrderPreestimateShippingListOrderItemInner]**](OrderPreestimateShippingListOrderItemInner.md) |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

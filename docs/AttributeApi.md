@@ -32,7 +32,7 @@ Add new attribute
 ### Example
 
 ```bash
- attributeAdd  type=value  name=value  code=value  store_id=value  lang_id=value  visible=value  required=value  position=value  attribute_group_id=value  is_global=value  is_searchable=value  is_filterable=value  is_comparable=value  is_html_allowed_on_front=value  is_filterable_in_search=value  is_configurable=value  is_visible_in_advanced_search=value  is_used_for_promo_rules=value  used_in_product_listing=value  used_for_sort_by=value  apply_to=value
+ attributeAdd  type=value  name=value  code=value  store_id=value  lang_id=value  visible=value  required=value  position=value  attribute_group_id=value  is_global=value  is_searchable=value  is_filterable=value  is_comparable=value  is_html_allowed_on_front=value  is_filterable_in_search=value  is_configurable=value  is_visible_in_advanced_search=value  is_used_for_promo_rules=value  used_in_product_listing=value  used_for_sort_by=value  apply_to=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -61,6 +61,7 @@ Name | Type | Description  | Notes
  **usedInProductListing** | **boolean** | Used in Product Listing | [optional] [default to false]
  **usedForSortBy** | **boolean** | Used for Sorting in Product Listing | [optional] [default to false]
  **applyTo** | **string** | Types of products which can have this attribute | [optional] [default to all_types]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -87,7 +88,7 @@ Assign attribute to the group
 ### Example
 
 ```bash
- attributeAssignGroup  id=value  group_id=value  attribute_set_id=value
+ attributeAssignGroup  id=value  group_id=value  attribute_set_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
  **id** | **string** | Entity id | [default to null]
  **groupId** | **string** | Attribute group_id | [default to null]
  **attributeSetId** | **string** | Attribute set id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -124,7 +126,7 @@ Assign attribute to the attribute set
 ### Example
 
 ```bash
- attributeAssignSet  id=value  attribute_set_id=value  group_id=value
+ attributeAssignSet  id=value  attribute_set_id=value  group_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -135,6 +137,7 @@ Name | Type | Description  | Notes
  **id** | **string** | Entity id | [default to null]
  **attributeSetId** | **string** | Attribute set id | [default to null]
  **groupId** | **string** | Attribute group_id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -438,7 +441,7 @@ Unassign attribute from group
 ### Example
 
 ```bash
- attributeUnassignGroup  id=value  group_id=value
+ attributeUnassignGroup  id=value  group_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -448,6 +451,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Entity id | [default to null]
  **groupId** | **string** | Customer group_id | [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -474,7 +478,7 @@ Unassign attribute from attribute set
 ### Example
 
 ```bash
- attributeUnassignSet  id=value  attribute_set_id=value
+ attributeUnassignSet  id=value  attribute_set_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -484,6 +488,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Entity id | [default to null]
  **attributeSetId** | **string** | Attribute set id | [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -510,7 +515,7 @@ Update attribute data
 ### Example
 
 ```bash
- attributeUpdate  id=value  name=value  store_id=value  lang_id=value
+ attributeUpdate  id=value  name=value  store_id=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -522,6 +527,7 @@ Name | Type | Description  | Notes
  **name** | **string** | Defines new attributes's name | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -548,7 +554,7 @@ Add new value to attribute.
 ### Example
 
 ```bash
- attributeValueAdd  attribute_id=value  name=value  code=value  description=value  store_id=value  lang_id=value
+ attributeValueAdd  attribute_id=value  name=value  code=value  description=value  store_id=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -562,6 +568,7 @@ Name | Type | Description  | Notes
  **description** | **string** | Defines attribute value's description | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -625,7 +632,7 @@ Update attribute value.
 ### Example
 
 ```bash
- attributeValueUpdate  id=value  attribute_id=value  name=value  description=value  code=value  store_id=value  lang_id=value
+ attributeValueUpdate  id=value  attribute_id=value  name=value  description=value  code=value  store_id=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -640,6 +647,7 @@ Name | Type | Description  | Notes
  **code** | **string** | Entity code | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

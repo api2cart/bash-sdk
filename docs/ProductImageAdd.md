@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **mime** | **string** |  | [optional] [default to null]
 **position** | **integer** |  | [optional] [default to 0]
 **useUnderscorelatestUnderscoreapiUnderscoreversion** | **boolean** |  | [optional] [default to false]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

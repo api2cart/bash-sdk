@@ -59,7 +59,7 @@ Create webhook on the store and subscribe to it.
 ### Example
 
 ```bash
- webhookCreate  entity=value  action=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value  store_id=value
+ webhookCreate  entity=value  action=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value  store_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
  **active** | **boolean** | Webhook status | [optional] [default to true]
  **langId** | **string** | Language id | [optional] [default to null]
  **storeId** | **string** | Defines store id where the webhook should be assigned | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -210,7 +211,7 @@ Update Webhooks parameters.
 ### Example
 
 ```bash
- webhookUpdate  id=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value
+ webhookUpdate  id=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -225,6 +226,7 @@ Name | Type | Description  | Notes
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **active** | **boolean** | Webhook status | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

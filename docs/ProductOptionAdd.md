@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **required** | **boolean** |  | [optional] [default to false]
 **values** | [**array[ProductOptionAddValuesInner]**](ProductOptionAddValuesInner.md) |  | [optional] [default to null]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
+**idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

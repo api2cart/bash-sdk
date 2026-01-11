@@ -187,7 +187,7 @@ Delete customer from store.
 ### Example
 
 ```bash
- customerDelete  id=value
+ customerDelete  id=value  store_id=value
 ```
 
 ### Parameters
@@ -196,6 +196,7 @@ Delete customer from store.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Identifies customer specified by the id | [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 
@@ -261,7 +262,7 @@ Create customer group.
 ### Example
 
 ```bash
- customerGroupAdd  name=value  store_id=value  stores_ids=value
+ customerGroupAdd  name=value  store_id=value  stores_ids=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -272,6 +273,7 @@ Name | Type | Description  | Notes
  **name** | **string** | Customer group name | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **storesIds** | **string** | Assign customer group to the stores that is specified by comma-separated stores' id | [optional] [default to null]
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 

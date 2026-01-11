@@ -272,6 +272,7 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_client_sec
 operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_organization_id"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_short_code"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::scapi_scopes"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::ids"]=0
@@ -296,12 +297,15 @@ operation_parameters_minimum_occurrences["attributeAdd:::is_used_for_promo_rules
 operation_parameters_minimum_occurrences["attributeAdd:::used_in_product_listing"]=0
 operation_parameters_minimum_occurrences["attributeAdd:::used_for_sort_by"]=0
 operation_parameters_minimum_occurrences["attributeAdd:::apply_to"]=0
+operation_parameters_minimum_occurrences["attributeAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeAssignGroup:::id"]=1
 operation_parameters_minimum_occurrences["attributeAssignGroup:::group_id"]=1
 operation_parameters_minimum_occurrences["attributeAssignGroup:::attribute_set_id"]=0
+operation_parameters_minimum_occurrences["attributeAssignGroup:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeAssignSet:::id"]=1
 operation_parameters_minimum_occurrences["attributeAssignSet:::attribute_set_id"]=1
 operation_parameters_minimum_occurrences["attributeAssignSet:::group_id"]=0
+operation_parameters_minimum_occurrences["attributeAssignSet:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeAttributesetList:::start"]=0
 operation_parameters_minimum_occurrences["attributeAttributesetList:::count"]=0
 operation_parameters_minimum_occurrences["attributeAttributesetList:::response_fields"]=0
@@ -345,18 +349,22 @@ operation_parameters_minimum_occurrences["attributeList:::params"]=0
 operation_parameters_minimum_occurrences["attributeList:::exclude"]=0
 operation_parameters_minimum_occurrences["attributeUnassignGroup:::id"]=1
 operation_parameters_minimum_occurrences["attributeUnassignGroup:::group_id"]=1
+operation_parameters_minimum_occurrences["attributeUnassignGroup:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeUnassignSet:::id"]=1
 operation_parameters_minimum_occurrences["attributeUnassignSet:::attribute_set_id"]=1
+operation_parameters_minimum_occurrences["attributeUnassignSet:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::id"]=1
 operation_parameters_minimum_occurrences["attributeUpdate:::name"]=1
 operation_parameters_minimum_occurrences["attributeUpdate:::store_id"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::lang_id"]=0
+operation_parameters_minimum_occurrences["attributeUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeValueAdd:::attribute_id"]=1
 operation_parameters_minimum_occurrences["attributeValueAdd:::name"]=1
 operation_parameters_minimum_occurrences["attributeValueAdd:::code"]=0
 operation_parameters_minimum_occurrences["attributeValueAdd:::description"]=0
 operation_parameters_minimum_occurrences["attributeValueAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["attributeValueAdd:::lang_id"]=0
+operation_parameters_minimum_occurrences["attributeValueAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeValueDelete:::id"]=1
 operation_parameters_minimum_occurrences["attributeValueDelete:::attribute_id"]=1
 operation_parameters_minimum_occurrences["attributeValueDelete:::store_id"]=0
@@ -367,6 +375,7 @@ operation_parameters_minimum_occurrences["attributeValueUpdate:::description"]=0
 operation_parameters_minimum_occurrences["attributeValueUpdate:::code"]=0
 operation_parameters_minimum_occurrences["attributeValueUpdate:::store_id"]=0
 operation_parameters_minimum_occurrences["attributeValueUpdate:::lang_id"]=0
+operation_parameters_minimum_occurrences["attributeValueUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["basketInfo:::id"]=1
 operation_parameters_minimum_occurrences["basketInfo:::store_id"]=0
 operation_parameters_minimum_occurrences["basketInfo:::response_fields"]=0
@@ -377,9 +386,11 @@ operation_parameters_minimum_occurrences["basketItemAdd:::product_id"]=1
 operation_parameters_minimum_occurrences["basketItemAdd:::variant_id"]=0
 operation_parameters_minimum_occurrences["basketItemAdd:::quantity"]=0
 operation_parameters_minimum_occurrences["basketItemAdd:::store_id"]=0
+operation_parameters_minimum_occurrences["basketItemAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["basketLiveShippingServiceCreate:::name"]=1
 operation_parameters_minimum_occurrences["basketLiveShippingServiceCreate:::callback"]=1
 operation_parameters_minimum_occurrences["basketLiveShippingServiceCreate:::store_id"]=0
+operation_parameters_minimum_occurrences["basketLiveShippingServiceCreate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["basketLiveShippingServiceDelete:::id"]=1
 operation_parameters_minimum_occurrences["basketLiveShippingServiceList:::start"]=0
 operation_parameters_minimum_occurrences["basketLiveShippingServiceList:::count"]=0
@@ -411,6 +422,7 @@ operation_parameters_minimum_occurrences["cartCouponConditionAdd:::target"]=0
 operation_parameters_minimum_occurrences["cartCouponConditionAdd:::include_tax"]=0
 operation_parameters_minimum_occurrences["cartCouponConditionAdd:::include_shipping"]=0
 operation_parameters_minimum_occurrences["cartCouponConditionAdd:::store_id"]=0
+operation_parameters_minimum_occurrences["cartCouponConditionAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartCouponCount:::store_id"]=0
 operation_parameters_minimum_occurrences["cartCouponCount:::avail"]=0
 operation_parameters_minimum_occurrences["cartCouponCount:::date_start_from"]=0
@@ -441,6 +453,7 @@ operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_email"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::recipient_email"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::recipient_name"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_name"]=0
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartGiftcardCount:::store_id"]=0
 operation_parameters_minimum_occurrences["cartGiftcardDelete:::id"]=1
 operation_parameters_minimum_occurrences["cartGiftcardList:::start"]=0
@@ -471,6 +484,7 @@ operation_parameters_minimum_occurrences["cartMetaDataSet:::namespace"]=1
 operation_parameters_minimum_occurrences["cartMetaDataSet:::entity"]=0
 operation_parameters_minimum_occurrences["cartMetaDataSet:::store_id"]=0
 operation_parameters_minimum_occurrences["cartMetaDataSet:::lang_id"]=0
+operation_parameters_minimum_occurrences["cartMetaDataSet:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartMetaDataUnset:::entity_id"]=1
 operation_parameters_minimum_occurrences["cartMetaDataUnset:::key"]=1
 operation_parameters_minimum_occurrences["cartMetaDataUnset:::id"]=1
@@ -487,6 +501,7 @@ operation_parameters_minimum_occurrences["cartScriptAdd:::load_method"]=0
 operation_parameters_minimum_occurrences["cartScriptAdd:::scope"]=0
 operation_parameters_minimum_occurrences["cartScriptAdd:::events"]=0
 operation_parameters_minimum_occurrences["cartScriptAdd:::store_id"]=0
+operation_parameters_minimum_occurrences["cartScriptAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartScriptDelete:::id"]=1
 operation_parameters_minimum_occurrences["cartScriptDelete:::store_id"]=0
 operation_parameters_minimum_occurrences["cartScriptList:::start"]=0
@@ -523,10 +538,12 @@ operation_parameters_minimum_occurrences["categoryAdd:::seo_url"]=0
 operation_parameters_minimum_occurrences["categoryAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryAdd:::stores_ids"]=0
 operation_parameters_minimum_occurrences["categoryAdd:::lang_id"]=0
+operation_parameters_minimum_occurrences["categoryAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["categoryAddBatch:::CategoryAddBatch"]=1
 operation_parameters_minimum_occurrences["categoryAssign:::category_id"]=1
 operation_parameters_minimum_occurrences["categoryAssign:::product_id"]=1
 operation_parameters_minimum_occurrences["categoryAssign:::store_id"]=0
+operation_parameters_minimum_occurrences["categoryAssign:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["categoryCount:::parent_id"]=0
 operation_parameters_minimum_occurrences["categoryCount:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryCount:::lang_id"]=0
@@ -542,6 +559,7 @@ operation_parameters_minimum_occurrences["categoryCount:::report_request_id"]=0
 operation_parameters_minimum_occurrences["categoryCount:::disable_report_cache"]=0
 operation_parameters_minimum_occurrences["categoryDelete:::id"]=1
 operation_parameters_minimum_occurrences["categoryDelete:::store_id"]=0
+operation_parameters_minimum_occurrences["categoryDeleteBatch:::CategoryDeleteBatch"]=1
 operation_parameters_minimum_occurrences["categoryFind:::find_value"]=1
 operation_parameters_minimum_occurrences["categoryFind:::find_where"]=0
 operation_parameters_minimum_occurrences["categoryFind:::find_params"]=0
@@ -555,6 +573,7 @@ operation_parameters_minimum_occurrences["categoryImageAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::label"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::mime"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::position"]=0
+operation_parameters_minimum_occurrences["categoryImageAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["categoryImageDelete:::category_id"]=1
 operation_parameters_minimum_occurrences["categoryImageDelete:::image_id"]=1
 operation_parameters_minimum_occurrences["categoryImageDelete:::store_id"]=0
@@ -590,6 +609,7 @@ operation_parameters_minimum_occurrences["categoryList:::disable_cache"]=0
 operation_parameters_minimum_occurrences["categoryUnassign:::category_id"]=1
 operation_parameters_minimum_occurrences["categoryUnassign:::product_id"]=1
 operation_parameters_minimum_occurrences["categoryUnassign:::store_id"]=0
+operation_parameters_minimum_occurrences["categoryUnassign:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["categoryUpdate:::id"]=1
 operation_parameters_minimum_occurrences["categoryUpdate:::name"]=0
 operation_parameters_minimum_occurrences["categoryUpdate:::description"]=0
@@ -605,6 +625,7 @@ operation_parameters_minimum_occurrences["categoryUpdate:::seo_url"]=0
 operation_parameters_minimum_occurrences["categoryUpdate:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryUpdate:::stores_ids"]=0
 operation_parameters_minimum_occurrences["categoryUpdate:::lang_id"]=0
+operation_parameters_minimum_occurrences["categoryUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["customerAdd:::CustomerAdd"]=1
 operation_parameters_minimum_occurrences["customerAddressAdd:::CustomerAddressAdd"]=1
 operation_parameters_minimum_occurrences["customerAttributeList:::customer_id"]=1
@@ -629,6 +650,7 @@ operation_parameters_minimum_occurrences["customerCount:::created_to"]=0
 operation_parameters_minimum_occurrences["customerCount:::modified_from"]=0
 operation_parameters_minimum_occurrences["customerCount:::modified_to"]=0
 operation_parameters_minimum_occurrences["customerDelete:::id"]=1
+operation_parameters_minimum_occurrences["customerDelete:::store_id"]=0
 operation_parameters_minimum_occurrences["customerFind:::find_value"]=1
 operation_parameters_minimum_occurrences["customerFind:::find_where"]=0
 operation_parameters_minimum_occurrences["customerFind:::find_params"]=0
@@ -637,6 +659,7 @@ operation_parameters_minimum_occurrences["customerFind:::include_guests"]=0
 operation_parameters_minimum_occurrences["customerGroupAdd:::name"]=1
 operation_parameters_minimum_occurrences["customerGroupAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["customerGroupAdd:::stores_ids"]=0
+operation_parameters_minimum_occurrences["customerGroupAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["customerGroupList:::start"]=0
 operation_parameters_minimum_occurrences["customerGroupList:::count"]=0
 operation_parameters_minimum_occurrences["customerGroupList:::page_cursor"]=0
@@ -843,6 +866,7 @@ operation_parameters_minimum_occurrences["orderUpdate:::send_notifications"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::create_invoice"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::origin"]=0
 operation_parameters_minimum_occurrences["orderUpdate:::tags"]=0
+operation_parameters_minimum_occurrences["orderUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productAdd:::ProductAdd"]=1
 operation_parameters_minimum_occurrences["productAddBatch:::ProductAddBatch"]=1
 operation_parameters_minimum_occurrences["productAttributeList:::product_id"]=1
@@ -868,12 +892,14 @@ operation_parameters_minimum_occurrences["productAttributeValueSet:::value"]=0
 operation_parameters_minimum_occurrences["productAttributeValueSet:::value_id"]=0
 operation_parameters_minimum_occurrences["productAttributeValueSet:::lang_id"]=0
 operation_parameters_minimum_occurrences["productAttributeValueSet:::store_id"]=0
+operation_parameters_minimum_occurrences["productAttributeValueSet:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::product_id"]=1
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::attribute_id"]=1
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::store_id"]=0
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::include_default"]=0
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::reindex"]=0
 operation_parameters_minimum_occurrences["productAttributeValueUnset:::clear_cache"]=0
+operation_parameters_minimum_occurrences["productAttributeValueUnset:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productBrandList:::start"]=0
 operation_parameters_minimum_occurrences["productBrandList:::count"]=0
 operation_parameters_minimum_occurrences["productBrandList:::page_cursor"]=0
@@ -959,6 +985,7 @@ operation_parameters_minimum_occurrences["productCurrencyAdd:::avail"]=0
 operation_parameters_minimum_occurrences["productCurrencyAdd:::symbol_left"]=0
 operation_parameters_minimum_occurrences["productCurrencyAdd:::symbol_right"]=0
 operation_parameters_minimum_occurrences["productCurrencyAdd:::default"]=0
+operation_parameters_minimum_occurrences["productCurrencyAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productCurrencyList:::start"]=0
 operation_parameters_minimum_occurrences["productCurrencyList:::count"]=0
 operation_parameters_minimum_occurrences["productCurrencyList:::page_cursor"]=0
@@ -990,6 +1017,7 @@ operation_parameters_minimum_occurrences["productImageUpdate:::type"]=0
 operation_parameters_minimum_occurrences["productImageUpdate:::label"]=0
 operation_parameters_minimum_occurrences["productImageUpdate:::position"]=0
 operation_parameters_minimum_occurrences["productImageUpdate:::hidden"]=0
+operation_parameters_minimum_occurrences["productImageUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productInfo:::id"]=1
 operation_parameters_minimum_occurrences["productInfo:::store_id"]=0
 operation_parameters_minimum_occurrences["productInfo:::lang_id"]=0
@@ -1045,6 +1073,7 @@ operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_descript
 operation_parameters_minimum_occurrences["productManufacturerAdd:::search_keywords"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::image_url"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::seo_url"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productOptionAdd:::ProductOptionAdd"]=1
 operation_parameters_minimum_occurrences["productOptionAssign:::product_id"]=1
 operation_parameters_minimum_occurrences["productOptionAssign:::option_id"]=1
@@ -1052,6 +1081,7 @@ operation_parameters_minimum_occurrences["productOptionAssign:::required"]=0
 operation_parameters_minimum_occurrences["productOptionAssign:::sort_order"]=0
 operation_parameters_minimum_occurrences["productOptionAssign:::option_values"]=0
 operation_parameters_minimum_occurrences["productOptionAssign:::clear_cache"]=0
+operation_parameters_minimum_occurrences["productOptionAssign:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productOptionDelete:::option_id"]=1
 operation_parameters_minimum_occurrences["productOptionDelete:::product_id"]=1
 operation_parameters_minimum_occurrences["productOptionDelete:::store_id"]=0
@@ -1070,9 +1100,11 @@ operation_parameters_minimum_occurrences["productOptionValueAdd:::sort_order"]=0
 operation_parameters_minimum_occurrences["productOptionValueAdd:::display_value"]=0
 operation_parameters_minimum_occurrences["productOptionValueAdd:::is_default"]=0
 operation_parameters_minimum_occurrences["productOptionValueAdd:::clear_cache"]=0
+operation_parameters_minimum_occurrences["productOptionValueAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productOptionValueAssign:::product_option_id"]=1
 operation_parameters_minimum_occurrences["productOptionValueAssign:::option_value_id"]=1
 operation_parameters_minimum_occurrences["productOptionValueAssign:::clear_cache"]=0
+operation_parameters_minimum_occurrences["productOptionValueAssign:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productOptionValueDelete:::option_id"]=1
 operation_parameters_minimum_occurrences["productOptionValueDelete:::option_value_id"]=1
 operation_parameters_minimum_occurrences["productOptionValueDelete:::product_id"]=1
@@ -1085,6 +1117,7 @@ operation_parameters_minimum_occurrences["productOptionValueUpdate:::price"]=0
 operation_parameters_minimum_occurrences["productOptionValueUpdate:::quantity"]=0
 operation_parameters_minimum_occurrences["productOptionValueUpdate:::display_value"]=0
 operation_parameters_minimum_occurrences["productOptionValueUpdate:::clear_cache"]=0
+operation_parameters_minimum_occurrences["productOptionValueUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productPriceAdd:::ProductPriceAdd"]=1
 operation_parameters_minimum_occurrences["productPriceDelete:::product_id"]=1
 operation_parameters_minimum_occurrences["productPriceDelete:::group_prices"]=0
@@ -1108,6 +1141,7 @@ operation_parameters_minimum_occurrences["productReviewList:::params"]=0
 operation_parameters_minimum_occurrences["productReviewList:::exclude"]=0
 operation_parameters_minimum_occurrences["productStoreAssign:::product_id"]=1
 operation_parameters_minimum_occurrences["productStoreAssign:::store_id"]=1
+operation_parameters_minimum_occurrences["productStoreAssign:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productTaxAdd:::ProductTaxAdd"]=1
 operation_parameters_minimum_occurrences["productUpdate:::ProductUpdate"]=1
 operation_parameters_minimum_occurrences["productUpdateBatch:::ProductUpdateBatch"]=1
@@ -1208,6 +1242,7 @@ operation_parameters_minimum_occurrences["webhookCreate:::response_fields"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::active"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::lang_id"]=0
 operation_parameters_minimum_occurrences["webhookCreate:::store_id"]=0
+operation_parameters_minimum_occurrences["webhookCreate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["webhookDelete:::id"]=1
 operation_parameters_minimum_occurrences["webhookList:::start"]=0
 operation_parameters_minimum_occurrences["webhookList:::count"]=0
@@ -1223,6 +1258,7 @@ operation_parameters_minimum_occurrences["webhookUpdate:::fields"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::response_fields"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::active"]=0
 operation_parameters_minimum_occurrences["webhookUpdate:::lang_id"]=0
+operation_parameters_minimum_occurrences["webhookUpdate:::idempotency_key"]=0
 
 ##
 # This array stores the maximum number of allowed occurrences for parameter
@@ -1407,6 +1443,7 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_client_sec
 operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_organization_id"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_short_code"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::scapi_scopes"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::ids"]=0
@@ -1431,12 +1468,15 @@ operation_parameters_maximum_occurrences["attributeAdd:::is_used_for_promo_rules
 operation_parameters_maximum_occurrences["attributeAdd:::used_in_product_listing"]=0
 operation_parameters_maximum_occurrences["attributeAdd:::used_for_sort_by"]=0
 operation_parameters_maximum_occurrences["attributeAdd:::apply_to"]=0
+operation_parameters_maximum_occurrences["attributeAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeAssignGroup:::id"]=0
 operation_parameters_maximum_occurrences["attributeAssignGroup:::group_id"]=0
 operation_parameters_maximum_occurrences["attributeAssignGroup:::attribute_set_id"]=0
+operation_parameters_maximum_occurrences["attributeAssignGroup:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeAssignSet:::id"]=0
 operation_parameters_maximum_occurrences["attributeAssignSet:::attribute_set_id"]=0
 operation_parameters_maximum_occurrences["attributeAssignSet:::group_id"]=0
+operation_parameters_maximum_occurrences["attributeAssignSet:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeAttributesetList:::start"]=0
 operation_parameters_maximum_occurrences["attributeAttributesetList:::count"]=0
 operation_parameters_maximum_occurrences["attributeAttributesetList:::response_fields"]=0
@@ -1480,18 +1520,22 @@ operation_parameters_maximum_occurrences["attributeList:::params"]=0
 operation_parameters_maximum_occurrences["attributeList:::exclude"]=0
 operation_parameters_maximum_occurrences["attributeUnassignGroup:::id"]=0
 operation_parameters_maximum_occurrences["attributeUnassignGroup:::group_id"]=0
+operation_parameters_maximum_occurrences["attributeUnassignGroup:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeUnassignSet:::id"]=0
 operation_parameters_maximum_occurrences["attributeUnassignSet:::attribute_set_id"]=0
+operation_parameters_maximum_occurrences["attributeUnassignSet:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::id"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::name"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::store_id"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::lang_id"]=0
+operation_parameters_maximum_occurrences["attributeUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::attribute_id"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::name"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::code"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::description"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["attributeValueAdd:::lang_id"]=0
+operation_parameters_maximum_occurrences["attributeValueAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeValueDelete:::id"]=0
 operation_parameters_maximum_occurrences["attributeValueDelete:::attribute_id"]=0
 operation_parameters_maximum_occurrences["attributeValueDelete:::store_id"]=0
@@ -1502,6 +1546,7 @@ operation_parameters_maximum_occurrences["attributeValueUpdate:::description"]=0
 operation_parameters_maximum_occurrences["attributeValueUpdate:::code"]=0
 operation_parameters_maximum_occurrences["attributeValueUpdate:::store_id"]=0
 operation_parameters_maximum_occurrences["attributeValueUpdate:::lang_id"]=0
+operation_parameters_maximum_occurrences["attributeValueUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["basketInfo:::id"]=0
 operation_parameters_maximum_occurrences["basketInfo:::store_id"]=0
 operation_parameters_maximum_occurrences["basketInfo:::response_fields"]=0
@@ -1512,9 +1557,11 @@ operation_parameters_maximum_occurrences["basketItemAdd:::product_id"]=0
 operation_parameters_maximum_occurrences["basketItemAdd:::variant_id"]=0
 operation_parameters_maximum_occurrences["basketItemAdd:::quantity"]=0
 operation_parameters_maximum_occurrences["basketItemAdd:::store_id"]=0
+operation_parameters_maximum_occurrences["basketItemAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceCreate:::name"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceCreate:::callback"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceCreate:::store_id"]=0
+operation_parameters_maximum_occurrences["basketLiveShippingServiceCreate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceDelete:::id"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceList:::start"]=0
 operation_parameters_maximum_occurrences["basketLiveShippingServiceList:::count"]=0
@@ -1546,6 +1593,7 @@ operation_parameters_maximum_occurrences["cartCouponConditionAdd:::target"]=0
 operation_parameters_maximum_occurrences["cartCouponConditionAdd:::include_tax"]=0
 operation_parameters_maximum_occurrences["cartCouponConditionAdd:::include_shipping"]=0
 operation_parameters_maximum_occurrences["cartCouponConditionAdd:::store_id"]=0
+operation_parameters_maximum_occurrences["cartCouponConditionAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartCouponCount:::store_id"]=0
 operation_parameters_maximum_occurrences["cartCouponCount:::avail"]=0
 operation_parameters_maximum_occurrences["cartCouponCount:::date_start_from"]=0
@@ -1576,6 +1624,7 @@ operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_email"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::recipient_email"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::recipient_name"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_name"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartGiftcardCount:::store_id"]=0
 operation_parameters_maximum_occurrences["cartGiftcardDelete:::id"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::start"]=0
@@ -1606,6 +1655,7 @@ operation_parameters_maximum_occurrences["cartMetaDataSet:::namespace"]=0
 operation_parameters_maximum_occurrences["cartMetaDataSet:::entity"]=0
 operation_parameters_maximum_occurrences["cartMetaDataSet:::store_id"]=0
 operation_parameters_maximum_occurrences["cartMetaDataSet:::lang_id"]=0
+operation_parameters_maximum_occurrences["cartMetaDataSet:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartMetaDataUnset:::entity_id"]=0
 operation_parameters_maximum_occurrences["cartMetaDataUnset:::key"]=0
 operation_parameters_maximum_occurrences["cartMetaDataUnset:::id"]=0
@@ -1622,6 +1672,7 @@ operation_parameters_maximum_occurrences["cartScriptAdd:::load_method"]=0
 operation_parameters_maximum_occurrences["cartScriptAdd:::scope"]=0
 operation_parameters_maximum_occurrences["cartScriptAdd:::events"]=0
 operation_parameters_maximum_occurrences["cartScriptAdd:::store_id"]=0
+operation_parameters_maximum_occurrences["cartScriptAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartScriptDelete:::id"]=0
 operation_parameters_maximum_occurrences["cartScriptDelete:::store_id"]=0
 operation_parameters_maximum_occurrences["cartScriptList:::start"]=0
@@ -1658,10 +1709,12 @@ operation_parameters_maximum_occurrences["categoryAdd:::seo_url"]=0
 operation_parameters_maximum_occurrences["categoryAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryAdd:::stores_ids"]=0
 operation_parameters_maximum_occurrences["categoryAdd:::lang_id"]=0
+operation_parameters_maximum_occurrences["categoryAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["categoryAddBatch:::CategoryAddBatch"]=0
 operation_parameters_maximum_occurrences["categoryAssign:::category_id"]=0
 operation_parameters_maximum_occurrences["categoryAssign:::product_id"]=0
 operation_parameters_maximum_occurrences["categoryAssign:::store_id"]=0
+operation_parameters_maximum_occurrences["categoryAssign:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["categoryCount:::parent_id"]=0
 operation_parameters_maximum_occurrences["categoryCount:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryCount:::lang_id"]=0
@@ -1677,6 +1730,7 @@ operation_parameters_maximum_occurrences["categoryCount:::report_request_id"]=0
 operation_parameters_maximum_occurrences["categoryCount:::disable_report_cache"]=0
 operation_parameters_maximum_occurrences["categoryDelete:::id"]=0
 operation_parameters_maximum_occurrences["categoryDelete:::store_id"]=0
+operation_parameters_maximum_occurrences["categoryDeleteBatch:::CategoryDeleteBatch"]=0
 operation_parameters_maximum_occurrences["categoryFind:::find_value"]=0
 operation_parameters_maximum_occurrences["categoryFind:::find_where"]=0
 operation_parameters_maximum_occurrences["categoryFind:::find_params"]=0
@@ -1690,6 +1744,7 @@ operation_parameters_maximum_occurrences["categoryImageAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::label"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::mime"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::position"]=0
+operation_parameters_maximum_occurrences["categoryImageAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::category_id"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::image_id"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::store_id"]=0
@@ -1725,6 +1780,7 @@ operation_parameters_maximum_occurrences["categoryList:::disable_cache"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::category_id"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::product_id"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::store_id"]=0
+operation_parameters_maximum_occurrences["categoryUnassign:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::id"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::name"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::description"]=0
@@ -1740,6 +1796,7 @@ operation_parameters_maximum_occurrences["categoryUpdate:::seo_url"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::stores_ids"]=0
 operation_parameters_maximum_occurrences["categoryUpdate:::lang_id"]=0
+operation_parameters_maximum_occurrences["categoryUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["customerAdd:::CustomerAdd"]=0
 operation_parameters_maximum_occurrences["customerAddressAdd:::CustomerAddressAdd"]=0
 operation_parameters_maximum_occurrences["customerAttributeList:::customer_id"]=0
@@ -1764,6 +1821,7 @@ operation_parameters_maximum_occurrences["customerCount:::created_to"]=0
 operation_parameters_maximum_occurrences["customerCount:::modified_from"]=0
 operation_parameters_maximum_occurrences["customerCount:::modified_to"]=0
 operation_parameters_maximum_occurrences["customerDelete:::id"]=0
+operation_parameters_maximum_occurrences["customerDelete:::store_id"]=0
 operation_parameters_maximum_occurrences["customerFind:::find_value"]=0
 operation_parameters_maximum_occurrences["customerFind:::find_where"]=0
 operation_parameters_maximum_occurrences["customerFind:::find_params"]=0
@@ -1772,6 +1830,7 @@ operation_parameters_maximum_occurrences["customerFind:::include_guests"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::name"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["customerGroupAdd:::stores_ids"]=0
+operation_parameters_maximum_occurrences["customerGroupAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["customerGroupList:::start"]=0
 operation_parameters_maximum_occurrences["customerGroupList:::count"]=0
 operation_parameters_maximum_occurrences["customerGroupList:::page_cursor"]=0
@@ -1978,6 +2037,7 @@ operation_parameters_maximum_occurrences["orderUpdate:::send_notifications"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::create_invoice"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::origin"]=0
 operation_parameters_maximum_occurrences["orderUpdate:::tags"]=0
+operation_parameters_maximum_occurrences["orderUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productAdd:::ProductAdd"]=0
 operation_parameters_maximum_occurrences["productAddBatch:::ProductAddBatch"]=0
 operation_parameters_maximum_occurrences["productAttributeList:::product_id"]=0
@@ -2003,12 +2063,14 @@ operation_parameters_maximum_occurrences["productAttributeValueSet:::value"]=0
 operation_parameters_maximum_occurrences["productAttributeValueSet:::value_id"]=0
 operation_parameters_maximum_occurrences["productAttributeValueSet:::lang_id"]=0
 operation_parameters_maximum_occurrences["productAttributeValueSet:::store_id"]=0
+operation_parameters_maximum_occurrences["productAttributeValueSet:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::product_id"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::attribute_id"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::store_id"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::include_default"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::reindex"]=0
 operation_parameters_maximum_occurrences["productAttributeValueUnset:::clear_cache"]=0
+operation_parameters_maximum_occurrences["productAttributeValueUnset:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productBrandList:::start"]=0
 operation_parameters_maximum_occurrences["productBrandList:::count"]=0
 operation_parameters_maximum_occurrences["productBrandList:::page_cursor"]=0
@@ -2094,6 +2156,7 @@ operation_parameters_maximum_occurrences["productCurrencyAdd:::avail"]=0
 operation_parameters_maximum_occurrences["productCurrencyAdd:::symbol_left"]=0
 operation_parameters_maximum_occurrences["productCurrencyAdd:::symbol_right"]=0
 operation_parameters_maximum_occurrences["productCurrencyAdd:::default"]=0
+operation_parameters_maximum_occurrences["productCurrencyAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productCurrencyList:::start"]=0
 operation_parameters_maximum_occurrences["productCurrencyList:::count"]=0
 operation_parameters_maximum_occurrences["productCurrencyList:::page_cursor"]=0
@@ -2125,6 +2188,7 @@ operation_parameters_maximum_occurrences["productImageUpdate:::type"]=0
 operation_parameters_maximum_occurrences["productImageUpdate:::label"]=0
 operation_parameters_maximum_occurrences["productImageUpdate:::position"]=0
 operation_parameters_maximum_occurrences["productImageUpdate:::hidden"]=0
+operation_parameters_maximum_occurrences["productImageUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productInfo:::id"]=0
 operation_parameters_maximum_occurrences["productInfo:::store_id"]=0
 operation_parameters_maximum_occurrences["productInfo:::lang_id"]=0
@@ -2180,6 +2244,7 @@ operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_descript
 operation_parameters_maximum_occurrences["productManufacturerAdd:::search_keywords"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::image_url"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::seo_url"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productOptionAdd:::ProductOptionAdd"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::product_id"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::option_id"]=0
@@ -2187,6 +2252,7 @@ operation_parameters_maximum_occurrences["productOptionAssign:::required"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::sort_order"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::option_values"]=0
 operation_parameters_maximum_occurrences["productOptionAssign:::clear_cache"]=0
+operation_parameters_maximum_occurrences["productOptionAssign:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productOptionDelete:::option_id"]=0
 operation_parameters_maximum_occurrences["productOptionDelete:::product_id"]=0
 operation_parameters_maximum_occurrences["productOptionDelete:::store_id"]=0
@@ -2205,9 +2271,11 @@ operation_parameters_maximum_occurrences["productOptionValueAdd:::sort_order"]=0
 operation_parameters_maximum_occurrences["productOptionValueAdd:::display_value"]=0
 operation_parameters_maximum_occurrences["productOptionValueAdd:::is_default"]=0
 operation_parameters_maximum_occurrences["productOptionValueAdd:::clear_cache"]=0
+operation_parameters_maximum_occurrences["productOptionValueAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productOptionValueAssign:::product_option_id"]=0
 operation_parameters_maximum_occurrences["productOptionValueAssign:::option_value_id"]=0
 operation_parameters_maximum_occurrences["productOptionValueAssign:::clear_cache"]=0
+operation_parameters_maximum_occurrences["productOptionValueAssign:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productOptionValueDelete:::option_id"]=0
 operation_parameters_maximum_occurrences["productOptionValueDelete:::option_value_id"]=0
 operation_parameters_maximum_occurrences["productOptionValueDelete:::product_id"]=0
@@ -2220,6 +2288,7 @@ operation_parameters_maximum_occurrences["productOptionValueUpdate:::price"]=0
 operation_parameters_maximum_occurrences["productOptionValueUpdate:::quantity"]=0
 operation_parameters_maximum_occurrences["productOptionValueUpdate:::display_value"]=0
 operation_parameters_maximum_occurrences["productOptionValueUpdate:::clear_cache"]=0
+operation_parameters_maximum_occurrences["productOptionValueUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productPriceAdd:::ProductPriceAdd"]=0
 operation_parameters_maximum_occurrences["productPriceDelete:::product_id"]=0
 operation_parameters_maximum_occurrences["productPriceDelete:::group_prices"]=0
@@ -2243,6 +2312,7 @@ operation_parameters_maximum_occurrences["productReviewList:::params"]=0
 operation_parameters_maximum_occurrences["productReviewList:::exclude"]=0
 operation_parameters_maximum_occurrences["productStoreAssign:::product_id"]=0
 operation_parameters_maximum_occurrences["productStoreAssign:::store_id"]=0
+operation_parameters_maximum_occurrences["productStoreAssign:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productTaxAdd:::ProductTaxAdd"]=0
 operation_parameters_maximum_occurrences["productUpdate:::ProductUpdate"]=0
 operation_parameters_maximum_occurrences["productUpdateBatch:::ProductUpdateBatch"]=0
@@ -2343,6 +2413,7 @@ operation_parameters_maximum_occurrences["webhookCreate:::response_fields"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::active"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::lang_id"]=0
 operation_parameters_maximum_occurrences["webhookCreate:::store_id"]=0
+operation_parameters_maximum_occurrences["webhookCreate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["webhookDelete:::id"]=0
 operation_parameters_maximum_occurrences["webhookList:::start"]=0
 operation_parameters_maximum_occurrences["webhookList:::count"]=0
@@ -2358,6 +2429,7 @@ operation_parameters_maximum_occurrences["webhookUpdate:::fields"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::response_fields"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::active"]=0
 operation_parameters_maximum_occurrences["webhookUpdate:::lang_id"]=0
+operation_parameters_maximum_occurrences["webhookUpdate:::idempotency_key"]=0
 
 ##
 # The type of collection for specifying multiple values for parameter:
@@ -2539,6 +2611,7 @@ operation_parameters_collection_type["accountConfigUpdate:::scapi_client_secret"
 operation_parameters_collection_type["accountConfigUpdate:::scapi_organization_id"]=""
 operation_parameters_collection_type["accountConfigUpdate:::scapi_short_code"]=""
 operation_parameters_collection_type["accountConfigUpdate:::scapi_scopes"]=""
+operation_parameters_collection_type["accountConfigUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::start"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::count"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::ids"]=""
@@ -2563,12 +2636,15 @@ operation_parameters_collection_type["attributeAdd:::is_used_for_promo_rules"]="
 operation_parameters_collection_type["attributeAdd:::used_in_product_listing"]=""
 operation_parameters_collection_type["attributeAdd:::used_for_sort_by"]=""
 operation_parameters_collection_type["attributeAdd:::apply_to"]=""
+operation_parameters_collection_type["attributeAdd:::idempotency_key"]=""
 operation_parameters_collection_type["attributeAssignGroup:::id"]=""
 operation_parameters_collection_type["attributeAssignGroup:::group_id"]=""
 operation_parameters_collection_type["attributeAssignGroup:::attribute_set_id"]=""
+operation_parameters_collection_type["attributeAssignGroup:::idempotency_key"]=""
 operation_parameters_collection_type["attributeAssignSet:::id"]=""
 operation_parameters_collection_type["attributeAssignSet:::attribute_set_id"]=""
 operation_parameters_collection_type["attributeAssignSet:::group_id"]=""
+operation_parameters_collection_type["attributeAssignSet:::idempotency_key"]=""
 operation_parameters_collection_type["attributeAttributesetList:::start"]=""
 operation_parameters_collection_type["attributeAttributesetList:::count"]=""
 operation_parameters_collection_type["attributeAttributesetList:::response_fields"]=""
@@ -2612,18 +2688,22 @@ operation_parameters_collection_type["attributeList:::params"]=""
 operation_parameters_collection_type["attributeList:::exclude"]=""
 operation_parameters_collection_type["attributeUnassignGroup:::id"]=""
 operation_parameters_collection_type["attributeUnassignGroup:::group_id"]=""
+operation_parameters_collection_type["attributeUnassignGroup:::idempotency_key"]=""
 operation_parameters_collection_type["attributeUnassignSet:::id"]=""
 operation_parameters_collection_type["attributeUnassignSet:::attribute_set_id"]=""
+operation_parameters_collection_type["attributeUnassignSet:::idempotency_key"]=""
 operation_parameters_collection_type["attributeUpdate:::id"]=""
 operation_parameters_collection_type["attributeUpdate:::name"]=""
 operation_parameters_collection_type["attributeUpdate:::store_id"]=""
 operation_parameters_collection_type["attributeUpdate:::lang_id"]=""
+operation_parameters_collection_type["attributeUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["attributeValueAdd:::attribute_id"]=""
 operation_parameters_collection_type["attributeValueAdd:::name"]=""
 operation_parameters_collection_type["attributeValueAdd:::code"]=""
 operation_parameters_collection_type["attributeValueAdd:::description"]=""
 operation_parameters_collection_type["attributeValueAdd:::store_id"]=""
 operation_parameters_collection_type["attributeValueAdd:::lang_id"]=""
+operation_parameters_collection_type["attributeValueAdd:::idempotency_key"]=""
 operation_parameters_collection_type["attributeValueDelete:::id"]=""
 operation_parameters_collection_type["attributeValueDelete:::attribute_id"]=""
 operation_parameters_collection_type["attributeValueDelete:::store_id"]=""
@@ -2634,6 +2714,7 @@ operation_parameters_collection_type["attributeValueUpdate:::description"]=""
 operation_parameters_collection_type["attributeValueUpdate:::code"]=""
 operation_parameters_collection_type["attributeValueUpdate:::store_id"]=""
 operation_parameters_collection_type["attributeValueUpdate:::lang_id"]=""
+operation_parameters_collection_type["attributeValueUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["basketInfo:::id"]=""
 operation_parameters_collection_type["basketInfo:::store_id"]=""
 operation_parameters_collection_type["basketInfo:::response_fields"]=""
@@ -2644,9 +2725,11 @@ operation_parameters_collection_type["basketItemAdd:::product_id"]=""
 operation_parameters_collection_type["basketItemAdd:::variant_id"]=""
 operation_parameters_collection_type["basketItemAdd:::quantity"]=""
 operation_parameters_collection_type["basketItemAdd:::store_id"]=""
+operation_parameters_collection_type["basketItemAdd:::idempotency_key"]=""
 operation_parameters_collection_type["basketLiveShippingServiceCreate:::name"]=""
 operation_parameters_collection_type["basketLiveShippingServiceCreate:::callback"]=""
 operation_parameters_collection_type["basketLiveShippingServiceCreate:::store_id"]=""
+operation_parameters_collection_type["basketLiveShippingServiceCreate:::idempotency_key"]=""
 operation_parameters_collection_type["basketLiveShippingServiceDelete:::id"]=""
 operation_parameters_collection_type["basketLiveShippingServiceList:::start"]=""
 operation_parameters_collection_type["basketLiveShippingServiceList:::count"]=""
@@ -2678,6 +2761,7 @@ operation_parameters_collection_type["cartCouponConditionAdd:::target"]=""
 operation_parameters_collection_type["cartCouponConditionAdd:::include_tax"]=""
 operation_parameters_collection_type["cartCouponConditionAdd:::include_shipping"]=""
 operation_parameters_collection_type["cartCouponConditionAdd:::store_id"]=""
+operation_parameters_collection_type["cartCouponConditionAdd:::idempotency_key"]=""
 operation_parameters_collection_type["cartCouponCount:::store_id"]=""
 operation_parameters_collection_type["cartCouponCount:::avail"]=""
 operation_parameters_collection_type["cartCouponCount:::date_start_from"]=""
@@ -2708,6 +2792,7 @@ operation_parameters_collection_type["cartGiftcardAdd:::owner_email"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::recipient_email"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::recipient_name"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::owner_name"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::idempotency_key"]=""
 operation_parameters_collection_type["cartGiftcardCount:::store_id"]=""
 operation_parameters_collection_type["cartGiftcardDelete:::id"]=""
 operation_parameters_collection_type["cartGiftcardList:::start"]=""
@@ -2738,6 +2823,7 @@ operation_parameters_collection_type["cartMetaDataSet:::namespace"]=""
 operation_parameters_collection_type["cartMetaDataSet:::entity"]=""
 operation_parameters_collection_type["cartMetaDataSet:::store_id"]=""
 operation_parameters_collection_type["cartMetaDataSet:::lang_id"]=""
+operation_parameters_collection_type["cartMetaDataSet:::idempotency_key"]=""
 operation_parameters_collection_type["cartMetaDataUnset:::entity_id"]=""
 operation_parameters_collection_type["cartMetaDataUnset:::key"]=""
 operation_parameters_collection_type["cartMetaDataUnset:::id"]=""
@@ -2754,6 +2840,7 @@ operation_parameters_collection_type["cartScriptAdd:::load_method"]=""
 operation_parameters_collection_type["cartScriptAdd:::scope"]=""
 operation_parameters_collection_type["cartScriptAdd:::events"]=""
 operation_parameters_collection_type["cartScriptAdd:::store_id"]=""
+operation_parameters_collection_type["cartScriptAdd:::idempotency_key"]=""
 operation_parameters_collection_type["cartScriptDelete:::id"]=""
 operation_parameters_collection_type["cartScriptDelete:::store_id"]=""
 operation_parameters_collection_type["cartScriptList:::start"]=""
@@ -2790,10 +2877,12 @@ operation_parameters_collection_type["categoryAdd:::seo_url"]=""
 operation_parameters_collection_type["categoryAdd:::store_id"]=""
 operation_parameters_collection_type["categoryAdd:::stores_ids"]=""
 operation_parameters_collection_type["categoryAdd:::lang_id"]=""
+operation_parameters_collection_type["categoryAdd:::idempotency_key"]=""
 operation_parameters_collection_type["categoryAddBatch:::CategoryAddBatch"]=""
 operation_parameters_collection_type["categoryAssign:::category_id"]=""
 operation_parameters_collection_type["categoryAssign:::product_id"]=""
 operation_parameters_collection_type["categoryAssign:::store_id"]=""
+operation_parameters_collection_type["categoryAssign:::idempotency_key"]=""
 operation_parameters_collection_type["categoryCount:::parent_id"]=""
 operation_parameters_collection_type["categoryCount:::store_id"]=""
 operation_parameters_collection_type["categoryCount:::lang_id"]=""
@@ -2809,6 +2898,7 @@ operation_parameters_collection_type["categoryCount:::report_request_id"]=""
 operation_parameters_collection_type["categoryCount:::disable_report_cache"]=""
 operation_parameters_collection_type["categoryDelete:::id"]=""
 operation_parameters_collection_type["categoryDelete:::store_id"]=""
+operation_parameters_collection_type["categoryDeleteBatch:::CategoryDeleteBatch"]=""
 operation_parameters_collection_type["categoryFind:::find_value"]=""
 operation_parameters_collection_type["categoryFind:::find_where"]=""
 operation_parameters_collection_type["categoryFind:::find_params"]=""
@@ -2822,6 +2912,7 @@ operation_parameters_collection_type["categoryImageAdd:::store_id"]=""
 operation_parameters_collection_type["categoryImageAdd:::label"]=""
 operation_parameters_collection_type["categoryImageAdd:::mime"]=""
 operation_parameters_collection_type["categoryImageAdd:::position"]=""
+operation_parameters_collection_type["categoryImageAdd:::idempotency_key"]=""
 operation_parameters_collection_type["categoryImageDelete:::category_id"]=""
 operation_parameters_collection_type["categoryImageDelete:::image_id"]=""
 operation_parameters_collection_type["categoryImageDelete:::store_id"]=""
@@ -2857,6 +2948,7 @@ operation_parameters_collection_type["categoryList:::disable_cache"]=""
 operation_parameters_collection_type["categoryUnassign:::category_id"]=""
 operation_parameters_collection_type["categoryUnassign:::product_id"]=""
 operation_parameters_collection_type["categoryUnassign:::store_id"]=""
+operation_parameters_collection_type["categoryUnassign:::idempotency_key"]=""
 operation_parameters_collection_type["categoryUpdate:::id"]=""
 operation_parameters_collection_type["categoryUpdate:::name"]=""
 operation_parameters_collection_type["categoryUpdate:::description"]=""
@@ -2872,6 +2964,7 @@ operation_parameters_collection_type["categoryUpdate:::seo_url"]=""
 operation_parameters_collection_type["categoryUpdate:::store_id"]=""
 operation_parameters_collection_type["categoryUpdate:::stores_ids"]=""
 operation_parameters_collection_type["categoryUpdate:::lang_id"]=""
+operation_parameters_collection_type["categoryUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["customerAdd:::CustomerAdd"]=""
 operation_parameters_collection_type["customerAddressAdd:::CustomerAddressAdd"]=""
 operation_parameters_collection_type["customerAttributeList:::customer_id"]=""
@@ -2896,6 +2989,7 @@ operation_parameters_collection_type["customerCount:::created_to"]=""
 operation_parameters_collection_type["customerCount:::modified_from"]=""
 operation_parameters_collection_type["customerCount:::modified_to"]=""
 operation_parameters_collection_type["customerDelete:::id"]=""
+operation_parameters_collection_type["customerDelete:::store_id"]=""
 operation_parameters_collection_type["customerFind:::find_value"]=""
 operation_parameters_collection_type["customerFind:::find_where"]=""
 operation_parameters_collection_type["customerFind:::find_params"]=""
@@ -2904,6 +2998,7 @@ operation_parameters_collection_type["customerFind:::include_guests"]=""
 operation_parameters_collection_type["customerGroupAdd:::name"]=""
 operation_parameters_collection_type["customerGroupAdd:::store_id"]=""
 operation_parameters_collection_type["customerGroupAdd:::stores_ids"]=""
+operation_parameters_collection_type["customerGroupAdd:::idempotency_key"]=""
 operation_parameters_collection_type["customerGroupList:::start"]=""
 operation_parameters_collection_type["customerGroupList:::count"]=""
 operation_parameters_collection_type["customerGroupList:::page_cursor"]=""
@@ -3110,6 +3205,7 @@ operation_parameters_collection_type["orderUpdate:::send_notifications"]=""
 operation_parameters_collection_type["orderUpdate:::create_invoice"]=""
 operation_parameters_collection_type["orderUpdate:::origin"]=""
 operation_parameters_collection_type["orderUpdate:::tags"]=""
+operation_parameters_collection_type["orderUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["productAdd:::ProductAdd"]=""
 operation_parameters_collection_type["productAddBatch:::ProductAddBatch"]=""
 operation_parameters_collection_type["productAttributeList:::product_id"]=""
@@ -3135,12 +3231,14 @@ operation_parameters_collection_type["productAttributeValueSet:::value"]=""
 operation_parameters_collection_type["productAttributeValueSet:::value_id"]=""
 operation_parameters_collection_type["productAttributeValueSet:::lang_id"]=""
 operation_parameters_collection_type["productAttributeValueSet:::store_id"]=""
+operation_parameters_collection_type["productAttributeValueSet:::idempotency_key"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::product_id"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::attribute_id"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::store_id"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::include_default"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::reindex"]=""
 operation_parameters_collection_type["productAttributeValueUnset:::clear_cache"]=""
+operation_parameters_collection_type["productAttributeValueUnset:::idempotency_key"]=""
 operation_parameters_collection_type["productBrandList:::start"]=""
 operation_parameters_collection_type["productBrandList:::count"]=""
 operation_parameters_collection_type["productBrandList:::page_cursor"]=""
@@ -3226,6 +3324,7 @@ operation_parameters_collection_type["productCurrencyAdd:::avail"]=""
 operation_parameters_collection_type["productCurrencyAdd:::symbol_left"]=""
 operation_parameters_collection_type["productCurrencyAdd:::symbol_right"]=""
 operation_parameters_collection_type["productCurrencyAdd:::default"]=""
+operation_parameters_collection_type["productCurrencyAdd:::idempotency_key"]=""
 operation_parameters_collection_type["productCurrencyList:::start"]=""
 operation_parameters_collection_type["productCurrencyList:::count"]=""
 operation_parameters_collection_type["productCurrencyList:::page_cursor"]=""
@@ -3257,6 +3356,7 @@ operation_parameters_collection_type["productImageUpdate:::type"]=""
 operation_parameters_collection_type["productImageUpdate:::label"]=""
 operation_parameters_collection_type["productImageUpdate:::position"]=""
 operation_parameters_collection_type["productImageUpdate:::hidden"]=""
+operation_parameters_collection_type["productImageUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["productInfo:::id"]=""
 operation_parameters_collection_type["productInfo:::store_id"]=""
 operation_parameters_collection_type["productInfo:::lang_id"]=""
@@ -3312,6 +3412,7 @@ operation_parameters_collection_type["productManufacturerAdd:::meta_description"
 operation_parameters_collection_type["productManufacturerAdd:::search_keywords"]=""
 operation_parameters_collection_type["productManufacturerAdd:::image_url"]=""
 operation_parameters_collection_type["productManufacturerAdd:::seo_url"]=""
+operation_parameters_collection_type["productManufacturerAdd:::idempotency_key"]=""
 operation_parameters_collection_type["productOptionAdd:::ProductOptionAdd"]=""
 operation_parameters_collection_type["productOptionAssign:::product_id"]=""
 operation_parameters_collection_type["productOptionAssign:::option_id"]=""
@@ -3319,6 +3420,7 @@ operation_parameters_collection_type["productOptionAssign:::required"]=""
 operation_parameters_collection_type["productOptionAssign:::sort_order"]=""
 operation_parameters_collection_type["productOptionAssign:::option_values"]=""
 operation_parameters_collection_type["productOptionAssign:::clear_cache"]=""
+operation_parameters_collection_type["productOptionAssign:::idempotency_key"]=""
 operation_parameters_collection_type["productOptionDelete:::option_id"]=""
 operation_parameters_collection_type["productOptionDelete:::product_id"]=""
 operation_parameters_collection_type["productOptionDelete:::store_id"]=""
@@ -3337,9 +3439,11 @@ operation_parameters_collection_type["productOptionValueAdd:::sort_order"]=""
 operation_parameters_collection_type["productOptionValueAdd:::display_value"]=""
 operation_parameters_collection_type["productOptionValueAdd:::is_default"]=""
 operation_parameters_collection_type["productOptionValueAdd:::clear_cache"]=""
+operation_parameters_collection_type["productOptionValueAdd:::idempotency_key"]=""
 operation_parameters_collection_type["productOptionValueAssign:::product_option_id"]=""
 operation_parameters_collection_type["productOptionValueAssign:::option_value_id"]=""
 operation_parameters_collection_type["productOptionValueAssign:::clear_cache"]=""
+operation_parameters_collection_type["productOptionValueAssign:::idempotency_key"]=""
 operation_parameters_collection_type["productOptionValueDelete:::option_id"]=""
 operation_parameters_collection_type["productOptionValueDelete:::option_value_id"]=""
 operation_parameters_collection_type["productOptionValueDelete:::product_id"]=""
@@ -3352,6 +3456,7 @@ operation_parameters_collection_type["productOptionValueUpdate:::price"]=""
 operation_parameters_collection_type["productOptionValueUpdate:::quantity"]=""
 operation_parameters_collection_type["productOptionValueUpdate:::display_value"]=""
 operation_parameters_collection_type["productOptionValueUpdate:::clear_cache"]=""
+operation_parameters_collection_type["productOptionValueUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["productPriceAdd:::ProductPriceAdd"]=""
 operation_parameters_collection_type["productPriceDelete:::product_id"]=""
 operation_parameters_collection_type["productPriceDelete:::group_prices"]=""
@@ -3375,6 +3480,7 @@ operation_parameters_collection_type["productReviewList:::params"]=""
 operation_parameters_collection_type["productReviewList:::exclude"]=""
 operation_parameters_collection_type["productStoreAssign:::product_id"]=""
 operation_parameters_collection_type["productStoreAssign:::store_id"]=""
+operation_parameters_collection_type["productStoreAssign:::idempotency_key"]=""
 operation_parameters_collection_type["productTaxAdd:::ProductTaxAdd"]=""
 operation_parameters_collection_type["productUpdate:::ProductUpdate"]=""
 operation_parameters_collection_type["productUpdateBatch:::ProductUpdateBatch"]=""
@@ -3475,6 +3581,7 @@ operation_parameters_collection_type["webhookCreate:::response_fields"]=""
 operation_parameters_collection_type["webhookCreate:::active"]=""
 operation_parameters_collection_type["webhookCreate:::lang_id"]=""
 operation_parameters_collection_type["webhookCreate:::store_id"]=""
+operation_parameters_collection_type["webhookCreate:::idempotency_key"]=""
 operation_parameters_collection_type["webhookDelete:::id"]=""
 operation_parameters_collection_type["webhookList:::start"]=""
 operation_parameters_collection_type["webhookList:::count"]=""
@@ -3490,6 +3597,7 @@ operation_parameters_collection_type["webhookUpdate:::fields"]=""
 operation_parameters_collection_type["webhookUpdate:::response_fields"]=""
 operation_parameters_collection_type["webhookUpdate:::active"]=""
 operation_parameters_collection_type["webhookUpdate:::lang_id"]=""
+operation_parameters_collection_type["webhookUpdate:::idempotency_key"]=""
 
 
 ##
@@ -4006,6 +4114,7 @@ read -r -d '' ops <<EOF
   ${CYAN}categoryAssign${OFF};category.assign (AUTH) (AUTH)
   ${CYAN}categoryCount${OFF};category.count (AUTH) (AUTH)
   ${CYAN}categoryDelete${OFF};category.delete (AUTH) (AUTH)
+  ${CYAN}categoryDeleteBatch${OFF};category.delete.batch (AUTH) (AUTH)
   ${CYAN}categoryFind${OFF};category.find (AUTH) (AUTH)
   ${CYAN}categoryImageAdd${OFF};category.image.add (AUTH) (AUTH)
   ${CYAN}categoryImageDelete${OFF};category.image.delete (AUTH) (AUTH)
@@ -4603,6 +4712,8 @@ print_accountConfigUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}scapi_scopes${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Salesforce Commerce API Scopes${YELLOW} Specify as: scapi_scopes=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -4701,6 +4812,8 @@ print_attributeAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}apply_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: all_types)${OFF} - Types of products which can have this attribute${YELLOW} Specify as: apply_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -4724,6 +4837,8 @@ print_attributeAssignGroup_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}attribute_set_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Attribute set id${YELLOW} Specify as: attribute_set_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -4746,6 +4861,8 @@ print_attributeAssignSet_help() {
     echo -e "  * ${GREEN}attribute_set_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Attribute set id${YELLOW} Specify as: attribute_set_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}group_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Attribute group_id${YELLOW} Specify as: group_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -4968,6 +5085,8 @@ print_attributeUnassignGroup_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}group_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Customer group_id${YELLOW} Specify as: group_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -4988,6 +5107,8 @@ print_attributeUnassignSet_help() {
     echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity id${YELLOW} Specify as: id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}attribute_set_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Attribute set id${YELLOW} Specify as: attribute_set_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5013,6 +5134,8 @@ print_attributeUpdate_help() {
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5042,6 +5165,8 @@ print_attributeValueAdd_help() {
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5097,6 +5222,8 @@ print_attributeValueUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5151,6 +5278,8 @@ print_basketItemAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5173,6 +5302,8 @@ print_basketLiveShippingServiceCreate_help() {
     echo -e "  * ${GREEN}callback${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Callback url that returns shipping rates. It should be able to accept POST requests with json data.${YELLOW} Specify as: callback=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5420,6 +5551,8 @@ print_cartCouponConditionAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5564,6 +5697,8 @@ print_cartGiftcardAdd_help() {
     echo -e "  * ${GREEN}recipient_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card recipient name${YELLOW} Specify as: recipient_name=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}owner_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card owner name${YELLOW} Specify as: owner_name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5727,6 +5862,8 @@ print_cartMetaDataSet_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5825,6 +5962,8 @@ print_cartScriptAdd_help() {
     echo -e "  * ${GREEN}events${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Event for run scripts${YELLOW} Specify as: events=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5983,6 +6122,8 @@ print_categoryAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6024,6 +6165,8 @@ print_categoryAssign_help() {
     echo -e "  * ${GREEN}product_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines category assign to the product, specified by product id${YELLOW} Specify as: product_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6096,6 +6239,25 @@ print_categoryDelete_help() {
 }
 ##############################################################################
 #
+# Print help for categoryDeleteBatch operation
+#
+##############################################################################
+print_categoryDeleteBatch_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}categoryDeleteBatch - category.delete.batch${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Delete categories from the store." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
 # Print help for categoryFind operation
 #
 ##############################################################################
@@ -6148,6 +6310,8 @@ print_categoryImageAdd_help() {
     echo -e "  * ${GREEN}mime${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.${YELLOW} Specify as: mime=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}position${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - Defines image’s position in the list${YELLOW} Specify as: position=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6287,6 +6451,8 @@ print_categoryUnassign_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6333,6 +6499,8 @@ print_categoryUpdate_help() {
     echo -e "  * ${GREEN}stores_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Update category in the stores that is specified by comma-separated stores' id${YELLOW} Specify as: stores_ids=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6467,6 +6635,8 @@ print_customerDelete_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Identifies customer specified by the id${YELLOW} Specify as: id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6516,6 +6686,8 @@ print_customerGroupAdd_help() {
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}stores_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Assign customer group to the stores that is specified by comma-separated stores' id${YELLOW} Specify as: stores_ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7421,6 +7593,8 @@ print_orderUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}tags${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Order tags${YELLOW} Specify as: tags=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -7539,6 +7713,8 @@ print_productAttributeValueSet_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -7567,6 +7743,8 @@ print_productAttributeValueUnset_help() {
     echo -e "  * ${GREEN}reindex${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is reindex required${YELLOW} Specify as: reindex=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}clear_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is cache clear required${YELLOW} Specify as: clear_cache=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7840,6 +8018,8 @@ print_productCurrencyAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}default${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Specifies currency's default meaning${YELLOW} Specify as: default=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -8021,6 +8201,8 @@ print_productImageUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}hidden${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Define is hide image${YELLOW} Specify as: hidden=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -8182,6 +8364,8 @@ print_productManufacturerAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}seo_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique URL for SEO${YELLOW} Specify as: seo_url=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -8229,6 +8413,8 @@ print_productOptionAssign_help() {
     echo -e "  * ${GREEN}option_values${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines option values that has to be assigned${YELLOW} Specify as: option_values=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}clear_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is cache clear required${YELLOW} Specify as: clear_cache=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8317,6 +8503,8 @@ print_productOptionValueAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}clear_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is cache clear required${YELLOW} Specify as: clear_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -8339,6 +8527,8 @@ print_productOptionValueAssign_help() {
     echo -e "  * ${GREEN}option_value_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines value id that has to be assigned${YELLOW} Specify as: option_value_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}clear_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is cache clear required${YELLOW} Specify as: clear_cache=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8397,6 +8587,8 @@ print_productOptionValueUpdate_help() {
     echo -e "  * ${GREEN}display_value${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines the value that will be displayed for the option value${YELLOW} Specify as: display_value=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}clear_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Is cache clear required${YELLOW} Specify as: clear_cache=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8528,6 +8720,8 @@ print_productStoreAssign_help() {
     echo -e "  * ${GREEN}product_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines id of the product which should be assigned to a store${YELLOW} Specify as: product_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines id of the store product should be assigned to${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9152,6 +9346,8 @@ print_webhookCreate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines store id where the webhook should be assigned${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -9248,6 +9444,8 @@ print_webhookUpdate_help() {
     echo -e "  * ${GREEN}active${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Webhook status${YELLOW} Specify as: active=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9381,7 +9579,7 @@ call_accountConfigUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_client_id shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region scapi_client_id scapi_client_secret scapi_organization_id scapi_short_code scapi_scopes    )
+    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_client_id shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region scapi_client_id scapi_client_secret scapi_organization_id scapi_short_code scapi_scopes idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.config.update.json" path_parameter_names query_parameter_names); then
@@ -9489,7 +9687,7 @@ call_attributeAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(type name code store_id lang_id visible required position attribute_group_id is_global is_searchable is_filterable is_comparable is_html_allowed_on_front is_filterable_in_search is_configurable is_visible_in_advanced_search is_used_for_promo_rules used_in_product_listing used_for_sort_by apply_to    )
+    local query_parameter_names=(type name code store_id lang_id visible required position attribute_group_id is_global is_searchable is_filterable is_comparable is_html_allowed_on_front is_filterable_in_search is_configurable is_visible_in_advanced_search is_used_for_promo_rules used_in_product_listing used_for_sort_by apply_to idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.add.json" path_parameter_names query_parameter_names); then
@@ -9525,7 +9723,7 @@ call_attributeAssignGroup() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id group_id attribute_set_id    )
+    local query_parameter_names=(id group_id attribute_set_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.assign.group.json" path_parameter_names query_parameter_names); then
@@ -9561,7 +9759,7 @@ call_attributeAssignSet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id group_id attribute_set_id    )
+    local query_parameter_names=(id group_id attribute_set_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.assign.set.json" path_parameter_names query_parameter_names); then
@@ -9849,7 +10047,7 @@ call_attributeUnassignGroup() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id group_id    )
+    local query_parameter_names=(id group_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.unassign.group.json" path_parameter_names query_parameter_names); then
@@ -9885,7 +10083,7 @@ call_attributeUnassignSet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id attribute_set_id    )
+    local query_parameter_names=(id attribute_set_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.unassign.set.json" path_parameter_names query_parameter_names); then
@@ -9921,7 +10119,7 @@ call_attributeUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id name store_id lang_id    )
+    local query_parameter_names=(id name store_id lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.update.json" path_parameter_names query_parameter_names); then
@@ -9957,7 +10155,7 @@ call_attributeValueAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(attribute_id name code description store_id lang_id    )
+    local query_parameter_names=(attribute_id name code description store_id lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.value.add.json" path_parameter_names query_parameter_names); then
@@ -10029,7 +10227,7 @@ call_attributeValueUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id attribute_id name description code store_id lang_id    )
+    local query_parameter_names=(id attribute_id name description code store_id lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.value.update.json" path_parameter_names query_parameter_names); then
@@ -10101,7 +10299,7 @@ call_basketItemAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(customer_id product_id variant_id quantity store_id    )
+    local query_parameter_names=(customer_id product_id variant_id quantity store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/basket.item.add.json" path_parameter_names query_parameter_names); then
@@ -10137,7 +10335,7 @@ call_basketLiveShippingServiceCreate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(name callback store_id    )
+    local query_parameter_names=(name callback store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/basket.live_shipping_service.create.json" path_parameter_names query_parameter_names); then
@@ -10575,7 +10773,7 @@ call_cartCouponConditionAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(coupon_id entity key operator value target include_tax include_shipping store_id    )
+    local query_parameter_names=(coupon_id entity key operator value target include_tax include_shipping store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.coupon.condition.add.json" path_parameter_names query_parameter_names); then
@@ -10755,7 +10953,7 @@ call_cartGiftcardAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(amount code owner_email recipient_email recipient_name owner_name    )
+    local query_parameter_names=(amount code owner_email recipient_email recipient_name owner_name idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.giftcard.add.json" path_parameter_names query_parameter_names); then
@@ -10971,7 +11169,7 @@ call_cartMetaDataSet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(entity_id key value namespace entity store_id lang_id    )
+    local query_parameter_names=(entity_id key value namespace entity store_id lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.meta_data.set.json" path_parameter_names query_parameter_names); then
@@ -11115,7 +11313,7 @@ call_cartScriptAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(name description html src load_method scope events store_id    )
+    local query_parameter_names=(name description html src load_method scope events store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.script.add.json" path_parameter_names query_parameter_names); then
@@ -11295,7 +11493,7 @@ call_categoryAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(name description short_description parent_id avail created_time modified_time sort_order meta_title meta_description meta_keywords seo_url store_id stores_ids lang_id    )
+    local query_parameter_names=(name description short_description parent_id avail created_time modified_time sort_order meta_title meta_description meta_keywords seo_url store_id stores_ids lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.add.json" path_parameter_names query_parameter_names); then
@@ -11409,7 +11607,7 @@ call_categoryAssign() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(category_id product_id store_id    )
+    local query_parameter_names=(category_id product_id store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.assign.json" path_parameter_names query_parameter_names); then
@@ -11508,6 +11706,84 @@ call_categoryDelete() {
 
 ##############################################################################
 #
+# Call categoryDeleteBatch operation
+#
+##############################################################################
+call_categoryDeleteBatch() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/category.delete.batch.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="POST"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
+    else
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
+    fi
+}
+
+##############################################################################
+#
 # Call categoryFind operation
 #
 ##############################################################################
@@ -11553,7 +11829,7 @@ call_categoryImageAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(category_id image_name url type store_id label mime position    )
+    local query_parameter_names=(category_id image_name url type store_id label mime position idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.image.add.json" path_parameter_names query_parameter_names); then
@@ -11697,7 +11973,7 @@ call_categoryUnassign() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(category_id product_id store_id    )
+    local query_parameter_names=(category_id product_id store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.unassign.json" path_parameter_names query_parameter_names); then
@@ -11733,7 +12009,7 @@ call_categoryUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id name description short_description parent_id avail sort_order modified_time meta_title meta_description meta_keywords seo_url store_id stores_ids lang_id    )
+    local query_parameter_names=(id name description short_description parent_id avail sort_order modified_time meta_title meta_description meta_keywords seo_url store_id stores_ids lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.update.json" path_parameter_names query_parameter_names); then
@@ -11997,7 +12273,7 @@ call_customerDelete() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id    )
+    local query_parameter_names=(id store_id    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.delete.json" path_parameter_names query_parameter_names); then
@@ -12069,7 +12345,7 @@ call_customerGroupAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(name store_id stores_ids    )
+    local query_parameter_names=(name store_id stores_ids idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.group.add.json" path_parameter_names query_parameter_names); then
@@ -13575,7 +13851,7 @@ call_orderUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(order_id store_id order_status financial_status fulfillment_status cancellation_reason order_payment_method comment admin_comment admin_private_comment invoice_admin_comment date_modified date_finished send_notifications create_invoice origin tags    )
+    local query_parameter_names=(order_id store_id order_status financial_status fulfillment_status cancellation_reason order_payment_method comment admin_comment admin_private_comment invoice_admin_comment date_modified date_finished send_notifications create_invoice origin tags idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.update.json" path_parameter_names query_parameter_names); then
@@ -13803,7 +14079,7 @@ call_productAttributeValueSet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id attribute_id attribute_group_id attribute_name value value_id lang_id store_id    )
+    local query_parameter_names=(product_id attribute_id attribute_group_id attribute_name value value_id lang_id store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.attribute.value.set.json" path_parameter_names query_parameter_names); then
@@ -13839,7 +14115,7 @@ call_productAttributeValueUnset() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id attribute_id store_id include_default reindex clear_cache    )
+    local query_parameter_names=(product_id attribute_id store_id include_default reindex clear_cache idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.attribute.value.unset.json" path_parameter_names query_parameter_names); then
@@ -14055,7 +14331,7 @@ call_productCurrencyAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(iso3 rate name avail symbol_left symbol_right default    )
+    local query_parameter_names=(iso3 rate name avail symbol_left symbol_right default idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.currency.add.json" path_parameter_names query_parameter_names); then
@@ -14391,7 +14667,7 @@ call_productImageUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id id variant_ids store_id lang_id image_name type label position hidden    )
+    local query_parameter_names=(product_id id variant_ids store_id lang_id image_name type label position hidden idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.image.update.json" path_parameter_names query_parameter_names); then
@@ -14499,7 +14775,7 @@ call_productManufacturerAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id manufacturer store_id meta_title meta_keywords meta_description search_keywords image_url seo_url    )
+    local query_parameter_names=(product_id manufacturer store_id meta_title meta_keywords meta_description search_keywords image_url seo_url idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.manufacturer.add.json" path_parameter_names query_parameter_names); then
@@ -14613,7 +14889,7 @@ call_productOptionAssign() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id option_id required sort_order option_values clear_cache    )
+    local query_parameter_names=(product_id option_id required sort_order option_values clear_cache idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.option.assign.json" path_parameter_names query_parameter_names); then
@@ -14721,7 +14997,7 @@ call_productOptionValueAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id option_id option_value sort_order display_value is_default clear_cache    )
+    local query_parameter_names=(product_id option_id option_value sort_order display_value is_default clear_cache idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.option.value.add.json" path_parameter_names query_parameter_names); then
@@ -14757,7 +15033,7 @@ call_productOptionValueAssign() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_option_id option_value_id clear_cache    )
+    local query_parameter_names=(product_option_id option_value_id clear_cache idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.option.value.assign.json" path_parameter_names query_parameter_names); then
@@ -14829,7 +15105,7 @@ call_productOptionValueUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id option_id option_value_id option_value price quantity display_value clear_cache    )
+    local query_parameter_names=(product_id option_id option_value_id option_value price quantity display_value clear_cache idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.option.value.update.json" path_parameter_names query_parameter_names); then
@@ -15093,7 +15369,7 @@ call_productStoreAssign() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id store_id    )
+    local query_parameter_names=(product_id store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.store.assign.json" path_parameter_names query_parameter_names); then
@@ -16455,7 +16731,7 @@ call_webhookCreate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(entity action callback label fields response_fields active lang_id store_id    )
+    local query_parameter_names=(entity action callback label fields response_fields active lang_id store_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.create.json" path_parameter_names query_parameter_names); then
@@ -16599,7 +16875,7 @@ call_webhookUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id callback label fields response_fields active lang_id    )
+    local query_parameter_names=(id callback label fields response_fields active lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.update.json" path_parameter_names query_parameter_names); then
@@ -16897,6 +17173,9 @@ case $key in
     ;;
     categoryDelete)
     operation="categoryDelete"
+    ;;
+    categoryDeleteBatch)
+    operation="categoryDeleteBatch"
     ;;
     categoryFind)
     operation="categoryFind"
@@ -17493,6 +17772,9 @@ case $operation in
     ;;
     categoryDelete)
     call_categoryDelete
+    ;;
+    categoryDeleteBatch)
+    call_categoryDeleteBatch
     ;;
     categoryFind)
     call_categoryFind
