@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **storeUnderscoreownerUnderscoreinfo** | [**Info**](Info.md) |  | [optional] [default to null]
 **defaultUnderscorewarehouseUnderscoreid** | **string** |  | [optional] [default to null]
 **channels** | [**array[CartChannel]**](CartChannel.md) |  | [optional] [default to null]
+**pickupUnderscorelocations** | [**array[CartPickupLocation]**](CartPickupLocation.md) |  | [optional] [default to null]
 **additionalUnderscorefields** | **map** |  | [optional] [default to null]
 **customUnderscorefields** | **map** |  | [optional] [default to null]
 

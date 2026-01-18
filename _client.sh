@@ -1352,6 +1352,8 @@ case $state in
 "report_request_id=:[QUERY] Report request id"
 "disable_report_cache=true:[QUERY] Disable report cache for current request"
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1381,6 +1383,8 @@ case $state in
           "disable_report_cache=false:[QUERY] Disable report cache for current request"
 "disable_cache=true:[QUERY] Disable cache for current request"
           "disable_cache=false:[QUERY] Disable cache for current request"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

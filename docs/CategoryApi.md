@@ -389,7 +389,7 @@ Get category info about category ID*** or specify other category ID.
 ### Example
 
 ```bash
- categoryInfo  id=value  store_id=value  lang_id=value  schema_type=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value
+ categoryInfo  id=value  store_id=value  lang_id=value  schema_type=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -406,6 +406,7 @@ Name | Type | Description  | Notes
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 
@@ -432,7 +433,7 @@ Get list of categories from store.
 ### Example
 
 ```bash
- categoryList  start=value  count=value  page_cursor=value  store_id=value  lang_id=value  parent_id=value  avail=value  product_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  find_value=value  find_where=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  disable_cache=value
+ categoryList  start=value  count=value  page_cursor=value  store_id=value  lang_id=value  parent_id=value  avail=value  product_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  find_value=value  find_where=value  response_fields=value  params=value  exclude=value  report_request_id=value  disable_report_cache=value  disable_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -460,6 +461,7 @@ Name | Type | Description  | Notes
  **reportRequestId** | **string** | Report request id | [optional] [default to null]
  **disableReportCache** | **boolean** | Disable report cache for current request | [optional] [default to false]
  **disableCache** | **boolean** | Disable cache for current request | [optional] [default to false]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 

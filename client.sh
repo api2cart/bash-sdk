@@ -586,6 +586,7 @@ operation_parameters_minimum_occurrences["categoryInfo:::params"]=0
 operation_parameters_minimum_occurrences["categoryInfo:::exclude"]=0
 operation_parameters_minimum_occurrences["categoryInfo:::report_request_id"]=0
 operation_parameters_minimum_occurrences["categoryInfo:::disable_report_cache"]=0
+operation_parameters_minimum_occurrences["categoryInfo:::use_latest_api_version"]=0
 operation_parameters_minimum_occurrences["categoryList:::start"]=0
 operation_parameters_minimum_occurrences["categoryList:::count"]=0
 operation_parameters_minimum_occurrences["categoryList:::page_cursor"]=0
@@ -606,6 +607,7 @@ operation_parameters_minimum_occurrences["categoryList:::exclude"]=0
 operation_parameters_minimum_occurrences["categoryList:::report_request_id"]=0
 operation_parameters_minimum_occurrences["categoryList:::disable_report_cache"]=0
 operation_parameters_minimum_occurrences["categoryList:::disable_cache"]=0
+operation_parameters_minimum_occurrences["categoryList:::use_latest_api_version"]=0
 operation_parameters_minimum_occurrences["categoryUnassign:::category_id"]=1
 operation_parameters_minimum_occurrences["categoryUnassign:::product_id"]=1
 operation_parameters_minimum_occurrences["categoryUnassign:::store_id"]=0
@@ -1757,6 +1759,7 @@ operation_parameters_maximum_occurrences["categoryInfo:::params"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::exclude"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::report_request_id"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::disable_report_cache"]=0
+operation_parameters_maximum_occurrences["categoryInfo:::use_latest_api_version"]=0
 operation_parameters_maximum_occurrences["categoryList:::start"]=0
 operation_parameters_maximum_occurrences["categoryList:::count"]=0
 operation_parameters_maximum_occurrences["categoryList:::page_cursor"]=0
@@ -1777,6 +1780,7 @@ operation_parameters_maximum_occurrences["categoryList:::exclude"]=0
 operation_parameters_maximum_occurrences["categoryList:::report_request_id"]=0
 operation_parameters_maximum_occurrences["categoryList:::disable_report_cache"]=0
 operation_parameters_maximum_occurrences["categoryList:::disable_cache"]=0
+operation_parameters_maximum_occurrences["categoryList:::use_latest_api_version"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::category_id"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::product_id"]=0
 operation_parameters_maximum_occurrences["categoryUnassign:::store_id"]=0
@@ -2925,6 +2929,7 @@ operation_parameters_collection_type["categoryInfo:::params"]=""
 operation_parameters_collection_type["categoryInfo:::exclude"]=""
 operation_parameters_collection_type["categoryInfo:::report_request_id"]=""
 operation_parameters_collection_type["categoryInfo:::disable_report_cache"]=""
+operation_parameters_collection_type["categoryInfo:::use_latest_api_version"]=""
 operation_parameters_collection_type["categoryList:::start"]=""
 operation_parameters_collection_type["categoryList:::count"]=""
 operation_parameters_collection_type["categoryList:::page_cursor"]=""
@@ -2945,6 +2950,7 @@ operation_parameters_collection_type["categoryList:::exclude"]=""
 operation_parameters_collection_type["categoryList:::report_request_id"]=""
 operation_parameters_collection_type["categoryList:::disable_report_cache"]=""
 operation_parameters_collection_type["categoryList:::disable_cache"]=""
+operation_parameters_collection_type["categoryList:::use_latest_api_version"]=""
 operation_parameters_collection_type["categoryUnassign:::category_id"]=""
 operation_parameters_collection_type["categoryUnassign:::product_id"]=""
 operation_parameters_collection_type["categoryUnassign:::store_id"]=""
@@ -6371,6 +6377,8 @@ print_categoryInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}disable_report_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Disable report cache for current request${YELLOW} Specify as: disable_report_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -6427,6 +6435,8 @@ print_categoryList_help() {
     echo -e "  * ${GREEN}disable_report_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Disable report cache for current request${YELLOW} Specify as: disable_report_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}disable_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Disable cache for current request${YELLOW} Specify as: disable_cache=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -11901,7 +11911,7 @@ call_categoryInfo() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id store_id lang_id schema_type response_fields params exclude report_request_id disable_report_cache    )
+    local query_parameter_names=(id store_id lang_id schema_type response_fields params exclude report_request_id disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.info.json" path_parameter_names query_parameter_names); then
@@ -11937,7 +11947,7 @@ call_categoryList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor store_id lang_id parent_id avail product_type created_from created_to modified_from modified_to find_value find_where response_fields params exclude report_request_id disable_report_cache disable_cache    )
+    local query_parameter_names=(start count page_cursor store_id lang_id parent_id avail product_type created_from created_to modified_from modified_to find_value find_where response_fields params exclude report_request_id disable_report_cache disable_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.list.json" path_parameter_names query_parameter_names); then

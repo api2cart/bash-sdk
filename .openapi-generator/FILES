@@ -83,6 +83,7 @@ docs/CartInfo200Response.md
 docs/CartMetaData.md
 docs/CartMethods200Response.md
 docs/CartMethods200ResponseResult.md
+docs/CartPickupLocation.md
 docs/CartPluginList200Response.md
 docs/CartPluginList200ResponseResult.md
 docs/CartScriptAdd200Response.md
