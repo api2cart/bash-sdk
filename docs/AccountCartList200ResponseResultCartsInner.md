@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] [default to null]
 **storeUnderscorekey** | **string** |  | [optional] [default to null]
 **cartUnderscoreid** | **string** |  | [optional] [default to null]
+**customUnderscorelabel** | **string** |  | [optional] [default to null]
+**bridgeUnderscoreversion** | **string** |  | [optional] [default to null]
 **totalUnderscorecalls** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

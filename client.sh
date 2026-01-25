@@ -101,11 +101,13 @@ operation_parameters_minimum_occurrences["accountCartList:::store_url"]=0
 operation_parameters_minimum_occurrences["accountCartList:::store_key"]=0
 operation_parameters_minimum_occurrences["accountCartList:::request_from_date"]=0
 operation_parameters_minimum_occurrences["accountCartList:::request_to_date"]=0
+operation_parameters_minimum_occurrences["accountCartList:::custom_label"]=0
 operation_parameters_minimum_occurrences["accountCartList:::params"]=0
 operation_parameters_minimum_occurrences["accountCartList:::exclude"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::replace_parameters"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::new_store_url"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::new_store_key"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::custom_label"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::bridge_url"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::store_root"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::db_tables_prefix"]=0
@@ -235,6 +237,11 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::zid_client_secre
 operation_parameters_minimum_occurrences["accountConfigUpdate:::zid_access_token"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::zid_authorization"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::zid_refresh_token"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::jumpseller_client_id"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::jumpseller_client_secret"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::jumpseller_refresh_token"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::jumpseller_login"]=0
+operation_parameters_minimum_occurrences["accountConfigUpdate:::jumpseller_authtoken"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::flipkart_client_id"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::flipkart_client_secret"]=0
 operation_parameters_minimum_occurrences["accountConfigUpdate:::allegro_client_id"]=0
@@ -1274,11 +1281,13 @@ operation_parameters_maximum_occurrences["accountCartList:::store_url"]=0
 operation_parameters_maximum_occurrences["accountCartList:::store_key"]=0
 operation_parameters_maximum_occurrences["accountCartList:::request_from_date"]=0
 operation_parameters_maximum_occurrences["accountCartList:::request_to_date"]=0
+operation_parameters_maximum_occurrences["accountCartList:::custom_label"]=0
 operation_parameters_maximum_occurrences["accountCartList:::params"]=0
 operation_parameters_maximum_occurrences["accountCartList:::exclude"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::replace_parameters"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::new_store_url"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::new_store_key"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::custom_label"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::bridge_url"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::store_root"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::db_tables_prefix"]=0
@@ -1408,6 +1417,11 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::zid_client_secre
 operation_parameters_maximum_occurrences["accountConfigUpdate:::zid_access_token"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::zid_authorization"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::zid_refresh_token"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::jumpseller_client_id"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::jumpseller_client_secret"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::jumpseller_refresh_token"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::jumpseller_login"]=0
+operation_parameters_maximum_occurrences["accountConfigUpdate:::jumpseller_authtoken"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::flipkart_client_id"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::flipkart_client_secret"]=0
 operation_parameters_maximum_occurrences["accountConfigUpdate:::allegro_client_id"]=0
@@ -2444,11 +2458,13 @@ operation_parameters_collection_type["accountCartList:::store_url"]=""
 operation_parameters_collection_type["accountCartList:::store_key"]=""
 operation_parameters_collection_type["accountCartList:::request_from_date"]=""
 operation_parameters_collection_type["accountCartList:::request_to_date"]=""
+operation_parameters_collection_type["accountCartList:::custom_label"]=""
 operation_parameters_collection_type["accountCartList:::params"]=""
 operation_parameters_collection_type["accountCartList:::exclude"]=""
 operation_parameters_collection_type["accountConfigUpdate:::replace_parameters"]=""
 operation_parameters_collection_type["accountConfigUpdate:::new_store_url"]=""
 operation_parameters_collection_type["accountConfigUpdate:::new_store_key"]=""
+operation_parameters_collection_type["accountConfigUpdate:::custom_label"]=""
 operation_parameters_collection_type["accountConfigUpdate:::bridge_url"]=""
 operation_parameters_collection_type["accountConfigUpdate:::store_root"]=""
 operation_parameters_collection_type["accountConfigUpdate:::db_tables_prefix"]=""
@@ -2578,6 +2594,11 @@ operation_parameters_collection_type["accountConfigUpdate:::zid_client_secret"]=
 operation_parameters_collection_type["accountConfigUpdate:::zid_access_token"]=""
 operation_parameters_collection_type["accountConfigUpdate:::zid_authorization"]=""
 operation_parameters_collection_type["accountConfigUpdate:::zid_refresh_token"]=""
+operation_parameters_collection_type["accountConfigUpdate:::jumpseller_client_id"]=""
+operation_parameters_collection_type["accountConfigUpdate:::jumpseller_client_secret"]=""
+operation_parameters_collection_type["accountConfigUpdate:::jumpseller_refresh_token"]=""
+operation_parameters_collection_type["accountConfigUpdate:::jumpseller_login"]=""
+operation_parameters_collection_type["accountConfigUpdate:::jumpseller_authtoken"]=""
 operation_parameters_collection_type["accountConfigUpdate:::flipkart_client_id"]=""
 operation_parameters_collection_type["accountConfigUpdate:::flipkart_client_secret"]=""
 operation_parameters_collection_type["accountConfigUpdate:::allegro_client_id"]=""
@@ -4359,6 +4380,8 @@ print_accountCartList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}request_to_date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: request_to_date=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}custom_label${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines a custom label for the store in the app${YELLOW} Specify as: custom_label=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
@@ -4385,6 +4408,8 @@ print_accountConfigUpdate_help() {
     echo -e "  * ${GREEN}new_store_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The web address of the store you want to update to connect to API2Cart${YELLOW} Specify as: new_store_url=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}new_store_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Update store key${YELLOW} Specify as: new_store_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}custom_label${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines a custom label for the store in the app${YELLOW} Specify as: custom_label=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}bridge_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store)${YELLOW} Specify as: bridge_url=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -4643,6 +4668,16 @@ print_accountConfigUpdate_help() {
     echo -e "  * ${GREEN}zid_authorization${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Zid Authorization${YELLOW} Specify as: zid_authorization=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}zid_refresh_token${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Zid refresh token${YELLOW} Specify as: zid_refresh_token=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}jumpseller_client_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Jumpseller OAuth2 Client ID${YELLOW} Specify as: jumpseller_client_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}jumpseller_client_secret${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Jumpseller OAuth2 Client Secret${YELLOW} Specify as: jumpseller_client_secret=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}jumpseller_refresh_token${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Jumpseller OAuth2 refresh token${YELLOW} Specify as: jumpseller_refresh_token=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}jumpseller_login${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Jumpseller API login${YELLOW} Specify as: jumpseller_login=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}jumpseller_authtoken${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Jumpseller API auth token${YELLOW} Specify as: jumpseller_authtoken=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}flipkart_client_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Flipkart Client ID${YELLOW} Specify as: flipkart_client_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -9553,7 +9588,7 @@ call_accountCartList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(store_url store_key request_from_date request_to_date params exclude  )
+    local query_parameter_names=(store_url store_key request_from_date request_to_date custom_label params exclude  )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.cart.list.json" path_parameter_names query_parameter_names); then
@@ -9589,7 +9624,7 @@ call_accountConfigUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(replace_parameters new_store_url new_store_key bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_client_id shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region scapi_client_id scapi_client_secret scapi_organization_id scapi_short_code scapi_scopes idempotency_key    )
+    local query_parameter_names=(replace_parameters new_store_url new_store_key custom_label bridge_url store_root db_tables_prefix user_agent 3dcart_private_key 3dcart_access_token 3dcartapi_api_key amazon_sp_client_id amazon_sp_client_secret amazon_sp_refresh_token amazon_sp_aws_region amazon_sp_api_environment amazon_seller_id aspdotnetstorefront_api_user aspdotnetstorefront_api_pass americommerce_app_id americommerce_app_secret americommerce_access_token americommerce_refresh_token bigcommerceapi_admin_account bigcommerceapi_api_path bigcommerceapi_api_key bigcommerceapi_client_id bigcommerceapi_access_token bigcommerceapi_context bol_api_key bol_api_secret bol_retailer_id demandware_client_id demandware_api_password demandware_user_name demandware_user_password ebay_client_id ebay_client_secret ebay_runame ebay_access_token ebay_refresh_token ebay_environment ebay_site_id ecwid_acess_token ecwid_store_id lazada_app_id lazada_app_secret lazada_refresh_token lazada_region etsy_keystring etsy_shared_secret etsy_access_token etsy_token_secret etsy_client_id etsy_refresh_token facebook_app_id facebook_app_secret facebook_access_token facebook_business_id neto_api_key neto_api_username shopline_access_token shopline_app_key shopline_app_secret shopline_shared_secret shopify_access_token shopify_client_id shopify_api_key shopify_api_password shopify_shared_secret shopee_partner_id shopee_partner_key shopee_shop_id shopee_refresh_token shopee_region shopee_environment shoplazza_access_token shoplazza_shared_secret miva_access_token miva_signature shopware_access_key unas_api_key shopware_api_key shopware_api_secret bigcartel_user_name bigcartel_password bricklink_consumer_key bricklink_consumer_secret bricklink_token bricklink_token_secret volusion_login volusion_password walmart_client_id walmart_client_secret walmart_environment walmart_channel_type walmart_region square_client_id square_client_secret square_refresh_token squarespace_api_key squarespace_client_id squarespace_client_secret squarespace_access_token squarespace_refresh_token hybris_client_id hybris_client_secret hybris_username hybris_password hybris_websites lightspeed_api_key lightspeed_api_secret commercehq_api_key commercehq_api_password wc_consumer_key wc_consumer_secret magento_consumer_key magento_consumer_secret magento_access_token magento_token_secret prestashop_webservice_key wix_app_id wix_app_secret_key wix_instance_id wix_refresh_token mercado_libre_app_id mercado_libre_app_secret_key mercado_libre_refresh_token zid_client_id zid_client_secret zid_access_token zid_authorization zid_refresh_token jumpseller_client_id jumpseller_client_secret jumpseller_refresh_token jumpseller_login jumpseller_authtoken flipkart_client_id flipkart_client_secret allegro_client_id allegro_client_secret allegro_access_token allegro_refresh_token allegro_environment zoho_client_id zoho_client_secret zoho_refresh_token zoho_region tiendanube_user_id tiendanube_access_token tiendanube_client_secret otto_client_id otto_client_secret otto_app_id otto_refresh_token otto_environment otto_access_token tiktokshop_app_key tiktokshop_app_secret tiktokshop_refresh_token tiktokshop_access_token salla_client_id salla_client_secret salla_refresh_token salla_access_token temu_app_key temu_app_secret temu_access_token temu_region scapi_client_id scapi_client_secret scapi_organization_id scapi_short_code scapi_scopes idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.config.update.json" path_parameter_names query_parameter_names); then
