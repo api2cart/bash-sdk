@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **comment** | **string** |  | [optional] [default to null]
 **sendUnderscorenotifications** | **boolean** |  | [optional] [default to false]
 **rejectUnderscorereason** | **string** |  | [optional] [default to null]
+**returnUnderscoreaction** | **string** |  | [optional] [default to null]
+**returnUnderscorereason** | **string** |  | [optional] [default to null]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **orderUnderscoreproducts** | [**array[OrderReturnUpdateOrderProductsInner]**](OrderReturnUpdateOrderProductsInner.md) |  | [default to null]
 

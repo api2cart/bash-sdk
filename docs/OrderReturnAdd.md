@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **returnUnderscorestatusUnderscoreid** | **string** |  | [default to null]
 **returnUnderscoreactionUnderscoreid** | **string** |  | [default to null]
 **returnUnderscorereasonUnderscoreid** | **string** |  | [default to null]
+**returnUnderscoreaction** | **string** |  | [optional] [default to null]
 **returnUnderscorereason** | **string** |  | [optional] [default to null]
 **itemUnderscorerestock** | **boolean** |  | [optional] [default to false]
 **staffUnderscorenote** | **string** |  | [optional] [default to null]
