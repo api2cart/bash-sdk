@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] [default to null]
 **description** | **string** |  | [optional] [default to null]
 **shortUnderscoredescription** | **string** |  | [optional] [default to null]
+**pricesUnderscoreincUnderscoretax** | **boolean** |  | [optional] [default to false]
 **price** | **integer** |  | [optional] [default to null]
 **oldUnderscoreprice** | **integer** |  | [optional] [default to null]
 **specialUnderscoreprice** | **integer** |  | [optional] [default to null]

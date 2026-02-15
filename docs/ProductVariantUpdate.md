@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **quantity** | **integer** |  | [optional] [default to null]
 **increaseUnderscorequantity** | **integer** |  | [optional] [default to 0]
 **reduceUnderscorequantity** | **integer** |  | [optional] [default to 0]
+**pricesUnderscoreincUnderscoretax** | **boolean** |  | [optional] [default to false]
 **price** | **integer** |  | [optional] [default to null]
 **specialUnderscoreprice** | **integer** |  | [optional] [default to null]
 **retailUnderscoreprice** | **integer** |  | [optional] [default to null]

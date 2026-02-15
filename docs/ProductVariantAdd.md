@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **tierUnderscoreprices** | [**array[ProductAddTierPricesInner]**](ProductAddTierPricesInner.md) |  | [optional] [default to null]
 **measureUnderscoreunit** | **string** |  | [optional] [default to null]
 **unitUnderscoreprice** | **integer** |  | [optional] [default to null]
+**pricesUnderscoreincUnderscoretax** | **boolean** |  | [optional] [default to false]
 **quantity** | **integer** |  | [optional] [default to 0]
 **warehouseUnderscoreid** | **string** |  | [optional] [default to null]
 **inUnderscorestock** | **boolean** |  | [optional] [default to null]
