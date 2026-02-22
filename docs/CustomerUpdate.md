@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **gender** | **string** |  | [optional] [default to null]
 **note** | **string** |  | [optional] [default to null]
 **status** | **string** |  | [optional] [default to null]
+**password** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **address** | [**array[CustomerUpdateAddressInner]**](CustomerUpdateAddressInner.md) |  | [optional] [default to null]

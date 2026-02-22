@@ -98,7 +98,7 @@ Get attributes for specific customer
 ### Example
 
 ```bash
- customerAttributeList  customer_id=value  count=value  page_cursor=value  store_id=value  lang_id=value  response_fields=value  params=value  exclude=value
+ customerAttributeList  customer_id=value  start=value  count=value  page_cursor=value  store_id=value  lang_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -107,6 +107,7 @@ Get attributes for specific customer
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **string** | Retrieves orders specified by customer id | [default to null]
+ **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]

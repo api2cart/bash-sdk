@@ -309,7 +309,7 @@ Add image to category
 ### Example
 
 ```bash
- categoryImageAdd  category_id=value  image_name=value  url=value  type=value  store_id=value  label=value  mime=value  position=value  idempotency_key=value
+ categoryImageAdd  category_id=value  image_name=value  url=value  type=value  store_id=value  label=value  mime=value  position=value  apply_to_translations=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -325,6 +325,7 @@ Name | Type | Description  | Notes
  **label** | **string** | Defines alternative text that has to be attached to the picture | [optional] [default to null]
  **mime** | **string** | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] [default to null]
  **position** | **integer** | Defines image’s position in the list | [optional] [default to 0]
+ **applyToTranslations** | **boolean** | Defines whether to add image to all category translations | [optional] [default to true]
  **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
@@ -352,7 +353,7 @@ Delete image
 ### Example
 
 ```bash
- categoryImageDelete  category_id=value  image_id=value  store_id=value
+ categoryImageDelete  category_id=value  image_id=value  store_id=value  apply_to_translations=value
 ```
 
 ### Parameters
@@ -363,6 +364,7 @@ Name | Type | Description  | Notes
  **categoryId** | **string** | Defines category id where the image should be deleted | [default to null]
  **imageId** | **string** | Define image id | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **applyToTranslations** | **boolean** | Defines whether to delete image from all category translations | [optional] [default to true]
 
 ### Return type
 

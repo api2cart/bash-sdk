@@ -58,7 +58,7 @@ Get list of tax classes from your store.
 ### Example
 
 ```bash
- taxClassList  count=value  page_cursor=value  store_id=value  find_value=value  find_where=value  created_to=value  created_from=value  modified_to=value  modified_from=value  response_fields=value
+ taxClassList  count=value  start=value  page_cursor=value  store_id=value  find_value=value  find_where=value  created_to=value  created_from=value  modified_to=value  modified_from=value  response_fields=value
 ```
 
 ### Parameters
@@ -67,6 +67,7 @@ Get list of tax classes from your store.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **findValue** | **string** | Entity search that is specified by some value | [optional] [default to null]

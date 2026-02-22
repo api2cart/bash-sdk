@@ -1333,6 +1333,8 @@ case $state in
 "label=:[QUERY] Defines alternative text that has to be attached to the picture"
 "mime=:[QUERY] Mime type of image http://en.wikipedia.org/wiki/Internet_media_type."
 "position=:[QUERY] Defines image’s position in the list"
+"apply_to_translations=true:[QUERY] Defines whether to add image to all category translations"
+          "apply_to_translations=false:[QUERY] Defines whether to add image to all category translations"
 "idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1343,6 +1345,8 @@ case $state in
                     "category_id=:[QUERY] Defines category id where the image should be deleted"
 "image_id=:[QUERY] Define image id"
 "store_id=:[QUERY] Store Id"
+"apply_to_translations=true:[QUERY] Defines whether to delete image from all category translations"
+          "apply_to_translations=false:[QUERY] Defines whether to delete image from all category translations"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1443,7 +1447,8 @@ case $state in
       customerAttributeList)
         local -a _op_arguments
         _op_arguments=(
-                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "customer_id=:[QUERY] Retrieves orders specified by customer id"
 "store_id=:[QUERY] Store Id"
@@ -2599,6 +2604,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"start=:[QUERY] This parameter sets the number from which you want to get entities"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "store_id=:[QUERY] Store Id"
 "find_value=:[QUERY] Entity search that is specified by some value"

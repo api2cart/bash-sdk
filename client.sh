@@ -580,10 +580,12 @@ operation_parameters_minimum_occurrences["categoryImageAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::label"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::mime"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::position"]=0
+operation_parameters_minimum_occurrences["categoryImageAdd:::apply_to_translations"]=0
 operation_parameters_minimum_occurrences["categoryImageAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["categoryImageDelete:::category_id"]=1
 operation_parameters_minimum_occurrences["categoryImageDelete:::image_id"]=1
 operation_parameters_minimum_occurrences["categoryImageDelete:::store_id"]=0
+operation_parameters_minimum_occurrences["categoryImageDelete:::apply_to_translations"]=0
 operation_parameters_minimum_occurrences["categoryInfo:::id"]=1
 operation_parameters_minimum_occurrences["categoryInfo:::store_id"]=0
 operation_parameters_minimum_occurrences["categoryInfo:::lang_id"]=0
@@ -638,6 +640,7 @@ operation_parameters_minimum_occurrences["categoryUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["customerAdd:::CustomerAdd"]=1
 operation_parameters_minimum_occurrences["customerAddressAdd:::CustomerAddressAdd"]=1
 operation_parameters_minimum_occurrences["customerAttributeList:::customer_id"]=1
+operation_parameters_minimum_occurrences["customerAttributeList:::start"]=0
 operation_parameters_minimum_occurrences["customerAttributeList:::count"]=0
 operation_parameters_minimum_occurrences["customerAttributeList:::page_cursor"]=0
 operation_parameters_minimum_occurrences["customerAttributeList:::store_id"]=0
@@ -1230,6 +1233,7 @@ operation_parameters_minimum_occurrences["taxClassInfo:::response_fields"]=0
 operation_parameters_minimum_occurrences["taxClassInfo:::params"]=0
 operation_parameters_minimum_occurrences["taxClassInfo:::exclude"]=0
 operation_parameters_minimum_occurrences["taxClassList:::count"]=0
+operation_parameters_minimum_occurrences["taxClassList:::start"]=0
 operation_parameters_minimum_occurrences["taxClassList:::page_cursor"]=0
 operation_parameters_minimum_occurrences["taxClassList:::store_id"]=0
 operation_parameters_minimum_occurrences["taxClassList:::find_value"]=0
@@ -1760,10 +1764,12 @@ operation_parameters_maximum_occurrences["categoryImageAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::label"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::mime"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::position"]=0
+operation_parameters_maximum_occurrences["categoryImageAdd:::apply_to_translations"]=0
 operation_parameters_maximum_occurrences["categoryImageAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::category_id"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::image_id"]=0
 operation_parameters_maximum_occurrences["categoryImageDelete:::store_id"]=0
+operation_parameters_maximum_occurrences["categoryImageDelete:::apply_to_translations"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::id"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::store_id"]=0
 operation_parameters_maximum_occurrences["categoryInfo:::lang_id"]=0
@@ -1818,6 +1824,7 @@ operation_parameters_maximum_occurrences["categoryUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["customerAdd:::CustomerAdd"]=0
 operation_parameters_maximum_occurrences["customerAddressAdd:::CustomerAddressAdd"]=0
 operation_parameters_maximum_occurrences["customerAttributeList:::customer_id"]=0
+operation_parameters_maximum_occurrences["customerAttributeList:::start"]=0
 operation_parameters_maximum_occurrences["customerAttributeList:::count"]=0
 operation_parameters_maximum_occurrences["customerAttributeList:::page_cursor"]=0
 operation_parameters_maximum_occurrences["customerAttributeList:::store_id"]=0
@@ -2410,6 +2417,7 @@ operation_parameters_maximum_occurrences["taxClassInfo:::response_fields"]=0
 operation_parameters_maximum_occurrences["taxClassInfo:::params"]=0
 operation_parameters_maximum_occurrences["taxClassInfo:::exclude"]=0
 operation_parameters_maximum_occurrences["taxClassList:::count"]=0
+operation_parameters_maximum_occurrences["taxClassList:::start"]=0
 operation_parameters_maximum_occurrences["taxClassList:::page_cursor"]=0
 operation_parameters_maximum_occurrences["taxClassList:::store_id"]=0
 operation_parameters_maximum_occurrences["taxClassList:::find_value"]=0
@@ -2937,10 +2945,12 @@ operation_parameters_collection_type["categoryImageAdd:::store_id"]=""
 operation_parameters_collection_type["categoryImageAdd:::label"]=""
 operation_parameters_collection_type["categoryImageAdd:::mime"]=""
 operation_parameters_collection_type["categoryImageAdd:::position"]=""
+operation_parameters_collection_type["categoryImageAdd:::apply_to_translations"]=""
 operation_parameters_collection_type["categoryImageAdd:::idempotency_key"]=""
 operation_parameters_collection_type["categoryImageDelete:::category_id"]=""
 operation_parameters_collection_type["categoryImageDelete:::image_id"]=""
 operation_parameters_collection_type["categoryImageDelete:::store_id"]=""
+operation_parameters_collection_type["categoryImageDelete:::apply_to_translations"]=""
 operation_parameters_collection_type["categoryInfo:::id"]=""
 operation_parameters_collection_type["categoryInfo:::store_id"]=""
 operation_parameters_collection_type["categoryInfo:::lang_id"]=""
@@ -2995,6 +3005,7 @@ operation_parameters_collection_type["categoryUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["customerAdd:::CustomerAdd"]=""
 operation_parameters_collection_type["customerAddressAdd:::CustomerAddressAdd"]=""
 operation_parameters_collection_type["customerAttributeList:::customer_id"]=""
+operation_parameters_collection_type["customerAttributeList:::start"]=""
 operation_parameters_collection_type["customerAttributeList:::count"]=""
 operation_parameters_collection_type["customerAttributeList:::page_cursor"]=""
 operation_parameters_collection_type["customerAttributeList:::store_id"]=""
@@ -3587,6 +3598,7 @@ operation_parameters_collection_type["taxClassInfo:::response_fields"]=""
 operation_parameters_collection_type["taxClassInfo:::params"]=""
 operation_parameters_collection_type["taxClassInfo:::exclude"]=""
 operation_parameters_collection_type["taxClassList:::count"]=""
+operation_parameters_collection_type["taxClassList:::start"]=""
 operation_parameters_collection_type["taxClassList:::page_cursor"]=""
 operation_parameters_collection_type["taxClassList:::store_id"]=""
 operation_parameters_collection_type["taxClassList:::find_value"]=""
@@ -6352,6 +6364,8 @@ print_categoryImageAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}position${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - Defines image’s position in the list${YELLOW} Specify as: position=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}apply_to_translations${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines whether to add image to all category translations${YELLOW} Specify as: apply_to_translations=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
@@ -6376,6 +6390,8 @@ print_categoryImageDelete_help() {
     echo -e "  * ${GREEN}image_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Define image id${YELLOW} Specify as: image_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}apply_to_translations${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines whether to delete image from all category translations${YELLOW} Specify as: apply_to_translations=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6603,6 +6619,8 @@ print_customerAttributeList_help() {
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}customer_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by customer id${YELLOW} Specify as: customer_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -9315,6 +9333,8 @@ print_taxClassList_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
@@ -11874,7 +11894,7 @@ call_categoryImageAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(category_id image_name url type store_id label mime position idempotency_key    )
+    local query_parameter_names=(category_id image_name url type store_id label mime position apply_to_translations idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.image.add.json" path_parameter_names query_parameter_names); then
@@ -11910,7 +11930,7 @@ call_categoryImageDelete() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(category_id image_id store_id    )
+    local query_parameter_names=(category_id image_id store_id apply_to_translations    )
     local path
 
     if ! path=$(build_request_path "/v1.1/category.image.delete.json" path_parameter_names query_parameter_names); then
@@ -12246,7 +12266,7 @@ call_customerAttributeList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(count page_cursor customer_id store_id lang_id response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor customer_id store_id lang_id response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/customer.attribute.list.json" path_parameter_names query_parameter_names); then
@@ -16704,7 +16724,7 @@ call_taxClassList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(count page_cursor store_id find_value find_where created_to created_from modified_to modified_from response_fields    )
+    local query_parameter_names=(count start page_cursor store_id find_value find_where created_to created_from modified_to modified_from response_fields    )
     local path
 
     if ! path=$(build_request_path "/v1.1/tax.class.list.json" path_parameter_names query_parameter_names); then
