@@ -59,7 +59,7 @@ Create webhook on the store and subscribe to it.
 ### Example
 
 ```bash
- webhookCreate  entity=value  action=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value  store_id=value  idempotency_key=value
+ webhookCreate
 ```
 
 ### Parameters
@@ -67,16 +67,7 @@ Create webhook on the store and subscribe to it.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entity** | **string** | Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) | [default to null]
- **action** | **string** | Specify what action (event) will trigger the webhook (e.g add, delete, or update) | [default to null]
- **callback** | **string** | Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] [default to null]
- **label** | **string** | The name you give to the webhook | [optional] [default to null]
- **fields** | **string** | Fields the webhook should send | [optional] [default to force_all]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **active** | **boolean** | Webhook status | [optional] [default to true]
- **langId** | **string** | Language id | [optional] [default to null]
- **storeId** | **string** | Defines store id where the webhook should be assigned | [optional] [default to null]
- **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
+ **webhookCreate** | [**WebhookCreate**](WebhookCreate.md) |  |
 
 ### Return type
 
@@ -88,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not Applicable
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -211,7 +202,7 @@ Update Webhooks parameters.
 ### Example
 
 ```bash
- webhookUpdate  id=value  callback=value  label=value  fields=value  response_fields=value  active=value  lang_id=value  idempotency_key=value
+ webhookUpdate
 ```
 
 ### Parameters
@@ -219,14 +210,7 @@ Update Webhooks parameters.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string** | Webhook id | [default to null]
- **callback** | **string** | Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] [default to null]
- **label** | **string** | The name you give to the webhook | [optional] [default to null]
- **fields** | **string** | Fields the webhook should send | [optional] [default to null]
- **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
- **active** | **boolean** | Webhook status | [optional] [default to null]
- **langId** | **string** | Language id | [optional] [default to null]
- **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
+ **webhookUpdate** | [**WebhookUpdate**](WebhookUpdate.md) |  |
 
 ### Return type
 
@@ -238,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not Applicable
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

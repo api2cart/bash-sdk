@@ -157,7 +157,7 @@ Count orders in store
 ### Example
 
 ```bash
- orderCount  order_ids=value  ids=value  customer_id=value  store_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value
+ orderCount  order_ids=value  ids=value  customer_id=value  store_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -185,6 +185,7 @@ Name | Type | Description  | Notes
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 

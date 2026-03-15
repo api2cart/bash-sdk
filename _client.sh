@@ -1662,6 +1662,8 @@ case $state in
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -2630,18 +2632,7 @@ case $state in
       webhookCreate)
         local -a _op_arguments
         _op_arguments=(
-                    "entity=:[QUERY] Specify the entity that you want to enable webhooks for (e.g product, order, customer, category)"
-"action=:[QUERY] Specify what action (event) will trigger the webhook (e.g add, delete, or update)"
-"callback=:[QUERY] Callback url that returns shipping rates. It should be able to accept POST requests with json data."
-"label=:[QUERY] The name you give to the webhook"
-"fields=:[QUERY] Fields the webhook should send"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"active=true:[QUERY] Webhook status"
-          "active=false:[QUERY] Webhook status"
-"lang_id=:[QUERY] Language id"
-"store_id=:[QUERY] Defines store id where the webhook should be assigned"
-"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
-          )
+                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       webhookDelete)
@@ -2674,16 +2665,7 @@ case $state in
       webhookUpdate)
         local -a _op_arguments
         _op_arguments=(
-                    "id=:[QUERY] Webhook id"
-"callback=:[QUERY] Callback url that returns shipping rates. It should be able to accept POST requests with json data."
-"label=:[QUERY] The name you give to the webhook"
-"fields=:[QUERY] Fields the webhook should send"
-"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
-"active=true:[QUERY] Webhook status"
-          "active=false:[QUERY] Webhook status"
-"lang_id=:[QUERY] Language id"
-"idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
-          )
+                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
     esac

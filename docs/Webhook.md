@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **updatedUnderscoreat** | **string** |  | [optional] [default to null]
 **entity** | **string** |  | [optional] [default to null]
 **action** | **string** |  | [optional] [default to null]
+**filteringUnderscoreconditions** | **map** |  | [optional] [default to null]
 **additionalUnderscorefields** | **map** |  | [optional] [default to null]
 **customUnderscorefields** | **map** |  | [optional] [default to null]
 

@@ -266,6 +266,10 @@ docs/OrderTotals.md
 docs/OrderTotalsNewDiscount.md
 docs/OrderTransaction.md
 docs/Pagination.md
+docs/ParamDefinitionFilteringConditionsFilterCondition.md
+docs/ParamDefinitionFilteringConditionsFilterGroup.md
+docs/ParamDefinitionFilteringConditionsFilterRule.md
+docs/ParamDefinitionFilteringConditionsFilterRuleValue.md
 docs/Plugin.md
 docs/PluginList.md
 docs/Product.md
@@ -448,8 +452,10 @@ docs/Webhook.md
 docs/WebhookApi.md
 docs/WebhookCount200Response.md
 docs/WebhookCount200ResponseResult.md
+docs/WebhookCreate.md
 docs/WebhookEvents200Response.md
 docs/WebhookEvents200ResponseResult.md
 docs/WebhookEvents200ResponseResultEventsInner.md
 docs/WebhookList200Response.md
 docs/WebhookList200ResponseResult.md
+docs/WebhookUpdate.md

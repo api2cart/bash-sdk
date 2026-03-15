@@ -766,6 +766,7 @@ operation_parameters_minimum_occurrences["orderCount:::created_from"]=0
 operation_parameters_minimum_occurrences["orderCount:::created_to"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_to"]=0
+operation_parameters_minimum_occurrences["orderCount:::use_latest_api_version"]=0
 operation_parameters_minimum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_minimum_occurrences["orderInfo:::id"]=0
 operation_parameters_minimum_occurrences["orderInfo:::order_id"]=0
@@ -1246,16 +1247,7 @@ operation_parameters_minimum_occurrences["taxClassList:::response_fields"]=0
 operation_parameters_minimum_occurrences["webhookCount:::entity"]=0
 operation_parameters_minimum_occurrences["webhookCount:::action"]=0
 operation_parameters_minimum_occurrences["webhookCount:::active"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::entity"]=1
-operation_parameters_minimum_occurrences["webhookCreate:::action"]=1
-operation_parameters_minimum_occurrences["webhookCreate:::callback"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::label"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::fields"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::response_fields"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::active"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::lang_id"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::store_id"]=0
-operation_parameters_minimum_occurrences["webhookCreate:::idempotency_key"]=0
+operation_parameters_minimum_occurrences["webhookCreate:::WebhookCreate"]=1
 operation_parameters_minimum_occurrences["webhookDelete:::id"]=1
 operation_parameters_minimum_occurrences["webhookList:::start"]=0
 operation_parameters_minimum_occurrences["webhookList:::count"]=0
@@ -1264,14 +1256,7 @@ operation_parameters_minimum_occurrences["webhookList:::action"]=0
 operation_parameters_minimum_occurrences["webhookList:::active"]=0
 operation_parameters_minimum_occurrences["webhookList:::ids"]=0
 operation_parameters_minimum_occurrences["webhookList:::params"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::id"]=1
-operation_parameters_minimum_occurrences["webhookUpdate:::callback"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::label"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::fields"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::response_fields"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::active"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::lang_id"]=0
-operation_parameters_minimum_occurrences["webhookUpdate:::idempotency_key"]=0
+operation_parameters_minimum_occurrences["webhookUpdate:::WebhookUpdate"]=1
 
 ##
 # This array stores the maximum number of allowed occurrences for parameter
@@ -1950,6 +1935,7 @@ operation_parameters_maximum_occurrences["orderCount:::created_from"]=0
 operation_parameters_maximum_occurrences["orderCount:::created_to"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_to"]=0
+operation_parameters_maximum_occurrences["orderCount:::use_latest_api_version"]=0
 operation_parameters_maximum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_maximum_occurrences["orderInfo:::id"]=0
 operation_parameters_maximum_occurrences["orderInfo:::order_id"]=0
@@ -2430,16 +2416,7 @@ operation_parameters_maximum_occurrences["taxClassList:::response_fields"]=0
 operation_parameters_maximum_occurrences["webhookCount:::entity"]=0
 operation_parameters_maximum_occurrences["webhookCount:::action"]=0
 operation_parameters_maximum_occurrences["webhookCount:::active"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::entity"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::action"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::callback"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::label"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::fields"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::response_fields"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::active"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::lang_id"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::store_id"]=0
-operation_parameters_maximum_occurrences["webhookCreate:::idempotency_key"]=0
+operation_parameters_maximum_occurrences["webhookCreate:::WebhookCreate"]=0
 operation_parameters_maximum_occurrences["webhookDelete:::id"]=0
 operation_parameters_maximum_occurrences["webhookList:::start"]=0
 operation_parameters_maximum_occurrences["webhookList:::count"]=0
@@ -2448,14 +2425,7 @@ operation_parameters_maximum_occurrences["webhookList:::action"]=0
 operation_parameters_maximum_occurrences["webhookList:::active"]=0
 operation_parameters_maximum_occurrences["webhookList:::ids"]=0
 operation_parameters_maximum_occurrences["webhookList:::params"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::id"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::callback"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::label"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::fields"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::response_fields"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::active"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::lang_id"]=0
-operation_parameters_maximum_occurrences["webhookUpdate:::idempotency_key"]=0
+operation_parameters_maximum_occurrences["webhookUpdate:::WebhookUpdate"]=0
 
 ##
 # The type of collection for specifying multiple values for parameter:
@@ -3131,6 +3101,7 @@ operation_parameters_collection_type["orderCount:::created_from"]=""
 operation_parameters_collection_type["orderCount:::created_to"]=""
 operation_parameters_collection_type["orderCount:::modified_from"]=""
 operation_parameters_collection_type["orderCount:::modified_to"]=""
+operation_parameters_collection_type["orderCount:::use_latest_api_version"]=""
 operation_parameters_collection_type["orderFulfillmentStatusList:::action"]=""
 operation_parameters_collection_type["orderInfo:::id"]=""
 operation_parameters_collection_type["orderInfo:::order_id"]=""
@@ -3611,16 +3582,7 @@ operation_parameters_collection_type["taxClassList:::response_fields"]=""
 operation_parameters_collection_type["webhookCount:::entity"]=""
 operation_parameters_collection_type["webhookCount:::action"]=""
 operation_parameters_collection_type["webhookCount:::active"]=""
-operation_parameters_collection_type["webhookCreate:::entity"]=""
-operation_parameters_collection_type["webhookCreate:::action"]=""
-operation_parameters_collection_type["webhookCreate:::callback"]=""
-operation_parameters_collection_type["webhookCreate:::label"]=""
-operation_parameters_collection_type["webhookCreate:::fields"]=""
-operation_parameters_collection_type["webhookCreate:::response_fields"]=""
-operation_parameters_collection_type["webhookCreate:::active"]=""
-operation_parameters_collection_type["webhookCreate:::lang_id"]=""
-operation_parameters_collection_type["webhookCreate:::store_id"]=""
-operation_parameters_collection_type["webhookCreate:::idempotency_key"]=""
+operation_parameters_collection_type["webhookCreate:::WebhookCreate"]=""
 operation_parameters_collection_type["webhookDelete:::id"]=""
 operation_parameters_collection_type["webhookList:::start"]=""
 operation_parameters_collection_type["webhookList:::count"]=""
@@ -3629,14 +3591,7 @@ operation_parameters_collection_type["webhookList:::action"]=""
 operation_parameters_collection_type["webhookList:::active"]=""
 operation_parameters_collection_type["webhookList:::ids"]=""
 operation_parameters_collection_type["webhookList:::params"]=""
-operation_parameters_collection_type["webhookUpdate:::id"]=""
-operation_parameters_collection_type["webhookUpdate:::callback"]=""
-operation_parameters_collection_type["webhookUpdate:::label"]=""
-operation_parameters_collection_type["webhookUpdate:::fields"]=""
-operation_parameters_collection_type["webhookUpdate:::response_fields"]=""
-operation_parameters_collection_type["webhookUpdate:::active"]=""
-operation_parameters_collection_type["webhookUpdate:::lang_id"]=""
-operation_parameters_collection_type["webhookUpdate:::idempotency_key"]=""
+operation_parameters_collection_type["webhookUpdate:::WebhookUpdate"]=""
 
 
 ##
@@ -7110,6 +7065,8 @@ print_orderCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -9393,26 +9350,8 @@ print_webhookCreate_help() {
     echo -e "Create webhook on the store and subscribe to it." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}entity${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Specify the entity that you want to enable webhooks for (e.g product, order, customer, category)${YELLOW} Specify as: entity=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}action${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Specify what action (event) will trigger the webhook (e.g add, delete, or update)${YELLOW} Specify as: action=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}callback${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Callback url that returns shipping rates. It should be able to accept POST requests with json data.${YELLOW} Specify as: callback=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}label${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The name you give to the webhook${YELLOW} Specify as: label=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Fields the webhook should send${YELLOW} Specify as: fields=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}active${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Webhook status${YELLOW} Specify as: active=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines store id where the webhook should be assigned${YELLOW} Specify as: store_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -9496,22 +9435,8 @@ print_webhookUpdate_help() {
     echo -e "Update Webhooks parameters." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Webhook id${YELLOW} Specify as: id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}callback${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Callback url that returns shipping rates. It should be able to accept POST requests with json data.${YELLOW} Specify as: callback=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}label${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The name you give to the webhook${YELLOW} Specify as: label=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Fields the webhook should send${YELLOW} Specify as: fields=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}active${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Webhook status${YELLOW} Specify as: active=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -12896,7 +12821,7 @@ call_orderCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(order_ids ids customer_id store_id customer_email order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_channel fulfillment_status shipping_method delivery_method tags ship_node_type created_from created_to modified_from modified_to    )
+    local query_parameter_names=(order_ids ids customer_id store_id customer_email order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_channel fulfillment_status shipping_method delivery_method tags ship_node_type created_from created_to modified_from modified_to use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.count.json" path_parameter_names query_parameter_names); then
@@ -16796,7 +16721,7 @@ call_webhookCreate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(entity action callback label fields response_fields active lang_id store_id idempotency_key    )
+    local query_parameter_names=(    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.create.json" path_parameter_names query_parameter_names); then
@@ -16814,10 +16739,52 @@ call_webhookCreate() {
     if [[ -n $basic_auth_credential ]]; then
         basic_auth_option="-u ${basic_auth_credential}"
     fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
     else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
     fi
 }
 
@@ -16940,7 +16907,7 @@ call_webhookUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id callback label fields response_fields active lang_id idempotency_key    )
+    local query_parameter_names=(    )
     local path
 
     if ! path=$(build_request_path "/v1.1/webhook.update.json" path_parameter_names query_parameter_names); then
@@ -16958,10 +16925,52 @@ call_webhookUpdate() {
     if [[ -n $basic_auth_credential ]]; then
         basic_auth_option="-u ${basic_auth_credential}"
     fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
     else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
     fi
 }
 
