@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **bricklinkUnderscoreconsumerUnderscoresecret** | **string** |  | [optional] [default to null]
 **bricklinkUnderscoretoken** | **string** |  | [optional] [default to null]
 **bricklinkUnderscoretokenUnderscoresecret** | **string** |  | [optional] [default to null]
+**nopcommerceUnderscoretoken** | **string** |  | [optional] [default to null]
 **demandwareUnderscoreclientUnderscoreid** | **string** |  | [optional] [default to null]
 **demandwareUnderscoreapiUnderscorepassword** | **string** |  | [optional] [default to null]
 **demandwareUnderscoreuserUnderscorename** | **string** |  | [optional] [default to null]

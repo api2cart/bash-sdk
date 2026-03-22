@@ -569,6 +569,7 @@ case $state in
 "bricklink_consumer_secret=:[QUERY] Bricklink Consumer Secret"
 "bricklink_token=:[QUERY] Bricklink Access Token"
 "bricklink_token_secret=:[QUERY] Bricklink Access Token Secret"
+"nopcommerce_token=:[QUERY] Access token authorizing the app to access resources on behalf of a user"
 "volusion_login=:[QUERY] It&#39;s a Volusion account for which API is enabled"
 "volusion_password=:[QUERY] Volusion API Password"
 "walmart_client_id=:[QUERY] Walmart client ID. For the region &#39;ca&#39; use Consumer ID"

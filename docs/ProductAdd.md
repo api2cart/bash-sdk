@@ -126,6 +126,8 @@ Name | Type | Description | Notes
 **returnUnderscorepolicyUnderscoreid** | **integer** |  | [optional] [default to null]
 **personalizationUnderscoredetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] [default to null]
 **personalizationUnderscorequestions** | [**array[ProductAddPersonalizationQuestionsInner]**](ProductAddPersonalizationQuestionsInner.md) |  | [optional] [default to null]
+**manufacturerUnderscoreids** | **string** |  | [optional] [default to null]
+**responsibleUnderscorepersonUnderscoreids** | **string** |  | [optional] [default to null]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
