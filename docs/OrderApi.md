@@ -39,7 +39,7 @@ Get list of orders that were left by customers before completing the order.
 ### Example
 
 ```bash
- orderAbandonedList  start=value  count=value  page_cursor=value  customer_id=value  customer_email=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  skip_empty_email=value  response_fields=value  params=value  exclude=value
+ orderAbandonedList  start=value  count=value  page_cursor=value  customer_id=value  customer_email=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  skip_empty_email=value  rounding_precision=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -58,6 +58,7 @@ Name | Type | Description  | Notes
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
  **skipEmptyEmail** | **boolean** | Filter empty emails | [optional] [default to false]
+ **roundingPrecision** | **integer** | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p> | [optional] [default to null]
  **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
  **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to customer,totals,items]
  **exclude** | **string** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]

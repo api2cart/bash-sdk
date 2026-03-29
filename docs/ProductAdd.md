@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **measureUnderscoreunit** | **string** |  | [optional] [default to null]
 **unitUnderscoreprice** | **integer** |  | [optional] [default to null]
 **pricesUnderscoreincUnderscoretax** | **boolean** |  | [optional] [default to false]
+**retailUnderscoreprice** | **integer** |  | [optional] [default to null]
 **quantity** | **integer** |  | [optional] [default to 0]
 **inUnderscorestock** | **boolean** |  | [optional] [default to null]
 **manageUnderscorestock** | **boolean** |  | [optional] [default to null]

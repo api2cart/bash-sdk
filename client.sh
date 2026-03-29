@@ -742,6 +742,7 @@ operation_parameters_minimum_occurrences["orderAbandonedList:::created_to"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::modified_from"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::modified_to"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::skip_empty_email"]=0
+operation_parameters_minimum_occurrences["orderAbandonedList:::rounding_precision"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::response_fields"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::params"]=0
 operation_parameters_minimum_occurrences["orderAbandonedList:::exclude"]=0
@@ -1912,6 +1913,7 @@ operation_parameters_maximum_occurrences["orderAbandonedList:::created_to"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::modified_from"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::modified_to"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::skip_empty_email"]=0
+operation_parameters_maximum_occurrences["orderAbandonedList:::rounding_precision"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::response_fields"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::params"]=0
 operation_parameters_maximum_occurrences["orderAbandonedList:::exclude"]=0
@@ -3079,6 +3081,7 @@ operation_parameters_collection_type["orderAbandonedList:::created_to"]=""
 operation_parameters_collection_type["orderAbandonedList:::modified_from"]=""
 operation_parameters_collection_type["orderAbandonedList:::modified_to"]=""
 operation_parameters_collection_type["orderAbandonedList:::skip_empty_email"]=""
+operation_parameters_collection_type["orderAbandonedList:::rounding_precision"]=""
 operation_parameters_collection_type["orderAbandonedList:::response_fields"]=""
 operation_parameters_collection_type["orderAbandonedList:::params"]=""
 operation_parameters_collection_type["orderAbandonedList:::exclude"]=""
@@ -6968,6 +6971,8 @@ print_orderAbandonedList_help() {
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}skip_empty_email${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Filter empty emails${YELLOW} Specify as: skip_empty_email=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}rounding_precision${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>${YELLOW} Specify as: rounding_precision=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -12634,7 +12639,7 @@ call_orderAbandonedList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor customer_id customer_email store_id created_from created_to modified_from modified_to skip_empty_email response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor customer_id customer_email store_id created_from created_to modified_from modified_to skip_empty_email rounding_precision response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.abandoned.list.json" path_parameter_names query_parameter_names); then
