@@ -1666,6 +1666,7 @@ case $state in
 "modified_to=:[QUERY] Retrieve entities to their modification date"
 "use_latest_api_version=true:[QUERY] Use the latest platform API version"
           "use_latest_api_version=false:[QUERY] Use the latest platform API version"
+"vendor_id=:[QUERY] Counts orders specified by vendor id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -1711,6 +1712,7 @@ case $state in
 "order_ids=:[QUERY] Retrieves orders specified by order ids"
 "since_id=:[QUERY] Retrieve entities starting from the specified id."
 "store_id=:[QUERY] Store Id"
+"vendor_id=:[QUERY] Retrieves orders specified by vendor id"
 "customer_id=:[QUERY] Retrieves orders specified by customer id"
 "customer_email=:[QUERY] Retrieves orders specified by customer email"
 "basket_id=:[QUERY] Retrieves order’s info specified by basket id."
@@ -1979,6 +1981,8 @@ case $state in
 "created_to=:[QUERY] Retrieve entities to their creation date"
 "modified_from=:[QUERY] Retrieve entities from their modification date"
 "modified_to=:[QUERY] Retrieve entities to their modification date"
+"avail=true:[QUERY] Defines category&#39;s visibility status"
+          "avail=false:[QUERY] Defines category&#39;s visibility status"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "params=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
@@ -2053,6 +2057,7 @@ case $state in
 "categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
 "category_id=:[QUERY] Counts products specified by category id"
 "store_id=:[QUERY] Counts products specified by store id"
+"vendor_id=:[QUERY] Counts products specified by vendor id"
 "lang_id=:[QUERY] Counts products specified by language id"
 "avail_view=true:[QUERY] Specifies the set of visible/invisible products"
           "avail_view=false:[QUERY] Specifies the set of visible/invisible products"
@@ -2176,6 +2181,7 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Retrieves product&#39;s info specified by product id"
 "store_id=:[QUERY] Retrieves product info specified by store id"
+"vendor_id=:[QUERY] Vendor Id"
 "lang_id=:[QUERY] Retrieves product info specified by language id"
 "currency_id=:[QUERY] Currency Id"
 "response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
@@ -2200,6 +2206,7 @@ case $state in
 "categories_ids=:[QUERY] Retrieves products specified by categories ids"
 "category_id=:[QUERY] Retrieves products specified by category id"
 "store_id=:[QUERY] Retrieves products specified by store id"
+"vendor_id=:[QUERY] Retrieves products specified by vendor id"
 "lang_id=:[QUERY] Retrieves products specified by language id"
 "currency_id=:[QUERY] Currency Id"
 "avail_view=true:[QUERY] Specifies the set of visible/invisible products"

@@ -158,7 +158,7 @@ Count orders in store
 ### Example
 
 ```bash
- orderCount  order_ids=value  ids=value  customer_id=value  store_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  use_latest_api_version=value
+ orderCount  order_ids=value  ids=value  customer_id=value  store_id=value  customer_email=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_channel=value  fulfillment_status=value  shipping_method=value  delivery_method=value  tags=value  ship_node_type=value  created_from=value  created_to=value  modified_from=value  modified_to=value  use_latest_api_version=value  vendor_id=value
 ```
 
 ### Parameters
@@ -187,6 +187,7 @@ Name | Type | Description  | Notes
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
  **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
  **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
+ **vendorId** | **string** | Counts orders specified by vendor id | [optional] [default to null]
 
 ### Return type
 
@@ -324,7 +325,7 @@ Get list of orders from store.
 ### Example
 
 ```bash
- orderList  start=value  count=value  page_cursor=value  ids=value  order_ids=value  since_id=value  store_id=value  customer_id=value  customer_email=value  basket_id=value  currency_id=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  return_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  is_deleted=value  shipping_country_iso3=value  delivery_method=value  ship_node_type=value  created_to=value  created_from=value  modified_to=value  modified_from=value  tags=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value  allow_user_defined_order_statuses=value
+ orderList  start=value  count=value  page_cursor=value  ids=value  order_ids=value  since_id=value  store_id=value  vendor_id=value  customer_id=value  customer_email=value  basket_id=value  currency_id=value  phone=value  order_status=value  Specify as:  order_status_ids=value1 order_status_ids=value2 order_status_ids=...  ebay_order_status=value  financial_status=value  Specify as:  financial_status_ids=value1 financial_status_ids=value2 financial_status_ids=...  fulfillment_status=value  return_status=value  fulfillment_channel=value  shipping_method=value  skip_order_ids=value  is_deleted=value  shipping_country_iso3=value  delivery_method=value  ship_node_type=value  created_to=value  created_from=value  modified_to=value  modified_from=value  tags=value  sort_by=value  sort_direction=value  params=value  response_fields=value  exclude=value  enable_cache=value  use_latest_api_version=value  rounding_precision=value  allow_user_defined_order_statuses=value
 ```
 
 ### Parameters
@@ -339,6 +340,7 @@ Name | Type | Description  | Notes
  **orderIds** | **string** | Retrieves orders specified by order ids | [optional] [default to null]
  **sinceId** | **string** | Retrieve entities starting from the specified id. | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **vendorId** | **string** | Retrieves orders specified by vendor id | [optional] [default to null]
  **customerId** | **string** | Retrieves orders specified by customer id | [optional] [default to null]
  **customerEmail** | **string** | Retrieves orders specified by customer email | [optional] [default to null]
  **basketId** | **string** | Retrieves order’s info specified by basket id. | [optional] [default to null]

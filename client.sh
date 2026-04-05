@@ -769,6 +769,7 @@ operation_parameters_minimum_occurrences["orderCount:::created_to"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_minimum_occurrences["orderCount:::modified_to"]=0
 operation_parameters_minimum_occurrences["orderCount:::use_latest_api_version"]=0
+operation_parameters_minimum_occurrences["orderCount:::vendor_id"]=0
 operation_parameters_minimum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_minimum_occurrences["orderInfo:::id"]=0
 operation_parameters_minimum_occurrences["orderInfo:::order_id"]=0
@@ -787,6 +788,7 @@ operation_parameters_minimum_occurrences["orderList:::ids"]=0
 operation_parameters_minimum_occurrences["orderList:::order_ids"]=0
 operation_parameters_minimum_occurrences["orderList:::since_id"]=0
 operation_parameters_minimum_occurrences["orderList:::store_id"]=0
+operation_parameters_minimum_occurrences["orderList:::vendor_id"]=0
 operation_parameters_minimum_occurrences["orderList:::customer_id"]=0
 operation_parameters_minimum_occurrences["orderList:::customer_email"]=0
 operation_parameters_minimum_occurrences["orderList:::basket_id"]=0
@@ -929,6 +931,7 @@ operation_parameters_minimum_occurrences["productBrandList:::created_from"]=0
 operation_parameters_minimum_occurrences["productBrandList:::created_to"]=0
 operation_parameters_minimum_occurrences["productBrandList:::modified_from"]=0
 operation_parameters_minimum_occurrences["productBrandList:::modified_to"]=0
+operation_parameters_minimum_occurrences["productBrandList:::avail"]=0
 operation_parameters_minimum_occurrences["productBrandList:::response_fields"]=0
 operation_parameters_minimum_occurrences["productBrandList:::params"]=0
 operation_parameters_minimum_occurrences["productBrandList:::exclude"]=0
@@ -974,6 +977,7 @@ operation_parameters_minimum_occurrences["productCount:::since_id"]=0
 operation_parameters_minimum_occurrences["productCount:::categories_ids"]=0
 operation_parameters_minimum_occurrences["productCount:::category_id"]=0
 operation_parameters_minimum_occurrences["productCount:::store_id"]=0
+operation_parameters_minimum_occurrences["productCount:::vendor_id"]=0
 operation_parameters_minimum_occurrences["productCount:::lang_id"]=0
 operation_parameters_minimum_occurrences["productCount:::avail_view"]=0
 operation_parameters_minimum_occurrences["productCount:::avail_sale"]=0
@@ -1035,6 +1039,7 @@ operation_parameters_minimum_occurrences["productImageUpdate:::hidden"]=0
 operation_parameters_minimum_occurrences["productImageUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["productInfo:::id"]=1
 operation_parameters_minimum_occurrences["productInfo:::store_id"]=0
+operation_parameters_minimum_occurrences["productInfo:::vendor_id"]=0
 operation_parameters_minimum_occurrences["productInfo:::lang_id"]=0
 operation_parameters_minimum_occurrences["productInfo:::currency_id"]=0
 operation_parameters_minimum_occurrences["productInfo:::response_fields"]=0
@@ -1051,6 +1056,7 @@ operation_parameters_minimum_occurrences["productList:::since_id"]=0
 operation_parameters_minimum_occurrences["productList:::categories_ids"]=0
 operation_parameters_minimum_occurrences["productList:::category_id"]=0
 operation_parameters_minimum_occurrences["productList:::store_id"]=0
+operation_parameters_minimum_occurrences["productList:::vendor_id"]=0
 operation_parameters_minimum_occurrences["productList:::lang_id"]=0
 operation_parameters_minimum_occurrences["productList:::currency_id"]=0
 operation_parameters_minimum_occurrences["productList:::avail_view"]=0
@@ -1940,6 +1946,7 @@ operation_parameters_maximum_occurrences["orderCount:::created_to"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_from"]=0
 operation_parameters_maximum_occurrences["orderCount:::modified_to"]=0
 operation_parameters_maximum_occurrences["orderCount:::use_latest_api_version"]=0
+operation_parameters_maximum_occurrences["orderCount:::vendor_id"]=0
 operation_parameters_maximum_occurrences["orderFulfillmentStatusList:::action"]=0
 operation_parameters_maximum_occurrences["orderInfo:::id"]=0
 operation_parameters_maximum_occurrences["orderInfo:::order_id"]=0
@@ -1958,6 +1965,7 @@ operation_parameters_maximum_occurrences["orderList:::ids"]=0
 operation_parameters_maximum_occurrences["orderList:::order_ids"]=0
 operation_parameters_maximum_occurrences["orderList:::since_id"]=0
 operation_parameters_maximum_occurrences["orderList:::store_id"]=0
+operation_parameters_maximum_occurrences["orderList:::vendor_id"]=0
 operation_parameters_maximum_occurrences["orderList:::customer_id"]=0
 operation_parameters_maximum_occurrences["orderList:::customer_email"]=0
 operation_parameters_maximum_occurrences["orderList:::basket_id"]=0
@@ -2100,6 +2108,7 @@ operation_parameters_maximum_occurrences["productBrandList:::created_from"]=0
 operation_parameters_maximum_occurrences["productBrandList:::created_to"]=0
 operation_parameters_maximum_occurrences["productBrandList:::modified_from"]=0
 operation_parameters_maximum_occurrences["productBrandList:::modified_to"]=0
+operation_parameters_maximum_occurrences["productBrandList:::avail"]=0
 operation_parameters_maximum_occurrences["productBrandList:::response_fields"]=0
 operation_parameters_maximum_occurrences["productBrandList:::params"]=0
 operation_parameters_maximum_occurrences["productBrandList:::exclude"]=0
@@ -2145,6 +2154,7 @@ operation_parameters_maximum_occurrences["productCount:::since_id"]=0
 operation_parameters_maximum_occurrences["productCount:::categories_ids"]=0
 operation_parameters_maximum_occurrences["productCount:::category_id"]=0
 operation_parameters_maximum_occurrences["productCount:::store_id"]=0
+operation_parameters_maximum_occurrences["productCount:::vendor_id"]=0
 operation_parameters_maximum_occurrences["productCount:::lang_id"]=0
 operation_parameters_maximum_occurrences["productCount:::avail_view"]=0
 operation_parameters_maximum_occurrences["productCount:::avail_sale"]=0
@@ -2206,6 +2216,7 @@ operation_parameters_maximum_occurrences["productImageUpdate:::hidden"]=0
 operation_parameters_maximum_occurrences["productImageUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["productInfo:::id"]=0
 operation_parameters_maximum_occurrences["productInfo:::store_id"]=0
+operation_parameters_maximum_occurrences["productInfo:::vendor_id"]=0
 operation_parameters_maximum_occurrences["productInfo:::lang_id"]=0
 operation_parameters_maximum_occurrences["productInfo:::currency_id"]=0
 operation_parameters_maximum_occurrences["productInfo:::response_fields"]=0
@@ -2222,6 +2233,7 @@ operation_parameters_maximum_occurrences["productList:::since_id"]=0
 operation_parameters_maximum_occurrences["productList:::categories_ids"]=0
 operation_parameters_maximum_occurrences["productList:::category_id"]=0
 operation_parameters_maximum_occurrences["productList:::store_id"]=0
+operation_parameters_maximum_occurrences["productList:::vendor_id"]=0
 operation_parameters_maximum_occurrences["productList:::lang_id"]=0
 operation_parameters_maximum_occurrences["productList:::currency_id"]=0
 operation_parameters_maximum_occurrences["productList:::avail_view"]=0
@@ -3108,6 +3120,7 @@ operation_parameters_collection_type["orderCount:::created_to"]=""
 operation_parameters_collection_type["orderCount:::modified_from"]=""
 operation_parameters_collection_type["orderCount:::modified_to"]=""
 operation_parameters_collection_type["orderCount:::use_latest_api_version"]=""
+operation_parameters_collection_type["orderCount:::vendor_id"]=""
 operation_parameters_collection_type["orderFulfillmentStatusList:::action"]=""
 operation_parameters_collection_type["orderInfo:::id"]=""
 operation_parameters_collection_type["orderInfo:::order_id"]=""
@@ -3126,6 +3139,7 @@ operation_parameters_collection_type["orderList:::ids"]=""
 operation_parameters_collection_type["orderList:::order_ids"]=""
 operation_parameters_collection_type["orderList:::since_id"]=""
 operation_parameters_collection_type["orderList:::store_id"]=""
+operation_parameters_collection_type["orderList:::vendor_id"]=""
 operation_parameters_collection_type["orderList:::customer_id"]=""
 operation_parameters_collection_type["orderList:::customer_email"]=""
 operation_parameters_collection_type["orderList:::basket_id"]=""
@@ -3268,6 +3282,7 @@ operation_parameters_collection_type["productBrandList:::created_from"]=""
 operation_parameters_collection_type["productBrandList:::created_to"]=""
 operation_parameters_collection_type["productBrandList:::modified_from"]=""
 operation_parameters_collection_type["productBrandList:::modified_to"]=""
+operation_parameters_collection_type["productBrandList:::avail"]=""
 operation_parameters_collection_type["productBrandList:::response_fields"]=""
 operation_parameters_collection_type["productBrandList:::params"]=""
 operation_parameters_collection_type["productBrandList:::exclude"]=""
@@ -3313,6 +3328,7 @@ operation_parameters_collection_type["productCount:::since_id"]=""
 operation_parameters_collection_type["productCount:::categories_ids"]=""
 operation_parameters_collection_type["productCount:::category_id"]=""
 operation_parameters_collection_type["productCount:::store_id"]=""
+operation_parameters_collection_type["productCount:::vendor_id"]=""
 operation_parameters_collection_type["productCount:::lang_id"]=""
 operation_parameters_collection_type["productCount:::avail_view"]=""
 operation_parameters_collection_type["productCount:::avail_sale"]=""
@@ -3374,6 +3390,7 @@ operation_parameters_collection_type["productImageUpdate:::hidden"]=""
 operation_parameters_collection_type["productImageUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["productInfo:::id"]=""
 operation_parameters_collection_type["productInfo:::store_id"]=""
+operation_parameters_collection_type["productInfo:::vendor_id"]=""
 operation_parameters_collection_type["productInfo:::lang_id"]=""
 operation_parameters_collection_type["productInfo:::currency_id"]=""
 operation_parameters_collection_type["productInfo:::response_fields"]=""
@@ -3390,6 +3407,7 @@ operation_parameters_collection_type["productList:::since_id"]=""
 operation_parameters_collection_type["productList:::categories_ids"]=""
 operation_parameters_collection_type["productList:::category_id"]=""
 operation_parameters_collection_type["productList:::store_id"]=""
+operation_parameters_collection_type["productList:::vendor_id"]=""
 operation_parameters_collection_type["productList:::lang_id"]=""
 operation_parameters_collection_type["productList:::currency_id"]=""
 operation_parameters_collection_type["productList:::avail_view"]=""
@@ -7077,6 +7095,8 @@ print_orderCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}vendor_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts orders specified by vendor id${YELLOW} Specify as: vendor_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -7179,6 +7199,8 @@ print_orderList_help() {
     echo -e "  * ${GREEN}since_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities starting from the specified id.${YELLOW} Specify as: since_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}vendor_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by vendor id${YELLOW} Specify as: vendor_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}customer_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by customer id${YELLOW} Specify as: customer_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -7821,6 +7843,8 @@ print_productBrandList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines category's visibility status${YELLOW} Specify as: avail=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,short_description,active,url)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
@@ -7978,6 +8002,8 @@ print_productCount_help() {
     echo -e "  * ${GREEN}category_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products specified by category id${YELLOW} Specify as: category_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}vendor_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products specified by vendor id${YELLOW} Specify as: vendor_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Counts products specified by language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8254,6 +8280,8 @@ print_productInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves product info specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}vendor_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Vendor Id${YELLOW} Specify as: vendor_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves product info specified by language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
@@ -8302,6 +8330,8 @@ print_productList_help() {
     echo -e "  * ${GREEN}category_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products specified by category id${YELLOW} Specify as: category_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}vendor_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products specified by vendor id${YELLOW} Specify as: vendor_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves products specified by language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -12831,7 +12861,7 @@ call_orderCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(order_ids ids customer_id store_id customer_email order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_channel fulfillment_status shipping_method delivery_method tags ship_node_type created_from created_to modified_from modified_to use_latest_api_version    )
+    local query_parameter_names=(order_ids ids customer_id store_id customer_email order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_channel fulfillment_status shipping_method delivery_method tags ship_node_type created_from created_to modified_from modified_to use_latest_api_version vendor_id    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.count.json" path_parameter_names query_parameter_names); then
@@ -12975,7 +13005,7 @@ call_orderList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor ids order_ids since_id store_id customer_id customer_email basket_id currency_id phone order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_status return_status fulfillment_channel shipping_method skip_order_ids is_deleted shipping_country_iso3 delivery_method ship_node_type created_to created_from modified_to modified_from tags sort_by sort_direction params response_fields exclude enable_cache use_latest_api_version rounding_precision allow_user_defined_order_statuses    )
+    local query_parameter_names=(start count page_cursor ids order_ids since_id store_id vendor_id customer_id customer_email basket_id currency_id phone order_status order_status_ids ebay_order_status financial_status financial_status_ids fulfillment_status return_status fulfillment_channel shipping_method skip_order_ids is_deleted shipping_country_iso3 delivery_method ship_node_type created_to created_from modified_to modified_from tags sort_by sort_direction params response_fields exclude enable_cache use_latest_api_version rounding_precision allow_user_defined_order_statuses    )
     local path
 
     if ! path=$(build_request_path "/v1.1/order.list.json" path_parameter_names query_parameter_names); then
@@ -14151,7 +14181,7 @@ call_productBrandList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor brand_ids category_id parent_id store_id lang_id find_where find_value created_from created_to modified_from modified_to response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor brand_ids category_id parent_id store_id lang_id find_where find_value created_from created_to modified_from modified_to avail response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.brand.list.json" path_parameter_names query_parameter_names); then
@@ -14295,7 +14325,7 @@ call_productCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(sku product_ids since_id categories_ids category_id store_id lang_id avail_view avail_sale created_from created_to modified_from modified_to brand_name manufacturer_id product_attributes status type visible find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(sku product_ids since_id categories_ids category_id store_id vendor_id lang_id avail_view avail_sale created_from created_to modified_from modified_to brand_name manufacturer_id product_attributes status type visible find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.count.json" path_parameter_names query_parameter_names); then
@@ -14703,7 +14733,7 @@ call_productInfo() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id store_id lang_id currency_id response_fields params exclude report_request_id disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(id store_id vendor_id lang_id currency_id response_fields params exclude report_request_id disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.info.json" path_parameter_names query_parameter_names); then
@@ -14739,7 +14769,7 @@ call_productList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes manufacturer_id status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version product_type    )
+    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id vendor_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes manufacturer_id status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version product_type    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.list.json" path_parameter_names query_parameter_names); then
