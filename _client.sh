@@ -559,6 +559,7 @@ case $state in
 "shoplazza_shared_secret=:[QUERY] Shared secret"
 "miva_access_token=:[QUERY] Miva access token"
 "miva_signature=:[QUERY] Miva signature"
+"mirakl_api_key=:[QUERY] Mirakl API Key"
 "shopware_access_key=:[QUERY] Shopware access key"
 "unas_api_key=:[QUERY] UNAS API Key"
 "shopware_api_key=:[QUERY] Shopware api key"

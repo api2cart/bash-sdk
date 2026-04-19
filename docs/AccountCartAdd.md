@@ -109,6 +109,7 @@ Name | Type | Description | Notes
 **shopwareUnderscoreapiUnderscoresecret** | **string** |  | [optional] [default to null]
 **mivaUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **mivaUnderscoresignature** | **string** |  | [optional] [default to null]
+**miraklUnderscoreapiUnderscorekey** | **string** |  | [optional] [default to null]
 **tiendanubeUnderscoreuserUnderscoreid** | **integer** |  | [optional] [default to null]
 **tiendanubeUnderscoreaccessUnderscoretoken** | **string** |  | [optional] [default to null]
 **tiendanubeUnderscoreclientUnderscoresecret** | **string** |  | [optional] [default to null]
