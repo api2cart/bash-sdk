@@ -123,6 +123,7 @@ Name | Type | Description | Notes
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 **viewedUnderscorecount** | **integer** |  | [optional] [default to 0]
 **orderedUnderscorecount** | **integer** |  | [optional] [default to 0]
+**vendorUnderscoreid** | **string** |  | [optional] [default to null]
 **shopUnderscoresectionUnderscoreid** | **integer** |  | [optional] [default to null]
 **returnUnderscorepolicyUnderscoreid** | **integer** |  | [optional] [default to null]
 **personalizationUnderscoredetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] [default to null]

@@ -945,7 +945,7 @@ Add manufacturer to store and assign to product
 ### Example
 
 ```bash
- productManufacturerAdd  product_id=value  manufacturer=value  store_id=value  meta_title=value  meta_keywords=value  meta_description=value  search_keywords=value  image_url=value  seo_url=value  idempotency_key=value
+ productManufacturerAdd  product_id=value  manufacturer=value  store_id=value  description=value  meta_title=value  meta_keywords=value  meta_description=value  search_keywords=value  image_url=value  seo_url=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -956,6 +956,7 @@ Name | Type | Description  | Notes
  **productId** | **string** | Defines products specified by product id | [default to null]
  **manufacturer** | **string** | Defines product’s manufacturer's name | [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
+ **description** | **string** | Defines manufacturer's description | [optional] [default to null]
  **metaTitle** | **string** | Defines unique meta title for each entity | [optional] [default to null]
  **metaKeywords** | **string** | Defines unique meta keywords for each entity | [optional] [default to null]
  **metaDescription** | **string** | Defines unique meta description of a entity | [optional] [default to null]

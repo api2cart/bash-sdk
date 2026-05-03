@@ -362,7 +362,7 @@ Get a list of global attributes.
 ### Example
 
 ```bash
- attributeList  start=value  count=value  attribute_ids=value  attribute_set_id=value  store_id=value  lang_id=value  type=value  visible=value  required=value  system=value  response_fields=value  params=value  exclude=value
+ attributeList  start=value  count=value  page_cursor=value  attribute_ids=value  attribute_set_id=value  store_id=value  lang_id=value  type=value  visible=value  required=value  system=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -372,6 +372,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
  **attributeIds** | **string** | Filter attributes by ids | [optional] [default to null]
  **attributeSetId** | **string** | Filter items by attribute set id | [optional] [default to null]
  **storeId** | **string** | Store Id | [optional] [default to null]
@@ -515,7 +516,7 @@ Update attribute data
 ### Example
 
 ```bash
- attributeUpdate  id=value  name=value  store_id=value  lang_id=value  idempotency_key=value
+ attributeUpdate  id=value  name=value  visible=value  position=value  store_id=value  lang_id=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -524,7 +525,9 @@ Update attribute data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Entity id | [default to null]
- **name** | **string** | Defines new attributes's name | [default to null]
+ **name** | **string** | Defines new attributes's name | [optional] [default to null]
+ **visible** | **boolean** | Set visibility status | [optional] [default to null]
+ **position** | **integer** | Attribute's position | [optional] [default to 0]
  **storeId** | **string** | Store Id | [optional] [default to null]
  **langId** | **string** | Language id | [optional] [default to null]
  **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]

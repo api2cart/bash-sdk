@@ -345,6 +345,7 @@ operation_parameters_minimum_occurrences["attributeInfo:::params"]=0
 operation_parameters_minimum_occurrences["attributeInfo:::exclude"]=0
 operation_parameters_minimum_occurrences["attributeList:::start"]=0
 operation_parameters_minimum_occurrences["attributeList:::count"]=0
+operation_parameters_minimum_occurrences["attributeList:::page_cursor"]=0
 operation_parameters_minimum_occurrences["attributeList:::attribute_ids"]=0
 operation_parameters_minimum_occurrences["attributeList:::attribute_set_id"]=0
 operation_parameters_minimum_occurrences["attributeList:::store_id"]=0
@@ -363,7 +364,9 @@ operation_parameters_minimum_occurrences["attributeUnassignSet:::id"]=1
 operation_parameters_minimum_occurrences["attributeUnassignSet:::attribute_set_id"]=1
 operation_parameters_minimum_occurrences["attributeUnassignSet:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::id"]=1
-operation_parameters_minimum_occurrences["attributeUpdate:::name"]=1
+operation_parameters_minimum_occurrences["attributeUpdate:::name"]=0
+operation_parameters_minimum_occurrences["attributeUpdate:::visible"]=0
+operation_parameters_minimum_occurrences["attributeUpdate:::position"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::store_id"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::lang_id"]=0
 operation_parameters_minimum_occurrences["attributeUpdate:::idempotency_key"]=0
@@ -1089,6 +1092,7 @@ operation_parameters_minimum_occurrences["productList:::product_type"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::product_id"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::manufacturer"]=1
 operation_parameters_minimum_occurrences["productManufacturerAdd:::store_id"]=0
+operation_parameters_minimum_occurrences["productManufacturerAdd:::description"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_title"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_keywords"]=0
 operation_parameters_minimum_occurrences["productManufacturerAdd:::meta_description"]=0
@@ -1523,6 +1527,7 @@ operation_parameters_maximum_occurrences["attributeInfo:::params"]=0
 operation_parameters_maximum_occurrences["attributeInfo:::exclude"]=0
 operation_parameters_maximum_occurrences["attributeList:::start"]=0
 operation_parameters_maximum_occurrences["attributeList:::count"]=0
+operation_parameters_maximum_occurrences["attributeList:::page_cursor"]=0
 operation_parameters_maximum_occurrences["attributeList:::attribute_ids"]=0
 operation_parameters_maximum_occurrences["attributeList:::attribute_set_id"]=0
 operation_parameters_maximum_occurrences["attributeList:::store_id"]=0
@@ -1542,6 +1547,8 @@ operation_parameters_maximum_occurrences["attributeUnassignSet:::attribute_set_i
 operation_parameters_maximum_occurrences["attributeUnassignSet:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::id"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::name"]=0
+operation_parameters_maximum_occurrences["attributeUpdate:::visible"]=0
+operation_parameters_maximum_occurrences["attributeUpdate:::position"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::store_id"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::lang_id"]=0
 operation_parameters_maximum_occurrences["attributeUpdate:::idempotency_key"]=0
@@ -2267,6 +2274,7 @@ operation_parameters_maximum_occurrences["productList:::product_type"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::product_id"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::manufacturer"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::store_id"]=0
+operation_parameters_maximum_occurrences["productManufacturerAdd:::description"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_title"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_keywords"]=0
 operation_parameters_maximum_occurrences["productManufacturerAdd:::meta_description"]=0
@@ -2698,6 +2706,7 @@ operation_parameters_collection_type["attributeInfo:::params"]=""
 operation_parameters_collection_type["attributeInfo:::exclude"]=""
 operation_parameters_collection_type["attributeList:::start"]=""
 operation_parameters_collection_type["attributeList:::count"]=""
+operation_parameters_collection_type["attributeList:::page_cursor"]=""
 operation_parameters_collection_type["attributeList:::attribute_ids"]=""
 operation_parameters_collection_type["attributeList:::attribute_set_id"]=""
 operation_parameters_collection_type["attributeList:::store_id"]=""
@@ -2717,6 +2726,8 @@ operation_parameters_collection_type["attributeUnassignSet:::attribute_set_id"]=
 operation_parameters_collection_type["attributeUnassignSet:::idempotency_key"]=""
 operation_parameters_collection_type["attributeUpdate:::id"]=""
 operation_parameters_collection_type["attributeUpdate:::name"]=""
+operation_parameters_collection_type["attributeUpdate:::visible"]=""
+operation_parameters_collection_type["attributeUpdate:::position"]=""
 operation_parameters_collection_type["attributeUpdate:::store_id"]=""
 operation_parameters_collection_type["attributeUpdate:::lang_id"]=""
 operation_parameters_collection_type["attributeUpdate:::idempotency_key"]=""
@@ -3442,6 +3453,7 @@ operation_parameters_collection_type["productList:::product_type"]=""
 operation_parameters_collection_type["productManufacturerAdd:::product_id"]=""
 operation_parameters_collection_type["productManufacturerAdd:::manufacturer"]=""
 operation_parameters_collection_type["productManufacturerAdd:::store_id"]=""
+operation_parameters_collection_type["productManufacturerAdd:::description"]=""
 operation_parameters_collection_type["productManufacturerAdd:::meta_title"]=""
 operation_parameters_collection_type["productManufacturerAdd:::meta_keywords"]=""
 operation_parameters_collection_type["productManufacturerAdd:::meta_description"]=""
@@ -5065,6 +5077,8 @@ print_attributeList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}attribute_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter attributes by ids${YELLOW} Specify as: attribute_ids=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}attribute_set_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter items by attribute set id${YELLOW} Specify as: attribute_set_id=value${OFF}" \
@@ -5168,7 +5182,11 @@ print_attributeUpdate_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity id${YELLOW} Specify as: id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}name${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines new attributes's name${YELLOW} Specify as: name=value${OFF}" \
+    echo -e "  * ${GREEN}name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines new attributes's name${YELLOW} Specify as: name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}visible${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Set visibility status${YELLOW} Specify as: visible=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}position${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - Attribute's position${YELLOW} Specify as: position=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8417,6 +8435,8 @@ print_productManufacturerAdd_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}description${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines manufacturer's description${YELLOW} Specify as: description=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}meta_title${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique meta title for each entity${YELLOW} Specify as: meta_title=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}meta_keywords${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines unique meta keywords for each entity${YELLOW} Specify as: meta_keywords=value${OFF}" \
@@ -10010,7 +10030,7 @@ call_attributeList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count attribute_ids attribute_set_id store_id lang_id type visible required system response_fields params exclude    )
+    local query_parameter_names=(start count page_cursor attribute_ids attribute_set_id store_id lang_id type visible required system response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.list.json" path_parameter_names query_parameter_names); then
@@ -10154,7 +10174,7 @@ call_attributeUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id name store_id lang_id idempotency_key    )
+    local query_parameter_names=(id name visible position store_id lang_id idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/attribute.update.json" path_parameter_names query_parameter_names); then
@@ -14810,7 +14830,7 @@ call_productManufacturerAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(product_id manufacturer store_id meta_title meta_keywords meta_description search_keywords image_url seo_url idempotency_key    )
+    local query_parameter_names=(product_id manufacturer store_id description meta_title meta_keywords meta_description search_keywords image_url seo_url idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.manufacturer.add.json" path_parameter_names query_parameter_names); then

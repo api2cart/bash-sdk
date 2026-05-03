@@ -800,6 +800,7 @@ case $state in
         _op_arguments=(
                     "start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "attribute_ids=:[QUERY] Filter attributes by ids"
 "attribute_set_id=:[QUERY] Filter items by attribute set id"
 "store_id=:[QUERY] Store Id"
@@ -846,6 +847,9 @@ case $state in
         _op_arguments=(
                     "id=:[QUERY] Entity id"
 "name=:[QUERY] Defines new attributes&#39;s name"
+"visible=true:[QUERY] Set visibility status"
+          "visible=false:[QUERY] Set visibility status"
+"position=:[QUERY] Attribute&#39;s position"
 "store_id=:[QUERY] Store Id"
 "lang_id=:[QUERY] Language id"
 "idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
@@ -2251,6 +2255,7 @@ case $state in
                     "product_id=:[QUERY] Defines products specified by product id"
 "manufacturer=:[QUERY] Defines product’s manufacturer&#39;s name"
 "store_id=:[QUERY] Store Id"
+"description=:[QUERY] Defines manufacturer&#39;s description"
 "meta_title=:[QUERY] Defines unique meta title for each entity"
 "meta_keywords=:[QUERY] Defines unique meta keywords for each entity"
 "meta_description=:[QUERY] Defines unique meta description of a entity"

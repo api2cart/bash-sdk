@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **addressUnderscorebookUnderscoretaxUnderscoreid** | **string** |  | [optional] [default to null]
 **addressUnderscorebookUnderscoreidentificationUnderscorenumber** | **string** |  | [optional] [default to null]
 **addressUnderscorebookUnderscoregender** | **string** |  | [optional] [default to null]
+**addressUnderscorebookUnderscoreregion** | **string** |  | [optional] [default to null]
 **addressUnderscorebookUnderscorealias** | **string** |  | [optional] [default to null]
 **addressUnderscorebookUnderscoretype** | **string** |  | [optional] [default to null]
 **addressUnderscorebookUnderscoredefault** | **boolean** |  | [optional] [default to null]
