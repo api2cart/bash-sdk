@@ -181,6 +181,7 @@ docs/ModelResponseMarketplaceProductFind.md
 docs/ModelResponseOrderAbandonedList.md
 docs/ModelResponseOrderList.md
 docs/ModelResponseOrderPreestimateShippingList.md
+docs/ModelResponseOrderShipmentEventList.md
 docs/ModelResponseOrderShipmentList.md
 docs/ModelResponseOrderStatusList.md
 docs/ModelResponseOrderTransactionList.md
@@ -251,6 +252,7 @@ docs/OrderShipmentAddItemsInner.md
 docs/OrderShipmentAddTrackingNumbersInner.md
 docs/OrderShipmentDelete200Response.md
 docs/OrderShipmentDelete200ResponseResult.md
+docs/OrderShipmentEventAdd.md
 docs/OrderShipmentInfo200Response.md
 docs/OrderShipmentTrackingAdd.md
 docs/OrderShipmentTrackingAdd200Response.md
@@ -400,6 +402,7 @@ docs/ResponseMarketplaceProductFindResult.md
 docs/ResponseOrderAbandonedListResult.md
 docs/ResponseOrderListResult.md
 docs/ResponseOrderPreestimateShippingListResult.md
+docs/ResponseOrderShipmentEventListResult.md
 docs/ResponseOrderShipmentListResult.md
 docs/ResponseOrderStatusListResult.md
 docs/ResponseOrderTransactionListResult.md
@@ -431,6 +434,7 @@ docs/ReturnStatusList200Response.md
 docs/ReturnStatusList200ResponseResult.md
 docs/Script.md
 docs/Shipment.md
+docs/ShipmentEvent.md
 docs/ShipmentItem.md
 docs/ShipmentTrackingNumber.md
 docs/SpecialPrice.md

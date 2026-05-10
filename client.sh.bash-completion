@@ -165,6 +165,8 @@ _()
     operations["orderShipmentAdd"]=1
     operations["orderShipmentAddBatch"]=1
     operations["orderShipmentDelete"]=1
+    operations["orderShipmentEventAdd"]=1
+    operations["orderShipmentEventList"]=1
     operations["orderShipmentInfo"]=1
     operations["orderShipmentList"]=1
     operations["orderShipmentTrackingAdd"]=1
@@ -335,6 +337,8 @@ _()
     operation_parameters["orderShipmentAdd"]=""
     operation_parameters["orderShipmentAddBatch"]=""
     operation_parameters["orderShipmentDelete"]="shipment_id= order_id= store_id= "
+    operation_parameters["orderShipmentEventAdd"]=""
+    operation_parameters["orderShipmentEventList"]="shipment_id= order_id= store_id= start= count= page_cursor= response_fields= "
     operation_parameters["orderShipmentInfo"]="start= id= order_id= store_id= response_fields= params= exclude= "
     operation_parameters["orderShipmentList"]="start= count= page_cursor= order_id= store_id= created_from= created_to= modified_from= modified_to= response_fields= params= exclude= "
     operation_parameters["orderShipmentTrackingAdd"]=""

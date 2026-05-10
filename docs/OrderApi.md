@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**orderShipmentAdd**](OrderApi.md#orderShipmentAdd) | **POST** /order.shipment.add.json | order.shipment.add
 [**orderShipmentAddBatch**](OrderApi.md#orderShipmentAddBatch) | **POST** /order.shipment.add.batch.json | order.shipment.add.batch
 [**orderShipmentDelete**](OrderApi.md#orderShipmentDelete) | **DELETE** /order.shipment.delete.json | order.shipment.delete
+[**orderShipmentEventAdd**](OrderApi.md#orderShipmentEventAdd) | **POST** /order.shipment.event.add.json | order.shipment.event.add
+[**orderShipmentEventList**](OrderApi.md#orderShipmentEventList) | **GET** /order.shipment.event.list.json | order.shipment.event.list
 [**orderShipmentInfo**](OrderApi.md#orderShipmentInfo) | **GET** /order.shipment.info.json | order.shipment.info
 [**orderShipmentList**](OrderApi.md#orderShipmentList) | **GET** /order.shipment.list.json | order.shipment.list
 [**orderShipmentTrackingAdd**](OrderApi.md#orderShipmentTrackingAdd) | **POST** /order.shipment.tracking.add.json | order.shipment.tracking.add
@@ -662,6 +664,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderShipmentDelete200Response**](OrderShipmentDelete200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not Applicable
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## orderShipmentEventAdd
+
+order.shipment.event.add
+
+Add a tracking event to the shipment.
+
+### Example
+
+```bash
+ orderShipmentEventAdd
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderShipmentEventAdd** | [**OrderShipmentEventAdd**](OrderShipmentEventAdd.md) |  |
+
+### Return type
+
+[**AttributeAdd200Response**](AttributeAdd200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## orderShipmentEventList
+
+order.shipment.event.list
+
+Get list of shipment tracking events.
+
+### Example
+
+```bash
+ orderShipmentEventList  shipment_id=value  order_id=value  store_id=value  start=value  count=value  page_cursor=value  response_fields=value
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **shipmentId** | **string** | Defines the shipment for which tracking events will be retrieved | [default to null]
+ **orderId** | **string** | Defines the order to which the shipment belongs | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
+ **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
+ **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to null]
+
+### Return type
+
+[**ModelResponseOrderShipmentEventList**](ModelResponseOrderShipmentEventList.md)
 
 ### Authorization
 

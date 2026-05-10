@@ -384,6 +384,8 @@ case $state in
             "orderShipmentAdd[order.shipment.add]" \
             "orderShipmentAddBatch[order.shipment.add.batch]" \
             "orderShipmentDelete[order.shipment.delete]" \
+            "orderShipmentEventAdd[order.shipment.event.add]" \
+            "orderShipmentEventList[order.shipment.event.list]" \
             "orderShipmentInfo[order.shipment.info]" \
             "orderShipmentList[order.shipment.list]" \
             "orderShipmentTrackingAdd[order.shipment.tracking.add]" \
@@ -1809,6 +1811,25 @@ case $state in
                     "shipment_id=:[QUERY] Shipment id indicates the number of delivery"
 "order_id=:[QUERY] Defines the order for which the shipment will be deleted"
 "store_id=:[QUERY] Store Id"
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      orderShipmentEventAdd)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      orderShipmentEventList)
+        local -a _op_arguments
+        _op_arguments=(
+                    "shipment_id=:[QUERY] Defines the shipment for which tracking events will be retrieved"
+"order_id=:[QUERY] Defines the order to which the shipment belongs"
+"store_id=:[QUERY] Store Id"
+"start=:[QUERY] This parameter sets the number from which you want to get entities"
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
