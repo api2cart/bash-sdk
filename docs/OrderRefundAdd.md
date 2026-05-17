@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **itemUnderscorerestock** | **boolean** |  | [optional] [default to false]
 **sendUnderscorenotifications** | **boolean** |  | [optional] [default to false]
 **date** | **string** |  | [optional] [default to null]
+**storeUnderscoreid** | **string** |  | [optional] [default to null]
 **isUnderscoreonline** | **boolean** |  | [optional] [default to false]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 
