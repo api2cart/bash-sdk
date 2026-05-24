@@ -70,6 +70,7 @@ Name | Type | Description | Notes
 **externalUnderscoresource** | **string** |  | [optional] [default to null]
 **inventoryUnderscorebehaviour** | **string** |  | [optional] [default to bypass]
 **createUnderscoreinvoice** | **boolean** |  | [optional] [default to false]
+**invoiceUnderscoreadminUnderscorecomment** | **string** |  | [optional] [default to null]
 **noteUnderscoreattributes** | [**array[OrderAddNoteAttributesInner]**](OrderAddNoteAttributesInner.md) |  | [optional] [default to null]
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 **origin** | **string** |  | [optional] [default to null]

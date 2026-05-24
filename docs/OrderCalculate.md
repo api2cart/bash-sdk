@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customerUnderscoreemail** | **string** |  | [default to null]
+**currency** | **string** |  | [optional] [default to null]
 **currencyUnderscoreid** | **string** |  | [optional] [default to null]
 **storeUnderscoreid** | **string** |  | [optional] [default to null]
 **coupons** | **array[string]** |  | [optional] [default to null]

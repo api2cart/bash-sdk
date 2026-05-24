@@ -13,8 +13,12 @@ Name | Type | Description | Notes
 **itemUnderscorerestock** | **boolean** |  | [optional] [default to false]
 **staffUnderscorenote** | **string** |  | [optional] [default to null]
 **comment** | **string** |  | [optional] [default to null]
+**message** | **string** |  | [optional] [default to null]
 **sendUnderscorenotifications** | **boolean** |  | [optional] [default to false]
 **rejectUnderscorereason** | **string** |  | [optional] [default to null]
+**isUnderscoreonline** | **boolean** |  | [optional] [default to false]
+**feeUnderscoreprice** | **integer** |  | [optional] [default to null]
+**shippingUnderscoreprice** | **integer** |  | [optional] [default to 0]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **orderUnderscoreproducts** | [**array[OrderReturnAddOrderProductsInner]**](OrderReturnAddOrderProductsInner.md) |  | [default to null]
 
