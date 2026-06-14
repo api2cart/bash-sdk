@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **lastUnderscorelogin** | **string** |  | [optional] [default to null]
 **birthUnderscoreday** | **string** |  | [optional] [default to null]
 **newsUnderscoreletterUnderscoresubscription** | **boolean** |  | [optional] [default to null]
+**partnerUnderscoreoffersUnderscoresubscription** | **boolean** |  | [optional] [default to null]
 **consents** | [**array[CustomerAddConsentsInner]**](CustomerAddConsentsInner.md) |  | [optional] [default to null]
 **gender** | **string** |  | [optional] [default to null]
 **website** | **string** |  | [optional] [default to null]
