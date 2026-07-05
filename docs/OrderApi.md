@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderCount200Response**](OrderCount200Response.md)
+[**ModelResponseOrderCount**](ModelResponseOrderCount.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OrderFinancialStatusList200Response**](OrderFinancialStatusList200Response.md)
+[**ModelResponseOrderFinancialStatusList**](ModelResponseOrderFinancialStatusList.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderFulfillmentStatusList200Response**](OrderFulfillmentStatusList200Response.md)
+[**ModelResponseOrderFulfillmentStatusList**](ModelResponseOrderFulfillmentStatusList.md)
 
 ### Authorization
 

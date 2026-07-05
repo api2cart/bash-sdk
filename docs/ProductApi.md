@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductChildItemFind200Response**](ProductChildItemFind200Response.md)
+[**ModelResponseProductChildItemFind**](ModelResponseProductChildItemFind.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductCount200Response**](ProductCount200Response.md)
+[**ModelResponseProductCount**](ModelResponseProductCount.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductFind200Response**](ProductFind200Response.md)
+[**ModelResponseProductFind**](ModelResponseProductFind.md)
 
 ### Authorization
 

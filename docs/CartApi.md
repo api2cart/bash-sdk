@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CartCatalogPriceRulesCount200Response**](CartCatalogPriceRulesCount200Response.md)
+[**ModelResponseCartCatalogPriceRulesCount**](ModelResponseCartCatalogPriceRulesCount.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartCouponCount200Response**](CartCouponCount200Response.md)
+[**ModelResponseCartCouponCount**](ModelResponseCartCouponCount.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Use this method to create a gift card for a specified amount.
 ### Example
 
 ```bash
- cartGiftcardAdd  amount=value  code=value  owner_email=value  recipient_email=value  recipient_name=value  owner_name=value  idempotency_key=value
+ cartGiftcardAdd  amount=value  currency=value  store_id=value  code=value  name=value  owner_email=value  owner_name=value  recipient_email=value  recipient_name=value  message=value  idempotency_key=value
 ```
 
 ### Parameters
@@ -360,11 +360,15 @@ Use this method to create a gift card for a specified amount.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amount** | **integer** | Defines the gift card amount value. | [default to null]
+ **currency** | **string** | Defines currency code | [optional] [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
  **code** | **string** | Gift card code | [optional] [default to null]
+ **name** | **string** | Entity name | [optional] [default to null]
  **ownerEmail** | **string** | Gift card owner email | [optional] [default to null]
+ **ownerName** | **string** | Gift card owner name | [optional] [default to null]
  **recipientEmail** | **string** | Gift card recipient email | [optional] [default to null]
  **recipientName** | **string** | Gift card recipient name | [optional] [default to null]
- **ownerName** | **string** | Gift card owner name | [optional] [default to null]
+ **message** | **string** | Free-form message attached to the entity. | [optional] [default to null]
  **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
@@ -404,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartGiftcardCount200Response**](CartGiftcardCount200Response.md)
+[**ModelResponseCartGiftcardCount**](ModelResponseCartGiftcardCount.md)
 
 ### Authorization
 
@@ -427,7 +431,7 @@ Delete giftcard
 ### Example
 
 ```bash
- cartGiftcardDelete  id=value
+ cartGiftcardDelete  id=value  store_id=value
 ```
 
 ### Parameters
@@ -436,6 +440,7 @@ Delete giftcard
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Entity id | [default to null]
+ **storeId** | **string** | Store Id | [optional] [default to null]
 
 ### Return type
 
@@ -462,7 +467,7 @@ Get gift cards list.
 ### Example
 
 ```bash
- cartGiftcardList  start=value  count=value  page_cursor=value  store_id=value  response_fields=value  params=value  exclude=value
+ cartGiftcardList  ids=value  start=value  count=value  page_cursor=value  store_id=value  response_fields=value  params=value  exclude=value
 ```
 
 ### Parameters
@@ -470,6 +475,7 @@ Get gift cards list.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | **string** | Retrieves gift cards specified by ids | [optional] [default to null]
  **start** | **integer** | This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
  **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
@@ -536,7 +542,7 @@ Name | Type | Description  | Notes
 
 cart.meta_data.list
 
-Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
+Using this method, you can get a list of metadata for various entities. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins.
 
 ### Example
 
@@ -580,7 +586,7 @@ Name | Type | Description  | Notes
 
 cart.meta_data.set
 
-Set meta data for a specific entity
+Set metadata for a specific entity. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins.
 
 ### Example
 
@@ -675,7 +681,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CartMethods200Response**](CartMethods200Response.md)
+[**ModelResponseCartMethods**](ModelResponseCartMethods.md)
 
 ### Authorization
 

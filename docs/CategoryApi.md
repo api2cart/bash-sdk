@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryAssign200Response**](CategoryAssign200Response.md)
+[**ModelResponseCategoryAssign**](ModelResponseCategoryAssign.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryCount200Response**](CategoryCount200Response.md)
+[**ModelResponseCategoryCount**](ModelResponseCategoryCount.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryFind200Response**](CategoryFind200Response.md)
+[**ModelResponseCategoryFind**](ModelResponseCategoryFind.md)
 
 ### Authorization
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryAssign200Response**](CategoryAssign200Response.md)
+[**ModelResponseCategoryUnassign**](ModelResponseCategoryUnassign.md)
 
 ### Authorization
 

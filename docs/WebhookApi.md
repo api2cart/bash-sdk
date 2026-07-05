@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebhookCount200Response**](WebhookCount200Response.md)
+[**ModelResponseWebhookCount**](ModelResponseWebhookCount.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**WebhookEvents200Response**](WebhookEvents200Response.md)
+[**ModelResponseWebhookEvents**](ModelResponseWebhookEvents.md)
 
 ### Authorization
 

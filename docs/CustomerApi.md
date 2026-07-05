@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerCount200Response**](CustomerCount200Response.md)
+[**ModelResponseCustomerCount**](ModelResponseCustomerCount.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerFind200Response**](CustomerFind200Response.md)
+[**ModelResponseCustomerFind**](ModelResponseCustomerFind.md)
 
 ### Authorization
 

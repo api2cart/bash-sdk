@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttributeCount200Response**](AttributeCount200Response.md)
+[**ModelResponseAttributeCount**](ModelResponseAttributeCount.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AttributeTypeList200Response**](AttributeTypeList200Response.md)
+[**ModelResponseAttributeTypeList**](ModelResponseAttributeTypeList.md)
 
 ### Authorization
 

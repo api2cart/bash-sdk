@@ -31,7 +31,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ReturnActionList200Response**](ReturnActionList200Response.md)
+[**ModelResponseReturnActionList**](ModelResponseReturnActionList.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnCount200Response**](ReturnCount200Response.md)
+[**ModelResponseReturnCount**](ModelResponseReturnCount.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnReasonList200Response**](ReturnReasonList200Response.md)
+[**ModelResponseReturnReasonList**](ModelResponseReturnReasonList.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ReturnStatusList200Response**](ReturnStatusList200Response.md)
+[**ModelResponseReturnStatusList**](ModelResponseReturnStatusList.md)
 
 ### Authorization
 

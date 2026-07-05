@@ -1083,11 +1083,15 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "amount=:[QUERY] Defines the gift card amount value."
+"currency=:[QUERY] Defines currency code"
+"store_id=:[QUERY] Store Id"
 "code=:[QUERY] Gift card code"
+"name=:[QUERY] Entity name"
 "owner_email=:[QUERY] Gift card owner email"
+"owner_name=:[QUERY] Gift card owner name"
 "recipient_email=:[QUERY] Gift card recipient email"
 "recipient_name=:[QUERY] Gift card recipient name"
-"owner_name=:[QUERY] Gift card owner name"
+"message=:[QUERY] Free-form message attached to the entity."
 "idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -1103,13 +1107,15 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "id=:[QUERY] Entity id"
+"store_id=:[QUERY] Store Id"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       cartGiftcardList)
         local -a _op_arguments
         _op_arguments=(
-                    "start=:[QUERY] This parameter sets the number from which you want to get entities"
+                    "ids=:[QUERY] Retrieves gift cards specified by ids"
+"start=:[QUERY] This parameter sets the number from which you want to get entities"
 "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
 "page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
 "store_id=:[QUERY] Store Id"

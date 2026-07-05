@@ -356,7 +356,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountSupportedPlatforms200Response**](AccountSupportedPlatforms200Response.md)
+[**ModelResponseAccountSupportedPlatforms**](ModelResponseAccountSupportedPlatforms.md)
 
 ### Authorization
 

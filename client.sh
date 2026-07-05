@@ -461,14 +461,20 @@ operation_parameters_minimum_occurrences["cartCouponList:::params"]=0
 operation_parameters_minimum_occurrences["cartCouponList:::exclude"]=0
 operation_parameters_minimum_occurrences["cartDelete:::delete_bridge"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::amount"]=1
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::currency"]=0
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::store_id"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::code"]=0
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::name"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_email"]=0
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_name"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::recipient_email"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::recipient_name"]=0
-operation_parameters_minimum_occurrences["cartGiftcardAdd:::owner_name"]=0
+operation_parameters_minimum_occurrences["cartGiftcardAdd:::message"]=0
 operation_parameters_minimum_occurrences["cartGiftcardAdd:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartGiftcardCount:::store_id"]=0
 operation_parameters_minimum_occurrences["cartGiftcardDelete:::id"]=1
+operation_parameters_minimum_occurrences["cartGiftcardDelete:::store_id"]=0
+operation_parameters_minimum_occurrences["cartGiftcardList:::ids"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::start"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::count"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::page_cursor"]=0
@@ -1652,14 +1658,20 @@ operation_parameters_maximum_occurrences["cartCouponList:::params"]=0
 operation_parameters_maximum_occurrences["cartCouponList:::exclude"]=0
 operation_parameters_maximum_occurrences["cartDelete:::delete_bridge"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::amount"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::currency"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::store_id"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::code"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::name"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_email"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_name"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::recipient_email"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::recipient_name"]=0
-operation_parameters_maximum_occurrences["cartGiftcardAdd:::owner_name"]=0
+operation_parameters_maximum_occurrences["cartGiftcardAdd:::message"]=0
 operation_parameters_maximum_occurrences["cartGiftcardAdd:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartGiftcardCount:::store_id"]=0
 operation_parameters_maximum_occurrences["cartGiftcardDelete:::id"]=0
+operation_parameters_maximum_occurrences["cartGiftcardDelete:::store_id"]=0
+operation_parameters_maximum_occurrences["cartGiftcardList:::ids"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::start"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::count"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::page_cursor"]=0
@@ -2840,14 +2852,20 @@ operation_parameters_collection_type["cartCouponList:::params"]=""
 operation_parameters_collection_type["cartCouponList:::exclude"]=""
 operation_parameters_collection_type["cartDelete:::delete_bridge"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::amount"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::currency"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::store_id"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::code"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::name"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::owner_email"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::owner_name"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::recipient_email"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::recipient_name"]=""
-operation_parameters_collection_type["cartGiftcardAdd:::owner_name"]=""
+operation_parameters_collection_type["cartGiftcardAdd:::message"]=""
 operation_parameters_collection_type["cartGiftcardAdd:::idempotency_key"]=""
 operation_parameters_collection_type["cartGiftcardCount:::store_id"]=""
 operation_parameters_collection_type["cartGiftcardDelete:::id"]=""
+operation_parameters_collection_type["cartGiftcardDelete:::store_id"]=""
+operation_parameters_collection_type["cartGiftcardList:::ids"]=""
 operation_parameters_collection_type["cartGiftcardList:::start"]=""
 operation_parameters_collection_type["cartGiftcardList:::count"]=""
 operation_parameters_collection_type["cartGiftcardList:::page_cursor"]=""
@@ -5776,15 +5794,23 @@ print_cartGiftcardAdd_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}amount${OFF} ${BLUE}[integer]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Defines the gift card amount value.${YELLOW} Specify as: amount=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}currency${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines currency code${YELLOW} Specify as: currency=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}code${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card code${YELLOW} Specify as: code=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Entity name${YELLOW} Specify as: name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}owner_email${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card owner email${YELLOW} Specify as: owner_email=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}owner_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card owner name${YELLOW} Specify as: owner_name=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}recipient_email${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card recipient email${YELLOW} Specify as: recipient_email=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}recipient_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card recipient name${YELLOW} Specify as: recipient_name=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}owner_name${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Gift card owner name${YELLOW} Specify as: owner_name=value${OFF}" \
+    echo -e "  * ${GREEN}message${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Free-form message attached to the entity.${YELLOW} Specify as: message=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -5826,6 +5852,8 @@ print_cartGiftcardDelete_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity id${YELLOW} Specify as: id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5843,6 +5871,8 @@ print_cartGiftcardList_help() {
     echo -e "Get gift cards list." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves gift cards specified by ids${YELLOW} Specify as: ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}start${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 0)${OFF} - This parameter sets the number from which you want to get entities${YELLOW} Specify as: start=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
@@ -5896,7 +5926,7 @@ print_cartMetaDataList_help() {
     echo ""
     echo -e "${BOLD}${WHITE}cartMetaDataList - cart.meta_data.list${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins." | paste -sd' ' | fold -sw 80
+    echo -e "Using this method, you can get a list of metadata for various entities. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}entity_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity Id${YELLOW} Specify as: entity_id=value${OFF}" \
@@ -5933,7 +5963,7 @@ print_cartMetaDataSet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}cartMetaDataSet - cart.meta_data.set${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Set meta data for a specific entity" | paste -sd' ' | fold -sw 80
+    echo -e "Set metadata for a specific entity. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}entity_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Entity Id${YELLOW} Specify as: entity_id=value${OFF}" \
@@ -11089,7 +11119,7 @@ call_cartGiftcardAdd() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(amount code owner_email recipient_email recipient_name owner_name idempotency_key    )
+    local query_parameter_names=(amount currency store_id code name owner_email owner_name recipient_email recipient_name message idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.giftcard.add.json" path_parameter_names query_parameter_names); then
@@ -11161,7 +11191,7 @@ call_cartGiftcardDelete() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(id    )
+    local query_parameter_names=(id store_id    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.giftcard.delete.json" path_parameter_names query_parameter_names); then
@@ -11197,7 +11227,7 @@ call_cartGiftcardList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor store_id response_fields params exclude    )
+    local query_parameter_names=(ids start count page_cursor store_id response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.giftcard.list.json" path_parameter_names query_parameter_names); then
