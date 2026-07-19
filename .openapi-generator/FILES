@@ -21,6 +21,14 @@ docs/AccountFailedWebhooks200ResponseResultWebhookInner.md
 docs/AccountSupportedPlatform.md
 docs/AccountSupportedPlatformParams.md
 docs/AccountSupportedPlatformParamsRequiredInnerInner.md
+docs/AnalyticsApi.md
+docs/AnalyticsCustomer.md
+docs/AnalyticsCustomerMetric.md
+docs/AnalyticsInterval.md
+docs/AnalyticsMetric.md
+docs/AnalyticsPeriod.md
+docs/AnalyticsProduct.md
+docs/AnalyticsProductMetric.md
 docs/AttributeAdd200Response.md
 docs/AttributeAdd200ResponseResult.md
 docs/AttributeApi.md
@@ -370,6 +378,9 @@ docs/ProductVariantUpdateBatch.md
 docs/ProductVariantUpdateBatchPayloadInner.md
 docs/ProductVariantUpdateOptionsInner.md
 docs/ResponseAccountSupportedPlatformsResult.md
+docs/ResponseAnalyticsCustomerReportResult.md
+docs/ResponseAnalyticsProductReportResult.md
+docs/ResponseAnalyticsReportResult.md
 docs/ResponseAttributeAttributesetListResult.md
 docs/ResponseAttributeCountResult.md
 docs/ResponseAttributeGroupListResult.md

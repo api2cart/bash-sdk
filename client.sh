@@ -286,6 +286,38 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::idempotency_key"
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::ids"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::date_from"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::date_to"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::count"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::currency_id"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::store_id"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::customer_type"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::email"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::sort_by"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::sort_direction"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::page_cursor"]=0
+operation_parameters_minimum_occurrences["analyticsCustomerReport:::response_fields"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::date_from"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::date_to"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::count"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::product_ids"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::currency_id"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::store_id"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::categories_ids"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::sort_by"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::sort_direction"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::page_cursor"]=0
+operation_parameters_minimum_occurrences["analyticsProductReport:::response_fields"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::date_from"]=1
+operation_parameters_minimum_occurrences["analyticsReport:::date_to"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::interval"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::order_status"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::financial_status"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::currency_id"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::store_id"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::sort_by"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::sort_direction"]=0
+operation_parameters_minimum_occurrences["analyticsReport:::response_fields"]=0
 operation_parameters_minimum_occurrences["attributeAdd:::type"]=1
 operation_parameters_minimum_occurrences["attributeAdd:::name"]=1
 operation_parameters_minimum_occurrences["attributeAdd:::code"]=0
@@ -1483,6 +1515,38 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::idempotency_key"
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::ids"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::date_from"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::date_to"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::count"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::currency_id"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::store_id"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::customer_type"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::email"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::sort_by"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::sort_direction"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::page_cursor"]=0
+operation_parameters_maximum_occurrences["analyticsCustomerReport:::response_fields"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::date_from"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::date_to"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::count"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::product_ids"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::currency_id"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::store_id"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::categories_ids"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::sort_by"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::sort_direction"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::page_cursor"]=0
+operation_parameters_maximum_occurrences["analyticsProductReport:::response_fields"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::date_from"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::date_to"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::interval"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::order_status"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::financial_status"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::currency_id"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::store_id"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::sort_by"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::sort_direction"]=0
+operation_parameters_maximum_occurrences["analyticsReport:::response_fields"]=0
 operation_parameters_maximum_occurrences["attributeAdd:::type"]=0
 operation_parameters_maximum_occurrences["attributeAdd:::name"]=0
 operation_parameters_maximum_occurrences["attributeAdd:::code"]=0
@@ -2677,6 +2741,38 @@ operation_parameters_collection_type["accountConfigUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::start"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::count"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::ids"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::date_from"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::date_to"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::count"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::currency_id"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::store_id"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::customer_type"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::email"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::sort_by"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::sort_direction"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::page_cursor"]=""
+operation_parameters_collection_type["analyticsCustomerReport:::response_fields"]=""
+operation_parameters_collection_type["analyticsProductReport:::date_from"]=""
+operation_parameters_collection_type["analyticsProductReport:::date_to"]=""
+operation_parameters_collection_type["analyticsProductReport:::count"]=""
+operation_parameters_collection_type["analyticsProductReport:::product_ids"]=""
+operation_parameters_collection_type["analyticsProductReport:::currency_id"]=""
+operation_parameters_collection_type["analyticsProductReport:::store_id"]=""
+operation_parameters_collection_type["analyticsProductReport:::categories_ids"]=""
+operation_parameters_collection_type["analyticsProductReport:::sort_by"]=""
+operation_parameters_collection_type["analyticsProductReport:::sort_direction"]=""
+operation_parameters_collection_type["analyticsProductReport:::page_cursor"]=""
+operation_parameters_collection_type["analyticsProductReport:::response_fields"]=""
+operation_parameters_collection_type["analyticsReport:::date_from"]=""
+operation_parameters_collection_type["analyticsReport:::date_to"]=""
+operation_parameters_collection_type["analyticsReport:::interval"]=""
+operation_parameters_collection_type["analyticsReport:::order_status"]=""
+operation_parameters_collection_type["analyticsReport:::financial_status"]=""
+operation_parameters_collection_type["analyticsReport:::currency_id"]=""
+operation_parameters_collection_type["analyticsReport:::store_id"]=""
+operation_parameters_collection_type["analyticsReport:::sort_by"]=""
+operation_parameters_collection_type["analyticsReport:::sort_direction"]=""
+operation_parameters_collection_type["analyticsReport:::response_fields"]=""
 operation_parameters_collection_type["attributeAdd:::type"]=""
 operation_parameters_collection_type["attributeAdd:::name"]=""
 operation_parameters_collection_type["attributeAdd:::code"]=""
@@ -4111,6 +4207,14 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
+    echo -e "${BOLD}${WHITE}[analytics]${OFF}"
+read -r -d '' ops <<EOF
+  ${CYAN}analyticsCustomerReport${OFF};analytics.customer_report (AUTH) (AUTH)
+  ${CYAN}analyticsProductReport${OFF};analytics.product_report (AUTH) (AUTH)
+  ${CYAN}analyticsReport${OFF};analytics.report (AUTH) (AUTH)
+EOF
+echo "  $ops" | column -t -s ';'
+    echo ""
     echo -e "${BOLD}${WHITE}[attribute]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}attributeAdd${OFF};attribute.add (AUTH) (AUTH)
@@ -4853,6 +4957,121 @@ print_accountSupportedPlatforms_help() {
     echo -e ""
     echo -e "Use this method to retrieve a list of supported platforms and the sets of parameters required for connecting to each of them. Note: some platforms may have multiple connection methods so that the response will contain multiple sets of parameters." | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for analyticsCustomerReport operation
+#
+##############################################################################
+print_analyticsCustomerReport_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}analyticsCustomerReport - analytics.customer_report${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Get customer-level analytics for a store over a given period." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}date_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Start date for the analytics period (Y-m-d or Y-m-d H:i:s)${YELLOW} Specify as: date_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}date_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date.${YELLOW} Specify as: date_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}customer_type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter analytics customers by customer type${YELLOW} Specify as: customer_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}email${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter analytics customers by email${YELLOW} Specify as: email=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: total_spend)${OFF} - Set field to sort by${YELLOW} Specify as: sort_by=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: desc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for analyticsProductReport operation
+#
+##############################################################################
+print_analyticsProductReport_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}analyticsProductReport - analytics.product_report${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Get product-level analytics for a store over a given period." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}date_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Start date for the analytics period (Y-m-d or Y-m-d H:i:s)${YELLOW} Specify as: date_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}date_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date.${YELLOW} Specify as: date_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}product_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter analytics by product ids${YELLOW} Specify as: product_ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}categories_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines product add that is specified by comma-separated categories id${YELLOW} Specify as: categories_ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: items_sold)${OFF} - Set field to sort by${YELLOW} Specify as: sort_by=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: desc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for analyticsReport operation
+#
+##############################################################################
+print_analyticsReport_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}analyticsReport - analytics.report${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Get analytics report with totals and optional interval breakdown for a store over a given period." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}date_from${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Start date for the analytics period (Y-m-d or Y-m-d H:i:s)${YELLOW} Specify as: date_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}date_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date.${YELLOW} Specify as: date_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}interval${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Interval for analytics report breakdown${YELLOW} Specify as: interval=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}order_status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by order status${YELLOW} Specify as: order_status=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}financial_status${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves orders specified by financial status${YELLOW} Specify as: financial_status=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: date)${OFF} - Set field to sort by${YELLOW} Specify as: sort_by=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -9821,6 +10040,114 @@ call_accountSupportedPlatforms() {
     local path
 
     if ! path=$(build_request_path "/v1.1/account.supported_platforms.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call analyticsCustomerReport operation
+#
+##############################################################################
+call_analyticsCustomerReport() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(date_from date_to count currency_id store_id customer_type email sort_by sort_direction page_cursor response_fields    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/analytics.customer_report.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call analyticsProductReport operation
+#
+##############################################################################
+call_analyticsProductReport() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(date_from date_to count product_ids currency_id store_id categories_ids sort_by sort_direction page_cursor response_fields    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/analytics.product_report.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call analyticsReport operation
+#
+##############################################################################
+call_analyticsReport() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(date_from date_to interval order_status financial_status currency_id store_id sort_by sort_direction response_fields    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/analytics.report.json" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -17376,6 +17703,15 @@ case $key in
     accountSupportedPlatforms)
     operation="accountSupportedPlatforms"
     ;;
+    analyticsCustomerReport)
+    operation="analyticsCustomerReport"
+    ;;
+    analyticsProductReport)
+    operation="analyticsProductReport"
+    ;;
+    analyticsReport)
+    operation="analyticsReport"
+    ;;
     attributeAdd)
     operation="attributeAdd"
     ;;
@@ -17980,6 +18316,15 @@ case $operation in
     ;;
     accountSupportedPlatforms)
     call_accountSupportedPlatforms
+    ;;
+    analyticsCustomerReport)
+    call_analyticsCustomerReport
+    ;;
+    analyticsProductReport)
+    call_analyticsProductReport
+    ;;
+    analyticsReport)
+    call_analyticsReport
     ;;
     attributeAdd)
     call_attributeAdd

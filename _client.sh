@@ -301,7 +301,9 @@ case $state in
             "accountCartList[account.cart.list]" \
             "accountConfigUpdate[account.config.update]" \
             "accountFailedWebhooks[account.failed_webhooks]" \
-            "accountSupportedPlatforms[account.supported_platforms]"             "attributeAdd[attribute.add]" \
+            "accountSupportedPlatforms[account.supported_platforms]"             "analyticsCustomerReport[analytics.customer_report]" \
+            "analyticsProductReport[analytics.product_report]" \
+            "analyticsReport[analytics.report]"             "attributeAdd[attribute.add]" \
             "attributeAssignGroup[attribute.assign.group]" \
             "attributeAssignSet[attribute.assign.set]" \
             "attributeAttributesetList[attribute.attributeset.list]" \
@@ -676,6 +678,56 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                               )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      analyticsCustomerReport)
+        local -a _op_arguments
+        _op_arguments=(
+                    "date_from=:[QUERY] Start date for the analytics period (Y-m-d or Y-m-d H:i:s)"
+"date_to=:[QUERY] End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date."
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"currency_id=:[QUERY] Currency Id"
+"store_id=:[QUERY] Store Id"
+"customer_type=:[QUERY] Filter analytics customers by customer type"
+"email=:[QUERY] Filter analytics customers by email"
+"sort_by=:[QUERY] Set field to sort by"
+"sort_direction=:[QUERY] Set sorting direction"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      analyticsProductReport)
+        local -a _op_arguments
+        _op_arguments=(
+                    "date_from=:[QUERY] Start date for the analytics period (Y-m-d or Y-m-d H:i:s)"
+"date_to=:[QUERY] End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date."
+"count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"product_ids=:[QUERY] Filter analytics by product ids"
+"currency_id=:[QUERY] Currency Id"
+"store_id=:[QUERY] Store Id"
+"categories_ids=:[QUERY] Defines product add that is specified by comma-separated categories id"
+"sort_by=:[QUERY] Set field to sort by"
+"sort_direction=:[QUERY] Set sorting direction"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      analyticsReport)
+        local -a _op_arguments
+        _op_arguments=(
+                    "date_from=:[QUERY] Start date for the analytics period (Y-m-d or Y-m-d H:i:s)"
+"date_to=:[QUERY] End date for the analytics period (Y-m-d or Y-m-d H:i:s). Defaults to the current date."
+"interval=:[QUERY] Interval for analytics report breakdown"
+"order_status=:[QUERY] Retrieves orders specified by order status"
+"financial_status=:[QUERY] Retrieves orders specified by financial status"
+"currency_id=:[QUERY] Currency Id"
+"store_id=:[QUERY] Store Id"
+"sort_by=:[QUERY] Set field to sort by"
+"sort_direction=:[QUERY] Set sorting direction"
+"response_fields=:[QUERY] Set this parameter in order to choose which entity fields you want to retrieve"
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       attributeAdd)
