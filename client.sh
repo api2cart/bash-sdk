@@ -286,6 +286,7 @@ operation_parameters_minimum_occurrences["accountConfigUpdate:::idempotency_key"
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_minimum_occurrences["accountFailedWebhooks:::ids"]=0
+operation_parameters_minimum_occurrences["accountSupportedPlatforms:::cart_id"]=0
 operation_parameters_minimum_occurrences["analyticsCustomerReport:::date_from"]=0
 operation_parameters_minimum_occurrences["analyticsCustomerReport:::date_to"]=0
 operation_parameters_minimum_occurrences["analyticsCustomerReport:::count"]=0
@@ -514,7 +515,6 @@ operation_parameters_minimum_occurrences["cartGiftcardList:::store_id"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::response_fields"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::params"]=0
 operation_parameters_minimum_occurrences["cartGiftcardList:::exclude"]=0
-operation_parameters_minimum_occurrences["cartInfo:::store_id"]=0
 operation_parameters_minimum_occurrences["cartInfo:::response_fields"]=0
 operation_parameters_minimum_occurrences["cartInfo:::params"]=0
 operation_parameters_minimum_occurrences["cartInfo:::exclude"]=0
@@ -1515,6 +1515,7 @@ operation_parameters_maximum_occurrences["accountConfigUpdate:::idempotency_key"
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::start"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::count"]=0
 operation_parameters_maximum_occurrences["accountFailedWebhooks:::ids"]=0
+operation_parameters_maximum_occurrences["accountSupportedPlatforms:::cart_id"]=0
 operation_parameters_maximum_occurrences["analyticsCustomerReport:::date_from"]=0
 operation_parameters_maximum_occurrences["analyticsCustomerReport:::date_to"]=0
 operation_parameters_maximum_occurrences["analyticsCustomerReport:::count"]=0
@@ -1743,7 +1744,6 @@ operation_parameters_maximum_occurrences["cartGiftcardList:::store_id"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::response_fields"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::params"]=0
 operation_parameters_maximum_occurrences["cartGiftcardList:::exclude"]=0
-operation_parameters_maximum_occurrences["cartInfo:::store_id"]=0
 operation_parameters_maximum_occurrences["cartInfo:::response_fields"]=0
 operation_parameters_maximum_occurrences["cartInfo:::params"]=0
 operation_parameters_maximum_occurrences["cartInfo:::exclude"]=0
@@ -2741,6 +2741,7 @@ operation_parameters_collection_type["accountConfigUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::start"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::count"]=""
 operation_parameters_collection_type["accountFailedWebhooks:::ids"]=""
+operation_parameters_collection_type["accountSupportedPlatforms:::cart_id"]=""
 operation_parameters_collection_type["analyticsCustomerReport:::date_from"]=""
 operation_parameters_collection_type["analyticsCustomerReport:::date_to"]=""
 operation_parameters_collection_type["analyticsCustomerReport:::count"]=""
@@ -2969,7 +2970,6 @@ operation_parameters_collection_type["cartGiftcardList:::store_id"]=""
 operation_parameters_collection_type["cartGiftcardList:::response_fields"]=""
 operation_parameters_collection_type["cartGiftcardList:::params"]=""
 operation_parameters_collection_type["cartGiftcardList:::exclude"]=""
-operation_parameters_collection_type["cartInfo:::store_id"]=""
 operation_parameters_collection_type["cartInfo:::response_fields"]=""
 operation_parameters_collection_type["cartInfo:::params"]=""
 operation_parameters_collection_type["cartInfo:::exclude"]=""
@@ -4531,17 +4531,17 @@ print_accountCartList_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}store_url${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A web address of a store${YELLOW} Specify as: store_url=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}store_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Find store by store key${YELLOW} Specify as: store_key=value${OFF}" \
+    echo -e "  * ${GREEN}store_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add.${YELLOW} Specify as: store_key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}request_from_date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: request_from_date=value${OFF}" \
+    echo -e "  * ${GREEN}request_from_date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store's total_calls (number of API requests in that period) in the response.${YELLOW} Specify as: request_from_date=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}request_to_date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: request_to_date=value${OFF}" \
+    echo -e "  * ${GREEN}request_to_date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store's total_calls (number of API requests in that period) in the response.${YELLOW} Specify as: request_to_date=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}custom_label${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines a custom label for the store in the app${YELLOW} Specify as: custom_label=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -4957,6 +4957,9 @@ print_accountSupportedPlatforms_help() {
     echo -e ""
     echo -e "Use this method to retrieve a list of supported platforms and the sets of parameters required for connecting to each of them. Note: some platforms may have multiple connection methods so that the response will contain multiple sets of parameters." | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}cart_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter by integration identifier (e.g. 'Shopify'). If omitted, the method returns all integrations.${YELLOW} Specify as: cart_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -4994,7 +4997,7 @@ print_analyticsCustomerReport_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5033,7 +5036,7 @@ print_analyticsProductReport_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5070,7 +5073,7 @@ print_analyticsReport_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5204,11 +5207,11 @@ print_attributeAttributesetList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5287,11 +5290,11 @@ print_attributeGroupList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5318,11 +5321,11 @@ print_attributeInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5363,11 +5366,11 @@ print_attributeList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}system${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - True if attribute is system${YELLOW} Specify as: system=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,code,type)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,code,type)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5570,11 +5573,11 @@ print_basketInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5703,7 +5706,7 @@ print_batchJobList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}processed_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities according to their processing datetime${YELLOW} Specify as: processed_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5816,11 +5819,11 @@ print_cartCatalogPriceRulesList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves  catalog_price_rules by ids${YELLOW} Specify as: ids=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -5969,11 +5972,11 @@ print_cartCouponList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}date_end_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter entity by date_end (less or equal)${YELLOW} Specify as: date_end_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,code,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,code,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6100,11 +6103,11 @@ print_cartGiftcardList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,code,name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,code,name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6123,13 +6126,11 @@ print_cartInfo_help() {
     echo -e "This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: store_name,store_url,db_prefix)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: store_name,store_url,db_prefix)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6162,11 +6163,11 @@ print_cartMetaDataList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Key${YELLOW} Specify as: key=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: key,value)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: key,value)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6358,11 +6359,11 @@ print_cartScriptList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6387,11 +6388,11 @@ print_cartShippingZonesList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,enabled)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,enabled)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -6702,11 +6703,11 @@ print_categoryInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}schema_type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The name of the requirements set for the provided schema.${YELLOW} Specify as: schema_type=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,parent_id,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,parent_id,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}report_request_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Report request id${YELLOW} Specify as: report_request_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -6759,11 +6760,11 @@ print_categoryList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}find_where${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Category search that is specified by field${YELLOW} Specify as: find_where=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,parent_id,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,parent_id,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}report_request_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Report request id${YELLOW} Specify as: report_request_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -6914,11 +6915,11 @@ print_customerAttributeList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7065,11 +7066,11 @@ print_customerGroupList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,additional_fields)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,additional_fields)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}disable_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Disable cache for current request${YELLOW} Specify as: disable_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -7094,11 +7095,11 @@ print_customerInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves customer info specified by store id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,email,first_name,last_name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,email,first_name,last_name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7153,11 +7154,11 @@ print_customerList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,email,first_name,last_name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,email,first_name,last_name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7207,7 +7208,7 @@ print_customerWishlistList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7248,11 +7249,11 @@ print_marketplaceProductFind_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}isbn${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - International Standard Book Number. An ISBN is a unique identifier for books.${YELLOW} Specify as: isbn=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7295,11 +7296,11 @@ print_orderAbandonedList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}rounding_precision${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>${YELLOW} Specify as: rounding_precision=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: customer,totals,items)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: customer,totals,items)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7458,11 +7459,11 @@ print_orderInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Defines store id where the order should be found${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: order_id,customer,totals,address,items,bundles,status)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: order_id,customer,totals,address,items,bundles,status)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}enable_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - If the value is 'true' and order exist in our cache, we will return order.info response from cache${YELLOW} Specify as: enable_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -7557,11 +7558,11 @@ print_orderList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: order_id,customer,totals,address,items,bundles,status)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: order_id,customer,totals,address,items,bundles,status)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}enable_cache${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)${YELLOW} Specify as: enable_cache=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -7779,7 +7780,7 @@ print_orderShipmentEventList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7806,11 +7807,11 @@ print_orderShipmentInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,items,tracking_numbers)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,items,tracking_numbers)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7847,11 +7848,11 @@ print_orderShipmentList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,items,tracking_numbers)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,items,tracking_numbers)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7914,7 +7915,7 @@ print_orderStatusList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}allow_user_defined_order_statuses${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Indicates whether custom (user-defined) order statuses should be included in the response.${YELLOW} Specify as: allow_user_defined_order_statuses=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -7941,11 +7942,11 @@ print_orderTransactionList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,amount,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_id,amount,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8079,11 +8080,11 @@ print_productAttributeList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: attribute_id,name)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: attribute_id,name)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8198,11 +8199,11 @@ print_productBrandList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: true)${OFF} - Defines category's visibility status${YELLOW} Specify as: avail=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,short_description,active,url)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,short_description,active,url)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8256,11 +8257,11 @@ print_productChildItemInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8315,11 +8316,11 @@ print_productChildItemList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}return_global${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.${YELLOW} Specify as: return_global=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}report_request_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Report request id${YELLOW} Specify as: report_request_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8456,11 +8457,11 @@ print_productCurrencyList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of available/not available currencies${YELLOW} Specify as: avail=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: name,iso3,default,avail)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: name,iso3,default,avail)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -8639,11 +8640,11 @@ print_productInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}currency_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Currency Id${YELLOW} Specify as: currency_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price,categories_ids)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price,categories_ids)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}report_request_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Report request id${YELLOW} Specify as: report_request_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8722,11 +8723,11 @@ print_productList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}return_global${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.${YELLOW} Specify as: return_global=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price,categories_ids)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description,price,categories_ids)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id)${OFF} - Set field to sort by${YELLOW} Specify as: sort_by=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -8881,11 +8882,11 @@ print_productOptionList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,name,description)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9109,11 +9110,11 @@ print_productReviewList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_direction${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: asc)${OFF} - Set sorting direction${YELLOW} Specify as: sort_direction=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9498,11 +9499,11 @@ print_returnInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Store Id${YELLOW} Specify as: store_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_products)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_products)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9547,11 +9548,11 @@ print_returnList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_products)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,order_products)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}report_request_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Report request id${YELLOW} Specify as: report_request_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -9631,11 +9632,11 @@ print_subscriberList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: force_all)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9660,11 +9661,11 @@ print_taxClassInfo_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}lang_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Language id${YELLOW} Specify as: lang_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: tax_class_id,name,avail)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: tax_class_id,name,avail)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+    echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9703,7 +9704,7 @@ print_taxClassList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}modified_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their modification date${YELLOW} Specify as: modified_from=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: response_fields=value${OFF}" \
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -9811,7 +9812,7 @@ print_webhookList_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - List of сomma-separated webhook ids${YELLOW} Specify as: ids=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,entity,action,callback)${OFF} - Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
+    echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: id,entity,action,callback)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -10036,7 +10037,7 @@ call_accountSupportedPlatforms() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(cart_id  )
     local path
 
     if ! path=$(build_request_path "/v1.1/account.supported_platforms.json" path_parameter_names query_parameter_names); then
@@ -11590,7 +11591,7 @@ call_cartInfo() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(store_id response_fields params exclude    )
+    local query_parameter_names=(response_fields params exclude    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.info.json" path_parameter_names query_parameter_names); then

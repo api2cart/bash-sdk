@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entity** | **string** |  | [default to null]
 **action** | **string** |  | [default to null]
-**callback** | **string** |  | [optional] [default to null]
+**callback** | **string** |  | [default to null]
 **label** | **string** |  | [optional] [default to null]
 **fields** | **string** |  | [optional] [default to force_all]
 **responseUnderscorefields** | **string** |  | [optional] [default to null]

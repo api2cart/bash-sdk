@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
  **action** | **string** | The action you want to filter webhooks by (e.g. add, update, or delete) | [optional] [default to null]
  **active** | **boolean** | The webhook status you want to filter webhooks by | [optional] [default to null]
  **ids** | **string** | List of сomma-separated webhook ids | [optional] [default to null]
- **params** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,entity,action,callback]
+ **params** | **string** | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to id,entity,action,callback]
 
 ### Return type
 
