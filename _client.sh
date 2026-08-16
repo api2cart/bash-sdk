@@ -583,6 +583,8 @@ case $state in
 "walmart_environment=:[QUERY] Walmart environment"
 "walmart_channel_type=:[QUERY] Walmart WM_CONSUMER.CHANNEL.TYPE header"
 "walmart_region=:[QUERY] Walmart region"
+"walmart_refresh_token=:[QUERY] Walmart refresh token received by a Solution Provider application through the Walmart App Store authorization. When it is set, walmart_client_id and walmart_client_secret are the credentials of that application, not of the seller. Must be used together with walmart_seller_id and is supported only for walmart_region &#x3D; &#39;us&#39;"
+"walmart_seller_id=:[QUERY] Walmart seller id the refresh token was issued for, sent as the WM_PARTNER.ID header. Must be used together with walmart_refresh_token and is supported only for walmart_region &#x3D; &#39;us&#39;"
 "square_client_id=:[QUERY] Square (Weebly) Client ID"
 "square_client_secret=:[QUERY] Square (Weebly) Client Secret"
 "square_refresh_token=:[QUERY] Square (Weebly) Refresh Token"

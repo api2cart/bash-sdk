@@ -67,6 +67,8 @@ Name | Type | Description | Notes
 **walmartUnderscoreenvironment** | **string** |  | [optional] [default to production]
 **walmartUnderscorechannelUnderscoretype** | **string** |  | [optional] [default to null]
 **walmartUnderscoreregion** | **string** |  | [optional] [default to us]
+**walmartUnderscorerefreshUnderscoretoken** | **string** |  | [optional] [default to null]
+**walmartUnderscoresellerUnderscoreid** | **string** |  | [optional] [default to null]
 **ecwidUnderscoreacessUnderscoretoken** | **string** |  | [optional] [default to null]
 **ecwidUnderscorestoreUnderscoreid** | **string** |  | [optional] [default to null]
 **lazadaUnderscoreappUnderscoreid** | **string** |  | [optional] [default to null]
