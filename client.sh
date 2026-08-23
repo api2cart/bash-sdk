@@ -520,6 +520,7 @@ operation_parameters_minimum_occurrences["cartGiftcardList:::exclude"]=0
 operation_parameters_minimum_occurrences["cartInfo:::response_fields"]=0
 operation_parameters_minimum_occurrences["cartInfo:::params"]=0
 operation_parameters_minimum_occurrences["cartInfo:::exclude"]=0
+operation_parameters_minimum_occurrences["cartInfo:::use_latest_api_version"]=0
 operation_parameters_minimum_occurrences["cartMetaDataList:::entity_id"]=1
 operation_parameters_minimum_occurrences["cartMetaDataList:::count"]=0
 operation_parameters_minimum_occurrences["cartMetaDataList:::page_cursor"]=0
@@ -1751,6 +1752,7 @@ operation_parameters_maximum_occurrences["cartGiftcardList:::exclude"]=0
 operation_parameters_maximum_occurrences["cartInfo:::response_fields"]=0
 operation_parameters_maximum_occurrences["cartInfo:::params"]=0
 operation_parameters_maximum_occurrences["cartInfo:::exclude"]=0
+operation_parameters_maximum_occurrences["cartInfo:::use_latest_api_version"]=0
 operation_parameters_maximum_occurrences["cartMetaDataList:::entity_id"]=0
 operation_parameters_maximum_occurrences["cartMetaDataList:::count"]=0
 operation_parameters_maximum_occurrences["cartMetaDataList:::page_cursor"]=0
@@ -2979,6 +2981,7 @@ operation_parameters_collection_type["cartGiftcardList:::exclude"]=""
 operation_parameters_collection_type["cartInfo:::response_fields"]=""
 operation_parameters_collection_type["cartInfo:::params"]=""
 operation_parameters_collection_type["cartInfo:::exclude"]=""
+operation_parameters_collection_type["cartInfo:::use_latest_api_version"]=""
 operation_parameters_collection_type["cartMetaDataList:::entity_id"]=""
 operation_parameters_collection_type["cartMetaDataList:::count"]=""
 operation_parameters_collection_type["cartMetaDataList:::page_cursor"]=""
@@ -6141,6 +6144,8 @@ print_cartInfo_help() {
     echo -e "  * ${GREEN}params${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: store_name,store_url,db_prefix)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve${YELLOW} Specify as: params=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}exclude${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all${YELLOW} Specify as: exclude=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}use_latest_api_version${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Use the latest platform API version${YELLOW} Specify as: use_latest_api_version=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -11601,7 +11606,7 @@ call_cartInfo() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(response_fields params exclude    )
+    local query_parameter_names=(response_fields params exclude use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/cart.info.json" path_parameter_names query_parameter_names); then

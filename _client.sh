@@ -1186,6 +1186,8 @@ case $state in
                     "response_fields=:[QUERY] Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields."
 "params=:[QUERY] Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve"
 "exclude=:[QUERY] Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#39;params&#39; equal force_all"
+"use_latest_api_version=true:[QUERY] Use the latest platform API version"
+          "use_latest_api_version=false:[QUERY] Use the latest platform API version"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

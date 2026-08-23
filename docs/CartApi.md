@@ -509,7 +509,7 @@ This method allows you to get various information about the store, including a l
 ### Example
 
 ```bash
- cartInfo  response_fields=value  params=value  exclude=value
+ cartInfo  response_fields=value  params=value  exclude=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -520,6 +520,7 @@ Name | Type | Description  | Notes
  **responseFields** | **string** | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] [default to null]
  **params** | **string** | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to store_name,store_url,db_prefix]
  **exclude** | **string** | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter 'params' equal force_all | [optional] [default to null]
+ **useLatestApiVersion** | **boolean** | Use the latest platform API version | [optional] [default to false]
 
 ### Return type
 
