@@ -1023,7 +1023,8 @@ case $state in
       bridgeDelete)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       bridgeDownload)
@@ -1037,7 +1038,8 @@ case $state in
       bridgeUpdate)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "idempotency_key=:[QUERY] A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt;"
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       cartCatalogPriceRulesCount)

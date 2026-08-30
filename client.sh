@@ -452,7 +452,9 @@ operation_parameters_minimum_occurrences["batchJobList:::processed_from"]=0
 operation_parameters_minimum_occurrences["batchJobList:::processed_to"]=0
 operation_parameters_minimum_occurrences["batchJobList:::response_fields"]=0
 operation_parameters_minimum_occurrences["batchJobResult:::id"]=1
+operation_parameters_minimum_occurrences["bridgeDelete:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["bridgeDownload:::whitelabel"]=0
+operation_parameters_minimum_occurrences["bridgeUpdate:::idempotency_key"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::start"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::count"]=0
 operation_parameters_minimum_occurrences["cartCatalogPriceRulesList:::page_cursor"]=0
@@ -1684,7 +1686,9 @@ operation_parameters_maximum_occurrences["batchJobList:::processed_from"]=0
 operation_parameters_maximum_occurrences["batchJobList:::processed_to"]=0
 operation_parameters_maximum_occurrences["batchJobList:::response_fields"]=0
 operation_parameters_maximum_occurrences["batchJobResult:::id"]=0
+operation_parameters_maximum_occurrences["bridgeDelete:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["bridgeDownload:::whitelabel"]=0
+operation_parameters_maximum_occurrences["bridgeUpdate:::idempotency_key"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::start"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::count"]=0
 operation_parameters_maximum_occurrences["cartCatalogPriceRulesList:::page_cursor"]=0
@@ -2913,7 +2917,9 @@ operation_parameters_collection_type["batchJobList:::processed_from"]=""
 operation_parameters_collection_type["batchJobList:::processed_to"]=""
 operation_parameters_collection_type["batchJobList:::response_fields"]=""
 operation_parameters_collection_type["batchJobResult:::id"]=""
+operation_parameters_collection_type["bridgeDelete:::idempotency_key"]=""
 operation_parameters_collection_type["bridgeDownload:::whitelabel"]=""
+operation_parameters_collection_type["bridgeUpdate:::idempotency_key"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::start"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::count"]=""
 operation_parameters_collection_type["cartCatalogPriceRulesList:::page_cursor"]=""
@@ -5756,6 +5762,9 @@ print_bridgeDelete_help() {
     echo -e ""
     echo -e "Delete bridge from the store." | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -5791,6 +5800,9 @@ print_bridgeUpdate_help() {
     echo -e ""
     echo -e "Update bridge in the store." | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}idempotency_key${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>${YELLOW} Specify as: idempotency_key=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -11024,7 +11036,7 @@ call_bridgeDelete() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(    )
+    local query_parameter_names=(idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/bridge.delete.json" path_parameter_names query_parameter_names); then
@@ -11096,7 +11108,7 @@ call_bridgeUpdate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(    )
+    local query_parameter_names=(idempotency_key    )
     local path
 
     if ! path=$(build_request_path "/v1.1/bridge.update.json" path_parameter_names query_parameter_names); then

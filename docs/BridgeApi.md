@@ -19,12 +19,15 @@ Delete bridge from the store.
 ### Example
 
 ```bash
- bridgeDelete
+ bridgeDelete  idempotency_key=value
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
@@ -86,12 +89,15 @@ Update bridge in the store.
 ### Example
 
 ```bash
- bridgeUpdate
+ bridgeUpdate  idempotency_key=value
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **idempotencyKey** | **string** | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong> | [optional] [default to null]
 
 ### Return type
 
