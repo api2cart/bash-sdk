@@ -75,6 +75,9 @@ Name | Type | Description | Notes
 **clearUnderscorecache** | **boolean** |  | [optional] [default to true]
 **origin** | **string** |  | [optional] [default to null]
 **feeUnderscoreprice** | **integer** |  | [optional] [default to null]
+**shippUnderscorenationalUnderscoreaddress** | **string** |  | [optional] [default to null]
+**shippUnderscorebuildingUnderscorenumber** | **string** |  | [optional] [default to null]
+**shippUnderscoreadditionalUnderscorenumber** | **string** |  | [optional] [default to null]
 **idempotencyUnderscorekey** | **string** |  | [optional] [default to null]
 **orderUnderscoreitem** | [**array[OrderAddOrderItemInner]**](OrderAddOrderItemInner.md) |  | [default to null]
 
