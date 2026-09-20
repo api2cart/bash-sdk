@@ -8018,7 +8018,7 @@ print_orderUpdate_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}date_finished${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Specifies order's  finished date${YELLOW} Specify as: date_finished=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}send_notifications${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Send notifications to customer after order was created${YELLOW} Specify as: send_notifications=value${OFF}" \
+    echo -e "  * ${GREEN}send_notifications${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Send notifications to customer after order status was changed${YELLOW} Specify as: send_notifications=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}create_invoice${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Determines whether an invoice should be created if it has not already been created${YELLOW} Specify as: create_invoice=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'

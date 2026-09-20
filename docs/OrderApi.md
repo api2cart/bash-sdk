@@ -1019,7 +1019,7 @@ Name | Type | Description  | Notes
  **invoiceAdminComment** | **string** | Specifies admin's order invoice comment | [optional] [default to null]
  **dateModified** | **string** | Specifies order's  modification date | [optional] [default to null]
  **dateFinished** | **string** | Specifies order's  finished date | [optional] [default to null]
- **sendNotifications** | **boolean** | Send notifications to customer after order was created | [optional] [default to false]
+ **sendNotifications** | **boolean** | Send notifications to customer after order status was changed | [optional] [default to false]
  **createInvoice** | **boolean** | Determines whether an invoice should be created if it has not already been created | [optional] [default to null]
  **origin** | **string** | The source of the order | [optional] [default to null]
  **tags** | **string** | Order tags | [optional] [default to null]
