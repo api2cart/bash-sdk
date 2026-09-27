@@ -8390,7 +8390,7 @@ print_productCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail_view${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of visible/invisible products${YELLOW} Specify as: avail_view=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}avail_sale${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of available/not available products for sale${YELLOW} Specify as: avail_sale=value${OFF}" \
+    echo -e "  * ${GREEN}avail_sale${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations${YELLOW} Specify as: avail_sale=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'

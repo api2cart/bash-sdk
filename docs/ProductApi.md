@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
  **vendorId** | **string** | Counts products specified by vendor id | [optional] [default to null]
  **langId** | **string** | Counts products specified by language id | [optional] [default to null]
  **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
- **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
+ **availSale** | **boolean** | Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
