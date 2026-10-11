@@ -457,7 +457,7 @@ Count products in store.
 ### Example
 
 ```bash
- productCount  sku=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  vendor_id=value  lang_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  manufacturer_id=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
+ productCount  sku=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  vendor_id=value  lang_id=value  avail_view=value  avail_sale=value  is_partial_or_full_out_of_stock=value  created_from=value  created_to=value  modified_from=value  modified_to=value  brand_name=value  manufacturer_id=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  status=value  type=value  visible=value  find_value=value  find_where=value  report_request_id=value  return_global=value  disable_report_cache=value  use_latest_api_version=value
 ```
 
 ### Parameters
@@ -475,6 +475,7 @@ Name | Type | Description  | Notes
  **langId** | **string** | Counts products specified by language id | [optional] [default to null]
  **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
  **availSale** | **boolean** | Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations | [optional] [default to null]
+ **isPartialOrFullOutOfStock** | **boolean** | Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
@@ -874,7 +875,7 @@ Get list of products from your store. Returns 10 products by default.
 ### Example
 
 ```bash
- productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  vendor_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  manufacturer_id=value  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value  product_type=value
+ productList  start=value  count=value  page_cursor=value  product_ids=value  since_id=value  categories_ids=value  category_id=value  store_id=value  vendor_id=value  lang_id=value  currency_id=value  avail_view=value  avail_sale=value  is_partial_or_full_out_of_stock=value  created_from=value  created_to=value  modified_from=value  modified_to=value  sku=value  brand_name=value  Specify as:  product_attributes=value1 product_attributes=value2 product_attributes=...  manufacturer_id=value  status=value  type=value  visible=value  find_value=value  find_where=value  return_global=value  params=value  response_fields=value  exclude=value  sort_by=value  sort_direction=value  report_request_id=value  disable_cache=value  disable_report_cache=value  use_latest_api_version=value  product_type=value
 ```
 
 ### Parameters
@@ -895,6 +896,7 @@ Name | Type | Description  | Notes
  **currencyId** | **string** | Currency Id | [optional] [default to null]
  **availView** | **boolean** | Specifies the set of visible/invisible products | [optional] [default to null]
  **availSale** | **boolean** | Specifies the set of available/not available products for sale | [optional] [default to null]
+ **isPartialOrFullOutOfStock** | **boolean** | Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do | [optional] [default to null]
  **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
  **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
  **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]

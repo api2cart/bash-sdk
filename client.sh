@@ -1037,6 +1037,7 @@ operation_parameters_minimum_occurrences["productCount:::vendor_id"]=0
 operation_parameters_minimum_occurrences["productCount:::lang_id"]=0
 operation_parameters_minimum_occurrences["productCount:::avail_view"]=0
 operation_parameters_minimum_occurrences["productCount:::avail_sale"]=0
+operation_parameters_minimum_occurrences["productCount:::is_partial_or_full_out_of_stock"]=0
 operation_parameters_minimum_occurrences["productCount:::created_from"]=0
 operation_parameters_minimum_occurrences["productCount:::created_to"]=0
 operation_parameters_minimum_occurrences["productCount:::modified_from"]=0
@@ -1117,6 +1118,7 @@ operation_parameters_minimum_occurrences["productList:::lang_id"]=0
 operation_parameters_minimum_occurrences["productList:::currency_id"]=0
 operation_parameters_minimum_occurrences["productList:::avail_view"]=0
 operation_parameters_minimum_occurrences["productList:::avail_sale"]=0
+operation_parameters_minimum_occurrences["productList:::is_partial_or_full_out_of_stock"]=0
 operation_parameters_minimum_occurrences["productList:::created_from"]=0
 operation_parameters_minimum_occurrences["productList:::created_to"]=0
 operation_parameters_minimum_occurrences["productList:::modified_from"]=0
@@ -2271,6 +2273,7 @@ operation_parameters_maximum_occurrences["productCount:::vendor_id"]=0
 operation_parameters_maximum_occurrences["productCount:::lang_id"]=0
 operation_parameters_maximum_occurrences["productCount:::avail_view"]=0
 operation_parameters_maximum_occurrences["productCount:::avail_sale"]=0
+operation_parameters_maximum_occurrences["productCount:::is_partial_or_full_out_of_stock"]=0
 operation_parameters_maximum_occurrences["productCount:::created_from"]=0
 operation_parameters_maximum_occurrences["productCount:::created_to"]=0
 operation_parameters_maximum_occurrences["productCount:::modified_from"]=0
@@ -2351,6 +2354,7 @@ operation_parameters_maximum_occurrences["productList:::lang_id"]=0
 operation_parameters_maximum_occurrences["productList:::currency_id"]=0
 operation_parameters_maximum_occurrences["productList:::avail_view"]=0
 operation_parameters_maximum_occurrences["productList:::avail_sale"]=0
+operation_parameters_maximum_occurrences["productList:::is_partial_or_full_out_of_stock"]=0
 operation_parameters_maximum_occurrences["productList:::created_from"]=0
 operation_parameters_maximum_occurrences["productList:::created_to"]=0
 operation_parameters_maximum_occurrences["productList:::modified_from"]=0
@@ -3502,6 +3506,7 @@ operation_parameters_collection_type["productCount:::vendor_id"]=""
 operation_parameters_collection_type["productCount:::lang_id"]=""
 operation_parameters_collection_type["productCount:::avail_view"]=""
 operation_parameters_collection_type["productCount:::avail_sale"]=""
+operation_parameters_collection_type["productCount:::is_partial_or_full_out_of_stock"]=""
 operation_parameters_collection_type["productCount:::created_from"]=""
 operation_parameters_collection_type["productCount:::created_to"]=""
 operation_parameters_collection_type["productCount:::modified_from"]=""
@@ -3582,6 +3587,7 @@ operation_parameters_collection_type["productList:::lang_id"]=""
 operation_parameters_collection_type["productList:::currency_id"]=""
 operation_parameters_collection_type["productList:::avail_view"]=""
 operation_parameters_collection_type["productList:::avail_sale"]=""
+operation_parameters_collection_type["productList:::is_partial_or_full_out_of_stock"]=""
 operation_parameters_collection_type["productList:::created_from"]=""
 operation_parameters_collection_type["productList:::created_to"]=""
 operation_parameters_collection_type["productList:::modified_from"]=""
@@ -8392,6 +8398,8 @@ print_productCount_help() {
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail_sale${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations${YELLOW} Specify as: avail_sale=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}is_partial_or_full_out_of_stock${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do${YELLOW} Specify as: is_partial_or_full_out_of_stock=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
@@ -8721,6 +8729,8 @@ print_productList_help() {
     echo -e "  * ${GREEN}avail_view${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of visible/invisible products${YELLOW} Specify as: avail_view=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}avail_sale${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of available/not available products for sale${YELLOW} Specify as: avail_sale=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}is_partial_or_full_out_of_stock${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: null)${OFF} - Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do${YELLOW} Specify as: is_partial_or_full_out_of_stock=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -14930,7 +14940,7 @@ call_productCount() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(sku product_ids since_id categories_ids category_id store_id vendor_id lang_id avail_view avail_sale created_from created_to modified_from modified_to brand_name manufacturer_id product_attributes status type visible find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
+    local query_parameter_names=(sku product_ids since_id categories_ids category_id store_id vendor_id lang_id avail_view avail_sale is_partial_or_full_out_of_stock created_from created_to modified_from modified_to brand_name manufacturer_id product_attributes status type visible find_value find_where report_request_id return_global disable_report_cache use_latest_api_version    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.count.json" path_parameter_names query_parameter_names); then
@@ -15374,7 +15384,7 @@ call_productList() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id vendor_id lang_id currency_id avail_view avail_sale created_from created_to modified_from modified_to sku brand_name product_attributes manufacturer_id status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version product_type    )
+    local query_parameter_names=(start count page_cursor product_ids since_id categories_ids category_id store_id vendor_id lang_id currency_id avail_view avail_sale is_partial_or_full_out_of_stock created_from created_to modified_from modified_to sku brand_name product_attributes manufacturer_id status type visible find_value find_where return_global params response_fields exclude sort_by sort_direction report_request_id disable_cache disable_report_cache use_latest_api_version product_type    )
     local path
 
     if ! path=$(build_request_path "/v1.1/product.list.json" path_parameter_names query_parameter_names); then
