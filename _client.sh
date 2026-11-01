@@ -377,6 +377,7 @@ case $state in
             "orderFinancialStatusList[order.financial_status.list]" \
             "orderFulfillmentStatusList[order.fulfillment_status.list]" \
             "orderInfo[order.info]" \
+            "orderInvoiceAdd[order.invoice.add]" \
             "orderList[order.list]" \
             "orderPreestimateShippingList[order.preestimate_shipping.list]" \
             "orderRefundAdd[order.refund.add]" \
@@ -1772,6 +1773,12 @@ case $state in
 "allow_user_defined_order_statuses=true:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
           "allow_user_defined_order_statuses=false:[QUERY] Indicates whether custom (user-defined) order statuses should be included in the response."
           )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      orderInvoiceAdd)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       orderList)

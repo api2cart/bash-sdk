@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**orderFinancialStatusList**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list
 [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 [**orderInfo**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info
+[**orderInvoiceAdd**](OrderApi.md#orderInvoiceAdd) | **POST** /order.invoice.add.json | order.invoice.add
 [**orderList**](OrderApi.md#orderList) | **GET** /order.list.json | order.list
 [**orderPreestimateShippingList**](OrderApi.md#orderPreestimateShippingList) | **POST** /order.preestimate_shipping.list.json | order.preestimate_shipping.list
 [**orderRefundAdd**](OrderApi.md#orderRefundAdd) | **POST** /order.refund.add.json | order.refund.add
@@ -313,6 +314,41 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not Applicable
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## orderInvoiceAdd
+
+order.invoice.add
+
+Upload a PDF invoice or credit note of the order to the store. The store checks the document after the upload, so a successful response means it was received, not accepted. Use the returned id to find the result of the check in the store.
+
+### Example
+
+```bash
+ orderInvoiceAdd
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderInvoiceAdd** | [**OrderInvoiceAdd**](OrderInvoiceAdd.md) |  |
+
+### Return type
+
+[**AttributeAdd200Response**](AttributeAdd200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

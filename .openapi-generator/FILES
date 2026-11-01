@@ -226,6 +226,7 @@ docs/OrderCalculateShippingRate.md
 docs/OrderCalculateSubtotal.md
 docs/OrderCalculateTax.md
 docs/OrderInfo200Response.md
+docs/OrderInvoiceAdd.md
 docs/OrderItem.md
 docs/OrderItemOption.md
 docs/OrderPaymentMethod.md
