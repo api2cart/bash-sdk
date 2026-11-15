@@ -830,6 +830,16 @@ operation_parameters_minimum_occurrences["orderInfo:::use_latest_api_version"]=0
 operation_parameters_minimum_occurrences["orderInfo:::rounding_precision"]=0
 operation_parameters_minimum_occurrences["orderInfo:::allow_user_defined_order_statuses"]=0
 operation_parameters_minimum_occurrences["orderInvoiceAdd:::OrderInvoiceAdd"]=1
+operation_parameters_minimum_occurrences["orderInvoiceList:::count"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::page_cursor"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::order_ids"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::ids"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::store_id"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::created_from"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::created_to"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::modified_from"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::modified_to"]=0
+operation_parameters_minimum_occurrences["orderInvoiceList:::response_fields"]=0
 operation_parameters_minimum_occurrences["orderList:::start"]=0
 operation_parameters_minimum_occurrences["orderList:::count"]=0
 operation_parameters_minimum_occurrences["orderList:::page_cursor"]=0
@@ -2067,6 +2077,16 @@ operation_parameters_maximum_occurrences["orderInfo:::use_latest_api_version"]=0
 operation_parameters_maximum_occurrences["orderInfo:::rounding_precision"]=0
 operation_parameters_maximum_occurrences["orderInfo:::allow_user_defined_order_statuses"]=0
 operation_parameters_maximum_occurrences["orderInvoiceAdd:::OrderInvoiceAdd"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::count"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::page_cursor"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::order_ids"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::ids"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::store_id"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::created_from"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::created_to"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::modified_from"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::modified_to"]=0
+operation_parameters_maximum_occurrences["orderInvoiceList:::response_fields"]=0
 operation_parameters_maximum_occurrences["orderList:::start"]=0
 operation_parameters_maximum_occurrences["orderList:::count"]=0
 operation_parameters_maximum_occurrences["orderList:::page_cursor"]=0
@@ -3301,6 +3321,16 @@ operation_parameters_collection_type["orderInfo:::use_latest_api_version"]=""
 operation_parameters_collection_type["orderInfo:::rounding_precision"]=""
 operation_parameters_collection_type["orderInfo:::allow_user_defined_order_statuses"]=""
 operation_parameters_collection_type["orderInvoiceAdd:::OrderInvoiceAdd"]=""
+operation_parameters_collection_type["orderInvoiceList:::count"]=""
+operation_parameters_collection_type["orderInvoiceList:::page_cursor"]=""
+operation_parameters_collection_type["orderInvoiceList:::order_ids"]=""
+operation_parameters_collection_type["orderInvoiceList:::ids"]=""
+operation_parameters_collection_type["orderInvoiceList:::store_id"]=""
+operation_parameters_collection_type["orderInvoiceList:::created_from"]=""
+operation_parameters_collection_type["orderInvoiceList:::created_to"]=""
+operation_parameters_collection_type["orderInvoiceList:::modified_from"]=""
+operation_parameters_collection_type["orderInvoiceList:::modified_to"]=""
+operation_parameters_collection_type["orderInvoiceList:::response_fields"]=""
 operation_parameters_collection_type["orderList:::start"]=""
 operation_parameters_collection_type["orderList:::count"]=""
 operation_parameters_collection_type["orderList:::page_cursor"]=""
@@ -4364,6 +4394,7 @@ read -r -d '' ops <<EOF
   ${CYAN}orderFulfillmentStatusList${OFF};order.fulfillment_status.list (AUTH) (AUTH)
   ${CYAN}orderInfo${OFF};order.info (AUTH) (AUTH)
   ${CYAN}orderInvoiceAdd${OFF};order.invoice.add (AUTH) (AUTH)
+  ${CYAN}orderInvoiceList${OFF};order.invoice.list (AUTH) (AUTH)
   ${CYAN}orderList${OFF};order.list (AUTH) (AUTH)
   ${CYAN}orderPreestimateShippingList${OFF};order.preestimate_shipping.list (AUTH) (AUTH)
   ${CYAN}orderRefundAdd${OFF};order.refund.add (AUTH) (AUTH)
@@ -7529,6 +7560,43 @@ print_orderInvoiceAdd_help() {
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for orderInvoiceList operation
+#
+##############################################################################
+print_orderInvoiceList_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}orderInvoiceList - order.invoice.list${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Get list of invoices the store issued for orders. Only the invoices of one store are returned, also when filtered by order_ids or ids: the store given in store_id, or the default store when store_id is not given." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}count${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 10)${OFF} - This parameter sets the entity amount that has to be retrieved. Max allowed count=250${YELLOW} Specify as: count=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page_cursor${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)${YELLOW} Specify as: page_cursor=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}order_ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves invoices of the orders specified by order ids${YELLOW} Specify as: order_ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}ids${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves invoices specified by ids${YELLOW} Specify as: ids=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}store_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieves invoices of the store specified by store id. The default store is taken when not specified${YELLOW} Specify as: store_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}created_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their creation date${YELLOW} Specify as: created_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}created_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their creation date${YELLOW} Specify as: created_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}modified_from${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities from their modification date${YELLOW} Specify as: modified_from=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}modified_to${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Retrieve entities to their modification date${YELLOW} Specify as: modified_to=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}response_fields${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: {return_code,return_message,pagination,result})${OFF} - Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.${YELLOW} Specify as: response_fields=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -13598,6 +13666,42 @@ call_orderInvoiceAdd() {
 
 ##############################################################################
 #
+# Call orderInvoiceList operation
+#
+##############################################################################
+call_orderInvoiceList() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(count page_cursor order_ids ids store_id created_from created_to modified_from modified_to response_fields    )
+    local path
+
+    if ! path=$(build_request_path "/v1.1/order.invoice.list.json" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
 # Call orderList operation
 #
 ##############################################################################
@@ -18100,6 +18204,9 @@ case $key in
     orderInvoiceAdd)
     operation="orderInvoiceAdd"
     ;;
+    orderInvoiceList)
+    operation="orderInvoiceList"
+    ;;
     orderList)
     operation="orderList"
     ;;
@@ -18716,6 +18823,9 @@ case $operation in
     ;;
     orderInvoiceAdd)
     call_orderInvoiceAdd
+    ;;
+    orderInvoiceList)
+    call_orderInvoiceList
     ;;
     orderList)
     call_orderList

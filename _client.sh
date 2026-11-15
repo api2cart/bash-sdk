@@ -378,6 +378,7 @@ case $state in
             "orderFulfillmentStatusList[order.fulfillment_status.list]" \
             "orderInfo[order.info]" \
             "orderInvoiceAdd[order.invoice.add]" \
+            "orderInvoiceList[order.invoice.list]" \
             "orderList[order.list]" \
             "orderPreestimateShippingList[order.preestimate_shipping.list]" \
             "orderRefundAdd[order.refund.add]" \
@@ -1779,6 +1780,22 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                               )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      orderInvoiceList)
+        local -a _op_arguments
+        _op_arguments=(
+                    "count=:[QUERY] This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250"
+"page_cursor=:[QUERY] Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)"
+"order_ids=:[QUERY] Retrieves invoices of the orders specified by order ids"
+"ids=:[QUERY] Retrieves invoices specified by ids"
+"store_id=:[QUERY] Retrieves invoices of the store specified by store id. The default store is taken when not specified"
+"created_from=:[QUERY] Retrieve entities from their creation date"
+"created_to=:[QUERY] Retrieve entities to their creation date"
+"modified_from=:[QUERY] Retrieve entities from their modification date"
+"modified_to=:[QUERY] Retrieve entities to their modification date"
+"response_fields=:[QUERY] Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields."
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       orderList)

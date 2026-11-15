@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderFulfillmentStatusList**](docs/OrderApi.md#orderfulfillmentstatuslist) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 *OrderApi* | [**orderInfo**](docs/OrderApi.md#orderinfo) | **GET** /order.info.json | order.info
 *OrderApi* | [**orderInvoiceAdd**](docs/OrderApi.md#orderinvoiceadd) | **POST** /order.invoice.add.json | order.invoice.add
+*OrderApi* | [**orderInvoiceList**](docs/OrderApi.md#orderinvoicelist) | **GET** /order.invoice.list.json | order.invoice.list
 *OrderApi* | [**orderList**](docs/OrderApi.md#orderlist) | **GET** /order.list.json | order.list
 *OrderApi* | [**orderPreestimateShippingList**](docs/OrderApi.md#orderpreestimateshippinglist) | **POST** /order.preestimate_shipping.list.json | order.preestimate_shipping.list
 *OrderApi* | [**orderRefundAdd**](docs/OrderApi.md#orderrefundadd) | **POST** /order.refund.add.json | order.refund.add
@@ -444,6 +445,7 @@ Class | Method | HTTP request | Description
  - [ModelResponseOrderCount](docs/ModelResponseOrderCount.md)
  - [ModelResponseOrderFinancialStatusList](docs/ModelResponseOrderFinancialStatusList.md)
  - [ModelResponseOrderFulfillmentStatusList](docs/ModelResponseOrderFulfillmentStatusList.md)
+ - [ModelResponseOrderInvoiceList](docs/ModelResponseOrderInvoiceList.md)
  - [ModelResponseOrderList](docs/ModelResponseOrderList.md)
  - [ModelResponseOrderPreestimateShippingList](docs/ModelResponseOrderPreestimateShippingList.md)
  - [ModelResponseOrderShipmentEventList](docs/ModelResponseOrderShipmentEventList.md)
@@ -490,7 +492,11 @@ Class | Method | HTTP request | Description
  - [OrderCalculateSubtotal](docs/OrderCalculateSubtotal.md)
  - [OrderCalculateTax](docs/OrderCalculateTax.md)
  - [OrderInfo200Response](docs/OrderInfo200Response.md)
+ - [OrderInvoice](docs/OrderInvoice.md)
  - [OrderInvoiceAdd](docs/OrderInvoiceAdd.md)
+ - [OrderInvoiceComment](docs/OrderInvoiceComment.md)
+ - [OrderInvoiceItem](docs/OrderInvoiceItem.md)
+ - [OrderInvoiceTotals](docs/OrderInvoiceTotals.md)
  - [OrderItem](docs/OrderItem.md)
  - [OrderItemOption](docs/OrderItemOption.md)
  - [OrderPaymentMethod](docs/OrderPaymentMethod.md)
@@ -678,6 +684,7 @@ Class | Method | HTTP request | Description
  - [ResponseOrderCountResult](docs/ResponseOrderCountResult.md)
  - [ResponseOrderFinancialStatusListResult](docs/ResponseOrderFinancialStatusListResult.md)
  - [ResponseOrderFulfillmentStatusListResult](docs/ResponseOrderFulfillmentStatusListResult.md)
+ - [ResponseOrderInvoiceListResult](docs/ResponseOrderInvoiceListResult.md)
  - [ResponseOrderListResult](docs/ResponseOrderListResult.md)
  - [ResponseOrderPreestimateShippingListResult](docs/ResponseOrderPreestimateShippingListResult.md)
  - [ResponseOrderShipmentEventListResult](docs/ResponseOrderShipmentEventListResult.md)

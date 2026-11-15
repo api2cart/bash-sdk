@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 [**orderInfo**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info
 [**orderInvoiceAdd**](OrderApi.md#orderInvoiceAdd) | **POST** /order.invoice.add.json | order.invoice.add
+[**orderInvoiceList**](OrderApi.md#orderInvoiceList) | **GET** /order.invoice.list.json | order.invoice.list
 [**orderList**](OrderApi.md#orderList) | **GET** /order.list.json | order.list
 [**orderPreestimateShippingList**](OrderApi.md#orderPreestimateShippingList) | **POST** /order.preestimate_shipping.list.json | order.preestimate_shipping.list
 [**orderRefundAdd**](OrderApi.md#orderRefundAdd) | **POST** /order.refund.add.json | order.refund.add
@@ -349,6 +350,50 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## orderInvoiceList
+
+order.invoice.list
+
+Get list of invoices the store issued for orders. Only the invoices of one store are returned, also when filtered by order_ids or ids: the store given in store_id, or the default store when store_id is not given.
+
+### Example
+
+```bash
+ orderInvoiceList  count=value  page_cursor=value  order_ids=value  ids=value  store_id=value  created_from=value  created_to=value  modified_from=value  modified_to=value  response_fields=value
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count=250 | [optional] [default to 10]
+ **pageCursor** | **string** | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter) | [optional] [default to null]
+ **orderIds** | **string** | Retrieves invoices of the orders specified by order ids | [optional] [default to null]
+ **ids** | **string** | Retrieves invoices specified by ids | [optional] [default to null]
+ **storeId** | **string** | Retrieves invoices of the store specified by store id. The default store is taken when not specified | [optional] [default to null]
+ **createdFrom** | **string** | Retrieve entities from their creation date | [optional] [default to null]
+ **createdTo** | **string** | Retrieve entities to their creation date | [optional] [default to null]
+ **modifiedFrom** | **string** | Retrieve entities from their modification date | [optional] [default to null]
+ **modifiedTo** | **string** | Retrieve entities to their modification date | [optional] [default to null]
+ **responseFields** | **string** | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] [default to {return_code,return_message,pagination,result}]
+
+### Return type
+
+[**ModelResponseOrderInvoiceList**](ModelResponseOrderInvoiceList.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not Applicable
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

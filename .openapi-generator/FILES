@@ -179,6 +179,7 @@ docs/ModelResponseOrderAbandonedList.md
 docs/ModelResponseOrderCount.md
 docs/ModelResponseOrderFinancialStatusList.md
 docs/ModelResponseOrderFulfillmentStatusList.md
+docs/ModelResponseOrderInvoiceList.md
 docs/ModelResponseOrderList.md
 docs/ModelResponseOrderPreestimateShippingList.md
 docs/ModelResponseOrderShipmentEventList.md
@@ -226,7 +227,11 @@ docs/OrderCalculateShippingRate.md
 docs/OrderCalculateSubtotal.md
 docs/OrderCalculateTax.md
 docs/OrderInfo200Response.md
+docs/OrderInvoice.md
 docs/OrderInvoiceAdd.md
+docs/OrderInvoiceComment.md
+docs/OrderInvoiceItem.md
+docs/OrderInvoiceTotals.md
 docs/OrderItem.md
 docs/OrderItemOption.md
 docs/OrderPaymentMethod.md
@@ -415,6 +420,7 @@ docs/ResponseOrderAbandonedListResult.md
 docs/ResponseOrderCountResult.md
 docs/ResponseOrderFinancialStatusListResult.md
 docs/ResponseOrderFulfillmentStatusListResult.md
+docs/ResponseOrderInvoiceListResult.md
 docs/ResponseOrderListResult.md
 docs/ResponseOrderPreestimateShippingListResult.md
 docs/ResponseOrderShipmentEventListResult.md
